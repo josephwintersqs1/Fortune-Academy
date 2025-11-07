@@ -815,35 +815,35 @@
    INDUSTRY-SPECIFIC COLORS
    =================================================================== */
 
-/* Real Estate - Blue (Teal) */
+/* Real Estate - Blue */
 .real-estate-business .lead-gen-section {
-  background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+  background: linear-gradient(135deg, #2c75ba 0%, #4c8ed0 100%);
 }
 
 .real-estate-business .lms-benefit-icon {
-  background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+  background: linear-gradient(135deg, #2c75ba 0%, #4c8ed0 100%);
 }
 
 .real-estate-business .business-hero .button-primary {
-  background: #00897B;
+  background: #2c75ba;
 }
 
 .real-estate-business .business-hero .button-primary:hover {
-  background: #26A69A;
+  background: #4c8ed0;
 }
 
 .real-estate-business .lead-gen-form .submit-btn {
-  background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+  background: linear-gradient(135deg, #2c75ba 0%, #4c8ed0 100%);
 }
 
 .real-estate-business .header-btn .button-primary {
-  background: #00897B;
-  border-color: #00897B;
+  background: #2c75ba;
+  border-color: #2c75ba;
 }
 
 .real-estate-business .header-btn .button-primary:hover {
-  background: #26A69A;
-  border-color: #26A69A;
+  background: #4c8ed0;
+  border-color: #4c8ed0;
 }
 
 /* Mortgage - Purple */
