@@ -1267,8 +1267,8 @@ margin-top: 3px;
 
 /* Section Container */
 .alacarte-section {
-    margin-top: 80px;
-    padding-top: 60px;
+    margin-top: 40px;
+    padding-top: 40px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -1564,6 +1564,21 @@ margin-top: 3px;
 }
 
 /* ==================== END À LA CARTE COURSES SECTION STYLES ==================== */
+
+/* ==================== SCROLL FADE-IN ANIMATIONS ==================== */
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== END SCROLL FADE-IN ANIMATIONS ==================== */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -3089,7 +3104,7 @@ SCREC Approved #004
 <div class="full-width-tabs-section">
 
 <!-- Delivery Method Tabs -->
-<div class="tab-container" id="course-selection">
+<div class="tab-container fade-in-section" id="course-selection">
 <ul class="nav nav-tabs" id="deliveryTabs" role="tablist">
 <li class="nav-item">
 <a class="nav-link active" id="in-person-tab" data-toggle="tab" href="#in-person" role="tab" aria-controls="in-person" aria-selected="true">
@@ -3639,7 +3654,7 @@ See Schedule
 <!-- End of full-width tabs section -->
 
 <!-- À La Carte Courses Section -->
-<section class="alacarte-section">
+<section class="alacarte-section fade-in-section">
     <div class="section-header">
         <h2 class="section-title">Individual Courses</h2>
         <p class="section-subtitle">
@@ -3733,7 +3748,7 @@ See Schedule
 <div class="col-lg-12">
 
 <!-- Why Fortune Academy Section -->
-<div class="course-meta-box" style="margin-top: 50px;">
+<div class="course-meta-box fade-in-section" style="margin-top: 50px;">
 <h5>Why Choose Fortune Academy?</h5>
 <div class="row">
 <div class="col-md-4 text-center" style="margin-bottom: 25px;">
@@ -3770,7 +3785,7 @@ See Schedule
 </div>
 
 <!-- Our Instructors Section -->
-<div class="course-meta-box" style="margin-top: 30px;">
+<div class="course-meta-box fade-in-section" style="margin-top: 30px;">
 <h5>Meet Our Expert Instructors</h5>
 <div class="instructor-grid">
 <div class="instructor-card">
@@ -3821,7 +3836,7 @@ See Schedule
 </div>
 
 <!-- Student Testimonials Section -->
-<div class="course-meta-box" style="margin-top: 30px;">
+<div class="course-meta-box fade-in-section" style="margin-top: 30px;">
 <h5>What Our Students Say</h5>
 <div class="testimonial-grid">
 <div class="testimonial-card">
@@ -4197,7 +4212,7 @@ See Schedule
 </section>
 
 <!-- FAQ Section -->
-<div class="course-meta-box faq-section" style="margin-top: 30px;">
+<div class="course-meta-box faq-section fade-in-section" style="margin-top: 30px;">
 <h5>Frequently Asked Questions</h5>
 <div class="faq-item">
 <button class="faq-question">
@@ -5202,6 +5217,26 @@ $(document).ready(function() {
                 });
             }
         });
+    });
+})();
+
+// Page Section Fade-In Animations
+(function() {
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+    
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    fadeInSections.forEach(section => {
+        fadeInObserver.observe(section);
     });
 })();
 </script>
