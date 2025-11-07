@@ -6496,45 +6496,123 @@ procduct details css
 }
 
 /*--------------------------------------------------------------
->>> Testimonial Pages - DISABLED - Using custom.css instead
+>>> Testimonial Pages
 ----------------------------------------------------------------*/
-/* .testimonial-page-section .testimonial-item {
+.testimonial-page-section .testimonial-item {
   background-color: #F8F8F8;
-  padding: 80px 40px 32px 40px;
+  padding: 30px 25px 25px 25px;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   z-index: 1;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
+
+.testimonial-page-section .testimonial-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-color: #2c75ba;
+}
+
 .testimonial-page-section .testimonial-item:before {
-  background-image: url(assets/images/icon18.png);
-  background-repeat: no-repeat;
-  background-position: 40px 14px;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.25;
-  z-index: -1;
+  display: none; /* Remove quote icon */
 }
+
 .testimonial-page-section .testimonial-item .testimonial-content p {
   font-size: 15px;
   font-style: normal;
   margin-bottom: 25px;
+  line-height: 1.7;
+  color: #555;
 }
+
 .testimonial-page-section .testimonial-item .testimonial-img {
   height: 100px;
   width: 100px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -50px;
+  position: relative; /* Changed from absolute */
+  left: auto;
+  right: auto;
+  top: auto;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #2c75ba;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: 4px solid #2c75ba;
+  box-shadow: 0 4px 12px rgba(44, 117, 186, 0.3);
+  overflow: visible;
 }
+
+.testimonial-page-section .testimonial-item .testimonial-img img {
+  display: none; /* Hide images, show text instead */
+}
+
 .testimonial-page-section .start-wrap {
   display: inline-block;
   margin-bottom: 20px;
-} */
+}
+
+/* Industry colors for avatars */
+.industry-real-estate .testimonial-page-section .testimonial-item .testimonial-img {
+  background: #2c75ba;
+  border-color: #2c75ba;
+}
+
+.industry-mortgage .testimonial-page-section .testimonial-item .testimonial-img {
+  background: #7b1fa2;
+  border-color: #7b1fa2;
+}
+
+.industry-appraisal .testimonial-page-section .testimonial-item .testimonial-img {
+  background: #2c75ba;
+  border-color: #2c75ba;
+}
+
+.industry-osha .testimonial-page-section .testimonial-item .testimonial-img {
+  background: #ff6f00;
+  border-color: #ff6f00;
+}
+
+.industry-healthcare .testimonial-page-section .testimonial-item .testimonial-img {
+  background: #c1241a;
+  border-color: #c1241a;
+}
+
+.industry-compliance .testimonial-page-section .testimonial-item .testimonial-img {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+/* Industry colors for stars */
+.industry-real-estate .testimonial-page-section .rating-start span {
+  background-color: #2c75ba;
+}
+
+.industry-mortgage .testimonial-page-section .rating-start span {
+  background-color: #7b1fa2;
+}
+
+.industry-appraisal .testimonial-page-section .rating-start span {
+  background-color: #2c75ba;
+}
+
+.industry-osha .testimonial-page-section .rating-start span {
+  background-color: #ff6f00;
+}
+
+.industry-healthcare .testimonial-page-section .rating-start span {
+  background-color: #c1241a;
+}
+
+.industry-compliance .testimonial-page-section .rating-start span {
+  background-color: #4caf50;
+}
 
 /*--------------------------------------------------------------
 >>> Career Pages
