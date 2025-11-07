@@ -250,6 +250,35 @@ $(".video-container").modalVideo({
   }
 });
 
+/* Learning Styles carousel */
+$('.learning-styles-carousel').slick({
+  dots: true,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  speed: 800,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
 /* counter up*/
 $('.counter').counterUp();
 

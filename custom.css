@@ -4146,6 +4146,144 @@ body.industry-compliance {
     color: #FFA726 !important;
 }
 
+/* ==================== LEARNING STYLES CAROUSEL ==================== */
+.learning-styles-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.learning-styles-carousel {
+  margin-top: 50px;
+  padding: 0 50px;
+}
+
+.learning-style-slide {
+  padding: 0 15px;
+}
+
+.learning-styles-carousel .slick-prev,
+.learning-styles-carousel .slick-next {
+  width: 44px;
+  height: 44px;
+  background: #2c75ba;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.learning-styles-carousel .slick-prev:hover,
+.learning-styles-carousel .slick-next:hover {
+  background: #1a5a9a;
+  transform: scale(1.1);
+}
+
+.learning-styles-carousel .slick-prev {
+  left: -10px;
+}
+
+.learning-styles-carousel .slick-next {
+  right: -10px;
+}
+
+.learning-styles-carousel .slick-prev:before,
+.learning-styles-carousel .slick-next:before {
+  display: none;
+}
+
+.learning-styles-carousel .slick-prev i,
+.learning-styles-carousel .slick-next i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.learning-styles-carousel .slick-dots {
+  bottom: -50px;
+}
+
+.learning-styles-carousel .slick-dots li button:before {
+  font-size: 12px;
+  color: #2c75ba;
+  opacity: 0.5;
+}
+
+.learning-styles-carousel .slick-dots li.slick-active button:before {
+  color: #2c75ba;
+  opacity: 1;
+}
+
+/* Industry-specific carousel colors */
+.industry-real-estate .learning-styles-carousel .slick-prev,
+.industry-real-estate .learning-styles-carousel .slick-next,
+.industry-real-estate .learning-styles-carousel .slick-dots li button:before,
+.industry-real-estate .learning-styles-carousel .slick-dots li.slick-active button:before {
+  background-color: #2c75ba;
+  color: #2c75ba;
+}
+
+.industry-mortgage .learning-styles-carousel .slick-prev,
+.industry-mortgage .learning-styles-carousel .slick-next {
+  background-color: #7b1fa2;
+}
+
+.industry-mortgage .learning-styles-carousel .slick-dots li button:before,
+.industry-mortgage .learning-styles-carousel .slick-dots li.slick-active button:before {
+  color: #7b1fa2;
+}
+
+.industry-appraisal .learning-styles-carousel .slick-prev,
+.industry-appraisal .learning-styles-carousel .slick-next {
+  background-color: #2c75ba;
+}
+
+.industry-appraisal .learning-styles-carousel .slick-dots li button:before,
+.industry-appraisal .learning-styles-carousel .slick-dots li.slick-active button:before {
+  color: #2c75ba;
+}
+
+.industry-osha .learning-styles-carousel .slick-prev,
+.industry-osha .learning-styles-carousel .slick-next {
+  background-color: #ff6f00;
+}
+
+.industry-osha .learning-styles-carousel .slick-dots li button:before,
+.industry-osha .learning-styles-carousel .slick-dots li.slick-active button:before {
+  color: #ff6f00;
+}
+
+.industry-healthcare .learning-styles-carousel .slick-prev,
+.industry-healthcare .learning-styles-carousel .slick-next {
+  background-color: #c1241a;
+}
+
+.industry-healthcare .learning-styles-carousel .slick-dots li button:before,
+.industry-healthcare .learning-styles-carousel .slick-dots li.slick-active button:before {
+  color: #c1241a;
+}
+
+.industry-compliance .learning-styles-carousel .slick-prev,
+.industry-compliance .learning-styles-carousel .slick-next {
+  background-color: #4caf50;
+}
+
+.industry-compliance .learning-styles-carousel .slick-dots li button:before,
+.industry-compliance .learning-styles-carousel .slick-dots li.slick-active button:before {
+  color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .learning-styles-carousel {
+    padding: 0 30px;
+  }
+  
+  .learning-styles-carousel .slick-prev {
+    left: 0;
+  }
+  
+  .learning-styles-carousel .slick-next {
+    right: 0;
+  }
+}
+
 /* ==================== INDUSTRY-SPECIFIC BUTTON HOVER STATES ==================== */
 /* Real Estate */
 .industry-real-estate .button-primary:not(.button-outline):not([class*="btn-"]):hover,
