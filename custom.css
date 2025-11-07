@@ -4212,44 +4212,107 @@ body.industry-compliance {
 }
 
 /* ===================================================================
-   TESTIMONIALS SECTION
+   TESTIMONIALS SECTION - Updated with Avatar Style
    =================================================================== */
-.testimonials-section {
+.testimonial-page-section {
   padding: 80px 0;
   background: #ffffff;
 }
 
-.testimonials-section .section-heading {
+.testimonial-page-section .section-heading {
   margin-bottom: 50px;
 }
 
-.testimonial-widget {
-  text-align: center;
-}
-
-.testimonial-widget .widget-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.testimonial-widget .widget-note {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #666;
-  font-style: italic;
-}
-
-.trustpilot-placeholder,
-.google-reviews-placeholder {
+.testimonial-item {
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  padding: 30px 20px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
-.trustpilot-placeholder:hover,
-.google-reviews-placeholder:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
+.testimonial-img {
+  margin: 0 auto 20px;
+}
+
+.review-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f33 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.testimonial-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+
+.testimonial-content .start-wrap {
+  margin-bottom: 15px;
+}
+
+.testimonial-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.testimonial-content .posted-on {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+}
+
+.trustpilot-link {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 40px;
+}
+
+.trustpilot-link a:hover {
+  color: #00b67a !important;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .testimonial-page-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonial-page-section {
+    padding: 50px 0;
+  }
+  
+  .testimonial-item {
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-content p {
+    min-height: auto;
+  }
+}
+
 
 /* ===================================================================
    LEARNING STYLES SECTION
