@@ -947,7 +947,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Federal",
           licenses: ["MLO"],
-        roles: []
+        roles: ["Loan Officer"]
         },
         {
           title: "Georgia MLO State-Specific Licensing",
@@ -961,7 +961,7 @@ var COURSE_DATA = {
           format: "Hybrid",
           focus: "Georgia",
           licenses: ["MLO"],
-        roles: []
+        roles: ["Loan Officer"]
         },
         {
           title: "MLO Exam Prep Intensive",
@@ -975,7 +975,7 @@ var COURSE_DATA = {
           format: "Live Virtual",
           focus: "Exam Prep",
           licenses: ["MLO"],
-        roles: []
+        roles: ["Loan Officer"]
         },
         {
           title: "Mortgage Fundamentals Bundle",
@@ -989,7 +989,7 @@ var COURSE_DATA = {
           format: "Self-Paced",
           focus: "Complete Package",
           licenses: ["MLO"],
-        roles: []
+        roles: ["Loan Officer"]
         },
         {
           title: "Fast-Track MLO Certification",
@@ -1003,7 +1003,7 @@ var COURSE_DATA = {
           format: "Hybrid",
           focus: "Accelerated",
           licenses: ["MLO"],
-        roles: []
+        roles: ["Loan Officer"]
         },
         {
           title: "Spanish MLO Pre-License Course",
@@ -1017,7 +1017,7 @@ var COURSE_DATA = {
           format: "Live Virtual",
           focus: "Spanish",
           licenses: ["MLO"],
-        roles: []
+        roles: ["Loan Officer"]
         }
       ],
       "exam": [],
@@ -1040,7 +1040,7 @@ var COURSE_DATA = {
           format: "Online + Live",
           focus: "Trainee Level",
           licenses: ["Trainee Appraiser"],
-        roles: []
+        roles: ["Trainee Appraiser"]
         },
         {
           title: "Licensed Residential Appraiser Package",
@@ -1054,7 +1054,7 @@ var COURSE_DATA = {
           format: "Self-Paced",
           focus: "Residential",
           licenses: ["Licensed Appraiser"],
-        roles: []
+        roles: ["Licensed Appraiser"]
         },
         {
           title: "FHA Appraiser Certification",
@@ -1068,7 +1068,7 @@ var COURSE_DATA = {
           format: "Hybrid",
           focus: "FHA Certification",
           licenses: ["FHA Appraiser"],
-        roles: []
+        roles: ["FHA Appraiser"]
         },
         {
           title: "Commercial Appraisal Fundamentals",
@@ -1082,7 +1082,7 @@ var COURSE_DATA = {
           format: "Live Virtual",
           focus: "Commercial",
           licenses: ["Commercial Appraiser"],
-        roles: []
+        roles: ["Certified Appraiser"]
         },
         {
           title: "Appraisal Report Writing Mastery",
@@ -1096,7 +1096,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Report Writing",
           licenses: ["Licensed Appraiser"],
-        roles: []
+        roles: ["Licensed Appraiser"]
         },
         {
           title: "Appraisal Exam Prep Bootcamp",
@@ -1110,7 +1110,7 @@ var COURSE_DATA = {
           format: "In-Person",
           focus: "Exam Preparation",
           licenses: ["All Levels"],
-        roles: []
+        roles: ["Safety Manager"]
         }
       ],
       "exam": [],
@@ -1133,7 +1133,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Construction",
           licenses: ["OSHA 10"],
-        roles: []
+        roles: ["Construction Worker"]
         },
         {
           title: "OSHA 10-Hour General Industry",
@@ -1147,7 +1147,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "General Industry",
           licenses: ["OSHA 10"],
-        roles: []
+        roles: ["Construction Worker"]
         },
         {
           title: "Construction Safety Fundamentals",
@@ -1161,7 +1161,7 @@ var COURSE_DATA = {
           format: "In-Person",
           focus: "Job Site Safety",
           licenses: ["OSHA 10"],
-        roles: []
+        roles: ["Construction Worker"]
         },
         {
           title: "Spanish OSHA 10-Hour Construction",
@@ -1175,7 +1175,7 @@ var COURSE_DATA = {
           format: "Live Virtual",
           focus: "Spanish Language",
           licenses: ["OSHA 10"],
-        roles: []
+        roles: ["Construction Worker"]
         },
         {
           title: "OSHA 10 + First Aid Bundle",
@@ -1189,7 +1189,7 @@ var COURSE_DATA = {
           format: "Hybrid",
           focus: "Emergency Prep",
           licenses: ["OSHA 10", "First Aid"],
-        roles: []
+        roles: ["Construction Worker"]
         },
         {
           title: "OSHA 10 On-Site Group Training",
@@ -1203,7 +1203,7 @@ var COURSE_DATA = {
           format: "On-Site",
           focus: "Group Training",
           licenses: ["OSHA 10"],
-        roles: []
+        roles: ["Construction Worker"]
         }
       ],
       "exam": [],
@@ -1226,7 +1226,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "All Staff",
           licenses: ["Healthcare Worker"],
-        roles: []
+        roles: ["Healthcare Worker"]
         },
         {
           title: "Annual Staff Compliance Bundle",
@@ -1240,7 +1240,7 @@ var COURSE_DATA = {
           format: "Self-Paced",
           focus: "Annual Training",
           licenses: ["All Staff"],
-        roles: []
+        roles: ["Healthcare Worker"]
         },
         {
           title: "HIPAA Privacy & Security Training",
@@ -1254,7 +1254,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Data Privacy",
           licenses: ["All Staff"],
-        roles: []
+        roles: ["Healthcare Worker"]
         },
         {
           title: "Bloodborne Pathogens Certification",
@@ -1268,7 +1268,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Safety Training",
           licenses: ["Clinical Staff"],
-        roles: []
+        roles: ["Nurse"]
         },
         {
           title: "Infection Control & Prevention",
@@ -1282,7 +1282,7 @@ var COURSE_DATA = {
           format: "Self-Paced",
           focus: "Infection Control",
           licenses: ["Clinical Staff"],
-        roles: []
+        roles: ["Nurse"]
         },
         {
           title: "Emergency Preparedness for Healthcare",
@@ -1296,7 +1296,7 @@ var COURSE_DATA = {
           format: "Live Virtual",
           focus: "Emergency Response",
           licenses: ["All Staff"],
-        roles: []
+        roles: ["Healthcare Worker"]
         }
       ],
       "exam": [],
@@ -1319,7 +1319,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Legal Compliance",
           licenses: ["HR Professional"],
-        roles: []
+        roles: ["HR Professional"]
         },
         {
           title: "HR Compliance for Small Business",
@@ -1333,7 +1333,7 @@ var COURSE_DATA = {
           format: "Self-Paced",
           focus: "Small Business",
           licenses: ["Business Owner"],
-        roles: []
+        roles: ["Business Owner"]
         },
         {
           title: "Workplace Investigations Training",
@@ -1347,7 +1347,7 @@ var COURSE_DATA = {
           format: "Live Virtual",
           focus: "Investigations",
           licenses: ["HR Manager"],
-        roles: []
+        roles: ["HR Manager"]
         },
         {
           title: "FMLA & Leave Management",
@@ -1361,7 +1361,7 @@ var COURSE_DATA = {
           format: "Online",
           focus: "Leave Administration",
           licenses: ["HR Professional"],
-        roles: []
+        roles: ["HR Professional"]
         },
         {
           title: "I-9 Compliance & E-Verify",
@@ -1375,7 +1375,7 @@ var COURSE_DATA = {
           format: "Self-Paced",
           focus: "Immigration",
           licenses: ["HR Professional"],
-        roles: []
+        roles: ["HR Professional"]
         },
         {
           title: "Wage & Hour Law Essentials",
@@ -1389,7 +1389,7 @@ var COURSE_DATA = {
           format: "Hybrid",
           focus: "Wage & Hour",
           licenses: ["HR Manager"],
-        roles: []
+        roles: ["HR Manager"]
         }
       ],
       "exam": [],
@@ -1542,7 +1542,7 @@ function getCourses(state, tab, role) {
             '<div class="package-meta text-center">' +
               '<ul>' +
                 (course.duration ? '<li><i class="far fa-clock"></i>' + course.duration + '</li>' : '') +
-                (course.format ? '<li><i class="fas fa-laptop"></i>' + course.format + '</li>' : '') +
+                (course.roles && course.roles[0] ? '<li><i class="fas fa-user-tie"></i>' + course.roles[0] + '</li>' : '') +
               '</ul>' +
             '</div>' +
             '<div class="package-content">' +
