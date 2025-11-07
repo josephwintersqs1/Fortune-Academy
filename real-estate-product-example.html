@@ -1506,16 +1506,6 @@ SCREC Approved #004
 <i class="fas fa-clock"></i> ONLINE SELF-PACED
 </a>
 </li>
-<li class="nav-item">
-<a class="nav-link" id="mobile-app-tab" data-toggle="tab" href="#mobile-app" role="tab" aria-controls="mobile-app" aria-selected="false">
-<i class="fas fa-mobile-alt"></i> MOBILE APP
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="audio-course-tab" data-toggle="tab" href="#audio-course" role="tab" aria-controls="audio-course" aria-selected="false">
-<i class="fas fa-headphones"></i> AUDIO COURSE
-</a>
-</li>
 </ul>
 
 <div class="tab-content" id="deliveryTabContent">
@@ -2373,76 +2363,6 @@ $(document).ready(function() {
 				frequency: 'Bi-Weekly',
 				intervalDays: 14
 			}
-		},
-		'mobile-app': {
-			'bronze': {
-				packageName: 'Bronze Package',
-				deliveryMethod: 'Mobile App',
-				originalPrice: 953,
-				discountedPrice: 619,
-				paymentPlanPrice: null,
-				firstPayment: null,
-				numPayments: null,
-				frequency: null,
-				intervalDays: null
-			},
-			'silver': {
-				packageName: 'Silver Package',
-				deliveryMethod: 'Mobile App',
-				originalPrice: 999,
-				discountedPrice: 649,
-				paymentPlanPrice: null,
-				firstPayment: null,
-				numPayments: null,
-				frequency: null,
-				intervalDays: null
-			},
-			'gold': {
-				packageName: 'Gold Package',
-				deliveryMethod: 'Mobile App',
-				originalPrice: 1057,
-				discountedPrice: 687,
-				paymentPlanPrice: null,
-				firstPayment: null,
-				numPayments: null,
-				frequency: null,
-				intervalDays: null
-			}
-		},
-		'audio-course': {
-			'bronze': {
-				packageName: 'Bronze Package',
-				deliveryMethod: 'Audio Course',
-				originalPrice: 953,
-				discountedPrice: 619,
-				paymentPlanPrice: null,
-				firstPayment: null,
-				numPayments: null,
-				frequency: null,
-				intervalDays: null
-			},
-			'silver': {
-				packageName: 'Silver Package',
-				deliveryMethod: 'Audio Course',
-				originalPrice: 999,
-				discountedPrice: 649,
-				paymentPlanPrice: null,
-				firstPayment: null,
-				numPayments: null,
-				frequency: null,
-				intervalDays: null
-			},
-			'gold': {
-				packageName: 'Gold Package',
-				deliveryMethod: 'Audio Course',
-				originalPrice: 1057,
-				discountedPrice: 687,
-				paymentPlanPrice: null,
-				firstPayment: null,
-				numPayments: null,
-				frequency: null,
-				intervalDays: null
-			}
 		}
 	};
 
@@ -2568,18 +2488,6 @@ $(document).ready(function() {
 		// $('#paymentScheduleModal').modal('hide');
 		// window.location.href = 'enrollment-page.html';
 	});
-
-	// Hide payment plan badges for Mobile App and Audio Course delivery methods
-	function updatePaymentPlanVisibility() {
-		// Hide payment plans in mobile-app tab
-		$('#mobile-app .payment-plan-badge').hide();
-		
-		// Hide payment plans in audio-course tab
-		$('#audio-course .payment-plan-badge').hide();
-	}
-
-	// Call on page load
-	updatePaymentPlanVisibility();
 });
 </script>
 </body>
