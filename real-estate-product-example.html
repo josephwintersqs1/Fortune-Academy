@@ -969,39 +969,28 @@ border-top: 2px solid var(--real-estate-primary);
 padding: 20px 30px;
 border-top: 1px solid #e5e7eb;
 display: flex;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
 }
 
 #paymentScheduleModal .btn-enroll {
-background: var(--real-estate-accent);
+background: var(--real-estate-primary);
 color: white;
 border: none;
 padding: 14px 40px;
 border-radius: 8px;
 font-weight: 700;
-font-size: 1.1rem;
+font-size: 1.05rem;
 transition: all 0.3s;
 text-transform: uppercase;
 letter-spacing: 1px;
+min-width: 200px;
 }
 
 #paymentScheduleModal .btn-enroll:hover {
-background: #b8960f;
+background: var(--real-estate-secondary);
 transform: translateY(-2px);
-box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-#paymentScheduleModal .no-thanks-link {
-color: var(--real-estate-secondary);
-font-size: 1rem;
-text-decoration: underline;
-transition: color 0.3s;
-}
-
-#paymentScheduleModal .no-thanks-link:hover {
-color: var(--real-estate-primary);
-text-decoration: none;
+box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -1899,18 +1888,6 @@ Yes! All students get lifetime access to course materials, so you can review con
 <!-- Sidebar -->
 <div class="col-lg-4">
 <div class="sidebar">
-<div class="package-price">
-<h5 class="price">
-<span>$164</span> - $408
-</h5>
-<p style="margin-bottom: 0;">Flexible payment plans available</p>
-<div class="start-wrap" style="margin-top: 10px;">
-<div class="rating-start" title="Rated 5 out of 5">
-<span style="width: 95%"></span>
-</div>
-</div>
-</div>
-
 <div class="widget-bg information-content text-center">
 <h5>HAVE QUESTIONS?</h5>
 <h3>NEED MORE INFORMATION?</h3>
@@ -1963,13 +1940,6 @@ Yes! All students get lifetime access to course materials, so you can review con
 </button>
 </div>
 <div class="modal-body">
-<div class="payment-schedule-header">
-<div class="schedule-type-badge">
-<strong>Online Self-Paced</strong>
-<a href="#" class="change-link">Change</a>
-</div>
-</div>
-
 <table class="payment-schedule-table">
 <thead>
 <tr>
@@ -2002,8 +1972,7 @@ Total Price: $719
 </div>
 </div>
 <div class="modal-footer">
-<a href="#" class="no-thanks-link" data-dismiss="modal">No Thanks</a>
-<button type="button" class="btn btn-enroll">ENROLL</button>
+<button type="button" class="btn btn-enroll">ENROLL NOW</button>
 </div>
 </div>
 </div>
@@ -2083,12 +2052,6 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	// Close modal on "No Thanks" click
-	$('.no-thanks-link').on('click', function(e) {
-		e.preventDefault();
-		$('#paymentScheduleModal').modal('hide');
-	});
-
 	// Handle ESC key to close modal
 	$(document).on('keydown', function(e) {
 		if (e.keyCode === 27 && $('#paymentScheduleModal').hasClass('show')) {
@@ -2096,13 +2059,12 @@ $(document).ready(function() {
 		}
 	});
 
-	// Optional: Handle enrollment button click
+	// Handle enrollment button click
 	$('#paymentScheduleModal .btn-enroll').on('click', function() {
 		// You can add enrollment logic here or link to enrollment page
 		console.log('Enroll button clicked');
-		// For now, we'll just close the modal
+		// Redirect to enrollment page or close modal
 		// $('#paymentScheduleModal').modal('hide');
-		// Or redirect to enrollment page:
 		// window.location.href = 'enrollment-page.html';
 	});
 });
