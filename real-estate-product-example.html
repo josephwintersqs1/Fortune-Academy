@@ -810,14 +810,15 @@ margin-top: 3px;
 
 /* Vertical Progress Line */
 .timeline-progress-line {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 0;
     width: 4px;
-    height: 100vh;
+    height: 100%;
     background: #dee2e6;
     transform: translateX(-50%);
     z-index: 0;
+    pointer-events: none;
 }
 
 .timeline-progress-line-fill {
@@ -3552,13 +3553,12 @@ See Schedule
         </div>
     </div>
 
-    <!-- Progress Line (Fixed) -->
-    <div class="timeline-progress-line">
-        <div class="timeline-progress-line-fill" id="timelineProgressFill"></div>
-    </div>
-
     <!-- Timeline -->
     <div class="timeline-steps-container">
+        <!-- Progress Line -->
+        <div class="timeline-progress-line">
+            <div class="timeline-progress-line-fill" id="timelineProgressFill"></div>
+        </div>
         <!-- Step 1 -->
         <div class="timeline-animated-step" data-step="1">
             <div class="timeline-step-content">
@@ -4767,15 +4767,28 @@ $(document).ready(function() {
 
     // Progress line animation
     function updateProgressLine() {
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-        
+        const container = document.querySelector('.timeline-steps-container');
         const progressFill = document.getElementById('timelineProgressFill');
-        if (progressFill) {
-            progressFill.style.height = `${Math.min(scrollPercentage, 100)}%`;
+        
+        if (!container || !progressFill) return;
+        
+        const containerRect = container.getBoundingClientRect();
+        const containerTop = containerRect.top + window.pageYOffset;
+        const containerHeight = containerRect.height;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        
+        // Calculate how much of the container has been scrolled through
+        const scrollStart = containerTop;
+        const scrollEnd = containerTop + containerHeight - windowHeight;
+        
+        if (scrollTop < scrollStart) {
+            progressFill.style.height = '0%';
+        } else if (scrollTop > scrollEnd) {
+            progressFill.style.height = '100%';
+        } else {
+            const scrollPercentage = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100;
+            progressFill.style.height = `${Math.min(Math.max(scrollPercentage, 0), 100)}%`;
         }
     }
 
