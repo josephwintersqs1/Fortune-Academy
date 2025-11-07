@@ -4229,11 +4229,16 @@ body.industry-compliance {
   padding: 30px 20px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--industry-color, #2c75ba);
 }
 
 .testimonial-img {
@@ -4241,18 +4246,25 @@ body.industry-compliance {
 }
 
 .review-avatar {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff6f00 0%, #ff8f33 100%);
+  background: var(--industry-color, #2c75ba);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 700;
   margin: 0 auto;
-  text-transform: uppercase;
+  border: 3px solid var(--industry-color, #2c75ba);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-content p {
@@ -4260,11 +4272,15 @@ body.industry-compliance {
   line-height: 1.8;
   color: #555;
   margin-bottom: 20px;
-  min-height: 80px;
+  flex-grow: 1;
 }
 
 .testimonial-content .start-wrap {
   margin-bottom: 15px;
+}
+
+.testimonial-content .rating-start span {
+  background: var(--industry-color, #2c75ba) !important;
 }
 
 .testimonial-content h3 {
@@ -4282,14 +4298,34 @@ body.industry-compliance {
   font-style: italic;
 }
 
+.trustpilot-link,
+.trustpilot-link-top {
+  text-align: center;
+}
+
 .trustpilot-link {
   border-top: 1px solid #e5e7eb;
   padding-top: 40px;
 }
 
-.trustpilot-link a:hover {
+.trustpilot-link a:hover,
+.trustpilot-link-top a:hover {
   color: #00b67a !important;
   text-decoration: none;
+}
+
+/* Industry-specific colors for Real Estate page */
+.industry-real-estate .review-avatar {
+  background: #2c75ba;
+  border-color: #2c75ba;
+}
+
+.industry-real-estate .testimonial-item:hover {
+  border-color: #2c75ba;
+}
+
+.industry-real-estate .rating-start span {
+  background: #2c75ba !important;
 }
 
 /* Responsive adjustments */
@@ -4308,10 +4344,13 @@ body.industry-compliance {
     margin-bottom: 20px;
   }
   
-  .testimonial-content p {
-    min-height: auto;
+  .review-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
   }
 }
+
 
 
 /* ===================================================================
