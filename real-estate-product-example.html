@@ -939,14 +939,22 @@ font-weight: 700;
 #in-person h3,
 #in-person .schedule-filters,
 #in-person .schedule-grid,
-#in-person .pricing-grid,
 #in-person .upsell-section,
 #online-live h3,
 #online-live .schedule-filters,
 #online-live .schedule-grid,
-#online-live .pricing-grid,
 #online-live .upsell-section {
 display: none !important;
+}
+
+/* Keep certain h3 headings visible */
+#in-person .whats-included-section h3,
+#in-person .about-course-section h3,
+#in-person .delivery-method-section h3,
+#online-live .whats-included-section h3,
+#online-live .about-course-section h3,
+#online-live .delivery-method-section h3 {
+display: block !important;
 }
 
 /* Keep the overview-content and tab-pricing-box visible */
@@ -1014,6 +1022,87 @@ justify-content: space-between;
 /* Full-width tabs section styling */
 .full-width-tabs-section {
 margin-top: 40px;
+}
+
+/* What's Included Section Styling */
+.whats-included-section {
+margin: 40px 0;
+}
+
+.whats-included-section h3 {
+color: var(--real-estate-primary);
+margin-bottom: 20px;
+font-size: 1.8rem;
+}
+
+.whats-included-category {
+margin-bottom: 30px;
+}
+
+.whats-included-category h4 {
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 15px;
+color: #1f2937;
+}
+
+.whats-included-list {
+list-style: none;
+padding: 0;
+}
+
+.whats-included-list li {
+padding: 12px 0;
+border-bottom: 1px solid #e5e7eb;
+font-size: 1.05rem;
+line-height: 1.6;
+}
+
+.whats-included-list li:last-child {
+border-bottom: none;
+}
+
+.whats-included-list li strong {
+color: var(--real-estate-primary);
+font-weight: 700;
+}
+
+.ai-accelerated-section {
+background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+padding: 25px;
+border-radius: 10px;
+margin-top: 30px;
+border: 1px solid #bae6fd;
+}
+
+.ai-accelerated-section h4 {
+color: var(--real-estate-primary);
+margin-bottom: 10px;
+font-size: 1.2rem;
+font-weight: 700;
+}
+
+.ai-accelerated-section p {
+margin: 0;
+color: #1f2937;
+}
+
+.about-course-section {
+margin-bottom: 30px;
+}
+
+.about-course-section h3 {
+color: var(--real-estate-primary);
+margin-bottom: 15px;
+}
+
+.delivery-method-section {
+margin-bottom: 30px;
+}
+
+.delivery-method-section h3 {
+color: var(--real-estate-primary);
+margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
@@ -1372,13 +1461,32 @@ SCREC Approved #004
 <i class="fas fa-clock"></i> ONLINE SELF-PACED
 </a>
 </li>
+<li class="nav-item">
+<a class="nav-link" id="mobile-app-tab" data-toggle="tab" href="#mobile-app" role="tab" aria-controls="mobile-app" aria-selected="false">
+<i class="fas fa-mobile-alt"></i> MOBILE APP
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="audio-course-tab" data-toggle="tab" href="#audio-course" role="tab" aria-controls="audio-course" aria-selected="false">
+<i class="fas fa-headphones"></i> AUDIO COURSE
+</a>
+</li>
 </ul>
 
 <div class="tab-content" id="deliveryTabContent">
 <!-- In-Person Tab -->
 <div class="tab-pane fade show active" id="in-person" role="tabpanel" aria-labelledby="in-person-tab">
 <div class="overview-content">
-<h3>In-Person Classroom Experience</h3>
+
+<!-- Section 1: About This Course -->
+<div class="about-course-section">
+<h3>About This Course</h3>
+<p>This comprehensive 90-hour pre-licensing course is delivered in a traditional classroom setting with expert instructors. You'll benefit from face-to-face interaction, structured learning schedules, and the ability to network with fellow aspiring real estate professionals. Our classroom format ensures accountability and provides immediate access to instructor support when you need it most.</p>
+</div>
+
+<!-- Section 2: In-Person Classroom Learning -->
+<div class="delivery-method-section">
+<h3>In-Person Classroom Learning</h3>
 <p>The best education option for students who prefer a traditional, in-person learning format where instructors and students share a learning environment.</p>
 <ul>
 <li>Face-to-face instruction with expert teachers</li>
@@ -1386,8 +1494,38 @@ SCREC Approved #004
 <li>Structured schedule keeps you on track</li>
 <li>Hands-on learning activities and real-time Q&A</li>
 </ul>
+</div>
 
-<!-- Pricing Box for In-Person -->
+<!-- Section 3: What's Included -->
+<div class="whats-included-section">
+<h3>What's Included</h3>
+
+<div class="whats-included-category">
+<h4>Online Zoom & In-Person Classes:</h4>
+<ul class="whats-included-list">
+<li><strong>Live Instructor Support</strong> – Get real-time guidance from expert instructors.</li>
+<li><strong>Career Resources</strong> – Essential tools to help you succeed in real estate.</li>
+<li><strong>Real Estate eBook & Printed Books</strong> – Comprehensive study materials covering key topics.</li>
+<li><strong>100 Digital Flashcards</strong> – A proven way to retain key concepts.</li>
+<li><strong>Real Estate Vocabulary Guide</strong> – Simplified terminology for easy understanding.</li>
+</ul>
+</div>
+
+<div class="whats-included-category">
+<h4>Comes with all Delivery Methods:</h4>
+<ul class="whats-included-list">
+<li><strong>60-Hour & 30-Hour State-Approved Courses</strong> – Fully accredited for your licensing needs.</li>
+<li><strong>FREE OSHA-10 Certification</strong> – Includes an official OSHA plastic card.</li>
+</ul>
+</div>
+
+<div class="ai-accelerated-section">
+<h4>AI-Powered Accelerated Learning</h4>
+<p>Get instant answers and concept explanations from a virtual instructor available 24/7.</p>
+</div>
+</div>
+
+<!-- Section 4: Pricing Box -->
 <div class="tab-pricing-box">
 <div class="tab-pricing-content">
 <div class="tab-price-main">$453</div>
@@ -1402,98 +1540,18 @@ SCREC Approved #004
 </div>
 </div>
 
-<h3 style="margin-top: 30px;">Select Your Class Schedule</h3>
-<div class="schedule-filters">
-<div class="form-group">
-<label for="location">Location</label>
-<select id="location" class="form-control">
-<option>Charleston</option>
-<option>Columbia</option>
-<option>Greenville</option>
-<option>Myrtle Beach</option>
-<option>Spartanburg</option>
-</select>
-</div>
-<div class="form-group">
-<label for="time-pref">Time Preference</label>
-<select id="time-pref" class="form-control">
-<option>All Times</option>
-<option>Morning (9AM-12PM)</option>
-<option>Afternoon (1PM-5PM)</option>
-<option>Evening (6PM-9PM)</option>
-</select>
-</div>
-<div class="form-group">
-<label for="day-pref">Day Preference</label>
-<select id="day-pref" class="form-control">
-<option>All Days</option>
-<option>Weekdays Only</option>
-<option>Weekends Only</option>
-</select>
-</div>
-</div>
-
-<div class="schedule-grid">
-<div class="schedule-card available">
-<div class="schedule-card-header">
-<div class="schedule-date">Nov 10-20, 2025</div>
-<span class="schedule-status available">8 Seats Left</span>
-</div>
-<div class="schedule-details">
-<div><i class="far fa-clock"></i> 8:30 AM - 5:30 PM</div>
-<div><i class="fas fa-map-marker-alt"></i> Charleston - Downtown Campus</div>
-</div>
-<button class="btn">Select This Schedule</button>
-</div>
-
-<div class="schedule-card limited">
-<div class="schedule-card-header">
-<div class="schedule-date">Nov 22-Dec 13, 2025</div>
-<span class="schedule-status limited">3 Seats Left</span>
-</div>
-<div class="schedule-details">
-<div><i class="far fa-clock"></i> 8:30 AM - 5:30 PM</div>
-<div><i class="fas fa-map-marker-alt"></i> Charleston - Downtown Campus</div>
-</div>
-<button class="btn">Select This Schedule</button>
-</div>
-
-<div class="schedule-card available">
-<div class="schedule-card-header">
-<div class="schedule-date">Dec 5-15, 2025</div>
-<span class="schedule-status available">12 Seats Left</span>
-</div>
-<div class="schedule-details">
-<div><i class="far fa-clock"></i> 9:00 AM - 1:00 PM</div>
-<div><i class="fas fa-map-marker-alt"></i> Greenville - Main Campus</div>
-</div>
-<button class="btn">Select This Schedule</button>
-</div>
-
-<div class="schedule-card full">
-<div class="schedule-card-header">
-<div class="schedule-date">Dec 20-30, 2025</div>
-<span class="schedule-status full">Full</span>
-</div>
-<div class="schedule-details">
-<div><i class="far fa-clock"></i> Saturday & Sunday Only</div>
-<div><i class="fas fa-map-marker-alt"></i> Columbia - North Campus</div>
-</div>
-<button class="btn" disabled>Join Waitlist</button>
-</div>
-</div>
-
+<!-- Section 5: Choose Your Package -->
 <h3 style="margin-top: 40px;">Choose Your Package</h3>
 <div class="pricing-grid">
 <div class="pricing-card">
 <h4>Core Courses Only</h4>
 <div class="pricing-amount">
-<span class="price-current">$164</span>
-<span class="price-original">$219</span>
-<span class="price-save">Save $55</span>
+<span class="price-current">$453</span>
+<span class="price-original">$755</span>
+<span class="price-save">Save $302</span>
 </div>
 <div class="payment-plan-badge">
-<strong>Start now for only $180</strong>
+<strong>Start now for only $159</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
 <ul class="pricing-features">
@@ -1510,33 +1568,33 @@ SCREC Approved #004
 <span class="pricing-badge">Most Popular</span>
 <h4>Core + Exam Prep</h4>
 <div class="pricing-amount">
-<span class="price-current">$245</span>
-<span class="price-original">$327</span>
-<span class="price-save">Save $82</span>
+<span class="price-current">$534</span>
+<span class="price-original">$836</span>
+<span class="price-save">Save $302</span>
 </div>
 <div class="payment-plan-badge">
-<strong>Start now for only $180</strong>
+<strong>Start now for only $179</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
 <ul class="pricing-features">
 <li><i class="fas fa-check"></i> Everything in Core</li>
-<li><i class="fas fa-check"></i> State Exam Prep Course</li>
-<li><i class="fas fa-check"></i> Practice Exams (Unlimited)</li>
+<li><i class="fas fa-check"></i> Unlimited Practice Exams</li>
 <li><i class="fas fa-check"></i> AI Study Assistant</li>
 <li><i class="fas fa-check"></i> Exam Strategy Sessions</li>
+<li><i class="fas fa-check"></i> Pass Guarantee</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
 </div>
 
 <div class="pricing-card">
-<h4>Complete Package</h4>
+<h4>Premium Package</h4>
 <div class="pricing-amount">
-<span class="price-current">$408</span>
-<span class="price-original">$544</span>
-<span class="price-save">Save $136</span>
+<span class="price-current">$697</span>
+<span class="price-original">$999</span>
+<span class="price-save">Save $302</span>
 </div>
 <div class="payment-plan-badge">
-<strong>Start now for only $180</strong>
+<strong>Start now for only $199</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
 <ul class="pricing-features">
@@ -1550,32 +1608,21 @@ SCREC Approved #004
 </div>
 </div>
 
-<div class="upsell-section">
-<h4>🎁 Add More Value to Your Learning</h4>
-<label class="upsell-option">
-<input type="checkbox" class="upsell-checkbox" data-price="81">
-<div class="upsell-details">
-<strong>Add Exam Prep Package</strong>
-<span>Unlimited practice exams, AI assistant & exam strategy sessions</span>
-</div>
-<div class="upsell-price">+$81</div>
-</label>
-<label class="upsell-option">
-<input type="checkbox" class="upsell-checkbox" data-price="163">
-<div class="upsell-details">
-<strong>Add Expert Support</strong>
-<span>24/7 support, career coaching, resume review & interview prep</span>
-</div>
-<div class="upsell-price">+$163</div>
-</label>
-</div>
-</div>
 </div>
 
 <!-- Online Live Tab -->
 <div class="tab-pane fade" id="online-live" role="tabpanel" aria-labelledby="online-live-tab">
 <div class="overview-content">
-<h3>Online Live Classes via Zoom</h3>
+
+<!-- Section 1: About This Course -->
+<div class="about-course-section">
+<h3>About This Course</h3>
+<p>Experience the best of both worlds with our live online Zoom classes. This 90-hour pre-licensing course combines the convenience of learning from home with the engagement of real-time instruction. Interact with expert instructors and classmates through video, participate in live discussions, and get your questions answered immediately—all from the comfort of your own space.</p>
+</div>
+
+<!-- Section 2: Online Live Zoom Learning -->
+<div class="delivery-method-section">
+<h3>Online Live Zoom Learning</h3>
 <p>Enjoy the flexibility of learning from anywhere while benefiting from real-time interaction with instructors and peers through live video sessions.</p>
 <ul>
 <li>Learn from anywhere with internet access</li>
@@ -1583,8 +1630,38 @@ SCREC Approved #004
 <li>Real-time Q&A and discussions</li>
 <li>Recorded sessions available for review</li>
 </ul>
+</div>
 
-<!-- Pricing Box for Zoom -->
+<!-- Section 3: What's Included -->
+<div class="whats-included-section">
+<h3>What's Included</h3>
+
+<div class="whats-included-category">
+<h4>Online Zoom & In-Person Classes:</h4>
+<ul class="whats-included-list">
+<li><strong>Live Instructor Support</strong> – Get real-time guidance from expert instructors.</li>
+<li><strong>Career Resources</strong> – Essential tools to help you succeed in real estate.</li>
+<li><strong>Real Estate eBook & Printed Books</strong> – Comprehensive study materials covering key topics.</li>
+<li><strong>100 Digital Flashcards</strong> – A proven way to retain key concepts.</li>
+<li><strong>Real Estate Vocabulary Guide</strong> – Simplified terminology for easy understanding.</li>
+</ul>
+</div>
+
+<div class="whats-included-category">
+<h4>Comes with all Delivery Methods:</h4>
+<ul class="whats-included-list">
+<li><strong>60-Hour & 30-Hour State-Approved Courses</strong> – Fully accredited for your licensing needs.</li>
+<li><strong>FREE OSHA-10 Certification</strong> – Includes an official OSHA plastic card.</li>
+</ul>
+</div>
+
+<div class="ai-accelerated-section">
+<h4>AI-Powered Accelerated Learning</h4>
+<p>Get instant answers and concept explanations from a virtual instructor available 24/7.</p>
+</div>
+</div>
+
+<!-- Section 4: Pricing Box -->
 <div class="tab-pricing-box">
 <div class="tab-pricing-content">
 <div class="tab-price-main">$453</div>
