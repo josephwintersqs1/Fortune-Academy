@@ -1053,6 +1053,12 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
 }
 
+/* Hide payment plan badges in Mobile App and Audio Course tabs */
+#mobile-app .payment-plan-badge,
+#audio-course .payment-plan-badge {
+display: none !important;
+}
+
 @media (max-width: 768px) {
 .tab-pricing-box {
 flex-direction: column;
