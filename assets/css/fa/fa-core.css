@@ -1,0 +1,176 @@
+/* Global shared tweaks/utilities */
+
+.product-grid .button-primary {
+    padding: 10px 25px;
+    font-size: 14px;
+}
+
+/* ---------- button palettes (default + hover 15% lighter) ---------- */
+.btn-umbrella      { background:#04206A; }
+
+.btn-umbrella:hover{ background:#173C97; }
+
+.btn-real-estate      { background:#c1241a; }
+
+.btn-real-estate:hover{ background:#FF857D; }
+
+.btn-mortgage      { background:#00897B; }
+
+.btn-mortgage:hover{ background:#26A69A; }
+
+.btn-appraisal      { background:#2C75BA; }
+
+.btn-appraisal:hover{ background:#4C8ED0; }
+
+.btn-osha      { background:#4CAF50; }
+
+.btn-osha:hover{ background:#6CCF71; }
+
+.btn-healthcare      { background:#9C27B0; }
+
+.btn-healthcare:hover{ background:#B94AC9; }
+
+.btn-hr      { background:#FF6F00; }
+
+.btn-hr:hover{ background:#FF8F33; }
+
+/* === make every CTA pill-shaped === */
+.button-primary,
+.button-secondary,
+.btn,
+.btn-primary,
+.btn-secondary {
+    border-radius: 50px;   /* big number = fully rounded sides */
+}
+
+/* keep the template’s existing hover / focus styles */
+
+
+/* generic outline variant */
+.button-outline{
+    background:transparent !important;
+    border:2px solid currentColor;   /* picks up the brand hue */
+    color:currentColor !important;
+    transition:none;                 /* kill any prior hover animation */
+}
+
+/* brand-colour mappings */
+.button-outline.btn-real-estate {color:#c1241a !important; border-color:#c1241a;}
+
+.button-outline.btn-mortgage    {color:#00897B !important; border-color:#00897B;}
+
+.button-outline.btn-appraisal   {color:#2C75BA !important; border-color:#2C75BA;}
+
+.button-outline.btn-osha        {color:#FF6F00 !important; border-color:#FF6F00;}
+
+.button-outline.btn-healthcare  {color:#D32F2F !important; border-color:#D32F2F;}
+
+.button-outline.btn-hr          {color:#9C27B0 !important; border-color:#9C27B0;}
+
+/* keep appearance identical on hover / focus */
+.button-outline:hover,
+.button-outline:focus{
+    background:transparent !important;
+    color:currentColor !important;
+    border-color:currentColor !important;
+}
+
+/* Keep the CTA row tidy at small widths */
+@media (max-width: 575.98px){
+  .contact-section .contact-btn-wrap .button-primary{ margin-top:12px; }
+}
+
+/* Optional: active state consistency */
+.button-primary:not(.button-outline):not([class*="btn-"]):active,
+.btn.btn-primary:not(.button-outline):not([class*="btn-"]):active {
+  background:#FFB445 !important;
+  border-color:#FFB445 !important;
+  color:#fff !important;
+}
+
+.resource-section .btn-read{
+  display:inline-block; padding:8px 14px; border-radius:22px;
+  border:2px solid rgba(255,255,255,.95); color:#fff; font-weight:700; font-size:12px;
+}
+
+.resource-section .card-link:hover .btn-read{ border-color:#fff; }
+
+.resource-section .btn-read{
+  display: inline-flex;               /* center text inside the pill */
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;             /* ignore overlay's stretch */
+  text-align: center;
+  min-width: 120px;                   /* optional: consistent pill width */
+}
+
+/* Compact button to suit card footprint */
+.fa-activity .button-sm{
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  line-height:1;
+}
+
+.industry-hero .approval-note i{
+  margin-right: 6px;
+  color: var(--industry-color, #00897B);
+}
+
+/* Optional: per-industry color mapping set on <body> */
+body.industry-real-estate { --industry-color:#c1241a; }
+
+body.industry-mortgage    { --industry-color:#00897B; }
+
+body.industry-appraisal   { --industry-color:#2C75BA; }
+
+body.industry-osha        { --industry-color:#4CAF50; }
+
+body.industry-healthcare  { --industry-color:#9C27B0; }
+
+body.industry-compliance  { --industry-color:#FF6F00; }
+
+/* 3) Outline / secondary buttons adopt the industry color too */
+body.industry-page .button-outline,
+body.industry-page .btn-outline,
+body.industry-page a.button-outline{
+  background: transparent !important;
+  border: 2px solid var(--industry-color, #c1241a) !important;
+  color: var(--industry-color, #c1241a) !important;
+}
+
+body.industry-page .button-outline:hover,
+body.industry-page .btn-outline:hover,
+body.industry-page a.button-outline:hover{
+  background: var(--industry-color, #c1241a) !important;
+  color:#fff !important;
+}
+
+/* 4) Catch-all for any theme "More…" style links that look like buttons */
+body.industry-page a[class*="more"],
+body.industry-page .view-all a,
+body.industry-page a.button{
+  border-color: var(--industry-color, #c1241a);
+  color: var(--industry-color, #c1241a);
+}
+
+body.industry-page a[class*="more"]:hover,
+body.industry-page .view-all a:hover,
+body.industry-page a.button:hover{
+  background: var(--industry-color, #c1241a);
+  color:#fff;
+}
+
+/* Ensure Real Estate maps correctly */
+body.industry-real-estate { --industry-color: #c1241a; }
+
+/* (others for reference)
+body.industry-mortgage    { --industry-color:#00897B; }
+
+body.industry-appraisal   { --industry-color:#2C75BA; }
+
+body.industry-osha        { --industry-color:#4CAF50; }
+
+body.industry-healthcare  { --industry-color:#9C27B0; }
+
+body.industry-compliance  { --industry-color:#FF6F00; }

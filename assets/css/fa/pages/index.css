@@ -1,0 +1,768 @@
+/* Index-only styles */
+
+/* --- Product showcase overrides --- */
+.product-grid {           /* kill the previous d-flex */
+    display: block;
+}
+
+/* ↑ Lift the white product card 15 px higher so it overlaps the slider more */
+.product-showcase-section{
+    margin-top: -140px;   /* was –70 px → move up 15 px */
+}
+
+/* keep everything else (padding, z-index, etc.) exactly as it is */
+
+/* --- Equalise the white card’s padding --- */
+.product-showcase-section .trip-search-inner{
+    padding: 36px 40px;          /* top = bottom = 36px */
+}
+
+/* --- Remove the extra margin that only affects the bottom --- */
+.product-showcase-section .row > [class*="col-"]{
+    margin-bottom: 0 !important; /* overrides .mb-4 */
+}
+
+/* inherit existing sizing/transition from .button-primary (style.css L5-18)  [oai_citation:1‡style.css](file-service://file-8s9DuxjxgcTCx7tU3Qh2gD) */
+.home-banner-items .banner-content p { font-size: 22px; }
+
+/* ───── 2  KILL THE HOVER ANIMATION ───── */
+
+.industries-mega .industry-tile:hover{
+    transform: none;
+}
+
+/* ───── 3  OPTIONAL – KEEP TILES SAME HEIGHT (nicely aligned rows) ───── */
+@media (min-width: 768px){                    /* tablet & up */
+    .industries-mega .industry-tile{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+    }
+    .industries-mega .tile-more{ margin-top:auto; }   /* pushes CTA to bottom */
+}
+
+/* 2 ▸  add only a BOTTOM gap so columns never collide */
+.industries-mega .industry-tile{
+    margin-bottom:18px;          /* vertical breathing room   */
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    padding:0;                   /* Remove padding - children handle spacing */
+    transition:none;             /* kills the lift animation  */
+    overflow:hidden;             /* Ensure children don't overflow */
+}
+
+/* 3 ▸  make all cards equal-height on md / lg so rows stay even */
+@media (min-width: 768px){              /*  ≥ md  */
+    .industries-mega .industry-tile{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+        min-height:200px;  /* Set minimum height for consistency */
+    }
+    .industries-mega .tile-head{
+        flex-shrink:0;  /* Header stays fixed size */
+    }
+    .industries-mega .tile-blurb{
+        flex-shrink:0;  /* Blurb stays fixed size */
+    }
+    .industries-mega .tile-links{
+        flex-grow:1;  /* Links area can grow */
+    }
+    .industries-mega .tile-more{
+        margin-top:auto;  /* Push to bottom */
+        flex-shrink:0;
+    }
+}
+    
+    /* ===== Primary button palettes (solid + white text) ===== */
+.btn-real-estate      { background:#c1241a; }
+.btn-real-estate:hover{ background:#FF857D; }
+
+.btn-mortgage         { background:#00897B; }
+.btn-mortgage:hover   { background:#26A69A; }
+
+.btn-appraisal        { background:#2C75BA; }
+.btn-appraisal:hover  { background:#4C8ED0; }
+
+.btn-osha             { background:#4CAF50; }
+.btn-osha:hover       { background:#6CCF71; }
+
+.btn-healthcare       { background:#9C27B0; }
+.btn-healthcare:hover { background:#B94AC9; }
+
+.btn-compliance       { background:#FF6F00; }
+.btn-compliance:hover { background:#FF8F33; }
+
+/* ===== Secondary (outline) CTA: white background + colored outline/text ===== */
+.button-outline{
+  background:#fff !important;
+  border:2px solid currentColor;
+  color:currentColor !important;
+  transition:none; /* no hover animation */
+}
+.button-outline.btn-real-estate { color:#c1241a; border-color:#c1241a; }
+.button-outline.btn-mortgage    { color:#00897B; border-color:#00897B; }
+.button-outline.btn-appraisal   { color:#2C75BA; border-color:#2C75BA; }
+.button-outline.btn-osha        { color:#4CAF50; border-color:#4CAF50; }
+.button-outline.btn-healthcare  { color:#9C27B0; border-color:#9C27B0; }
+.button-outline.btn-compliance  { color:#FF6F00; border-color:#FF6F00; }
+
+/* ===== Colored bottom border on each tile image ===== */
+.package-wrap.real-estate   .feature-image img{ border-bottom:4px solid #c1241a; }
+.package-wrap.mortgage      .feature-image img{ border-bottom:4px solid #00897B; }
+.package-wrap.appraisal     .feature-image img{ border-bottom:4px solid #2C75BA; }
+.package-wrap.osha          .feature-image img{ border-bottom:4px solid #4CAF50; }
+.package-wrap.healthcare    .feature-image img{ border-bottom:4px solid #9C27B0; }
+.package-wrap.compliance    .feature-image img{ border-bottom:4px solid #FF6F00; }
+    .industries-mega .tile-more{ margin-top:auto; }
+}
+
+/* 4 ▸  optional: give every row extra air on large screens only */
+@media (min-width: 992px){
+    .industries-mega .industry-tile{ margin-bottom:20px; }
+}
+
+/* ================= PRODUCT SHOWCASE BUTTONS ================= */
+/* Scope: only affect CTAs inside the product tiles section */
+.product-showcase-section .package-wrap a.button-primary{ 
+  border-radius:50px;           /* keep pill ends */
+  font-weight:600;
+}
+
+/* Neutralize any global link-color inside tiles */
+.product-showcase-section .real-estate a,
+.product-showcase-section .mortgage a,
+.product-showcase-section .appraisal a,
+.product-showcase-section .osha a,
+.product-showcase-section .healthcare a,
+.product-showcase-section .compliance a { color: inherit; }
+
+.product-showcase-section .btn-real-estate:not(.button-outline):hover{ background:#FF857D !important; }
+
+.product-showcase-section .btn-mortgage:not(.button-outline):hover{    background:#26A69A !important; }
+
+.product-showcase-section .btn-appraisal:not(.button-outline):hover{   background:#4C8ED0 !important; }
+
+.product-showcase-section .btn-osha:not(.button-outline):hover{        background:#6CCF71 !important; }
+
+.product-showcase-section .btn-healthcare:not(.button-outline):hover{  background:#B94AC9 !important; }
+
+.product-showcase-section .btn-compliance:not(.button-outline):hover{  background:#FF8F33 !important; }
+
+/* -------- Secondary CTA (white outline, no hover fill) -------- */
+.product-showcase-section .button-outline{
+  background:#fff !important;
+  border:2px solid currentColor;
+  color:currentColor !important;
+  transition:none;
+}
+
+.product-showcase-section .button-outline.btn-real-estate { color:#c1241a !important; border-color:#c1241a !important; }
+
+.product-showcase-section .button-outline.btn-mortgage    { color:#00897B !important; border-color:#00897B !important; }
+
+.product-showcase-section .button-outline.btn-appraisal   { color:#2C75BA !important; border-color:#2C75BA !important; }
+
+.product-showcase-section .button-outline.btn-osha        { color:#4CAF50 !important; border-color:#4CAF50 !important; }
+
+.product-showcase-section .button-outline.btn-healthcare  { color:#9C27B0 !important; border-color:#9C27B0 !important; }
+
+.product-showcase-section .button-outline.btn-compliance  { color:#FF6F00 !important; border-color:#FF6F00 !important; }
+
+/* keep outline static on hover/focus (no color flip) */
+.product-showcase-section .button-outline:hover,
+.product-showcase-section .button-outline:focus{
+  background:#fff !important;
+  color:currentColor !important;
+  border-color:currentColor !important;
+}
+
+.industries-mega .mortgage     .tile-head{ background:#00897B; } /* Mortgage    */
+
+.industries-mega .appraisal    .tile-head{ background:#2C75BA; } /* Appraisal   */
+
+.industries-mega .osha         .tile-head{ background:#4CAF50; } /* OSHA        */
+
+.industries-mega .healthcare   .tile-head{ background:#9C27B0; } /* Healthcare  */
+
+.industries-mega .compliance   .tile-head,
+.industries-mega .hr           .tile-head{ background:#FF6F00; } /* Compliance  */
+
+/* Link accents inside each tile (deep links + VIEW MORE) */
+.industries-mega .real-estate  a{ color:#c1241a; }
+
+.industries-mega .mortgage     a{ color:#00897B; }
+
+.industries-mega .appraisal    a{ color:#2C75BA; }
+
+.industries-mega .osha         a{ color:#4CAF50; }
+
+.industries-mega .healthcare   a{ color:#9C27B0; }
+
+.industries-mega .compliance   a,
+.industries-mega .hr          a{ color:#FF6F00; }
+
+/* Optional: keep hover simple & consistent */
+.industries-mega .tile-links a:hover,
+.industries-mega .tile-more:hover{
+  text-decoration: underline;
+}
+
+.callback-section:before { background-color:#173C97 !important; }
+
+/* Highlight "JOB-READY" in the callback heading */
+.callback-section .section-heading-white h2 .fa-title-accent{
+  color:#FFA726; /* Keep as amber - this is for homepage accent, not mortgage */
+}
+
+/* Make the phone "Call:" line the specified orange */
+.callback-section .support-content h3 a{
+  color:#CC5500;           /* primary call color */
+  text-decoration:none;
+}
+
+.callback-section .support-content h3 a:hover,
+.callback-section .support-content h3 a:focus{
+  color:#e06700;           /* subtle hover tint */
+  text-decoration:underline;
+}
+
+/* ===== Resources grid (compact, uses placeholder img17.jpg) ===== */
+.resource-section .section-heading p{ font-size:14px; margin-top:6px; }
+
+/* ===== Resources: force correct industry colors (no currentColor bleed) ===== */
+
+/* 1) Map each card to a CSS variable */
+.resource-section .resource-card{ --resColor: #999; } /* fallback */
+
+/* Resources: center the "Read More" text and stop full-width stretching */
+.resource-section .resource-overlay{
+  align-items: flex-start;            /* children size to content, not 100% */
+}
+
+/* ==================== Testimonials: centered, larger type, solid stars ==================== */
+
+/* If the theme injects avatars/icons, hide them */
+.testimonial-section .author-img,
+.testimonial-section .testimonial-thumb,
+.testimonial-section .testimonial-icon { display:none !important; }
+
+/* Center all slide content; keep site fonts/colors */
+.testimonial-section .testimonial-item,
+.testimonial-section .fa-testi-card { text-align:center; color:inherit; }
+
+/* No card chrome */
+.testimonial-section .fa-testi-card{
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:14px 10px;
+  max-width:920px;
+  margin:0 auto;
+}
+
+/* Name: bigger & bolder */
+.testimonial-section .fa-testi-name{
+  margin:0 0 12px;
+  font-size:36px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+/* Stars: always five SOLID icons; gray the "unearned" ones */
+.testimonial-section .fa-testi-stars{
+  font-size:40px;
+  line-height:1;
+  margin:8px 0 12px;
+}
+
+.testimonial-section .fa-testi-stars .fa-star{ color:#FFC107; }                 /* gold */
+
+.testimonial-section .fa-testi-stars .fa-star.is-gray{ color:rgba(255,255,255,.35); } /* gray on dark bg */
+
+/* Role + paragraph (bigger & italic) */
+.testimonial-section .fa-testi-role{
+  font-weight:600;
+  margin:6px 0 14px;
+  opacity:.95;
+}
+
+.testimonial-section .fa-testi-text{
+  margin:0;
+  font-style:italic;
+  font-size:20px;
+  line-height:1.6;
+}
+
+/* Let the slider control heights naturally */
+.testimonial-section .testimonial-item{ height:auto; }
+
+/* Responsive scaling */
+@media (max-width:575.98px){
+  .testimonial-section .fa-testi-name{ font-size:28px; }
+  .testimonial-section .fa-testi-stars{ font-size:32px; }
+  .testimonial-section .fa-testi-text{ font-size:18px; }
+}
+
+/* ===== Client/Partner strip ===== */
+
+/* Brand background (covers sections that use :before overlays too) */
+.client-section { background-color:#173C97 !important; }
+
+.client-section:before { background-color:#173C97 !important; }
+
+/* If your slider duplicates items, keep consistent spacing */
+.client-section .client-slider .client-item{
+  padding:18px 16px;
+}
+
+/* ===== Tools & Services (activity-section revamp) ===== */
+.fa-activity .fa-activity-item{
+  background:#fff;                 /* matches site cards; remove if you want transparent */
+  border-radius:14px;
+  padding:22px 20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  height:100%;
+  text-align:left;
+}
+
+/* ===== Industry banner bottom stripe ===== */
+.home-banner-section{ position: relative; }
+
+.home-banner-section .industry-stripe{
+  position:absolute; left:0; right:0; bottom:0;
+  height:30px;                 /* stripe thickness */
+  background: var(--industry-color, #04206A);
+  z-index: 2;
+}
+
+/* Bottom color stripe (per-industry color) */
+.home-banner-section .industry-stripe{
+  position:absolute; left:0; right:0; bottom:0;
+  height:30px;
+  background: var(--industry-color, #04206A);
+  z-index: 2;
+}
+
+/* ===== Industry Hero: sizing + spacing fix on the exact wrapper ===== */
+
+/* Typography */
+.home-banner-section.industry-hero .banner-title{
+  font-size:60px;            /* h1 */
+  line-height:1.1;
+}
+
+.home-banner-section.industry-hero .banner-kicker,
+.home-banner-section.industry-hero p{
+  font-size:18px;
+}
+
+/* Spacing on the requested wrapper: use padding (margin won't apply to abs-pos) */
+.home-banner-section.industry-hero .home-banner-items .banner-content-wrap{
+  padding-top:160px !important;
+  padding-bottom:50px !important;
+}
+
+/* In some builds the wrapper (or its inner) is vertically centered via transform.
+   Kill that so our padding actually shows. */
+.home-banner-section.industry-hero .home-banner-items .banner-content-wrap{
+  transform:none !important;
+  -webkit-transform:none !important;
+}
+
+/* Safety: if the theme sets a fixed height/100% layout on the inner content,
+   make sure it doesn't swallow the padding. */
+.home-banner-section.industry-hero .home-banner-items .banner-content-wrap .banner-content{
+  height:auto !important;
+}
+
+/* Industry hero: paragraph spacing */
+.home-banner-section.industry-hero .home-banner-items .banner-content p{
+  margin-bottom: 18px !important;
+}
+
+/* ===== Find Courses card: white, elevated, compact ===== */
+.home-banner-section.industry-hero .trip-search-section .trip-search-inner.find-courses-form{
+  background:#fff !important;             /* switch from blue to white */
+  color:#1d1d1d;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+  padding:18px 18px 16px;                 /* tighter padding */
+}
+
+/* Title */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .find-title{
+  margin:0 0 10px;
+  font-weight:800;
+  font-size:20px;
+  color:#111;
+}
+
+/* Labels */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form label{
+  color:#333 !important;
+  font-size:12px;
+  margin-bottom:6px;
+}
+
+/* Inputs / selects — shorter height & tighter spacing */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form input[type="text"],
+.home-banner-section.industry-hero .trip-search-section .find-courses-form input[list],
+.home-banner-section.industry-hero .trip-search-section .find-courses-form select{
+  width:100%;
+  height:44px;                            /* reduced from 48+ */
+  background:#fff;
+  color:#1d1d1d;
+  border:1px solid #e5e7eb;
+  border-radius:6px;
+  padding:0 12px;
+  outline:none;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group{
+  margin-bottom:10px;                     /* compact vertical rhythm */
+}
+
+/* CTA uses per-industry color */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .btn-find{
+  width:100%;
+  height:44px;
+  border:none;
+  border-radius:8px;
+  font-weight:700;
+  background:var(--industry-color, #c1241a);
+  color:#fff;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .btn-find:hover{
+  filter:brightness(1.08);
+}
+
+/* Make sure earlier "blue card" rules don't leak back in */
+.home-banner-section.industry-hero .trip-search-section .trip-search-inner.secondary-bg{
+  background:#fff !important;
+}
+
+/* Banner title = industry color (no gradient) */
+.home-banner-section.industry-hero .banner-title{
+  color: var(--industry-color, #c1241a) !important; /* fallback for RE */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+          background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+*/
+/* ================= Hero readability upgrades (industry-hero only) ================= */
+
+/* 1) Local scrim behind the left text block */
+.home-banner-section.industry-hero .banner-content{
+  position: relative;
+  z-index: 2;               /* sit above the section overlay */
+  max-width: 860px;         /* keep lines comfortable */
+}
+
+.home-banner-section.industry-hero .banner-content::before{
+  content:"";
+  position:absolute;
+  /* extend slightly around the text */
+  inset:-20px -28px -20px -28px;
+  /* dark-to-clear gradient, fades toward the form on the right */
+  background: linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.30) 45%, rgba(0,0,0,0) 100%);
+  border-radius: 10px;
+  z-index:-1;
+  /* adds a subtle “frosted” effect behind the text where supported */
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+/* 3) Subtle text shadow for the heading & paragraphs */
+.home-banner-section.industry-hero .banner-title,
+.home-banner-section.industry-hero .banner-content p{
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* 4) Make inline emphasis readable inside paragraphs */
+.home-banner-section.industry-hero .banner-content p a,
+.home-banner-section.industry-hero .banner-content p strong{
+  color:#fff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Kicker: use the industry color (Real Estate = #c1241a) */
+.home-banner-section.industry-hero .banner-kicker{
+  color: var(--industry-color, #c1241a) !important;
+}
+
+/* Title: default to white */
+.home-banner-section.industry-hero .banner-title{
+  color:#fff !important;
+  background:none !important;
+  -webkit-background-clip:initial !important;
+  background-clip:initial !important;
+  -webkit-text-fill-color:initial !important;
+}
+
+/* Only the wrapped phrase uses the industry color */
+.home-banner-section.industry-hero .banner-title .accent-industry{
+  color: var(--industry-color, #c1241a) !important;
+}
+
+/* Accent just the "Real Estate." phrase inside the banner title */
+.home-banner-section.industry-hero .banner-content .banner-title .accent-industry{
+  color: var(--industry-color, #c1241a) !important;
+  -webkit-text-fill-color: var(--industry-color, #c1241a) !important; /* beats any prior text-fill */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+          background-clip: initial !important;
+}
+
+/* ===== Course Catalog (destination-section) ===== */
+.fa-catalog { padding-top: 40px; padding-bottom: 40px; }
+
+.fa-catalog .section-heading .lead { max-width: 760px; margin: 0 auto 10px; }
+
+/* Tabs */
+.fa-catalog .catalog-tabs{
+  display:flex; overflow-x:auto; gap:10px; margin: 14px 0 22px;
+  border-bottom: 2px solid #e9edf3; padding-bottom: 8px;
+}
+
+.fa-catalog .catalog-tab{
+  appearance:none; border:0; background:transparent; color:#3b3b3b;
+  font-weight:700; padding:10px 14px; border-radius:8px;
+  position:relative; white-space:nowrap; outline:none;
+  transition: background .2s ease, color .2s ease;
+}
+
+.fa-catalog .catalog-tab:hover{ background:#f4f6f9; }
+
+.fa-catalog .catalog-tab.active{
+  color: var(--industry-color, #c1241a);
+}
+
+.fa-catalog .catalog-tab.active::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:-10px;
+  height:3px; background: var(--industry-color, #c1241a); border-radius:2px;
+}
+
+/* Panel shell */
+.fa-catalog .catalog-panel{ display:none; }
+
+.fa-catalog .catalog-panel.active{ display:block; }
+
+/* Top States belt */
+.fa-catalog .top-states{
+  display:flex; flex-wrap:wrap; gap:10px; margin: 0 0 12px;
+}
+
+.fa-catalog .top-states .state-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 14px; border-radius:999px; font-weight:700;
+  background: var(--industry-color, #c1241a); color:#fff; border:0;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.fa-catalog .top-states .state-pill:hover{ transform: translateY(-1px); filter:brightness(1.08); }
+
+/* Search + grid */
+.fa-catalog .state-search{
+  display:flex; align-items:center; gap:10px; margin: 8px 0 16px;
+}
+
+.fa-catalog .state-search input[type="text"]{
+  flex:1; height:44px; border:1px solid #e5e7eb; border-radius:8px; padding:0 12px;
+}
+
+.fa-catalog .state-search .clear-btn{
+  height:44px; border:0; border-radius:8px; padding:0 12px; font-weight:700;
+  background:#f2f4f7; color:#333;
+}
+
+.fa-catalog .state-search .clear-btn:hover{ background:#e7eaf0; }
+
+/* Grid of other states */
+.fa-catalog .state-grid{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:10px; margin-bottom: 12px;
+}
+
+.fa-catalog .state-chip{
+  display:block; width:100%; text-align:center; padding:10px 12px;
+  background:#fff; border:1.5px solid #e6e9f0; border-radius:999px; color:#0f172a;
+  font-weight:600; transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+
+.fa-catalog .state-chip:hover{
+  border-color: var(--industry-color, #c1241a); color: var(--industry-color, #c1241a);
+  background:#fff;
+}
+
+/* Collapsed / expand */
+.fa-catalog .collapse-wrap{ position:relative; }
+
+.fa-catalog .collapse-mask{ display:none; }
+
+.fa-catalog .collapse-toggle{
+  display:inline-block; margin: 4px 0 0; font-weight:700; border:0; background:transparent;
+  color: var(--industry-color, #c1241a);
+}
+
+.fa-catalog .collapsed .collapse-mask{ 
+  display:block; position:absolute; inset:auto 0 0 0; height:80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 70%);
+  pointer-events:none;
+}
+
+/* Chip when filtered */
+.fa-catalog .state-chip[hidden]{ display:none !important; }
+
+/* Small screens */
+@media (max-width:575.98px){
+  .fa-catalog .state-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+.home-banner-section {
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 575px) {
+  .home-banner-section {
+    padding-bottom: 50px;
+  }
+  .home-banner-section .banner-content-wrap {
+    padding-bottom: 50px;
+  }
+  
+  /* ===== Catalog UX polish: bigger tabs, clear sections, standout search ===== */
+
+/* Tabs → large category pills */
+.fa-catalog .catalog-tabs{
+  display:flex; flex-wrap:wrap; gap:12px;
+  border:0; padding:0; margin: 6px 0 22px;
+}
+.fa-catalog .catalog-tab{
+  appearance:none; border:2px solid #e6e9f0; background:#fff; color:#0f172a;
+  font-weight:800; font-size:16px; text-transform:none; letter-spacing:.2px;
+  padding:12px 18px; border-radius:999px; line-height:1; white-space:nowrap;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+  transition: transform .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+}
+.fa-catalog .catalog-tab:hover{
+  transform: translateY(-1px);
+  border-color: var(--industry-color, #c1241a);
+  color: var(--industry-color, #c1241a);
+}
+.fa-catalog .catalog-tab.active{
+  background: var(--industry-color, #c1241a);
+  border-color: var(--industry-color, #c1241a);
+  color:#fff;
+  box-shadow:0 10px 22px rgba(0,0,0,.14);
+}
+
+/* Panel sections (cards) */
+.fa-catalog .panel-section{
+  background:#fff;
+  border:1px solid #eef1f6;
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Section headings */
+.fa-catalog .group-label{
+  margin:0 0 10px;
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#64748b;
+}
+.fa-catalog .group-label strong{
+  color: var(--industry-color, #c1241a);
+}
+
+/* Top States pills get a bit larger */
+.fa-catalog .top-states{
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.fa-catalog .top-states .state-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 16px; border-radius:999px; font-weight:800;
+  background: var(--industry-color, #c1241a); color:#fff; border:0;
+  box-shadow:0 8px 18px rgba(0,0,0,.12);
+  transition: transform .15s ease, filter .15s ease;
+}
+.fa-catalog .top-states .state-pill:hover{ transform:translateY(-1px); filter:brightness(1.08); }
+
+/* Search bar: prominent with icon + focus ring */
+.fa-catalog .state-search{ position:relative; display:flex; gap:10px; align-items:center; }
+.fa-catalog .state-search::before{
+  content:"\f002"; /* FA search icon */
+  font-family:"Font Awesome 5 Free"; font-weight:900;
+  position:absolute; left:14px; color:#94a3b8; pointer-events:none;
+}
+.fa-catalog .state-search input[type="text"]{
+  flex:1; height:50px; border:2px solid var(--industry-color, #c1241a);
+  border-radius:10px; padding:0 14px 0 40px; background:#fff;
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+.fa-catalog .state-search input[type="text"]:focus{
+  outline:0;
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--industry-color, #c1241a) 24%, transparent);
+}
+@supports not (color-mix(in srgb, #000 10%, transparent)){
+  .fa-catalog .state-search input[type="text"]:focus{ box-shadow:0 0 0 4px rgba(193,36,26,.24); }
+}
+.fa-catalog .state-search .clear-btn{
+  height:50px; border:2px solid #e6e9f0; border-radius:10px; padding:0 14px;
+  font-weight:800; background:#f8fafc; color:#0f172a;
+}
+.fa-catalog .state-search .clear-btn:hover{
+  border-color: var(--industry-color, #c1241a);
+  color: var(--industry-color, #c1241a);
+}
+
+/* Other states grid stays compact but clearer */
+.fa-catalog .state-grid{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:10px; margin-top:8px;
+}
+.fa-catalog .state-chip{
+  display:block; text-align:center; padding:10px 12px;
+  background:#fff; border:1.5px solid #e6e9f0; border-radius:999px; color:#0f172a;
+  font-weight:700; transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.fa-catalog .state-chip:hover{
+  border-color: var(--industry-color, #c1241a);
+  color: var(--industry-color, #c1241a);
+}
+
+/* Expand/collapse polish */
+.fa-catalog .collapse-wrap{ position:relative; }
+.fa-catalog .collapse-mask{ display:none; }
+.fa-catalog .collapse-toggle{
+  display:inline-flex; align-items:center; gap:6px;
+  margin: 8px 0 0; font-weight:800; border:0; background:transparent;
+  color: var(--industry-color, #c1241a);
+}
+.fa-catalog .collapsed .collapse-mask{
+  display:block; position:absolute; inset:auto 0 0 0; height:80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 70%);
+  pointer-events:none;
+}
+
+/* Small screens */
+@media (max-width:575.98px){
+  .fa-catalog .catalog-tab{ font-size:15px; padding:10px 14px; }
+  .fa-catalog .state-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Catalog lead blurb under tabs */
+.fa-catalog .catalog-lead{
+  margin: -4px 0 18px;   /* tucks closer to tabs, leaves room above panels */
+  color: #334155;        /* readable on light background */
+}

@@ -1,0 +1,381 @@
+/* Custom navigation & footer (shared) */
+
+/* ========== TOP HEADER NAVIGATION ========== */
+
+/* ---------- Top-header re-skin ---------- */
+.top-header{
+    background: var(--color-umbrella, #04206A);  /* dark blue bar */
+    border-bottom: none;                          /* remove thin white divider */
+}
+
+/* Right-hand email */
+.header-email a{
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.header-email i{ margin-right: 6px; }
+
+/* ===== colour keys for each vertical ===== */
+.vertical-item.home{ color: var(--color-umbrella, #04206A); }
+.vertical-item.real-estate{ color: var(--color-real-estate, #c1241a); }
+.vertical-item.mortgage{ color: var(--color-mortgage, #00897B); }
+.vertical-item.appraisal{ color: var(--color-appraisal, #2c75ba); }
+.vertical-item.osha{ color: var(--color-osha, #4caf50); }
+.vertical-item.healthcare{ color: var(--color-healthcare, #9c27b0); }
+.vertical-item.hr{ color: var(--color-hr, #ff6f00); }
+
+/* ===== Top-header vertical nav layout ===== */
+.header-vertical-nav .vertical-nav { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 8px;
+  align-items: center;
+}
+
+.header-vertical-nav .vertical-nav li { 
+  padding: 0; 
+  margin: 0; 
+  list-style: none; 
+}
+
+.header-vertical-nav .vertical-nav li > a{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  line-height: 1.2;
+  background: transparent;
+  color: #fff;
+  transition: background .2s ease, color .2s ease;
+  text-decoration: none;
+}
+
+/* Hover state - NO border-radius */
+.header-vertical-nav .vertical-nav li > a:hover{
+  background: #fff;
+  color: var(--color-umbrella, #04206A);
+}
+
+/* ACTIVE state for specific industries */
+body.home .header-vertical-nav .vertical-item.home > a,
+body.industry-real-estate .header-vertical-nav .vertical-item.real-estate > a,
+body.industry-mortgage .header-vertical-nav .vertical-item.mortgage > a,
+body.industry-appraisal .header-vertical-nav .vertical-item.appraisal > a,
+body.industry-osha .header-vertical-nav .vertical-item.osha > a,
+body.industry-healthcare .header-vertical-nav .vertical-item.healthcare > a,
+body.industry-compliance .header-vertical-nav .vertical-item.hr > a{
+  background: #fff !important;
+  color: var(--color-umbrella, #04206A) !important;
+}
+
+/* Colored underline bar */
+.header-vertical-nav .vertical-nav li > a::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: transparent;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+/* Map the underline color per industry */
+.header-vertical-nav .vertical-item.home > a::after{ background: var(--color-umbrella, #04206A); }
+.header-vertical-nav .vertical-item.real-estate > a::after{ background: var(--color-real-estate, #c1241a); }
+.header-vertical-nav .vertical-item.mortgage > a::after{ background: var(--color-mortgage, #00897B); }
+.header-vertical-nav .vertical-item.appraisal > a::after{ background: var(--color-appraisal, #2C75BA); }
+.header-vertical-nav .vertical-item.osha > a::after{ background: var(--color-osha, #4CAF50); }
+.header-vertical-nav .vertical-item.healthcare > a::after{ background: var(--color-healthcare, #9C27B0); }
+.header-vertical-nav .vertical-item.hr > a::after{ background: var(--color-hr, #FF6F00); }
+
+/* Show the bar on hover & active */
+.header-vertical-nav .vertical-nav li > a:hover::after,
+.header-vertical-nav .vertical-nav li > a.is-active::after,
+.header-vertical-nav .vertical-nav li > a[aria-current="page"]::after,
+body.home .header-vertical-nav .vertical-item.home > a::after,
+body.industry-real-estate .header-vertical-nav .vertical-item.real-estate > a::after,
+body.industry-mortgage .header-vertical-nav .vertical-item.mortgage > a::after,
+body.industry-appraisal .header-vertical-nav .vertical-item.appraisal > a::after,
+body.industry-osha .header-vertical-nav .vertical-item.osha > a::after,
+body.industry-healthcare .header-vertical-nav .vertical-item.healthcare > a::after,
+body.industry-compliance .header-vertical-nav .vertical-item.hr > a::after{
+  opacity: 1;
+}
+
+/* offset anchor so the sticky nav (≈100 px) doesn’t hide it */
+#industries{
+    scroll-margin-top: 110px;   /* tweak to your exact header height */
+}
+
+/* ===== mega-menu container ===== */
+.dropdown-mega{
+   position:absolute;
+   top:100%;
+   left:0;
+   width:100%;
+   padding:25px 0;
+   background:#f5f5f5;           /* light grey like screenshot bg   */
+   box-shadow:0 8px 25px rgba(0,0,0,.15);
+   visibility:hidden;
+   opacity:0;
+   transform:translateY(15px);
+   transition:all .25s ease;
+   z-index:30;
+}
+
+/* show on hover */
+.menu-item-has-children:hover > .dropdown-mega{
+   visibility:visible;
+   opacity:1;
+   transform:none;
+}
+
+/* coloured header bar */
+.tile-head{
+   font-size:18px;
+   font-weight:700;
+   color:#fff;
+   padding:12px 18px;
+   margin:-25px -30px 18px;            /* pull to edges */
+}
+
+/* ——— colour codes (header + link + bar) ——— */
+.real-estate   .tile-head{background:#4CAF50;} /* green */
+
+@media (max-width:991.98px){     /* tablet/mobile : stack tiles */
+   .dropdown-mega{padding:15px;}
+}
+
+/* ░░ MEGA-MENU WIDTH ░░ */
+.dropdown-mega{                 /* class we added for the new panel */
+    position:absolute;
+    top:100%;
+    left:0;                     /* stretch the element edge-to-edge… */
+    right:0;
+    width:100%;                 /* …but */
+    max-width:1320px;           /* stop at the page container width  */
+    margin:0 auto;              /* centres it under the nav bar      */
+}
+
+.mega-parent > .mega-menu{    /* the coloured panel                      */
+    position:absolute;
+    left:0; right:0; top:100%;        /* full width under the bar        */
+    z-index:999;                      /* above header                     */
+    background:#fff;
+    border-top:4px solid #04206A;     /* blue accent, tweak as needed     */
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    display:none;                     /* default hide – shown on hover    */
+}
+
+.mega-parent:hover  > .mega-menu,
+.mega-parent:focus-within > .mega-menu{
+    display:block;                    /* show on hover / keyboard focus   */
+}
+
+/* keep it aligned with the site’s max-width container */
+.mega-menu .container{
+    max-width:1140px;                 /* bootstrap 4 default               */
+    margin:0 auto;                    /* centres the inner grid            */
+    padding:30px 15px;
+}
+
+/* optional - gap between columns inside */
+.mega-menu .row>[class*="col"]{ margin-bottom:25px; }
+
+/* ========== INDUSTRIES MEGA-MENU LAYOUT ========== */
+
+/* 1 ▸  keep Bootstrap’s default gutters (15 px left/right) */
+.industries-mega .row{
+    margin-left:-15px;
+    margin-right:-15px;
+}
+
+/* ===== Align mega-menu colors with Product Showcase ===== */
+
+/* Header bars on each tile */
+.industries-mega .real-estate  .tile-head{ background:#c1241a; } /* Real Estate */
+
+/* Button hover removed - now handled by industry-specific rules in custom.css */
+
+/* footer lists inside widgets → no bullets/indents */
+.site-footer .widget_text ul{ list-style:none; padding-left:0; margin:0; }
+
+.site-footer .widget_text ul li{ margin-bottom:8px; }
+
+/* trust badges (use the existing .award-img area) */
+.site-footer .award-img img{ height:22px; margin-right:8px; opacity:.95; }
+
+.site-footer .award-img img:last-child{ margin-right:0; }
+
+/* small social icons under newsletter */
+.site-footer .footer-social a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:50%;
+  color:inherit; opacity:.85; margin-right:6px; transition:opacity .2s ease;
+}
+
+.site-footer .footer-social a:last-child{ margin-right:0; }
+
+.site-footer .footer-social a:hover{ opacity:1; }
+
+/* ===== Footer link hover → brand orange (#CC5500) ===== */
+/* Top widgets (lists inside columns) */
+.site-footer.footer-primary .widget ul li a:hover,
+.site-footer.footer-primary .widget ul li a:focus,
+.site-footer .footer-menu ul li a:hover,
+.site-footer .footer-menu ul li a:focus,
+.site-footer .footer-contact a:hover,
+.site-footer .footer-contact a:focus{
+  color: #CC5500 !important;
+}
+
+/* Bottom footer inline menu */
+.buttom-footer .footer-menu ul li a:hover,
+.buttom-footer .footer-menu ul li a:focus{
+  color: #CC5500 !important;
+}
+
+/* ===================== Subscribe / Offer ===================== */
+.fa-subscribe{
+  background:#173C97; /* brand blue */
+  position:relative;
+  padding: 56px 0; /* respect theme spacing if it differs */
+}
+
+.fa-subscribe .text-white{ color:#fff !important; }
+
+.fa-subscribe .text-white-80{ color:rgba(255,255,255,.85) !important; }
+
+.fa-subscribe .text-white-70{ color:rgba(255,255,255,.70) !important; }
+
+.fa-subscribe .dash-style{ color:#fff; }
+
+/* Headline highlight */
+.fa-subscribe .highlight-amber{
+  color: #FFA726; /* Keep as amber/orange - not mortgage color */
+}
+
+/* Promo pill */
+.fa-subscribe .promo-pill{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:8px 14px; border-radius:999px;
+  background: rgba(255,255,255,.10);
+  border:2px solid #FFA726;  /* Keep as amber/orange - not mortgage color */
+  color:#fff;
+}
+
+.fa-subscribe .promo-pill .pill-label{
+  font-size:12px; letter-spacing:.4px; text-transform:uppercase;
+  opacity:.9;
+}
+
+.fa-subscribe .promo-pill .pill-code{
+  font-size:16px;
+}
+
+/* Form */
+.fa-subscribe-form .form-control{
+  height: 54px;
+  border-radius: 999px;
+  padding: 0 16px;
+  border: none;
+}
+
+.fa-subscribe-form .form-control:focus{
+  outline:0; box-shadow: 0 0 0 0.2rem rgba(255,167,38,.25);
+}
+
+.fa-subscribe-form .button-primary{
+  height: 54px;
+  border-radius: 999px;
+  font-weight:700;
+}
+
+/* Small copy sizes */
+.fa-subscribe .lead{ font-size:16px; line-height:1.6; }
+
+.fa-subscribe .tiny{ font-size:12px; }
+
+/* Responsive */
+@media (max-width: 575.98px){
+  .fa-subscribe{ padding: 40px 0; }
+  .fa-subscribe .promo-pill{ display:flex; margin-top:6px; }
+}
+
+/* Logo sizing & spacing */
+.client-section .client-item { text-align:center; }
+
+.client-section .client-logo img{
+  max-height:46px;           /* adjust 40–56px to taste */
+  width:auto;
+  opacity:.95;
+  transition:opacity .2s ease, transform .2s ease;
+  filter:none;               /* ensure white logos render crisp */
+}
+
+.client-section .client-logo img:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+/* On small screens, give a tad more vertical room */
+@media (max-width:575.98px){
+  .client-section .client-slider .client-item{ padding:14px 10px; }
+  .client-section .client-logo img{ max-height:40px; }
+}
+
+/* Subscribe section amber highlight */
+.subscribe-section .highlight-amber{
+  color: #FFA726 !important;   /* Keep as amber/orange - not mortgage color */
+  font-weight:800;            /* optional emphasis */
+  letter-spacing:.2px;        /* optional polish */
+}
+
+/* ================= Industry pages: CTAs + top header color ================= */
+
+/* 1) Top header bar uses the industry color instead of blue */
+body.industry-page .top-header{
+  background: var(--industry-accent, #c1241a) !important;
+}
+
+/* Make the vertical-nav pills read clearly on colored header */
+body.industry-page .header-vertical-nav .vertical-nav li > a{
+  color: #fff;
+}
+
+body.industry-page .header-vertical-nav .vertical-nav li > a:hover,
+body.industry-page .header-vertical-nav .vertical-nav li > a.is-active,
+body.industry-page .header-vertical-nav .vertical-nav li > a[aria-current="page"]{
+  background: #fff;
+  color: var(--industry-accent, #c1241a);
+}
+
+body.industry-page .header-vertical-nav .vertical-nav li > a:hover::after,
+body.industry-page .header-vertical-nav .vertical-nav li > a.is-active::after,
+body.industry-page .header-vertical-nav .vertical-nav li > a[aria-current="page"]::after{
+  opacity: 1;
+}
+
+/* 2) Primary CTAs on this page = industry color (incl. Student Login) */
+body.industry-page .button-primary,
+body.industry-page .btn-primary,
+body.industry-page .header-btn .button-primary,
+body.industry-page .trip-search-section .find-courses-form .btn-find,
+body.industry-page .trip-search-section input[type="submit"],
+body.industry-page a.button-primary {
+  background: var(--industry-accent, #c1241a) !important;
+  border-color: var(--industry-accent, #c1241a) !important;
+  color: #fff !important;
+}
+
+body.industry-page .button-primary:hover,
+body.industry-page .btn-primary:hover,
+body.industry-page .header-btn .button-primary:hover,
+body.industry-page .trip-search-section .find-courses-form .btn-find:hover,
+body.industry-page .trip-search-section input[type="submit"]:hover,
+body.industry-page a.button-primary:hover{
+  filter: brightness(1.08);
+  color: #fff !important;
+}

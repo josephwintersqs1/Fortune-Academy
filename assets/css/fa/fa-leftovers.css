@@ -1,0 +1,270 @@
+/* Leftover rules not auto-classified — review and move to correct file */
+
+.product-grid .row {
+    margin: -15px;
+}
+
+.product-grid .row > [class*="col-"] {
+    padding: 15px;
+}
+
+.product-grid .package-wrap {
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    padding-bottom: 20px;
+}
+
+.product-grid .package-content {
+    padding: 15px 20px;
+}
+
+.product-grid .package-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-grid .package-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* ===== colour keys for each vertical ===== */
+.vertical-item.real-estate{color:#c1241a;}       /* coral-red  */
+
+.vertical-item.mortgage   {color:#00897B;}       /* teal     */
+
+.vertical-item.appraisal  {color:#2C75BA;}       /* blue       */
+
+.vertical-item.osha       {color:#4CAF50;}       /* green      */
+
+.vertical-item.healthcare {color:#9C27B0;}       /* purple     */
+
+.vertical-item.hr         {color:#FF6F00;}       /* deep orange*/
+
+/* ---------- global smooth-scroll for anchor jumps ---------- */
+html { scroll-behavior: smooth; }
+
+/* ╔════════  COLOURED BOTTOM BORDER ON TILE IMAGES  ════════╗ */
+.package-wrap.real-estate   .feature-image img{border-bottom:4px solid #c1241a;}
+
+.package-wrap.mortgage      .feature-image img{border-bottom:4px solid #00897B;}
+
+.package-wrap.appraisal     .feature-image img{border-bottom:4px solid #2C75BA;}
+
+.package-wrap.osha          .feature-image img{border-bottom:4px solid #FF6F00;}
+
+.package-wrap.healthcare    .feature-image img{border-bottom:4px solid #D32F2F;}
+
+.package-wrap.hr            .feature-image img{border-bottom:4px solid #9C27B0;}
+
+/* ===== individual industry tiles ===== */
+.industry-tile{
+   background:#fff;
+   padding:0;  /* Remove all padding - let children handle their own spacing */
+   margin-bottom:25px;                 /* mobile gap */
+   box-shadow:0 2px 8px rgba(0,0,0,.06);
+   position:relative;
+   transition:transform .2s ease;
+   overflow:hidden;  /* Ensure children don't overflow */
+}
+
+.industry-tile:hover{transform:translateY(-4px);}
+
+/* blurb + list */
+.tile-blurb{font-size:14px; margin-bottom:18px;}
+
+.tile-links{margin:0 0 22px; padding:0; list-style:none;}
+
+.tile-links li{margin-bottom:6px;}
+
+.tile-links a{font-size:14px; font-weight:500;}
+
+.tile-more{font-size:13px; font-weight:700; text-transform:uppercase;}
+
+.mortgage      .tile-head{background:#00897B;} /* teal */
+
+.appraisal     .tile-head{background:#2C75BA;} /* blue  */
+
+.osha          .tile-head{background:#FF6F00;} /* deep orange */
+
+.healthcare    .tile-head{background:#D32F2F;} /* red   */
+
+.hr            .tile-head{background:#9C27B0;} /* purple */
+
+.real-estate   a{color:#4CAF50;}
+
+.mortgage      a{color:#00897B;}
+
+.appraisal     a{color:#2C75BA;}
+
+.osha          a{color:#FF6F00;}
+
+.healthcare    a{color:#D32F2F;}
+
+.hr            a{color:#9C27B0;}
+
+/* keep VIEW MORE vivid */
+.tile-more{letter-spacing:2px;}
+
+.tile-more:hover{text-decoration:underline;}
+
+/* ===== responsive tweaks ===== */
+@media (min-width:992px){        /* ≥ lg : 3-col grid */
+   .industry-tile{margin-bottom:0;}
+}
+
+/* ---- MEGA MENU LAYOUT ---------------------------------- */
+.mega-parent{                 /* the <li> itself                         */
+    position:static;          /* allows the panel to break out of 250 px */
+}
+
+/* Contact section brand color */
+.contact-section{ background-color:#173C97 !important; }
+
+/* Make the descriptive line readable on the blue background */
+.contact-section .contact-subcopy{
+  color:rgba(255,255,255,.9);
+  font-size:14px;
+}
+
+.resource-section .resource-card{ height:100%; }
+
+.resource-section .resource-thumb{ position:relative; margin:0; border-radius:8px; overflow:hidden; }
+
+.resource-section .resource-thumb img{
+  width:100%; height:260px; object-fit:cover; display:block; /* stable height */
+}
+
+/* color tint + tag */
+.resource-section .resource-thumb .tint{
+  position:absolute; inset:0; background:currentColor; opacity:.55; transition:opacity .2s ease;
+}
+
+.resource-section .industry-tag{
+  position:absolute; top:12px; left:12px;
+  background:currentColor; color:#fff; font-weight:700; font-size:11px; letter-spacing:.35px;
+  text-transform:uppercase; padding:6px 10px; border-radius:4px;
+}
+
+/* overlay content (compact text) */
+.resource-section .resource-overlay{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:18px; color:#fff; text-align:left;
+}
+
+.resource-section .resource-title{ font-size:18px; line-height:1.25; margin:0 0 8px; color:#fff; }
+
+.resource-section .resource-desc{ font-size:13px; line-height:1.4; margin:0 0 12px; opacity:.95; }
+
+/* subtle hover only */
+.resource-section .card-link:hover .tint{ opacity:.6; }
+
+/* Industry color mapping (drives tag + tint via currentColor) */
+.resource-card.real-estate { color:#c1241a; }
+
+.resource-card.mortgage    { color:#00897B; }
+
+.resource-card.appraisal   { color:#2C75BA; }
+
+.resource-card.osha        { color:#4CAF50; }
+
+.resource-card.healthcare  { color:#9C27B0; }
+
+.resource-card.compliance  { color:#FF6F00; }
+
+/* small-screen tweaks */
+@media (max-width:575.98px){
+  .resource-section .resource-thumb img{ height:220px; }
+  .resource-section .resource-title{ font-size:17px; }
+  .resource-section .resource-desc{ font-size:12px; }
+}
+
+.resource-section .resource-card.real-estate{ --resColor:#c1241a; }
+
+.resource-section .resource-card.mortgage{    --resColor:#00897B; }
+
+.resource-section .resource-card.appraisal{   --resColor:#2C75BA; }
+
+.resource-section .resource-card.osha{        --resColor:#4CAF50; }
+
+.resource-section .resource-card.healthcare{  --resColor:#9C27B0; }
+
+.resource-section .resource-card.compliance{  --resColor:#FF6F00; }
+
+/* 2) Use the variable for the visual parts, not currentColor */
+.resource-section .resource-thumb .tint{ background: var(--resColor); }
+
+.resource-section .resource-thumb .industry-tag{ background: var(--resColor); }
+
+/* 3) Neutralize any link color inside the card so it can’t hijack colors */
+.resource-section .resource-card .card-link{ color: inherit !important; }
+
+.fa-activity .fa-activity-item h4{
+  font-weight:800;
+  margin:12px 0 8px;
+}
+
+.fa-activity .fa-activity-item p{
+  margin:0 0 14px;
+}
+
+/* Icon treatment (Font Awesome) */
+.fa-activity .fa-ico{
+  width:56px; height:56px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#173C97;              /* brand blue */
+  color:#fff; font-size:22px;
+  box-shadow:0 4px 10px rgba(23,60,151,.25);
+}
+
+/* Hover polish */
+.fa-activity .fa-activity-item:hover .fa-ico{
+  transform:translateY(-1px);
+  transition:transform .15s ease;
+}
+
+/* Responsive spacing */
+@media (max-width:575.98px){
+  .fa-activity .fa-activity-item{ padding:18px; }
+}
+
+/* ========= Industry Hero tweaks (keeps default theme spacing) ========= */
+.industry-hero { position: relative; }
+
+.industry-hero .banner-kicker{
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 0 6px;
+  color: rgba(255,255,255,.92);
+}
+
+.industry-hero .banner-subtitle{
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: rgba(255,255,255,.92);
+}
+
+.industry-hero .banner-delivery{
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: rgba(255,255,255,.88);
+}
+
+.industry-hero .approval-note{
+  margin: 14px 0 0;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.92);
+}
+
+/* Responsive minor padding on very small screens */
+@media (max-width: 575.98px){
+  .industry-hero .banner-subtitle{ font-size: 16px; }
+  .industry-hero .banner-delivery{ font-size: 14px; }
+}
+
+/* 2) (Optional) slightly stronger section overlay tint — uses your variable */
+body.industry-page { --industry-overlay-opacity: .52; } /* try .52–.60; adjust per taste */

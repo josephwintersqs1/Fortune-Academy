@@ -1,0 +1,13 @@
+/* Industry color tokens + helpers (global) */
+:root { --industry-color: #c1241a; } /* default Real Estate */
+
+body.industry-real-estate { --industry-color:#c1241a; }
+body.industry-mortgage    { --industry-color:#00897B; }
+body.industry-appraisal   { --industry-color:#2C75BA; }
+body.industry-osha        { --industry-color:#4CAF50; }
+body.industry-healthcare  { --industry-color:#9C27B0; }
+body.industry-compliance  { --industry-color:#FF6F00; }
+
+.fa-accent    { color: var(--industry-color) !important; }
+.fa-bg-accent { background: var(--industry-color) !important; color:#fff !important; }
+.fa-bd-accent { border-color: var(--industry-color) !important; }

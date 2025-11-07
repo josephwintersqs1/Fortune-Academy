@@ -1,0 +1,4148 @@
+/* --- Brand palette tokens --- */
+/* ==================== IMPORT NAVIGATION & FOOTER STYLES ==================== */
+@import url('assets/css/fa/fa-nav-footer.css');
+
+/* ==================== CSS CUSTOM VARIABLE DEFINITIONS ==================== */
+:root{
+    --color-umbrella: #04206A;
+    --color-umbrella-hover: #173C97;
+
+    --color-real-estate: #c1241a;
+    --color-real-estate-hover: #ff857d;
+
+    --color-mortgage: #00897B;        /* Material Teal 600 - Professional & Financial */
+    --color-mortgage-hover: #26A69A;  /* Material Teal 400 - Lighter hover */
+
+    --color-appraisal: #2c75ba;
+    --color-appraisal-hover: #4c8ed0;
+
+    --color-osha: #4caf50;
+    --color-osha-hover: #6ccf71;
+
+    --color-healthcare: #9c27b0;
+    --color-healthcare-hover: #b94ac9;
+
+    --color-hr: #ff6f00;
+    --color-hr-hover: #ff8f33;
+
+    --color-compliance: var(--color-hr);
+    --color-compliance-hover: var(--color-hr-hover);
+
+    --industry-color-default: var(--color-real-estate);
+}
+
+body{
+    --industry-accent: var(--industry-color-default);
+}
+
+body.industry-page{
+    --industry-accent: var(--industry-color, var(--industry-color-default));
+}
+
+/* --- Product showcase overrides --- */
+.product-grid {           /* kill the previous d-flex */
+    display: block;
+}
+
+.product-grid .row {
+    margin: -15px;
+}
+.product-grid .row > [class*="col-"] {
+    padding: 15px;
+}
+
+.product-grid .package-wrap {
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    padding-bottom: 20px;
+}
+
+.product-grid .package-content {
+    padding: 15px 20px;
+}
+
+.product-grid .package-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-grid .package-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-grid .button-primary {
+    padding: 10px 25px;
+    font-size: 14px;
+}
+
+/* ↑ Lift the white product card 15 px higher so it overlaps the slider more */
+.product-showcase-section{
+    margin-top: -140px;   /* was –70 px → move up 15 px */
+}
+
+/* keep everything else (padding, z-index, etc.) exactly as it is */
+
+/* --- Equalise the white card's padding --- */
+.product-showcase-section .trip-search-inner{
+    padding: 36px 40px;          /* top = bottom = 36px */
+}
+
+/* --- Remove the extra margin that only affects the bottom --- */
+.product-showcase-section .row > [class*="col-"]{
+    margin-bottom: 0 !important; /* overrides .mb-4 */
+}
+
+/* ================= DO NOT ADD HEADER CSS HERE ================= */
+/* All header and navigation CSS is now in: assets/css/fa/fa-nav-footer.css */
+/* This keeps header styles consolidated in one place for easier maintenance */
+
+/* ---------- global smooth-scroll for anchor jumps ---------- */
+html { scroll-behavior: smooth; }
+
+/* ---------- button palettes (default + hover 15% lighter) ---------- */
+.btn-umbrella      { background:var(--color-umbrella); }
+.btn-umbrella:hover{ background:var(--color-umbrella-hover); }
+
+.btn-real-estate      { background:var(--color-real-estate); }
+.btn-real-estate:hover{ background:var(--color-real-estate-hover); }
+
+.btn-mortgage      { background:var(--color-mortgage); }
+.btn-mortgage:hover{ background:var(--color-mortgage-hover); }
+
+.btn-appraisal      { background:var(--color-appraisal); }
+.btn-appraisal:hover{ background:var(--color-appraisal-hover); }
+
+.btn-osha      { background:var(--color-osha); }
+.btn-osha:hover{ background:var(--color-osha-hover); }
+
+.btn-healthcare      { background:var(--color-healthcare); }
+.btn-healthcare:hover{ background:var(--color-healthcare-hover); }
+
+.btn-hr      { background:var(--color-hr); }
+.btn-hr:hover{ background:var(--color-hr-hover); }
+
+/* inherit existing sizing/transition from .button-primary (style.css L5-18)  [oai_citation:1‡style.css](file-service://file-8s9DuxjxgcTCx7tU3Qh2gD) */
+.home-banner-items .banner-content p { font-size: 22px; }
+/* offset anchor so the sticky nav (≈100 px) doesn't hide it */
+#industries{
+    scroll-margin-top: 110px;   /* tweak to your exact header height */
+}
+/* === make every CTA pill-shaped === */
+.button-primary,
+.button-secondary,
+.btn,
+.btn-primary,
+.btn-secondary {
+    border-radius: 50px;   /* big number = fully rounded sides */
+}
+
+/* keep the template's existing hover / focus styles */
+
+
+/* generic outline variant */
+.button-outline{
+    background:transparent !important;
+    border:2px solid currentColor;   /* picks up the brand hue */
+    color:currentColor !important;
+    transition:none;                 /* kill any prior hover animation */
+}
+
+/* brand-colour mappings */
+.button-outline.btn-real-estate {color:var(--color-real-estate) !important; border-color:var(--color-real-estate);}
+.button-outline.btn-mortgage    {color:var(--color-mortgage) !important; border-color:var(--color-mortgage);}
+.button-outline.btn-appraisal   {color:var(--color-appraisal) !important; border-color:var(--color-appraisal);}
+.button-outline.btn-osha        {color:var(--color-osha) !important; border-color:var(--color-osha);}
+.button-outline.btn-healthcare  {color:var(--color-healthcare) !important; border-color:var(--color-healthcare);}
+.button-outline.btn-hr          {color:var(--color-hr) !important; border-color:var(--color-hr);}
+
+/* keep appearance identical on hover / focus */
+.button-outline:hover,
+.button-outline:focus{
+    background:transparent !important;
+    color:currentColor !important;
+    border-color:currentColor !important;
+}
+
+/* ╔════════  COLOURED BOTTOM BORDER ON TILE IMAGES  ════════╗ */
+.package-wrap.real-estate   .feature-image img{border-bottom:4px solid var(--color-real-estate);}
+.package-wrap.mortgage      .feature-image img{border-bottom:4px solid var(--color-mortgage);}
+.package-wrap.appraisal     .feature-image img{border-bottom:4px solid var(--color-appraisal);}
+.package-wrap.osha          .feature-image img{border-bottom:4px solid var(--color-osha);}
+.package-wrap.healthcare    .feature-image img{border-bottom:4px solid var(--color-healthcare);}
+.package-wrap.hr            .feature-image img{border-bottom:4px solid var(--color-hr);}
+
+
+/* ===== mega-menu container ===== */
+.dropdown-mega{
+   position:absolute;
+   top:100%;
+   left:0;
+   width:100%;
+   padding:20px 0;
+   background:#f5f5f5;           /* light grey like screenshot bg   */
+   box-shadow:0 8px 25px rgba(0,0,0,.15);
+   visibility:hidden;
+   opacity:0;
+   transform:translateY(15px);
+   transition:all .25s ease;
+   z-index:30;
+}
+
+/* show on hover */
+.menu-item-has-children:hover > .dropdown-mega{
+   visibility:visible;
+   opacity:1;
+   transform:none;
+}
+
+/* ===== individual industry tiles ===== */
+.industry-tile{
+   background:#fff;
+   padding:0;  /* Remove all padding - let children handle their own spacing */
+   margin-bottom:25px;                 /* mobile gap */
+   box-shadow:0 2px 8px rgba(0,0,0,.06);
+   position:relative;
+   transition:transform .2s ease;
+   overflow:hidden;  /* Ensure children don't overflow */
+}
+.industry-tile:hover{transform:translateY(-4px);}
+
+/* coloured header bar - SIMPLIFIED */
+.tile-head{
+   font-size:18px;
+   font-weight:700;
+   color:#fff;
+   padding:12px 25px;
+   margin:0;  /* No negative margins! */
+}
+
+/* blurb + list */
+.tile-blurb{font-size:14px; margin-bottom:18px; padding:0 25px;}
+.tile-links{margin:0 0 22px; padding:0 25px; list-style:none;}
+.tile-links li{margin-bottom:6px;}
+.tile-links a{font-size:14px; font-weight:500;}
+.tile-more{font-size:13px; font-weight:700; text-transform:uppercase; padding:0 25px 25px; display:inline-block;}
+
+/* ——— colour codes (header + link + bar) ——— */
+.real-estate   .tile-head{background:var(--color-real-estate);}
+.mortgage      .tile-head{background:var(--color-mortgage);}
+.appraisal     .tile-head{background:var(--color-appraisal);}
+.osha          .tile-head{background:var(--color-osha);}
+.healthcare    .tile-head{background:var(--color-healthcare);}
+.hr            .tile-head{background:var(--color-hr);}
+
+.real-estate   a{color:var(--color-real-estate);}
+.mortgage      a{color:var(--color-mortgage);}
+.appraisal     a{color:var(--color-appraisal);}
+.osha          a{color:var(--color-osha);}
+.healthcare    a{color:var(--color-healthcare);}
+.hr            a{color:var(--color-hr);}
+
+/* keep VIEW MORE vivid */
+.tile-more{letter-spacing:2px;}
+.tile-more:hover{text-decoration:underline;}
+
+/* ===== responsive tweaks ===== */
+@media (min-width:992px){        /* ≥ lg : 3-col grid */
+   .industry-tile{margin-bottom:0;}
+}
+@media (max-width:991.98px){     /* tablet/mobile : stack tiles */
+   .dropdown-mega{padding:15px;}
+}
+
+/* ░░ MEGA-MENU WIDTH ░░ */
+.dropdown-mega{                 /* class we added for the new panel */
+    position:absolute;
+    top:100%;
+    left:0;                     /* stretch the element edge-to-edge… */
+    right:0;
+    width:100%;                 /* …but */
+    max-width:1200px;           /* stop at the page container width  */
+    margin:0 auto;              /* centres it under the nav bar      */
+}
+
+/* Add horizontal padding to the mega menu container */
+.industries-mega .container{
+    padding-left:25px;
+    padding-right:25px;
+}
+/* ---- MEGA MENU LAYOUT ---------------------------------- */
+.mega-parent{                 /* the <li> itself                         */
+    position:static;          /* allows the panel to break out of 250 px */
+}
+
+.mega-parent > .mega-menu{    /* the coloured panel                      */
+    position:absolute;
+    left:0; right:0; top:100%;        /* full width under the bar        */
+    z-index:999;                      /* above header                     */
+    background:#fff;
+    border-top:4px solid #04206A;     /* blue accent, tweak as needed     */
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    display:none;                     /* default hide – shown on hover    */
+}
+
+.mega-parent:hover  > .mega-menu,
+.mega-parent:focus-within > .mega-menu{
+    display:block;                    /* show on hover / keyboard focus   */
+}
+
+/* keep it aligned with the site's max-width container */
+.mega-menu .container{
+    max-width:1140px;                 /* bootstrap 4 default               */
+    margin:0 auto;                    /* centres the inner grid            */
+    padding:30px 15px;
+}
+
+/* optional - gap between columns inside */
+.mega-menu .row>[class*="col"]{ margin-bottom:25px; }
+
+
+
+/* ───── 2  KILL THE HOVER ANIMATION ───── */
+
+.industries-mega .industry-tile:hover{
+    transform: none;
+}
+
+/* ───── 3  OPTIONAL – KEEP TILES SAME HEIGHT (nicely aligned rows) ───── */
+@media (min-width: 768px){                    /* tablet & up */
+    .industries-mega .industry-tile{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+        min-height:200px;  /* Set minimum height for consistency */
+    }
+    .industries-mega .tile-head{
+        flex-shrink:0;  /* Header stays fixed size */
+    }
+    .industries-mega .tile-blurb{
+        flex-shrink:0;  /* Blurb stays fixed size */
+    }
+    .industries-mega .tile-links{
+        flex-grow:1;  /* Links area can grow */
+    }
+    .industries-mega .tile-more{
+        margin-top:auto;  /* Push to bottom */
+        flex-shrink:0;
+    }
+}
+
+/* ========== INDUSTRIES MEGA-MENU LAYOUT ========== */
+
+/* 1 ▸  reduce Bootstrap's default gutters for tighter layout */
+.industries-mega .row{
+    margin-left:-10px;
+    margin-right:-10px;
+}
+
+.industries-mega .row > [class*="col-"]{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* 2 ▸  add only a BOTTOM gap so columns never collide */
+.industries-mega .industry-tile{
+    margin-bottom:18px;          /* vertical breathing room   */
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    padding:0;                   /* Remove padding - children handle spacing */
+    transition:none;             /* kills the lift animation  */
+    overflow:hidden;             /* Ensure children don't overflow */
+}
+
+/* 3 ▸  make all cards equal-height on md / lg so rows stay even */
+@media (min-width: 768px){              /*  ≥ md  */
+    .industries-mega .industry-tile{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+        min-height:200px;  /* Set minimum height for consistency */
+    }
+    .industries-mega .tile-head{
+        flex-shrink:0;  /* Header stays fixed size */
+    }
+    .industries-mega .tile-blurb{
+        flex-shrink:0;  /* Blurb stays fixed size */
+    }
+    .industries-mega .tile-links{
+        flex-grow:1;  /* Links area can grow */
+    }
+    .industries-mega .tile-more{
+        margin-top:auto;  /* Push to bottom */
+        flex-shrink:0;
+    }
+}
+    
+    /* ===== Primary button palettes (solid + white text) ===== */
+.btn-real-estate      { background:var(--color-real-estate); }
+.btn-real-estate:hover{ background:var(--color-real-estate-hover); }
+
+.btn-mortgage         { background:var(--color-mortgage); }
+.btn-mortgage:hover   { background:var(--color-mortgage-hover); }
+
+.btn-appraisal        { background:var(--color-appraisal); }
+.btn-appraisal:hover  { background:var(--color-appraisal-hover); }
+
+.btn-osha             { background:var(--color-osha); }
+.btn-osha:hover       { background:var(--color-osha-hover); }
+
+.btn-healthcare       { background:var(--color-healthcare); }
+.btn-healthcare:hover { background:var(--color-healthcare-hover); }
+
+.btn-compliance,
+.btn-hr               { background:var(--color-hr); }
+.btn-compliance:hover,
+.btn-hr:hover         { background:var(--color-hr-hover); }
+
+/* ===== Secondary (outline) CTA: white background + colored outline/text ===== */
+.button-outline{
+  background:#fff !important;
+  border:2px solid currentColor;
+  color:currentColor !important;
+  transition:none; /* no hover animation */
+}
+.button-outline.btn-real-estate { color:var(--color-real-estate); border-color:var(--color-real-estate); }
+.button-outline.btn-mortgage    { color:var(--color-mortgage); border-color:var(--color-mortgage); }
+.button-outline.btn-appraisal   { color:var(--color-appraisal); border-color:var(--color-appraisal); }
+.button-outline.btn-osha        { color:var(--color-osha); border-color:var(--color-osha); }
+.button-outline.btn-healthcare  { color:var(--color-healthcare); border-color:var(--color-healthcare); }
+.button-outline.btn-compliance,
+.button-outline.btn-hr          { color:var(--color-hr); border-color:var(--color-hr); }
+
+/* ===== Colored bottom border on each tile image ===== */
+.package-wrap.real-estate   .feature-image img{ border-bottom:4px solid var(--color-real-estate); }
+.package-wrap.mortgage      .feature-image img{ border-bottom:4px solid var(--color-mortgage); }
+.package-wrap.appraisal     .feature-image img{ border-bottom:4px solid var(--color-appraisal); }
+.package-wrap.osha          .feature-image img{ border-bottom:4px solid var(--color-osha); }
+.package-wrap.healthcare    .feature-image img{ border-bottom:4px solid var(--color-healthcare); }
+.package-wrap.compliance    .feature-image img,
+.package-wrap.hr            .feature-image img{ border-bottom:4px solid var(--color-hr); }
+    .industries-mega .tile-more{ margin-top:auto; }
+}
+
+/* 4 ▸  optional: give every row extra air on large screens only */
+@media (min-width: 992px){
+    .industries-mega .industry-tile{ margin-bottom:20px; }
+}
+
+/* ================= PRODUCT SHOWCASE BUTTONS ================= */
+/* Scope: only affect CTAs inside the product tiles section */
+.product-showcase-section .package-wrap a.button-primary{ 
+  border-radius:50px;           /* keep pill ends */
+  font-weight:600;
+}
+
+/* Neutralize any global link-color inside tiles */
+.product-showcase-section .real-estate a,
+.product-showcase-section .mortgage a,
+.product-showcase-section .appraisal a,
+.product-showcase-section .osha a,
+.product-showcase-section .healthcare a,
+.product-showcase-section .compliance a { color: inherit; }
+
+/* -------- Primary CTA (solid, white text) -------- */
+.product-showcase-section .button-primary:not(.button-outline){ 
+  color:#fff !important; 
+  border:0;
+}
+
+/* backgrounds + hover for each industry */
+.product-showcase-section .btn-real-estate:not(.button-outline){ background:var(--color-real-estate) !important; }
+.product-showcase-section .btn-mortgage:not(.button-outline){    background:var(--color-mortgage) !important; }
+.product-showcase-section .btn-appraisal:not(.button-outline){   background:var(--color-appraisal) !important; }
+.product-showcase-section .btn-osha:not(.button-outline){        background:var(--color-osha) !important; }
+.product-showcase-section .btn-healthcare:not(.button-outline){  background:var(--color-healthcare) !important; }
+.product-showcase-section .btn-compliance:not(.button-outline),
+.product-showcase-section .btn-hr:not(.button-outline){  background:var(--color-hr) !important; }
+
+.product-showcase-section .btn-real-estate:not(.button-outline):hover{ background:var(--color-real-estate-hover) !important; }
+.product-showcase-section .btn-mortgage:not(.button-outline):hover{    background:var(--color-mortgage-hover) !important; }
+.product-showcase-section .btn-appraisal:not(.button-outline):hover{   background:var(--color-appraisal-hover) !important; }
+.product-showcase-section .btn-osha:not(.button-outline):hover{        background:var(--color-osha-hover) !important; }
+.product-showcase-section .btn-healthcare:not(.button-outline):hover{  background:var(--color-healthcare-hover) !important; }
+.product-showcase-section .btn-compliance:not(.button-outline):hover,
+.product-showcase-section .btn-hr:not(.button-outline):hover{  background:var(--color-hr-hover) !important; }
+
+/* -------- Secondary CTA (white outline, no hover fill) -------- */
+.product-showcase-section .button-outline{
+  background:#fff !important;
+  border:2px solid currentColor;
+  color:currentColor !important;
+  transition:none;
+}
+
+.product-showcase-section .button-outline.btn-real-estate { color:var(--color-real-estate) !important; border-color:var(--color-real-estate) !important; }
+.product-showcase-section .button-outline.btn-mortgage    { color:var(--color-mortgage) !important; border-color:var(--color-mortgage) !important; }
+.product-showcase-section .button-outline.btn-appraisal   { color:var(--color-appraisal) !important; border-color:var(--color-appraisal) !important; }
+.product-showcase-section .button-outline.btn-osha        { color:var(--color-osha) !important; border-color:var(--color-osha) !important; }
+.product-showcase-section .button-outline.btn-healthcare  { color:var(--color-healthcare) !important; border-color:var(--color-healthcare) !important; }
+.product-showcase-section .button-outline.btn-compliance,
+.product-showcase-section .button-outline.btn-hr  { color:var(--color-hr) !important; border-color:var(--color-hr) !important; }
+
+/* keep outline static on hover/focus (no color flip) */
+.product-showcase-section .button-outline:hover,
+.product-showcase-section .button-outline:focus{
+  background:#fff !important;
+  color:currentColor !important;
+  border-color:currentColor !important;
+}
+
+
+/* ===== Align mega-menu colors with Product Showcase ===== */
+
+/* Header bars on each tile */
+.industries-mega .real-estate  .tile-head{ background:var(--color-real-estate); }
+.industries-mega .mortgage     .tile-head{ background:var(--color-mortgage); }
+.industries-mega .appraisal    .tile-head{ background:var(--color-appraisal); }
+.industries-mega .osha         .tile-head{ background:var(--color-osha); }
+.industries-mega .healthcare   .tile-head{ background:var(--color-healthcare); }
+.industries-mega .compliance   .tile-head,
+.industries-mega .hr           .tile-head{ background:var(--color-hr); }
+
+/* Fix tile-head alignment to match new padding */
+.industries-mega .tile-head{
+    margin:0 !important;  /* Simple - no negative margins */
+    padding:12px 25px !important;
+}
+
+/* Add spacing to content within tiles */
+.industries-mega .tile-blurb{
+    padding:0 25px;
+    margin-top:15px;
+}
+
+.industries-mega .tile-links{
+    padding:0 25px;
+}
+
+.industries-mega .tile-more{
+    padding:0 25px 25px;
+}
+
+/* Link accents inside each tile (deep links + VIEW MORE) */
+.industries-mega .real-estate  a{ color:var(--color-real-estate); }
+.industries-mega .mortgage     a{ color:var(--color-mortgage); }
+.industries-mega .appraisal    a{ color:var(--color-appraisal); }
+.industries-mega .osha         a{ color:var(--color-osha); }
+.industries-mega .healthcare   a{ color:var(--color-healthcare); }
+.industries-mega .compliance   a,
+.industries-mega .hr          a{ color:var(--color-hr); }
+
+/* Optional: keep hover simple & consistent */
+.industries-mega .tile-links a:hover,
+.industries-mega .tile-more:hover{
+  text-decoration: underline;
+  background-color: transparent !important;
+}
+
+.callback-section:before { background-color:var(--color-umbrella-hover) !important; }
+
+/* Highlight "JOB-READY" in the callback heading */
+.callback-section .section-heading-white h2 .fa-title-accent{
+  color:#FFA726; /* amber - keep as orange accent */
+}
+
+/* Make the phone "Call:" line the specified orange */
+.callback-section .support-content h3 a{
+  color:#CC5500;           /* primary call color */
+  text-decoration:none;
+}
+.callback-section .support-content h3 a:hover,
+.callback-section .support-content h3 a:focus{
+  color:#e06700;           /* subtle hover tint */
+  text-decoration:underline;
+}
+
+/* Contact section brand color */
+.contact-section{ background-color:var(--color-umbrella-hover) !important; }
+
+/* Industry-specific contact section backgrounds */
+.industry-healthcare .contact-section { background-color: var(--color-healthcare) !important; }
+.industry-mortgage .contact-section { background-color: var(--color-mortgage) !important; }
+.industry-appraisal .contact-section { background-color: var(--color-appraisal) !important; }
+.industry-osha .contact-section { background-color: var(--color-osha) !important; }
+.industry-compliance .contact-section { background-color: var(--color-hr) !important; }
+.industry-real-estate .contact-section { background-color: var(--color-real-estate) !important; }
+
+/* Make the descriptive line readable on the blue background */
+.contact-section .contact-subcopy{
+  color:rgba(255,255,255,.9);
+  font-size:14px;
+}
+
+/* Keep the CTA row tidy at small widths */
+@media (max-width: 575.98px){
+  .contact-section .contact-btn-wrap .button-primary{ margin-top:12px; }
+}
+
+/* =========================================================
+   UNIVERSAL HOVER: lighter orange for generic primary CTAs
+   (does NOT affect industry-colored buttons or outline CTAs)
+   ========================================================= */
+
+/* Base text stays white on solid buttons */
+.button-primary:not(.button-outline):not([class*="btn-"]),
+.btn.btn-primary:not(.button-outline):not([class*="btn-"]) {
+  color:#fff;
+}
+
+/* footer lists inside widgets → no bullets/indents */
+.site-footer .widget_text ul{ list-style:none; padding-left:0; margin:0; }
+.site-footer .widget_text ul li{ margin-bottom:8px; }
+
+/* trust badges (use the existing .award-img area) */
+.site-footer .award-img img{ height:22px; margin-right:8px; opacity:.95; }
+.site-footer .award-img img:last-child{ margin-right:0; }
+
+/* small social icons under newsletter */
+.site-footer .footer-social a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:50%;
+  color:inherit; opacity:.85; margin-right:6px; transition:opacity .2s ease;
+}
+.site-footer .footer-social a:last-child{ margin-right:0; }
+.site-footer .footer-social a:hover{ opacity:1; }
+
+/* ===== Footer link hover → brand orange (#CC5500) ===== */
+/* Top widgets (lists inside columns) */
+.site-footer.footer-primary .widget ul li a:hover,
+.site-footer.footer-primary .widget ul li a:focus,
+.site-footer .footer-menu ul li a:hover,
+.site-footer .footer-menu ul li a:focus,
+.site-footer .footer-contact a:hover,
+.site-footer .footer-contact a:focus{
+  color: #CC5500 !important;
+}
+
+/* Bottom footer inline menu */
+.buttom-footer .footer-menu ul li a:hover,
+.buttom-footer .footer-menu ul li a:focus{
+  color: #CC5500 !important;
+}
+
+/* ===== Resources grid (compact, uses placeholder img17.jpg) ===== */
+.resource-section .section-heading p{ font-size:14px; margin-top:6px; }
+
+.resource-section .resource-card{ height:100%; }
+.resource-section .resource-thumb{ position:relative; margin:0; border-radius:8px; overflow:hidden; }
+.resource-section .resource-thumb img{
+  width:100%; height:260px; object-fit:cover; display:block; /* stable height */
+}
+
+/* color tint + tag */
+.resource-section .resource-thumb .tint{
+  position:absolute; inset:0; background:currentColor; opacity:.55; transition:opacity .2s ease;
+}
+.resource-section .industry-tag{
+  position:absolute; top:12px; left:12px;
+  background:currentColor; color:#fff; font-weight:700; font-size:11px; letter-spacing:.35px;
+  text-transform:uppercase; padding:6px 10px; border-radius:4px;
+}
+
+/* overlay content (compact text) */
+.resource-section .resource-overlay{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:18px; color:#fff; text-align:left;
+}
+.resource-section .resource-title{ font-size:18px; line-height:1.25; margin:0 0 8px; color:#fff; }
+.resource-section .resource-desc{ font-size:13px; line-height:1.4; margin:0 0 12px; opacity:.95; }
+.resource-section .btn-read{
+  display:inline-block; padding:8px 14px; border-radius:22px;
+  border:2px solid rgba(255,255,255,.95); color:#fff; font-weight:700; font-size:12px;
+}
+
+/* subtle hover only */
+.resource-section .card-link:hover .tint{ opacity:.6; }
+.resource-section .card-link:hover .btn-read{ border-color:#fff; }
+
+/* Industry color mapping (drives tag + tint via currentColor) */
+.resource-card.real-estate { color:var(--color-real-estate); }
+.resource-card.mortgage    { color:var(--color-mortgage); }
+.resource-card.appraisal   { color:var(--color-appraisal); }
+.resource-card.osha        { color:var(--color-osha); }
+.resource-card.healthcare  { color:var(--color-healthcare); }
+.resource-card.compliance,
+.resource-card.hr          { color:var(--color-hr); }
+
+/* small-screen tweaks */
+@media (max-width:575.98px){
+  .resource-section .resource-thumb img{ height:220px; }
+  .resource-section .resource-title{ font-size:17px; }
+  .resource-section .resource-desc{ font-size:12px; }
+}
+
+/* ===== Resources: force correct industry colors (no currentColor bleed) ===== */
+
+/* 1) Map each card to a CSS variable */
+.resource-section .resource-card{ --resColor: #999; } /* fallback */
+.resource-section .resource-card.real-estate{ --resColor:var(--color-real-estate); }
+.resource-section .resource-card.mortgage{    --resColor:var(--color-mortgage); }
+.resource-section .resource-card.appraisal{   --resColor:var(--color-appraisal); }
+.resource-section .resource-card.osha{        --resColor:var(--color-osha); }
+.resource-section .resource-card.healthcare{  --resColor:var(--color-healthcare); }
+.resource-section .resource-card.compliance,
+.resource-section .resource-card.hr{  --resColor:var(--color-hr); }
+
+/* 2) Use the variable for the visual parts, not currentColor */
+.resource-section .resource-thumb .tint{ background: var(--resColor); }
+.resource-section .resource-thumb .industry-tag{ background: var(--resColor); }
+
+/* 3) Neutralize any link color inside the card so it can't hijack colors */
+.resource-section .resource-card .card-link{ color: inherit !important; }
+
+/* Resources: center the "Read More" text and stop full-width stretching */
+.resource-section .resource-overlay{
+  align-items: flex-start;            /* children size to content, not 100% */
+}
+
+.resource-section .btn-read{
+  display: inline-flex;               /* center text inside the pill */
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;             /* ignore overlay's stretch */
+  text-align: center;
+  min-width: 120px;                   /* optional: consistent pill width */
+}
+/* ==================== Testimonials: centered, larger type, solid stars ==================== */
+
+/* If the theme injects avatars/icons, hide them */
+.testimonial-section .author-img,
+.testimonial-section .testimonial-thumb,
+.testimonial-section .testimonial-icon { display:none !important; }
+
+/* Center all slide content; keep site fonts/colors */
+.testimonial-section .testimonial-item,
+.testimonial-section .fa-testi-card { text-align:center; color:inherit; }
+
+/* No card chrome */
+.testimonial-section .fa-testi-card{
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:14px 10px;
+  max-width:920px;
+  margin:0 auto;
+}
+
+/* Name: bigger & bolder */
+.testimonial-section .fa-testi-name{
+  margin:0 0 12px;
+  font-size:36px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+/* Stars: always five SOLID icons; gray the "unearned" ones */
+.testimonial-section .fa-testi-stars{
+  font-size:40px;
+  line-height:1;
+  margin:8px 0 12px;
+}
+.testimonial-section .fa-testi-stars .fa-star{ color:#FFC107; }                 /* gold */
+.testimonial-section .fa-testi-stars .fa-star.is-gray{ color:rgba(255,255,255,.35); } /* gray on dark bg */
+
+/* Role + paragraph (bigger & italic) */
+.testimonial-section .fa-testi-role{
+  font-weight:600;
+  margin:6px 0 14px;
+  opacity:.95;
+}
+.testimonial-section .fa-testi-text{
+  margin:0;
+  font-style:italic;
+  font-size:20px;
+  line-height:1.6;
+}
+
+/* Let the slider control heights naturally */
+.testimonial-section .testimonial-item{ height:auto; }
+.testimonial-section .testimonial-item > *{ height:auto; }
+
+/* Responsive scaling */
+@media (max-width:575.98px){
+  .testimonial-section .fa-testi-name{ font-size:28px; }
+  .testimonial-section .fa-testi-stars{ font-size:32px; }
+  .testimonial-section .fa-testi-text{ font-size:18px; }
+}
+
+/* ===================== Subscribe / Offer ===================== */
+.fa-subscribe{
+  background:var(--color-umbrella-hover); /* brand blue */
+  position:relative;
+  padding: 56px 0; /* respect theme spacing if it differs */
+}
+.fa-subscribe .text-white{ color:#fff !important; }
+.fa-subscribe .text-white-80{ color:rgba(255,255,255,.85) !important; }
+.fa-subscribe .text-white-70{ color:rgba(255,255,255,.70) !important; }
+.fa-subscribe .dash-style{ color:#fff; }
+
+/* Headline highlight */
+.fa-subscribe .highlight-amber{
+  color:#FFA726; /* Keep as amber/orange - not mortgage color */
+}
+
+/* Promo pill */
+.fa-subscribe .promo-pill{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:8px 14px; border-radius:999px;
+  background: rgba(255,255,255,.10);
+  border:2px solid var(--color-mortgage);
+  color:#fff;
+}
+.fa-subscribe .promo-pill .pill-label{
+  font-size:12px; letter-spacing:.4px; text-transform:uppercase;
+  opacity:.9;
+}
+.fa-subscribe .promo-pill .pill-code{
+  font-size:16px;
+}
+
+/* Form */
+.fa-subscribe-form .form-control{
+  height: 54px;
+  border-radius: 999px;
+  padding: 0 16px;
+  border: none;
+}
+.fa-subscribe-form .form-control:focus{
+  outline:0; box-shadow: 0 0 0 0.2rem rgba(255,167,38,.25);
+}
+.fa-subscribe-form .button-primary{
+  height: 54px;
+  border-radius: 999px;
+  font-weight:700;
+}
+
+/* Small copy sizes */
+.fa-subscribe .lead{ font-size:16px; line-height:1.6; }
+.fa-subscribe .tiny{ font-size:12px; }
+
+/* Responsive */
+@media (max-width: 575.98px){
+  .fa-subscribe{ padding: 40px 0; }
+  .fa-subscribe .promo-pill{ display:flex; margin-top:6px; }
+}
+/* ===== Client/Partner strip ===== */
+
+/* Brand background (covers sections that use :before overlays too) */
+.client-section { background-color:#173C97 !important; }
+.client-section:before { background-color:#173C97 !important; }
+
+/* Logo sizing & spacing */
+.client-section .client-item { text-align:center; }
+.client-section .client-logo img{
+  max-height:46px;           /* adjust 40–56px to taste */
+  width:auto;
+  opacity:.95;
+  transition:opacity .2s ease, transform .2s ease;
+  filter:none;               /* ensure white logos render crisp */
+}
+.client-section .client-logo img:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+/* If your slider duplicates items, keep consistent spacing */
+.client-section .client-slider .client-item{
+  padding:18px 16px;
+}
+
+/* On small screens, give a tad more vertical room */
+@media (max-width:575.98px){
+  .client-section .client-slider .client-item{ padding:14px 10px; }
+  .client-section .client-logo img{ max-height:40px; }
+}
+
+/* ===== Tools & Services (activity-section revamp) ===== */
+.fa-activity .fa-activity-item{
+  background:#fff;                 /* matches site cards; remove if you want transparent */
+  border-radius:14px;
+  padding:22px 20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  height:100%;
+  text-align:left;
+}
+.fa-activity .fa-activity-item h4{
+  font-weight:800;
+  margin:12px 0 8px;
+}
+.fa-activity .fa-activity-item p{
+  margin:0 0 14px;
+}
+
+/* Icon treatment (Font Awesome) */
+.fa-activity .fa-ico{
+  width:56px; height:56px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#173C97;              /* brand blue */
+  color:#fff; font-size:22px;
+  box-shadow:0 4px 10px rgba(23,60,151,.25);
+}
+
+/* Compact button to suit card footprint */
+.fa-activity .button-sm{
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:700;
+  line-height:1;
+}
+
+/* Hover polish */
+.fa-activity .fa-activity-item:hover .fa-ico{
+  transform:translateY(-1px);
+  transition:transform .15s ease;
+}
+
+/* Responsive spacing */
+@media (max-width:575.98px){
+  .fa-activity .fa-activity-item{ padding:18px; }
+}
+
+/* Subscribe section amber highlight */
+.subscribe-section .highlight-amber{
+  color:#FFA726 !important;   /* Keep as amber/orange - not mortgage color */
+  font-weight:800;            /* optional emphasis */
+  letter-spacing:.2px;        /* optional polish */
+}
+/* ===== Industry banner bottom stripe ===== */
+.home-banner-section{ position: relative; }
+.home-banner-section .industry-stripe{
+  position:absolute; left:0; right:0; bottom:0;
+  height:30px;                 /* stripe thickness */
+  background: var(--industry-color, var(--color-umbrella));
+  z-index: 2;
+}
+
+/* ========= Industry Hero tweaks (keeps default theme spacing) ========= */
+.industry-hero { position: relative; }
+.industry-hero .banner-kicker{
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 0 6px;
+  color: rgba(255,255,255,.92);
+}
+.industry-hero .banner-subtitle{
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: rgba(255,255,255,.92);
+}
+.industry-hero .banner-delivery{
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: rgba(255,255,255,.88);
+}
+.industry-hero .approval-note{
+  margin: 14px 0 0;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.92);
+}
+.industry-hero .approval-note i{
+  margin-right: 6px;
+  color: var(--industry-color, var(--color-real-estate));
+}
+
+/* Bottom color stripe (per-industry color) */
+.home-banner-section .industry-stripe{
+  position:absolute; left:0; right:0; bottom:0;
+  height:30px;
+  background: var(--industry-color, var(--color-umbrella));
+  z-index: 2;
+}
+
+/* Optional: per-industry color mapping set on <body> */
+body.industry-real-estate { --industry-color:var(--color-real-estate); --industry-color-hover:var(--color-real-estate-hover); }
+body.industry-mortgage    { --industry-color:var(--color-mortgage); --industry-color-hover:var(--color-mortgage-hover); }
+body.industry-appraisal   { --industry-color:var(--color-appraisal); --industry-color-hover:var(--color-appraisal-hover); }
+body.industry-osha        { --industry-color:var(--color-osha); --industry-color-hover:var(--color-osha-hover); }
+body.industry-healthcare  { --industry-color:var(--color-healthcare); --industry-color-hover:var(--color-healthcare-hover); }
+body.industry-compliance  { --industry-color:var(--color-hr); --industry-color-hover:var(--color-hr-hover); }
+
+/* Responsive minor padding on very small screens */
+@media (max-width: 575.98px){
+  .industry-hero .banner-subtitle{ font-size: 16px; }
+  .industry-hero .banner-delivery{ font-size: 14px; }
+}
+
+/* ===== Industry Hero: sizing + spacing fix on the exact wrapper ===== */
+
+/* Typography */
+.home-banner-section.industry-hero .banner-title{
+  font-size:60px;            /* h1 */
+  line-height:1.1;
+}
+.home-banner-section.industry-hero .banner-kicker,
+.home-banner-section.industry-hero p{
+  font-size:18px;
+}
+
+/* Spacing on the requested wrapper: use padding (margin won't apply to abs-pos) */
+.home-banner-section.industry-hero .home-banner-items .banner-content-wrap{
+  padding-top:160px !important;
+  padding-bottom:50px !important;
+}
+
+/* In some builds the wrapper (or its inner) is vertically centered via transform.
+   Kill that so our padding actually shows. */
+.home-banner-section.industry-hero .home-banner-items .banner-content-wrap{
+  transform:none !important;
+  -webkit-transform:none !important;
+}
+
+/* Safety: if the theme sets a fixed height/100% layout on the inner content,
+   make sure it doesn't swallow the padding. */
+.home-banner-section.industry-hero .home-banner-items .banner-content-wrap .banner-content{
+  height:auto !important;
+}
+
+/* Industry hero: paragraph spacing */
+.home-banner-section.industry-hero .home-banner-items .banner-content p{
+  margin-bottom: 18px !important;
+}
+/* ===== Find Courses card: white, elevated, compact ===== */
+.home-banner-section.industry-hero .trip-search-section .trip-search-inner.find-courses-form{
+  background:#fff !important;             /* switch from blue to white */
+  color:#1d1d1d;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+  padding:18px 18px 16px;                 /* tighter padding */
+}
+
+/* Title */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .find-title{
+  margin:0 0 10px;
+  font-weight:800;
+  font-size:20px;
+  color:#111;
+}
+
+/* CTA uses per-industry color */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .btn-find{
+  width:100%;
+  height:44px;
+  border:none;
+  border-radius:8px;
+  font-weight:700;
+  background:var(--industry-accent);
+  color:#fff;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .btn-find:hover{
+  filter:brightness(1.08);
+}
+
+/* Make sure earlier "blue card" rules don't leak back in */
+.home-banner-section.industry-hero .trip-search-section .trip-search-inner.secondary-bg{
+  background:#fff !important;
+}
+
+/* ================= Industry pages: CTA colors ================= */
+/* Note: Industry page header colors are in assets/css/fa/fa-nav-footer.css */
+
+/* 2) Primary CTAs on this page = industry color (incl. Student Login) */
+body.industry-page .button-primary,
+body.industry-page .btn-primary,
+body.industry-page .header-btn .button-primary,
+body.industry-page .trip-search-section .find-courses-form .btn-find,
+body.industry-page .trip-search-section input[type="submit"],
+body.industry-page a.button-primary {
+  background: var(--industry-accent) !important;
+  border-color: var(--industry-accent) !important;
+  color:#fff !important;
+}
+body.industry-page .button-primary:hover,
+body.industry-page .btn-primary:hover,
+body.industry-page .header-btn .button-primary:hover,
+body.industry-page .trip-search-section .find-courses-form .btn-find:hover,
+body.industry-page .trip-search-section input[type="submit"]:hover,
+body.industry-page a.button-primary:hover{
+  background: var(--industry-color-hover, var(--industry-accent)) !important;
+  border-color: var(--industry-color-hover, var(--industry-accent)) !important;
+  color:#fff !important;
+}
+
+/* 3) Outline / secondary buttons adopt the industry color too */
+body.industry-page .button-outline,
+body.industry-page .btn-outline,
+body.industry-page a.button-outline{
+  background: transparent !important;
+  border: 2px solid var(--industry-accent) !important;
+  color: var(--industry-accent) !important;
+}
+body.industry-page .button-outline:hover,
+body.industry-page .btn-outline:hover,
+body.industry-page a.button-outline:hover{
+  background: var(--industry-accent) !important;
+  color:#fff !important;
+}
+
+/* 4) Catch-all for any theme "More…" style links that look like buttons */
+body.industry-page a[class*="more"],
+body.industry-page .view-all a,
+body.industry-page a.button{
+  border-color: var(--industry-accent);
+  color: var(--industry-accent);
+}
+body.industry-page a[class*="more"]:hover,
+body.industry-page .view-all a:hover,
+body.industry-page a.button:hover{
+  background: var(--industry-accent);
+  color:#fff;
+}	
+
+/* ================= Real Estate catalog (state-driven carousel) ================= */
+.re-catalog{
+  padding: 5px 0;
+  background: #fff;
+  text-align:center;
+}
+.re-catalog .container{
+  position: relative;
+}
+.re-catalog__header{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.re-catalog__header .section-heading{
+  text-align:center;
+  margin-bottom:0;
+}
+.re-catalog__header .section-heading p.lead{
+  max-width:780px;
+  margin:12px auto 0;
+  font-size: 15px;
+  color: #383838;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+/* industry accent overrides */
+body.industry-real-estate .dash-style,
+body.industry-real-estate .section-heading h5,
+body.industry-real-estate .section-heading .dash-style{
+  color: var(--color-real-estate);
+}
+body.industry-mortgage .dash-style,
+body.industry-mortgage .section-heading h5,
+body.industry-mortgage .section-heading .dash-style{
+  color: var(--color-mortgage);
+}
+body.industry-appraisal .dash-style,
+body.industry-appraisal .section-heading h5,
+body.industry-appraisal .section-heading .dash-style{
+  color: var(--color-appraisal);
+}
+body.industry-osha .dash-style,
+body.industry-osha .section-heading h5,
+body.industry-osha .section-heading .dash-style{
+  color: var(--color-osha);
+}
+body.industry-healthcare .dash-style,
+body.industry-healthcare .section-heading h5,
+body.industry-healthcare .section-heading .dash-style{
+  color: var(--color-healthcare);
+}
+body.industry-compliance .dash-style,
+body.industry-compliance .section-heading h5,
+body.industry-compliance .section-heading .dash-style{
+  color: var(--color-hr);
+}
+.re-catalog__state-picker{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.re-catalog__state-picker .state-label{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: #4a4a4a;
+  margin: 0;
+}
+.re-catalog__state-select-wrapper{
+  position: relative;
+}
+.re-catalog__state-select{
+  width: 260px;
+  border:1px solid #c8bdb2;
+  border-radius: 6px;
+  padding: 10px 40px 10px 14px;
+  font-size: 15px;
+  background:#fff;
+  cursor:pointer;
+}
+.re-catalog__select-icon{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform: translateY(-50%);
+  pointer-events:none;
+  color:#777;
+}
+.re-catalog__select-dropdown{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  width: 280px;
+  max-height:340px;
+  overflow:auto;
+  background:#fff;
+  border:1px solid #d9d2c8;
+  border-radius:8px;
+  box-shadow:0 18px 40px rgba(29,36,45,.18);
+  z-index:5;
+  text-align:left;
+}
+.re-catalog__select-search{
+  padding:10px 14px;
+  border-bottom:1px solid #eee7dc;
+  position:sticky;
+  top:0;
+  background:#fff;
+}
+.re-catalog__select-search input{
+  width:100%;
+  border:1px solid #d8cfc4;
+  border-radius:6px;
+  padding:8px 12px;
+  font-size:14px;
+}
+.re-catalog__group-title{
+  padding:10px 16px 6px;
+  font-size:12px;
+  letter-spacing:.08em;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#7b6a58;
+}
+.re-catalog__option{
+  padding:10px 16px;
+  cursor:pointer;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition: background .2s ease;
+}
+.re-catalog__option:hover{
+  background:#f3ece2;
+}
+.re-catalog__option--featured::after{
+  content:"★";
+  color:#d46a00;
+  font-size:12px;
+  margin-left:10px;
+}
+.re-catalog__tabs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content:center;
+  margin-bottom: 22px;
+  background:#fff;
+  border:1px solid rgba(223,210,194,.6);
+  border-radius:40px;
+  padding:8px;
+  box-shadow:0 8px 20px rgba(29,36,45,.08);
+}
+.re-catalog__tab{
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 15px;
+  color: #666;
+  position: relative;
+  padding: 10px 22px;
+  border-radius:30px;
+  transition: color .2s ease, background .2s ease;
+  outline: none;
+}
+.re-catalog__tab::after{
+  display:none;
+}
+.re-catalog__tab:hover{
+  color: var(--industry-accent);
+}
+.re-catalog__tab:focus{
+  outline: none;
+  box-shadow: none;
+}
+.re-catalog__tab.active{
+  background: var(--industry-accent);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(32,56,88,.18);
+}
+
+/* ===== Package Card Badge (on catalog cards) ===== */
+.package-wrap .package-badge{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--industry-accent, #04206A);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Empty card placeholder */
+.package-wrap.empty-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 40px;
+  text-align:center;
+  color:#5a5a5a;
+  font-weight:500;
+  min-height:400px;
+  background:#f9f9f9;
+  border-radius:8px;
+}
+
+/* Make empty card take full width in carousel */
+.re-catalog__carousel .slick-slide .col-lg-4.empty-state,
+.re-catalog__carousel .slick-slide .col-md-6.empty-state {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.package-wrap.empty-card p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Carousel container and slides */
+.re-catalog__carousel{
+  margin:0 -15px;
+}
+.re-catalog__carousel .slick-slide{
+  padding:0 15px;
+}
+.re-catalog__carousel .slick-slide > div{
+  height:100%;
+}
+
+/* Package wrap - use flexbox for equal heights */
+.re-catalog__carousel .package-wrap{
+  height:100%;
+  display:flex !important;
+  flex-direction:column;
+}
+
+/* Feature image with consistent aspect ratio */
+.re-catalog__carousel .feature-image{
+  position:relative;
+  width:100%;
+  padding-top:66.67%; /* 3:2 aspect ratio */
+  overflow:hidden;
+  background:#f5f5f5;
+}
+.re-catalog__carousel .feature-image img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.re-catalog__carousel .feature-image a{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+
+/* Content wrapper takes remaining space */
+.re-catalog__carousel .package-content-wrap{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:0;
+}
+
+/* Package meta (industry-colored bar with icons) */
+.re-catalog__carousel .package-meta{
+  background:var(--industry-accent, #c1241a);
+  padding:12px 20px;
+  margin:0;
+  flex-shrink:0;
+}
+.re-catalog__carousel .package-meta ul{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0;
+  padding:0;
+  list-style:none;
+  gap:30px;
+}
+.re-catalog__carousel .package-meta ul li{
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+.re-catalog__carousel .package-meta ul li i{
+  color:#fff;
+  font-size:16px;
+}
+
+/* Main package content area */
+.re-catalog__carousel .package-content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:20px 25px;
+}
+
+/* Title - limit to 2 lines */
+.re-catalog__carousel .package-content h3{
+  font-size:18px;
+  font-weight:700;
+  line-height:1.4;
+  margin:0 0 12px 0;
+  min-height:50px;
+  max-height:50px;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.re-catalog__carousel .package-content h3 a{
+  color:#2c2c2c;
+  text-decoration:none;
+}
+.re-catalog__carousel .package-content h3 a:hover{
+  color:var(--industry-accent);
+}
+
+/* Description - limit to 3 lines */
+.re-catalog__carousel .package-content > p{
+  font-size:14px;
+  line-height:1.5;
+  color:#666;
+  margin:0 0 12px 0;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:63px;
+  max-height:63px;
+}
+
+/* Course pricing display - centered with stacked layout */
+.re-catalog__carousel .course-pricing{
+  margin:0 0 15px 0;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  flex-shrink:0;
+}
+.re-catalog__carousel .course-pricing .price-current{
+  font-size:32px;
+  font-weight:700;
+  color:#4caf50;
+  line-height:1;
+}
+.re-catalog__carousel .course-pricing .price-original{
+  font-size:14px;
+  color:#999;
+  text-decoration:line-through;
+  font-weight:400;
+  line-height:1;
+}
+
+/* Buttons at bottom */
+.re-catalog__carousel .btn-wrap{
+  margin-top:auto;
+  padding-top:0;
+  display:flex !important;
+  justify-content:center !important;
+  flex-shrink:0;
+}
+.re-catalog__carousel .btn-wrap .button-primary{
+  display:inline-block !important;
+  width:auto !important;
+  padding:10px 25px !important;
+  background:var(--industry-accent, #c1241a) !important;
+  color:#fff !important;
+  text-align:center;
+  font-size:14px !important;
+  font-weight:600;
+  text-transform:none;
+  letter-spacing:normal;
+  border-radius:50px !important;
+  text-decoration:none;
+  border:2px solid var(--industry-accent, #c1241a) !important;
+  transition:background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  cursor:pointer;
+}
+.re-catalog__carousel .btn-wrap .button-primary:hover,
+.re-catalog__carousel .btn-wrap .button-primary:focus{
+  background:transparent !important;
+  border-color:var(--industry-accent, #c1241a) !important;
+  color:var(--industry-accent, #c1241a) !important;
+}
+
+.re-catalog__carousel-shell{
+  position:relative;
+}
+.re-catalog__nav{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  border:none;
+  background:#fff;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  box-shadow:0 8px 24px rgba(29,36,45,.14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#3a3a3a;
+  z-index:2;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+  padding:0;
+}
+.re-catalog__nav i{
+  pointer-events:none;
+  font-size:18px;
+}
+.re-catalog__nav:hover{
+  background: var(--industry-accent);
+  color:#fff;
+  box-shadow:0 10px 26px rgba(4,32,106,.2);
+}
+.re-catalog__nav--prev{
+  left:-24px;
+}
+.re-catalog__nav--next{
+  right:-24px;
+}
+
+@media (max-width: 991.98px){
+  .re-catalog__nav--prev{ left:-14px; }
+  .re-catalog__nav--next{ right:-14px; }
+}
+@media (max-width: 767.98px){
+  .re-catalog{
+    padding:56px 0;
+  }
+  .re-catalog__header{
+    gap:20px;
+  }
+  .re-catalog__state-picker{
+    flex-direction:column;
+  }
+  .re-catalog__nav{
+    display:none;
+  }
+}
+
+/* Banner title = industry color (no gradient) */
+.home-banner-section.industry-hero .banner-title{
+  color: var(--industry-accent) !important; /* fallback for RE */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+          background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+/* ================= Hero readability upgrades (industry-hero only) ================= */
+
+/* 1) Local scrim behind the left text block */
+.home-banner-section.industry-hero .banner-content{
+  position: relative;
+  z-index: 2;               /* sit above the section overlay */
+  max-width: 860px;         /* keep lines comfortable */
+}
+.home-banner-section.industry-hero .banner-content::before{
+  content:"";
+  position:absolute;
+  /* extend slightly around the text */
+  inset:-20px -28px -20px -28px;
+  /* dark-to-clear gradient, fades toward the form on the right */
+  background: linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.30) 45%, rgba(0,0,0,0) 100%);
+  border-radius: 10px;
+  z-index:-1;
+  /* adds a subtle "frosted" effect behind the text where supported */
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+/* 2) (Optional) slightly stronger section overlay tint — uses your variable */
+body.industry-page { --industry-overlay-opacity: .52; } /* try .52–.60; adjust per taste */
+
+/* 3) Subtle text shadow for the heading & paragraphs */
+.home-banner-section.industry-hero .banner-title,
+.home-banner-section.industry-hero .banner-content p{
+  text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+/* 4) Make inline emphasis readable inside paragraphs */
+.home-banner-section.industry-hero .banner-content p a,
+.home-banner-section.industry-hero .banner-content p strong{
+  color:#fff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+/* Kicker: use the industry color */
+.home-banner-section.industry-hero .banner-kicker{
+  color: var(--industry-accent) !important;
+}
+
+/* Title: default to white */
+.home-banner-section.industry-hero .banner-title{
+  color:#fff !important;
+  background:none !important;
+  -webkit-background-clip:initial !important;
+  background-clip:initial !important;
+  -webkit-text-fill-color:initial !important;
+}
+
+/* Only the wrapped phrase uses the industry color */
+.home-banner-section.industry-hero .banner-title .accent-industry{
+  color: var(--industry-accent) !important;
+}
+/* Accent just the "Real Estate." phrase inside the banner title */
+.home-banner-section.industry-hero .banner-content .banner-title .accent-industry{
+  color: var(--industry-accent) !important;
+  -webkit-text-fill-color: var(--industry-accent) !important; /* beats any prior text-fill */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+          background-clip: initial !important;
+}	
+
+/* ===== Course Catalog (destination-section) ===== */
+.fa-catalog { padding-top: 40px; padding-bottom: 40px; }
+.fa-catalog .section-heading .lead { max-width: 760px; margin: 0 auto 10px; }
+
+/* Tabs */
+.fa-catalog .catalog-tabs{
+  display:flex; overflow-x:auto; gap:10px; margin: 14px 0 22px;
+  border-bottom: 2px solid #e9edf3; padding-bottom: 8px;
+}
+.fa-catalog .catalog-tab{
+  appearance:none; border:0; background:transparent; color:#3b3b3b;
+  font-weight:700; padding:10px 14px; border-radius:8px;
+  position:relative; white-space:nowrap; outline:none;
+  transition: background .2s ease, color .2s ease;
+}
+.fa-catalog .catalog-tab:hover{ background:#f4f6f9; }
+.fa-catalog .catalog-tab.active{
+  color: var(--industry-accent);
+}
+.fa-catalog .catalog-tab.active::after{
+  content:""; position:absolute; left:10px; right:10px; bottom:-10px;
+  height:3px; background: var(--industry-accent); border-radius:2px;
+}
+
+/* Panel shell */
+.fa-catalog .catalog-panel{ display:none; }
+.fa-catalog .catalog-panel.active{ display:block; }
+
+/* Top States belt */
+.fa-catalog .top-states{
+  display:flex; flex-wrap:wrap; gap:10px; margin: 0 0 12px;
+}
+.fa-catalog .top-states .state-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 14px; border-radius:999px; font-weight:700;
+  background: var(--industry-accent); color:#fff; border:0;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  transition: transform .15s ease, filter .15s ease;
+}
+.fa-catalog .top-states .state-pill:hover{ transform: translateY(-1px); filter:brightness(1.08); }
+
+/* Search + grid */
+.fa-catalog .state-search{
+  display:flex; align-items:center; gap:10px; margin: 8px 0 16px;
+}
+.fa-catalog .state-search input[type="text"]{
+  flex:1; height:44px; border:1px solid #e5e7eb; border-radius:8px; padding:0 12px;
+}
+.fa-catalog .state-search .clear-btn{
+  height:44px; border:0; border-radius:8px; padding:0 12px; font-weight:700;
+  background:#f2f4f7; color:#333;
+}
+.fa-catalog .state-search .clear-btn:hover{ background:#e7eaf0; }
+
+/* Grid of other states */
+.fa-catalog .state-grid{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:10px; margin-bottom: 12px;
+}
+.fa-catalog .state-chip{
+  display:block; width:100%; text-align:center; padding:10px 12px;
+  background:#fff; border:1.5px solid #e6e9f0; border-radius:999px; color:#0f172a;
+  font-weight:600; transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+.fa-catalog .state-chip:hover{
+  border-color: var(--industry-accent); color: var(--industry-accent);
+  background:#fff;
+}
+
+/* Collapsed / expand */
+.fa-catalog .collapse-wrap{ position:relative; }
+.fa-catalog .collapse-mask{ display:none; }
+.fa-catalog .collapse-toggle{
+  display:inline-block; margin: 4px 0 0; font-weight:700; border:0; background:transparent;
+  color: var(--industry-accent);
+}
+.fa-catalog .collapsed .collapse-mask{ 
+  display:block; position:absolute; inset:auto 0 0 0; height:80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 70%);
+  pointer-events:none;
+}
+
+/* Chip when filtered */
+.fa-catalog .state-chip[hidden]{ display:none !important; }
+
+/* Small screens */
+@media (max-width:575.98px){
+  .fa-catalog .state-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+.home-banner-section {
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 575px) {
+  .home-banner-section {
+    padding-bottom: 50px;
+  }
+  .home-banner-section .banner-content-wrap {
+    padding-bottom: 50px;
+  }
+  
+  /* ===== Catalog UX polish: bigger tabs, clear sections, standout search ===== */
+
+/* Tabs → large category pills */
+.fa-catalog .catalog-tabs{
+  display:flex; flex-wrap:wrap; gap:12px;
+  border:0; padding:0; margin: 6px 0 22px;
+}
+.fa-catalog .catalog-tab{
+  appearance:none; border:2px solid #e6e9f0; background:#fff; color:#0f172a;
+  font-weight:800; font-size:16px; text-transform:none; letter-spacing:.2px;
+  padding:12px 18px; border-radius:999px; line-height:1; white-space:nowrap;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+  transition: transform .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+}
+.fa-catalog .catalog-tab:hover{
+  transform: translateY(-1px);
+  border-color: var(--industry-accent);
+  color: var(--industry-accent);
+}
+.fa-catalog .catalog-tab.active{
+  background: var(--industry-accent);
+  border-color: var(--industry-accent);
+  color:#fff;
+  box-shadow:0 10px 22px rgba(0,0,0,.14);
+}
+
+/* Panel sections (cards) */
+.fa-catalog .panel-section{
+  background:#fff;
+  border:1px solid #eef1f6;
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Section headings */
+.fa-catalog .group-label{
+  margin:0 0 10px;
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#64748b;
+}
+.fa-catalog .group-label strong{
+  color: var(--industry-accent);
+}
+
+/* Top States pills get a bit larger */
+.fa-catalog .top-states{
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.fa-catalog .top-states .state-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 16px; border-radius:999px; font-weight:800;
+  background: var(--industry-accent); color:#fff; border:0;
+  box-shadow:0 8px 18px rgba(0,0,0,.12);
+  transition: transform .15s ease, filter .15s ease;
+}
+.fa-catalog .top-states .state-pill:hover{ transform:translateY(-1px); filter:brightness(1.08); }
+
+/* Search bar: prominent with icon + focus ring */
+.fa-catalog .state-search{ position:relative; display:flex; gap:10px; align-items:center; }
+.fa-catalog .state-search::before{
+  content:"\f002"; /* FA search icon */
+  font-family:"Font Awesome 5 Free"; font-weight:900;
+  position:absolute; left:14px; color:#94a3b8; pointer-events:none;
+}
+.fa-catalog .state-search input[type="text"]{
+  flex:1; height:50px; border:2px solid var(--industry-accent);
+  border-radius:10px; padding:0 14px 0 40px; background:#fff;
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+.fa-catalog .state-search input[type="text"]:focus{
+  outline:0;
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--industry-accent) 24%, transparent);
+}
+@supports not (color-mix(in srgb, #000 10%, transparent)){
+  .fa-catalog .state-search input[type="text"]:focus{ box-shadow:0 0 0 4px rgba(193,36,26,.24); }
+}
+.fa-catalog .state-search .clear-btn{
+  height:50px; border:2px solid #e6e9f0; border-radius:10px; padding:0 14px;
+  font-weight:800; background:#f8fafc; color:#0f172a;
+}
+.fa-catalog .state-search .clear-btn:hover{
+  border-color: var(--industry-accent);
+  color: var(--industry-accent);
+}
+
+/* Other states grid stays compact but clearer */
+.fa-catalog .state-grid{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap:10px; margin-top:8px;
+}
+.fa-catalog .state-chip{
+  display:block; text-align:center; padding:10px 12px;
+  background:#fff; border:1.5px solid #e6e9f0; border-radius:999px; color:#0f172a;
+  font-weight:700; transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.fa-catalog .state-chip:hover{
+  border-color: var(--industry-accent);
+  color: var(--industry-accent);
+}
+
+/* Expand/collapse polish */
+.fa-catalog .collapse-wrap{ position:relative; }
+.fa-catalog .collapse-mask{ display:none; }
+.fa-catalog .collapse-toggle{
+  display:inline-flex; align-items:center; gap:6px;
+  margin: 8px 0 0; font-weight:800; border:0; background:transparent;
+  color: var(--industry-accent);
+}
+.fa-catalog .collapsed .collapse-mask{
+  display:block; position:absolute; inset:auto 0 0 0; height:80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 70%);
+  pointer-events:none;
+}
+
+/* Small screens */
+@media (max-width:575.98px){
+  .fa-catalog .catalog-tab{ font-size:15px; padding:10px 14px; }
+  .fa-catalog .state-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Catalog lead blurb under tabs */
+.fa-catalog .catalog-lead{
+  margin: -4px 0 18px;   /* tucks closer to tabs, leaves room above panels */
+  color: #334155;        /* readable on light background */
+}
+
+
+/* Partners presentation inside the original activity-section */
+.activity-section.activity-bg-image .activity-inner .activity-item {
+  text-align: center;
+}
+
+/* Make logos render crisp on the dark background and never break the columns */
+.activity-section.activity-bg-image .activity-icon img {
+  max-height: 48px;
+  width: auto;
+  display: inline-block;
+  filter: brightness(0) invert(1); /* white-on-dark; remove if your logos are already white */
+}
+
+/* Ensure the icon fallback matches sizing */
+.activity-section.activity-bg-image .activity-icon i.fas {
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Tight, consistent spacing */
+.activity-section.activity-bg-image .activity-icon { margin-bottom: 10px; }
+.activity-section.activity-bg-image .activity-content .title,
+.activity-section.activity-bg-image .activity-content h4 { margin: 0 0 4px; }
+
+/* Help prevent a column from "disappearing" on some breakpoints */
+.activity-section.activity-bg-image .activity-inner.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.activity-section.activity-bg-image .activity-inner .col-lg-2,
+.activity-section.activity-bg-image .activity-inner .col-md-4,
+.activity-section.activity-bg-image .activity-inner .col-6 {
+  display: block;
+}
+/* Partners logos inside the original activity-section */
+.activity-section.activity-bg-image .activity-icon img{
+  max-height:48px; width:auto; display:inline-block;
+  filter:brightness(0) invert(1); /* keep logos white on dark bg */
+}
+
+.activity-section.activity-bg-image .activity-icon{ margin-bottom:10px; }
+.activity-section.activity-bg-image .activity-content h4{ margin:0 0 4px; }
+
+/* Ensure the row doesn't collapse and all cols show */
+.activity-section.activity-bg-image .activity-inner.row{
+  display:flex; flex-wrap:wrap;
+}
+.activity-section.activity-bg-image .activity-inner.row > [class*="col-"]{
+  display:block;
+}
+
+.fa-select{
+  position:relative;
+}
+.fa-select--simple select{
+  appearance:none;
+  width:100%;
+  border:1px solid #c8bdb2;
+  border-radius:6px;
+  padding:10px 48px 10px 16px;
+  font-size:15px;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23606060' d='M6 8 0 0h12z'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px;
+  font-family:"Open Sans", sans-serif;
+  color:#2f2f2f;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.fa-select--simple:focus-within select{
+  border-color: var(--industry-accent, #04206A);
+  box-shadow:0 0 0 2px rgba(4,32,106,.08);
+}
+
+.re-catalog__select-dropdown{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  width: 280px;
+  max-height:340px;
+  overflow:auto;
+  background:#fff;
+  border:1px solid #d9d2c8;
+  border-radius:8px;
+  box-shadow:0 12px 28px rgba(29,36,45,.18);
+  z-index:10;
+  text-align:left;
+}
+.re-catalog__select-search{
+  padding:10px 14px;
+  border-bottom:1px solid #eee7dc;
+  position:sticky;
+  top:0;
+  background:#fff;
+}
+.re-catalog__select-search input{
+  width:100%;
+  border:1px solid #d8cfc4;
+  border-radius:6px;
+  padding:8px 12px;
+  font-size:14px;
+}
+.re-catalog__group-title{
+  padding:10px 16px 6px;
+  font-size:12px;
+  letter-spacing:.08em;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#7b6a58;
+}
+.re-catalog__option{
+  padding:10px 16px;
+  cursor:pointer;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition: background .2s ease;
+  color:#2f2f2f;
+}
+.re-catalog__option:hover{
+  background:#f3ece2;
+}
+.re-catalog__option--featured::after{
+  content:"★";
+  color:#d46a00;
+  font-size:12px;
+  margin-left:10px;
+}
+.re-catalog__option.is-selected{
+  background:#efe5d8;
+  font-weight:600;
+  color: var(--industry-accent, #04206A);
+}
+
+.find-courses-form p{
+  font-size:15px;
+  color:#383838;
+  font-family:"Open Sans", sans-serif;
+  line-height:1.6;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group > label{
+  display:block !important;
+  font-size:14px !important;
+  font-weight:600 !important;
+  color:#555 !important;
+  margin-bottom:8px !important;
+}
+.find-courses-form .hero-state__wrapper{
+  position:relative;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select{
+  width:100%;
+  border:1px solid #c8bdb2;
+  border-radius:6px;
+  padding:10px 48px 10px 16px;
+  font-size:15px;
+  font-family:"Open Sans", sans-serif;
+  color:#2f2f2f;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23606060' d='M6 8 0 0h12z'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px;
+  cursor:pointer;
+  transition:border-color .2s ease, box-shadow .2s ease;
+  height:44px;
+  line-height:24px;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select:focus{
+  outline:none;
+  border-color: var(--industry-accent, #04206A);
+  box-shadow:0 0 0 2px rgba(4,32,106,.08);
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select::placeholder{
+  color:#5f5f5f;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper.is-open .re-catalog__state-select{
+  border-color: var(--industry-accent, #04206A);
+  box-shadow:0 0 0 2px rgba(4,32,106,.1);
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__select-dropdown{
+  width:100%;
+  right:0;
+  left:0;
+  min-width:100%;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__select-dropdown .re-catalog__group-title{
+  padding:10px 16px 6px;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__select-dropdown .re-catalog__option{
+  padding:10px 16px;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__select-dropdown .re-catalog__select-search{
+  padding:10px 14px;
+}
+
+/* ===== Hero form reset & rebuild ===== */
+.home-banner-section.industry-hero .trip-search-section .find-courses-form{
+  --hero-input-height: 48px;
+  --hero-radius: 12px;
+  --hero-border: #d1d5db;
+  --hero-label: #434343;
+  --hero-text: #1f1f1f;
+  --hero-placeholder: #6d6d6d;
+  --hero-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23606060' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group{
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  margin-bottom:18px;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group.hero-state{
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group.hero-state > label{
+  order: 1 !important;
+  flex: 0 0 auto !important;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group.hero-state > .hero-state__wrapper{
+  order: 2 !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group:last-child{
+  margin-bottom:0;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .input-group > label{
+  display:block !important;
+  width:100% !important;
+  font-size:14px !important;
+  font-weight:600 !important;
+  color:var(--hero-label) !important;
+  margin-bottom:8px !important;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .width-col-1{
+  width:100%;
+  max-width:100%;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form input[type="text"],
+.home-banner-section.industry-hero .trip-search-section .find-courses-form select{
+  height:var(--hero-input-height);
+  border:1px solid var(--hero-border);
+  border-radius:var(--hero-radius);
+  background-color:#fff !important;
+  color:var(--hero-text);
+  font-size:15px;
+  font-family:"Open Sans", sans-serif;
+  padding:0 16px;
+  transition:border-color .2s ease, box-shadow .2s ease;
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  -moz-appearance:none !important;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form input[type="text"]::placeholder,
+.home-banner-section.industry-hero .trip-search-section .find-courses-form select::placeholder{
+  color:var(--hero-placeholder);
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form input[type="text"]:focus,
+.home-banner-section.industry-hero .trip-search-section .find-courses-form select:focus{
+  border-color: var(--industry-accent);
+  box-shadow:0 0 0 2px rgba(4,32,106,.14);
+  outline:none;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .fa-select--simple{
+  position:relative;
+  width:100%;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .fa-select--simple select{
+  width:100%;
+  padding-right:48px;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .fa-select--simple::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  top:calc(50% + 2px);
+  width:12px;
+  height:8px;
+  pointer-events:none;
+  background:var(--hero-arrow) no-repeat center/contain;
+  transform:translateY(-50%);
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper{
+  position:relative;
+  width:100%;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select{
+  width:100%;
+  height:var(--hero-input-height);
+  border:1px solid var(--hero-border);
+  border-radius:var(--hero-radius);
+  padding:0 48px 0 16px;
+  color:var(--hero-text);
+  background-color:#fff !important;
+  font-size:15px;
+  cursor:pointer;
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  -moz-appearance:none !important;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select:focus{
+  border-color: var(--industry-accent);
+  box-shadow:0 0 0 2px rgba(4,32,106,.14);
+  outline:none;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper::after{
+  content:"";
+  position:absolute;
+  right:18px;
+  top:calc(50% + 2px);
+  width:12px;
+  height:8px;
+  pointer-events:none;
+  background:var(--hero-arrow) no-repeat center/contain;
+  transform:translateY(-50%);
+  transition:transform .2s ease;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper.is-open::after{
+  transform:translateY(-50%) rotate(180deg);
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__select-dropdown{
+  width:100%;
+}
+
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select:focus{
+  outline:none;
+  border-color: var(--industry-accent, #04206A);
+  box-shadow:0 0 0 2px rgba(4,32,106,.08);
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper .re-catalog__state-select::placeholder{
+  color:#5f5f5f;
+}
+.home-banner-section.industry-hero .trip-search-section .find-courses-form .hero-state__wrapper.is-open .re-catalog__state-select{
+  border-color: var(--industry-accent, #04206A);
+  box-shadow:0 0 0 2px rgba(4,32,106,.1);
+}
+
+/* ========================================
+   HERO FORM - COMPLETELY INDEPENDENT
+   ======================================== */
+
+/* Field wrapper - stacks label above input */
+.find-courses-form .hero-field-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin-bottom: 16px !important;
+}
+
+.find-courses-form .hero-field-wrapper > label {
+  display: block !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #555 !important;
+  margin-bottom: 8px !important;
+  order: 1 !important;
+}
+
+.find-courses-form .hero-field-wrapper > select,
+.find-courses-form .hero-field-wrapper > button {
+  order: 2 !important;
+}
+
+/* All selects and inputs */
+.find-courses-form .hero-field-wrapper select {
+  width: 100% !important;
+  height: 48px !important;
+  padding: 0 40px 0 16px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 10px !important;
+  font-size: 15px !important;
+  font-family: "Open Sans", sans-serif !important;
+  color: #2f2f2f !important;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23606060' d='M6 8 0 0h12z'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+.find-courses-form .hero-field-wrapper select:focus {
+  border-color: var(--industry-accent, #04206A) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(4,32,106,.12) !important;
+}
+
+/* State picker */
+.hero-state-picker {
+  position: relative;
+  width: 100%;
+  order: 2 !important;
+}
+
+.hero-state-input {
+  width: 100% !important;
+  height: 48px !important;
+  padding: 0 40px 0 16px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 10px !important;
+  font-size: 15px !important;
+  font-family: "Open Sans", sans-serif !important;
+  color: #2f2f2f !important;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23606060' d='M6 8 0 0h12z'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+.hero-state-input:focus {
+  border-color: var(--industry-accent, #04206A) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(4,32,106,.12) !important;
+}
+
+.hero-state-arrow {
+  display: none;
+}
+
+/* State menu */
+.hero-state-menu {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #fff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  max-height: 320px !important;
+  overflow-y: auto !important;
+  z-index: 999 !important;
+}
+
+.hero-state-search {
+  padding: 12px !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: #fff !important;
+  z-index: 1 !important;
+}
+
+.hero-state-search input {
+  width: 100% !important;
+  height: 36px !important;
+  padding: 0 12px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  font-family: "Open Sans", sans-serif !important;
+  color: #2f2f2f !important;
+  background: #fff !important;
+}
+
+.hero-state-search input:focus {
+  border-color: var(--industry-accent, #04206A) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(4,32,106,.08) !important;
+}
+
+.hero-state-group-title {
+  padding: 8px 16px 4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #888 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  background: #f9fafb !important;
+}
+
+.hero-state-option {
+  padding: 10px 16px !important;
+  cursor: pointer !important;
+  font-size: 15px !important;
+  color: #2f2f2f !important;
+  transition: background 0.15s ease !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.hero-state-option:hover {
+  background: #f3f4f6 !important;
+}
+
+.hero-state-option.hero-state-featured {
+  position: relative !important;
+  padding-left: 36px !important;
+}
+
+.hero-state-option.hero-state-featured::before {
+  content: "★" !important;
+  position: absolute !important;
+  left: 16px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #fbbf24 !important;
+  font-size: 16px !important;
+}
+
+.hero-state-option[hidden] {
+  display: none !important;
+}
+
+/* Button */
+.find-courses-form .hero-field-wrapper button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Screen reader text */
+.screen-reader-text {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ===== Search Page Styles ===== */
+.search-page .inner-banner-wrap {
+    padding-bottom: 0;
+}
+
+.search-page .search-results-section {
+    background-color: #f8f9fa;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.filter-sidebar .filter-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #04206A;
+    margin-bottom: 1.5rem;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.filter-sidebar .filter-group {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px;
+}
+
+.filter-sidebar .filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-sidebar .filter-group-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-sidebar .custom-control-label {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-sidebar .custom-control-label:hover {
+    color: #04206A;
+}
+
+.filter-sidebar .custom-checkbox {
+    margin-bottom: 10px;
+}
+
+.filter-sidebar .form-control {
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.filter-sidebar #clearFilters {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Results Header */
+.results-header h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.results-header #resultsCount {
+    color: var(--industry-accent, #c1241a);
+}
+
+.results-header label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.results-header .form-control {
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+/* Course Cards in Search Results */
+.search-results-section .package-wrap {
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-results-section .package-wrap:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+    transform: translateY(-5px);
+}
+
+.search-results-section .feature-image {
+    margin: 0;
+    overflow: hidden;
+    flex-shrink: 0; /* Don't let image shrink */
+}
+
+.search-results-section .feature-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.search-results-section .package-wrap:hover .feature-image img {
+    transform: scale(1.05);
+}
+
+.search-results-section .package-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-results-section .package-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    min-height: 44px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines max */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.search-results-section .package-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    flex: 1; /* Take up available space */
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines max */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 63px; /* 3 lines * 21px (14px * 1.5 line-height) */
+}
+
+.search-results-section .package-price {
+    margin-bottom: 15px;
+    margin-top: auto; /* Push to bottom */
+}
+
+.search-results-section .package-price h4 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    min-height: 36px; /* Consistent height */
+}
+
+.search-results-section .package-price span {
+    color: var(--industry-accent, #c1241a);
+}
+
+.search-results-section .button-primary {
+    margin-top: auto; /* Ensure button stays at bottom */
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+/* Course Item Transition */
+.course-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.course-item.filtering {
+    opacity: 0.5;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .filter-sidebar {
+        margin-bottom: 30px;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+    
+    .results-header .results-sort {
+        width: 100%;
+    }
+    
+    .results-header .form-control {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .search-results-section .package-content h3 {
+        min-height: auto;
+        font-size: 16px;
+    }
+    
+    .results-header h4 {
+        font-size: 18px;
+    }
+}
+
+/* ===== Modern Search Modal (Algolia-Style) ===== */
+
+/* Search Icon in Header */
+.header-btn {
+    align-items: center;
+    gap: 0; /* Remove any gaps between items */
+}
+
+.header-btn > * {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* Override theme's default border styles on .header-search-icon */
+.header-search-icon,
+.bottom-header .header-search-icon,
+.header-btn .header-search-icon,
+div.header-search-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 20px !important; /* Reduced from 25px */
+    margin-left: 0 !important;
+    border: 0 !important;
+    border-width: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-style: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    flex-shrink: 0 !important; /* Prevent shrinking */
+}
+
+.header-search-icon .search-icon,
+.header-search-icon button.search-icon,
+.header-btn .header-search-icon .search-icon,
+button.search-icon {
+    background: transparent !important;
+    border: 0 !important;
+    border-width: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-style: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    font-size: 20px !important; /* Reduced from 24px to 20px */
+    cursor: pointer;
+    padding: 10px 0 !important; /* Reduced from 12px to 10px */
+    transition: all 0.3s ease;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    min-width: auto !important;
+    line-height: 1 !important; /* Ensure consistent height */
+    height: auto !important; /* Let it size naturally */
+    position: relative !important; /* Override absolute positioning */
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+}
+
+/* More specific selectors to override search results page styles */
+.header-btn .header-search-icon button.search-icon,
+.site-header .header-search-icon button.search-icon {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+}
+
+.header-search-icon .search-icon i,
+.header-search-icon button.search-icon i,
+.header-btn .header-search-icon .search-icon i {
+    color: inherit !important;
+    font-size: 20px !important; /* Match parent size */
+}
+
+.header-search-icon .search-icon:hover,
+.header-search-icon button.search-icon:hover,
+.header-btn .header-search-icon .search-icon:hover {
+    background: transparent !important;
+    color: #CC5500 !important;
+    transform: scale(1.1);
+    border: none !important;
+}
+
+.header-search-icon .search-icon:focus,
+.header-search-icon button.search-icon:focus,
+.header-btn .header-search-icon .search-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Transparent header (hero section) */
+.site-header.header-transparent .header-search-icon .search-icon,
+.site-header.header-transparent .header-search-icon button.search-icon,
+.site-header.header-transparent .header-btn .header-search-icon .search-icon {
+    color: #fff !important;
+}
+
+.site-header.header-transparent .header-search-icon .search-icon i,
+.site-header.header-transparent .header-search-icon button.search-icon i {
+    color: #fff !important;
+}
+
+.site-header.header-transparent .header-search-icon .search-icon:hover,
+.site-header.header-transparent .header-search-icon button.search-icon:hover {
+    color: #CC5500 !important;
+    background: rgba(204, 85, 0, 0.1) !important;
+}
+
+.site-header.header-transparent .header-search-icon .search-icon:hover i,
+.site-header.header-transparent .header-search-icon button.search-icon:hover i {
+    color: #CC5500 !important;
+}
+
+/* Sticky nav: use brand orange color */
+.site-header:not(.header-transparent) .header-search-icon .search-icon,
+.site-header:not(.header-transparent) .header-search-icon button.search-icon,
+.site-header:not(.header-transparent) .header-btn .header-search-icon .search-icon,
+body:not(.home) .site-header .header-search-icon .search-icon,
+body:not(.home) .site-header .header-search-icon button.search-icon {
+    color: #CC5500 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.site-header:not(.header-transparent) .header-search-icon .search-icon i,
+.site-header:not(.header-transparent) .header-search-icon button.search-icon i,
+body:not(.home) .site-header .header-search-icon .search-icon i,
+body:not(.home) .site-header .header-search-icon button.search-icon i {
+    color: #CC5500 !important;
+}
+
+.site-header:not(.header-transparent) .header-search-icon .search-icon:hover,
+.site-header:not(.header-transparent) .header-search-icon button.search-icon:hover,
+body:not(.home) .site-header .header-search-icon .search-icon:hover {
+    color: #ff8c33 !important;
+    background: rgba(204, 85, 0, 0.1) !important;
+    border: none !important;
+}
+
+.site-header:not(.header-transparent) .header-search-icon .search-icon:hover i,
+.site-header:not(.header-transparent) .header-search-icon button.search-icon:hover i,
+body:not(.home) .site-header .header-search-icon .search-icon:hover i {
+    color: #ff8c33 !important;
+}
+
+.site-header:not(.header-transparent) .header-search-icon .search-icon:focus,
+.site-header:not(.header-transparent) .header-search-icon button.search-icon:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Modal Backdrop */
+.search-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.search-modal-backdrop.active {
+    opacity: 1;
+}
+
+/* Modal Container */
+.search-modal {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    max-width: 600px;
+    width: calc(100% - 32px);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-modal-backdrop.active .search-modal {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Modal Header */
+.search-modal-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    gap: 12px;
+}
+
+.search-modal-icon {
+    color: #9ca3af;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.search-modal-header input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #111827;
+    background: transparent;
+}
+
+.search-modal-header input::placeholder {
+    color: #9ca3af;
+}
+
+.search-modal-close {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.search-modal-close:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* Modal Results */
+.search-modal-results {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+    background: #f9fafb;
+}
+
+.search-result-item.active {
+    border-left: 3px solid var(--industry-accent, #04206A);
+}
+
+.search-result-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-result-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.search-result-desc {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.search-result-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.search-result-industry {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+/* Industry specific colors for tags */
+.industry-tag-real-estate {
+    background: #ffe5e5;
+    color: #c1241a;
+}
+
+.industry-tag-mortgage {
+    background: #e0f2f1;  /* Light teal background */
+    color: var(--color-mortgage, #00897B);
+}
+
+.industry-tag-appraisal {
+    background: #e3f2fd;
+    color: #2c75ba;
+}
+
+.industry-tag-osha {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.industry-tag-healthcare {
+    background: #f3e5f5;
+    color: #9c27b0;
+}
+
+.industry-tag-hr {
+    background: #fff3e0;
+    color: #ff6f00;
+}
+
+.search-result-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* No Results */
+.search-no-results {
+    padding: 40px 20px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+.search-no-results i {
+    font-size: 32px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.search-no-results p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* View All Results */
+.search-view-all {
+    padding: 12px 20px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.search-view-all-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--industry-accent, #04206A);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.search-view-all-link:hover {
+    background: #f3f4f6;
+    color: var(--industry-accent, #04206A);
+}
+
+/* Modal Footer */
+.search-modal-footer {
+    padding: 12px 20px;
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
+    border-radius: 0 0 12px 12px;
+}
+
+.search-modal-hint {
+    font-size: 12px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.search-modal-hint kbd {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-modal {
+        top: 60px;
+        max-width: calc(100% - 24px);
+    }
+    
+    .search-modal-header {
+        padding: 12px 16px;
+    }
+    
+    .search-modal-results {
+        max-height: 300px;
+    }
+    
+    .search-result-item {
+        padding: 10px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .search-result-meta {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .search-modal-hint {
+        font-size: 11px;
+        gap: 6px;
+    }
+    
+    .search-modal-hint kbd {
+        padding: 1px 4px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-modal {
+        top: 20px;
+        width: calc(100% - 16px);
+    }
+    
+    .search-result-title {
+        font-size: 14px;
+    }
+    
+    .search-result-desc {
+        font-size: 12px;
+    }
+    
+    .search-result-price {
+        font-size: 14px;
+    }
+}
+
+/* ====================================================================
+   HERO FORM OVERRIDES - Force New Styling Over Legacy
+   ==================================================================== */
+
+/* Override trip-search-section flexbox behavior for new form */
+.trip-search-section .fa-form {
+  display: block !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Ensure fields are full-width blocks, never flex items */
+.trip-search-section .fa-field {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  flex: none !important;
+}
+
+/* Force labels to display as block elements above inputs */
+.trip-search-section .fa-label {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+  position: static !important;
+}
+
+/* Ensure selects don't inherit any inline-block or float behavior */
+.trip-search-section .fa-select {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* State picker should never be affected by parent flex */
+.trip-search-section .fa-state-picker {
+  display: block !important;
+  width: 100% !important;
+}
+
+.trip-search-section .fa-state-input {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Submit button full width */
+.trip-search-section .fa-submit {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Industry color variables for submit button hover states */
+body.industry-real-estate {
+  --industry-color: var(--color-real-estate);
+  --industry-color-hover: #B71C1C;
+}
+
+body.industry-mortgage {
+  --industry-color: var(--color-mortgage);
+  --industry-color-hover: #1565C0;
+}
+
+body.industry-appraisal {
+  --industry-color: var(--color-appraisal);
+  --industry-color-hover: #283593;
+}
+
+body.industry-osha {
+  --industry-color: var(--color-osha);
+  --industry-color-hover: #F57C00;
+}
+
+body.industry-healthcare {
+  --industry-color: var(--color-healthcare);
+  --industry-color-hover: #00796B;
+}
+
+body.industry-compliance {
+  --industry-color: var(--color-hr);
+  --industry-color-hover: #6A1B9A;
+}
+
+/* Industry Badge Styles for Blog Pages */
+.inner-banner-content .industry-badge {
+  display: inline-block !important;
+  padding: 8px 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 25px !important;
+  margin: 15px 0 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  line-height: 1.4 !important;
+}
+
+.inner-banner-content .badge-real-estate {
+  background-color: #c1241a !important;
+}
+
+.inner-banner-content .badge-mortgage {
+  background-color: var(--color-mortgage, #00897B) !important;
+}
+
+.inner-banner-content .badge-appraisal {
+  background-color: #2c75ba !important;
+}
+
+.inner-banner-content .badge-osha {
+  background-color: #4caf50 !important;
+}
+
+.inner-banner-content .badge-healthcare {
+  background-color: #9c27b0 !important;
+}
+
+.inner-banner-content .badge-compliance {
+  background-color: #ff6f00 !important;
+}
+
+/* Related Articles Hover States for Blog Pages */
+.widget_latest_post.widget-post-thumb ul li {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f8f8f8;
+}
+
+.widget_latest_post.widget-post-thumb ul li:hover {
+  background-color: #eeeeee;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.widget_latest_post.widget-post-thumb ul li:hover .post-thumb img {
+  transform: scale(1.05);
+}
+
+.widget_latest_post.widget-post-thumb ul li .post-thumb {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.widget_latest_post.widget-post-thumb ul li .post-thumb img {
+  transition: transform 0.3s ease;
+}
+
+.widget_latest_post.widget-post-thumb ul li:hover h5 a {
+  color: var(--color-real-estate);
+  text-decoration: none;
+}
+
+
+/* ============================================
+/* ============================================
+   SEARCH PAGE STYLES - REDESIGNED
+   ============================================ */
+
+/* Search Filter Bar */
+.search-filter-bar {
+  background: #fff;
+  padding: 20px 30px;
+  margin-bottom: 35px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.search-field-wrapper {
+  position: relative;
+}
+
+.search-input {
+  padding-left: 40px;
+  height: 45px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.search-input:focus {
+  border-color: #c1241a;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(193,36,26,0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-filter {
+  background: #f5f5f5;
+  border: 2px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+  background: #ececec;
+  border-color: #ccc;
+}
+
+.filter-count {
+  display: none;
+  background: #c1241a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.filter-count.active {
+  display: inline-block;
+}
+
+.filter-dropdown-wrapper {
+  position: relative;
+}
+
+.filter-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 20px;
+  min-width: 350px;
+  max-height: 500px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+}
+
+.filter-dropdown-menu.active {
+  display: block;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-section h6 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.filter-section label {
+  display: block;
+  padding: 5px 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.filter-section label:hover {
+  color: #333;
+}
+
+.filter-section input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.filter-actions-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+}
+
+.btn-clear {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-clear:hover {
+  background: #e0e0e0;
+}
+
+.btn-apply {
+  background: #c1241a;
+  color: #fff;
+  border: 1px solid #c1241a;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-apply:hover {
+  background: #a01e15;
+  border-color: #a01e15;
+}
+
+.sort-select {
+  width: auto;
+  min-width: 180px;
+  height: 45px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.sort-select:focus {
+  border-color: #c1241a;
+  outline: none;
+}
+
+/* Results Header */
+.search-results-section .results-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.search-results-section .results-count h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.search-results-section .results-count h4 span {
+  color: #c1241a;
+}
+
+/* Card Styles matching Travele template */
+.search-results-section .package-wrap {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-results-section .package-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.search-results-section .feature-image {
+  position: relative;
+  width: 100%;
+  padding-top: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
+  margin: 0;
+}
+
+.search-results-section .feature-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-results-section .package-price {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.search-results-section .package-price h6 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.search-results-section .package-price h6 span {
+  color: #fff;
+}
+
+.search-results-section .package-content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results-section .package-meta {
+  background: #4caf50;
+  color: #fff;
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+
+.search-results-section .package-meta ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.search-results-section .package-meta ul li {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+}
+
+.search-results-section .package-meta ul li i {
+  font-size: 14px;
+}
+
+.search-results-section .package-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+}
+
+.search-results-section .package-content h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+}
+
+.search-results-section .package-content h3 a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.search-results-section .package-content h3 a:hover {
+  color: #c1241a;
+}
+
+.search-results-section .review-area {
+  margin: 0 0 12px 0;
+}
+
+.search-results-section .review-text {
+  font-size: 13px;
+  color: #999;
+}
+
+.search-results-section .package-content > p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 15px 0;
+}
+
+.search-results-section .btn-wrap {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.search-results-section .button-text {
+  display: inline-block;
+  color: #c1241a;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.search-results-section .button-text i {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.search-results-section .button-text:hover {
+  color: #a01e15;
+}
+
+.search-results-section .button-text:hover i {
+  transform: translateX(3px);
+}
+
+/* Industry-specific colors for cards */
+.search-results-section .course-item[data-industry="real-estate"] .package-meta {
+  background: #c1241a;
+}
+.search-results-section .course-item[data-industry="real-estate"] .package-content h3 a:hover {
+  color: #c1241a;
+}
+.search-results-section .course-item[data-industry="real-estate"] .button-text {
+  color: #c1241a;
+}
+
+.search-results-section .course-item[data-industry="mortgage"] .package-meta {
+  background: #ff9800;
+}
+.search-results-section .course-item[data-industry="mortgage"] .package-content h3 a:hover {
+  color: #ff9800;
+}
+.search-results-section .course-item[data-industry="mortgage"] .button-text {
+  color: #ff9800;
+}
+
+.search-results-section .course-item[data-industry="appraisal"] .package-meta {
+  background: #2c75ba;
+}
+.search-results-section .course-item[data-industry="appraisal"] .package-content h3 a:hover {
+  color: #2c75ba;
+}
+.search-results-section .course-item[data-industry="appraisal"] .button-text {
+  color: #2c75ba;
+}
+
+.search-results-section .course-item[data-industry="osha"] .package-meta {
+  background: #4caf50;
+}
+.search-results-section .course-item[data-industry="osha"] .package-content h3 a:hover {
+  color: #4caf50;
+}
+.search-results-section .course-item[data-industry="osha"] .button-text {
+  color: #4caf50;
+}
+
+.search-results-section .course-item[data-industry="healthcare"] .package-meta {
+  background: #9c27b0;
+}
+.search-results-section .course-item[data-industry="healthcare"] .package-content h3 a:hover {
+  color: #9c27b0;
+}
+.search-results-section .course-item[data-industry="healthcare"] .button-text {
+  color: #9c27b0;
+}
+
+.search-results-section .course-item[data-industry="hr"] .package-meta {
+  background: #ff6f00;
+}
+.search-results-section .course-item[data-industry="hr"] .package-content h3 a:hover {
+  color: #ff6f00;
+}
+.search-results-section .course-item[data-industry="hr"] .button-text {
+  color: #ff6f00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .search-filter-bar {
+    padding: 20px;
+  }
+  
+  .filter-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .filter-dropdown-menu {
+    right: auto;
+    left: 0;
+    min-width: 300px;
+  }
+  
+  .sort-select {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-field-wrapper {
+    margin-bottom: 15px;
+  }
+  
+  .filter-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-dropdown-wrapper,
+  .sort-select {
+    width: 100%;
+  }
+  
+  .filter-dropdown-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* CRITICAL FIX: Ensure filter dropdown displays properly */
+.search-results-section {
+  position: relative;
+  z-index: 1;
+}
+
+.search-filter-bar {
+  position: relative;
+  z-index: 100;
+}
+
+.filter-dropdown-wrapper {
+  position: relative;
+  z-index: 200;
+}
+
+.filter-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  margin-top: 10px !important;
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15) !important;
+  padding: 20px !important;
+  min-width: 350px !important;
+  max-height: 500px !important;
+  overflow-y: auto !important;
+  display: none !important;
+  z-index: 10000 !important;
+}
+
+.filter-dropdown-menu.active {
+  display: block !important;
+}
+
+/* Fix container overflow issues */
+.search-results-section .container {
+  overflow: visible !important;
+}
+
+/* EMERGENCY FIX: Make dropdown super visible */
+.filter-dropdown-menu.active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: red !important; /* Temporary - make it VERY visible */
+  color: white !important;
+  position: fixed !important; /* Changed from absolute to fixed */
+  top: 200px !important;
+  right: 50px !important;
+  z-index: 999999 !important;
+  width: 400px !important;
+  max-width: 90vw !important;
+}
+
+.filter-dropdown-menu.active * {
+  color: white !important;
+}
+
+/* FORCE industry colors with !important */
+.search-results-section .course-item[data-industry="real-estate"] .package-meta {
+  background: #c1241a !important;
+}
+.search-results-section .course-item[data-industry="mortgage"] .package-meta {
+  background: #ff9800 !important;
+}
+.search-results-section .course-item[data-industry="appraisal"] .package-meta {
+  background: #2c75ba !important;
+}
+.search-results-section .course-item[data-industry="osha"] .package-meta {
+  background: #4caf50 !important;
+}
+.search-results-section .course-item[data-industry="healthcare"] .package-meta {
+  background: #9c27b0 !important;
+}
+.search-results-section .course-item[data-industry="hr"] .package-meta {
+  background: #ff6f00 !important;
+}
+
+/* FIX search bar layout */
+.search-field-wrapper {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.search-icon {
+  position: absolute !important;
+  left: 15px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #999 !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.search-input {
+  padding-left: 45px !important;
+  height: 48px !important;
+  border: 2px solid #ddd !important;
+  border-radius: 6px !important;
+  width: 100% !important;
+  font-size: 15px !important;
+}
+
+.filter-actions {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+.btn-filter {
+  background: #f5f5f5 !important;
+  border: 2px solid #ddd !important;
+  padding: 12px 20px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.sort-select {
+  width: auto !important;
+  min-width: 160px !important;
+  height: 48px !important;
+  border: 2px solid #ddd !important;
+  border-radius: 6px !important;
+  padding: 0 15px !important;
+  font-size: 14px !important;
+}
+
+.btn-clear-all {
+  height: 48px !important;
+  padding: 12px 20px !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+  border: 2px solid #ddd !important;
+  border-radius: 6px !important;
+}
+/* Search bar fit-and-finish */
+.search-filter-bar .row {
+  align-items: center !important;
+}
+
+/* Make left search area larger, right controls compact */
+@media (min-width: 992px) {
+  .search-filter-bar .col-lg-6:first-child { flex: 0 0 66.6667%; max-width: 66.6667%; }
+  .search-filter-bar .col-lg-6:last-child  { flex: 0 0 33.3333%; max-width: 33.3333%; }
+}
+
+/* Keep right controls on one line and aligned */
+.filter-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Harmonize control heights */
+.btn-filter, .sort-select, .btn-clear-all { height: 44px !important; }
+.btn-filter { padding: 0 14px !important; border-radius: 6px !important; }
+.btn-clear-all { padding: 0 14px !important; border-radius: 6px !important; }
+.sort-select { min-width: 180px !important; width: 200px !important; }
+
+/* Search input + icon refinement */
+.search-field-wrapper { position: relative !important; }
+.search-icon { left: 14px !important; top: 50% !important; transform: translateY(-50%) !important; font-size: 16px !important; color: #666 !important; }
+.search-input { height: 44px !important; padding-left: 42px !important; border: 1px solid #d9d9d9 !important; border-radius: 6px !important; }
+.search-input:focus { border-color: #c1241a !important; box-shadow: 0 0 0 2px rgba(193,36,26,0.12) !important; outline: none !important; }
+
+/* Nudge results header spacing */
+.results-header { margin-top: 10px !important; }
+
+/* Responsive: stack neatly */
+@media (max-width: 991.98px) {
+  .search-filter-bar .col-md-6 { width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important; }
+  .filter-actions { justify-content: flex-start !important; gap: 8px !important; flex-wrap: wrap !important; }
+  .sort-select { width: 100% !important; min-width: 0 !important; }
+}
+/* Final alignment pass for search/filter row */
+.search-results-section .filter-actions { flex-wrap: nowrap !important; gap: 12px !important; }
+.search-results-section .btn-filter,
+.search-results-section .btn-clear-all,
+.search-results-section .sort-select { flex: 0 0 auto !important; }
+.search-results-section .sort-select { width: 220px !important; min-width: 220px !important; }
+
+.search-results-section .search-field-wrapper { position: relative !important; }
+.search-results-section .search-icon { position: absolute !important; left: 18px !important; top: 50% !important; transform: translateY(-50%) !important; font-size: 18px !important; color: #808080 !important; pointer-events: none !important; z-index: 2 !important; }
+.search-results-section .search-input { padding-left: 50px !important; }
+
+/* Make Filters button look like a control */
+.search-results-section .btn-filter { background: #f7f7f7 !important; border: 1px solid #d9d9d9 !important; color: #333 !important; }
+.search-results-section .btn-filter:hover { background: #eee !important; }
+
+/* Tighten spacing */
+.search-results-section .search-filter-bar { padding-top: 10px !important; padding-bottom: 20px !important; }
+/* =======================
+   New Search Toolbar (fa-toolbar)
+   ======================= */
+.fa-toolbar { padding: 10px 0 18px; }
+.fa-toolbar * { font-family: "Open Sans", sans-serif; }
+
+/* Search */
+.fa-search { position: relative; }
+.fa-search__icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #777; font-size: 16px; pointer-events: none; }
+.fa-search__input { width: 100%; height: 46px; padding: 0 14px 0 44px; border: 1px solid #d9d9d9; border-radius: 6px; font-size: 15px; color: #222; }
+.fa-search__input:focus { border-color: #c1241a; outline: none; box-shadow: 0 0 0 2px rgba(193,36,26,.12); }
+
+/* Right controls */
+.fa-controls { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: nowrap; }
+.fa-btn { height: 46px; padding: 0 14px; border-radius: 6px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: 1px solid transparent; background: #f7f7f7; color: #333; }
+.fa-btn--ghost { background: #f7f7f7; border-color: #d9d9d9; }
+.fa-btn--light { background: #fff; border-color: #d9d9d9; }
+.fa-btn--primary { background: #c1241a; color: #fff; border-color: #c1241a; }
+.fa-btn:hover { filter: brightness(.96); }
+
+.fa-select { height: 46px; border: 1px solid #d9d9d9; border-radius: 6px; padding: 0 14px; font-size: 14px; min-width: 190px; }
+
+/* Dropdown menu */
+.fa-filter-wrapper { position: relative; }
+.fa-filter-menu { position: absolute; top: calc(100% + 8px); right: 0; background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.12); padding: 16px; min-width: 360px; max-height: 60vh; overflow: auto; z-index: 1000; display: none; }
+.fa-filter-menu.active { display: block; }
+.fa-filter-menu__section { padding: 10px 0; border-bottom: 1px solid #eee; }
+.fa-filter-menu__section:last-child { border-bottom: 0; }
+.fa-filter-menu__section h6 { margin: 0 0 8px; font-weight: 700; font-size: 13px; color: #333; text-transform: none; }
+.fa-filter-menu__section label { display: block; padding: 4px 0; font-size: 14px; color: #444; }
+.fa-filter-menu__footer { display: flex; justify-content: space-between; gap: 10px; padding-top: 10px; }
+
+@media (min-width: 992px) {
+  .fa-toolbar .col-lg-8 { flex: 0 0 70%; max-width: 70%; }
+  .fa-toolbar .col-lg-4 { flex: 0 0 30%; max-width: 30%; }
+}
+
+@media (max-width: 991.98px) {
+  .fa-controls { justify-content: flex-start; flex-wrap: wrap; }
+}
+/* Search page - Simple modern pagination */
+.search-page .post-navigation-wrap { 
+  margin-top: 30px !important; 
+  margin-bottom: 70px !important; 
+  padding-top: 20px !important; 
+  border-top: 1px solid #eee !important;
+}
+.search-page .pagination { 
+  gap: 8px !important; 
+}
+.search-page .pagination .page-item { 
+  display: inline-flex !important; 
+}
+.search-page .pagination .page-link { 
+  height: 40px !important; 
+  min-width: 40px !important; 
+  padding: 0 14px !important; 
+  border-radius: 8px !important; 
+  border: 1px solid #ddd !important; 
+  color: #444 !important; 
+  display: flex !important; 
+  align-items: center !important; 
+  justify-content: center !important; 
+  background: #fff !important; 
+}
+.search-page .pagination .page-link:hover { 
+  background: #f5f5f5 !important; 
+  border-color: #ccc !important; 
+  color: #222 !important; 
+}
+.search-page .pagination .page-item.active .page-link { 
+  background: #c1241a !important; 
+  border-color: #c1241a !important; 
+  color: #fff !important; 
+}
+.search-page .pagination .page-link i { 
+  font-size: 12px !important; 
+}
+/* Force-reset toolbar controls to avoid legacy conflicts */
+.fa-toolbar .fa-btn {
+  all: unset;
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 46px; padding: 0 14px; border-radius: 6px;
+  font: 600 14px/1 "Open Sans", sans-serif; cursor: pointer;
+  background: #f7f7f7; border: 1px solid #d9d9d9; color: #333;
+}
+.fa-toolbar .fa-btn:hover { background:#eee; }
+.fa-toolbar .fa-btn.fa-btn--primary { background:#c1241a; border-color:#c1241a; color:#fff; }
+.fa-toolbar .fa-select { all: unset; display:inline-block; height:46px; min-width:190px; padding:0 14px; border:1px solid #d9d9d9; border-radius:6px; font: 400 14px/46px "Open Sans", sans-serif; background:#fff; }
+.fa-toolbar .fa-search__input { all: unset; width:100%; height:46px; padding:0 14px 0 44px; border:1px solid #d9d9d9; border-radius:6px; font: 400 15px/46px "Open Sans", sans-serif; color:#222; }
+.fa-toolbar .fa-search__input:focus { border-color:#c1241a; box-shadow:0 0 0 2px rgba(193,36,26,.12); }
+/* FORCE OVERRIDES for toolbar - highest specificity */
+.search-page .search-results-section .fa-toolbar .fa-search { position: relative !important; }
+.search-page .search-results-section .fa-toolbar .fa-search__icon { position: absolute !important; left: 14px !important; top: 50% !important; transform: translateY(-50%) !important; color: #777 !important; font-size: 16px !important; pointer-events: none !important; z-index: 2 !important; }
+.search-page .search-results-section .fa-toolbar .fa-search__input { all: unset; width: 100% !important; height: 46px !important; padding: 0 14px 0 44px !important; border: 1px solid #d9d9d9 !important; border-radius: 6px !important; font: 400 15px/46px "Open Sans", sans-serif !important; color: #222 !important; box-sizing: border-box !important; }
+.search-page .search-results-section .fa-toolbar .fa-search__input:focus { border-color: #c1241a !important; box-shadow: 0 0 0 2px rgba(193,36,26,.12) !important; outline: none !important; }
+
+.search-page .search-results-section .fa-toolbar .fa-controls { display: flex !important; align-items: center !important; justify-content: flex-end !important; gap: 10px !important; flex-wrap: nowrap !important; }
+.search-page .search-results-section .fa-toolbar .fa-btn { all: unset; display: inline-flex !important; align-items: center !important; gap: 8px !important; height: 46px !important; padding: 0 14px !important; border-radius: 6px !important; font: 600 14px/1 "Open Sans", sans-serif !important; cursor: pointer !important; background: #f7f7f7 !important; border: 1px solid #d9d9d9 !important; color: #333 !important; }
+.search-page .search-results-section .fa-toolbar .fa-btn:hover { background:#eee !important; }
+.search-page .search-results-section .fa-toolbar .fa-btn.fa-btn--primary { background:#c1241a !important; border-color:#c1241a !important; color:#fff !important; }
+.search-page .search-results-section .fa-toolbar .fa-select { all: unset; display:inline-block !important; height:46px !important; min-width: 200px !important; padding: 0 14px !important; border: 1px solid #d9d9d9 !important; border-radius: 6px !important; font: 400 14px/46px "Open Sans", sans-serif !important; background:#fff !important; box-sizing: border-box !important; }
+
+/* Dropdown menu overrides */
+.search-page .search-results-section .fa-toolbar .fa-filter-wrapper { position: relative !important; }
+.search-page .search-results-section .fa-toolbar .fa-filter-menu { position: absolute !important; top: calc(100% + 8px) !important; right: 0 !important; background:#fff !important; border:1px solid #ddd !important; border-radius:8px !important; box-shadow:0 8px 24px rgba(0,0,0,.12) !important; padding:16px !important; min-width:360px !important; max-height:60vh !important; overflow:auto !important; z-index:10000 !important; display:none; }
+.search-page .search-results-section .fa-toolbar .fa-filter-menu.active { display:block !important; }
+.search-page .search-results-section .fa-toolbar .fa-filter-menu__section h6 { margin:0 0 8px !important; font:700 13px/1 "Open Sans", sans-serif !important; color:#333 !important; }
+.search-page .search-results-section .fa-toolbar .fa-filter-menu__section label { display:block !important; padding:4px 0 !important; font:400 14px/1.4 "Open Sans", sans-serif !important; color:#444 !important; }
+
+/* Layout split */
+@media (min-width: 992px) {
+  .search-page .search-results-section .fa-toolbar .col-lg-8 { flex: 0 0 72% !important; max-width: 72% !important; }
+  .search-page .search-results-section .fa-toolbar .col-lg-4 { flex: 0 0 28% !important; max-width: 28% !important; }
+}
+
+/* ==================== NAVIGATION IMPROVEMENTS ==================== */
+/* Increase font weight for better visibility */
+.main-navigation ul > li > a,
+.fixed-header .main-navigation .navigation > ul > li > a {
+    font-weight: 900 !important;
+    color: #101F46 !important;
+}
+
+/* Change hover/active state color to orange */
+.main-navigation ul > li:hover > a,
+.main-navigation ul > li:focus > a,
+.main-navigation ul > li:active > a,
+.fixed-header .main-navigation .navigation > ul > li:hover > a,
+.fixed-header .main-navigation .navigation > ul > li:focus > a,
+.fixed-header .main-navigation .navigation > ul > li:active > a {
+    color: #FFA726 !important;
+}
+
+/* ==================== INDUSTRY-SPECIFIC BUTTON HOVER STATES ==================== */
+/* Real Estate */
+.industry-real-estate .button-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-real-estate .button-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-real-estate .button-primary:not(.button-outline):not([class*="btn-"]):active,
+.industry-real-estate .btn.btn-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-real-estate .btn.btn-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-real-estate .header-btn .button-primary:not(.button-outline):not([class*="btn-"]):hover {
+    background-color: var(--color-real-estate-hover) !important;
+    border-color: var(--color-real-estate-hover) !important;
+}
+
+/* Mortgage */
+.industry-mortgage .button-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-mortgage .button-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-mortgage .button-primary:not(.button-outline):not([class*="btn-"]):active,
+.industry-mortgage .btn.btn-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-mortgage .btn.btn-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-mortgage .header-btn .button-primary:not(.button-outline):not([class*="btn-"]):hover {
+    background-color: var(--color-mortgage-hover) !important;
+    border-color: var(--color-mortgage-hover) !important;
+}
+
+/* Appraisal */
+.industry-appraisal .button-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-appraisal .button-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-appraisal .button-primary:not(.button-outline):not([class*="btn-"]):active,
+.industry-appraisal .btn.btn-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-appraisal .btn.btn-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-appraisal .header-btn .button-primary:not(.button-outline):not([class*="btn-"]):hover {
+    background-color: var(--color-appraisal-hover) !important;
+    border-color: var(--color-appraisal-hover) !important;
+}
+
+/* OSHA */
+.industry-osha .button-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-osha .button-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-osha .button-primary:not(.button-outline):not([class*="btn-"]):active,
+.industry-osha .btn.btn-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-osha .btn.btn-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-osha .header-btn .button-primary:not(.button-outline):not([class*="btn-"]):hover {
+    background-color: var(--color-osha-hover) !important;
+    border-color: var(--color-osha-hover) !important;
+}
+
+/* Healthcare */
+.industry-healthcare .button-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-healthcare .button-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-healthcare .button-primary:not(.button-outline):not([class*="btn-"]):active,
+.industry-healthcare .btn.btn-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-healthcare .btn.btn-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-healthcare .header-btn .button-primary:not(.button-outline):not([class*="btn-"]):hover {
+    background-color: var(--color-healthcare-hover) !important;
+    border-color: var(--color-healthcare-hover) !important;
+}
+
+/* HR Compliance */
+.industry-compliance .button-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-compliance .button-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-compliance .button-primary:not(.button-outline):not([class*="btn-"]):active,
+.industry-compliance .btn.btn-primary:not(.button-outline):not([class*="btn-"]):hover,
+.industry-compliance .btn.btn-primary:not(.button-outline):not([class*="btn-"]):focus,
+.industry-compliance .header-btn .button-primary:not(.button-outline):not([class*="btn-"]):hover {
+    background-color: var(--color-hr-hover) !important;
+    border-color: var(--color-hr-hover) !important;
+}

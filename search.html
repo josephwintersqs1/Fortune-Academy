@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Disable all caching during development -->
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+
+      <!-- favicon -->
+      <link rel="icon" type="image/png" href="assets/images/favicon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/fontawesome/css/all.min.css">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/jquery-ui/jquery-ui.min.css">
+      <!-- modal video css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/modal-video/modal-video.min.css">
+      <!-- light box css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/lightbox/dist/css/lightbox.min.css">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick.css">
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick-theme.css">
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="style.css?v=no-banner-padding">
+      <link rel="stylesheet" type="text/css" href="custom.css?v=bs4-native">
+      <title>Search Results | Fortune Academy</title>
+   </head>
+   <body class="search-page">
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="assets/images/loader1.gif" alt="">
+         </div>
+      </div>
+      <div id="page" class="full-page">
+         <div data-include="partials/header.html"></div>
+         <main id="content" class="site-main">
+            <!-- Inner Banner html start-->
+            <section class="inner-banner-wrap">
+               <div class="inner-baner-container" style="background-image: url(assets/images/discount-bg.jpg);">
+                  <div class="container">
+                     <div class="inner-banner-content">
+                        <h1 class="inner-title">Search Results</h1>
+                     </div>
+                  </div>
+               </div>
+               <div class="inner-shape"></div>
+            </section>
+            <!-- Inner Banner html end-->
+
+            <!-- Search Results Section -->
+            <div class="search-results-section">
+               <div class="container">
+                  
+                 <!-- Search & Filter Bar -->
+               <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                  <div class="row align-items-center">
+                     <div class="col-lg-5 mb-3 mb-lg-0">
+                        <!-- Search Field -->
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" style="background: white; border-right: 0; border-radius: 4px 0 0 4px; height: 46px; display: flex; align-items: center;"><i class="fas fa-search"></i></span>
+                           </div>
+                           <input type="text" id="searchInput" class="form-control" placeholder="Search courses..." style="border-left: 0; border-radius: 0 4px 4px 0; font-size: 15px; font-weight: 400; height: 46px;">
+                        </div>
+                     </div>
+                     <div class="col-lg-7">
+                        <div class="d-flex justify-content-end" style="gap: 12px; flex-wrap: wrap;">
+                           <!-- State Picker Dropdown -->
+                           <div class="dropdown" id="statePickerDropdown">
+                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="statePickerToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="white-space: nowrap; border-radius: 4px; font-size: 15px; font-weight: 400; min-width: 160px; text-align: left; height: 46px; display: inline-flex; align-items: center; justify-content: space-between;">
+                                 <span id="statePickerLabel">All States</span>
+                              </button>
+                              <div class="dropdown-menu p-3" id="statePickerMenu" style="min-width: 280px; max-height: 400px;">
+                                 <input type="text" class="form-control form-control-sm mb-2" id="stateSearch" placeholder="Search states..." style="font-size: 14px;">
+                                 <div style="max-height: 300px; overflow-y: auto;">
+                                    <div class="mb-2" id="featuredStates">
+                                       <h6 class="font-weight-bold mb-2" style="font-size: 12px; text-transform: uppercase; color: #666;">Featured</h6>
+                                       <div class="custom-control custom-radio mb-1">
+                                          <input class="custom-control-input" type="radio" name="stateFilter" value="GA" id="state-GA">
+                                          <label class="custom-control-label" for="state-GA" style="font-size: 14px;">⭐ Georgia</label>
+                                       </div>
+                                       <div class="custom-control custom-radio mb-1">
+                                          <input class="custom-control-input" type="radio" name="stateFilter" value="NC" id="state-NC">
+                                          <label class="custom-control-label" for="state-NC" style="font-size: 14px;">⭐ North Carolina</label>
+                                       </div>
+                                       <div class="custom-control custom-radio mb-2">
+                                          <input class="custom-control-input" type="radio" name="stateFilter" value="SC" id="state-SC">
+                                          <label class="custom-control-label" for="state-SC" style="font-size: 14px;">⭐ South Carolina</label>
+                                       </div>
+                                    </div>
+                                    <div id="allStates">
+                                       <h6 class="font-weight-bold mb-2" style="font-size: 12px; text-transform: uppercase; color: #666; border-top: 1px solid #dee2e6; padding-top: 8px;">All States</h6>
+                                       <div id="stateList"></div>
+                                    </div>
+                                 </div>
+                                 <div class="pt-2 mt-2" style="border-top: 1px solid #dee2e6;">
+                                    <button class="btn btn-sm btn-block btn-outline-secondary" id="clearStateFilter">Clear Selection</button>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Filters Button & Dropdown -->
+                           <div class="dropdown">
+                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="filterToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="white-space: nowrap; border-radius: 4px; font-size: 15px; font-weight: 400; height: 46px; display: inline-flex; align-items: center;">
+                                 <i class="fas fa-filter"></i> Filters <span class="badge badge-danger ml-1" id="filterCount" style="display: none;"></span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right p-3" id="filterMenu" style="min-width: 350px; max-height: 500px; overflow-y: auto;">
+                                 <div class="mb-3 pb-3" style="border-bottom: 1px solid #dee2e6;">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Industry</h6>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="real-estate" id="ind1">
+                                       <label class="custom-control-label" for="ind1">Real Estate</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="mortgage" id="ind2">
+                                       <label class="custom-control-label" for="ind2">Mortgage</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="appraisal" id="ind3">
+                                       <label class="custom-control-label" for="ind3">Appraisal</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="osha" id="ind4">
+                                       <label class="custom-control-label" for="ind4">OSHA Safety</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="healthcare" id="ind5">
+                                       <label class="custom-control-label" for="ind5">Healthcare</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="hr" id="ind6">
+                                       <label class="custom-control-label" for="ind6">HR Compliance</label>
+                                    </div>
+                                 </div>
+                                 <div class="mb-3 pb-3" style="border-bottom: 1px solid #dee2e6;">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Education Type</h6>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="pre-licensing" id="ed1">
+                                       <label class="custom-control-label" for="ed1">Pre-Licensing</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="continuing-education" id="ed2">
+                                       <label class="custom-control-label" for="ed2">Continuing Education</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="post-licensing" id="ed3">
+                                       <label class="custom-control-label" for="ed3">Post-Licensing</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="exam-prep" id="ed4">
+                                       <label class="custom-control-label" for="ed4">Exam Prep</label>
+                                    </div>
+                                 </div>
+                                 <div class="mb-3">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Delivery Method</h6>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="online-self-paced" id="del1">
+                                       <label class="custom-control-label" for="del1">Self-Paced</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="live-virtual" id="del2">
+                                       <label class="custom-control-label" for="del2">Live Virtual</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="online-interactive" id="del3">
+                                       <label class="custom-control-label" for="del3">Interactive</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="in-person" id="del4">
+                                       <label class="custom-control-label" for="del4">In-Person</label>
+                                    </div>
+                                 </div>
+                                 <div class="d-flex justify-content-end pt-3" style="border-top: 1px solid #dee2e6; gap: 10px;">
+                                    <button class="btn btn-sm btn-outline-secondary" id="clearFiltersInMenu">Clear All</button>
+                                    <button class="btn btn-sm btn-primary" id="applyFilters">Apply</button>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Sort Dropdown -->
+                           <select class="form-control" id="sortBy" style="width: auto; min-width: 200px; border-radius: 4px; font-size: 15px; font-weight: 400; height: 46px;">
+                              <option value="default">Sort By</option>
+                              <option value="title-asc">A-Z</option>
+                              <option value="title-desc">Z-A</option>
+                              <option value="price-low">Price: Low to High</option>
+                              <option value="price-high">Price: High to Low</option>
+                           </select>
+
+                           <!-- Clear All Button -->
+                           <button type="button" class="btn btn-outline-secondary" id="clearFilters" style="border-radius: 4px; font-size: 15px; font-weight: 400; height: 46px; display: inline-flex; align-items: center;">Clear All</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+                  <!-- Results Header -->
+                  <div class="results-header d-flex justify-content-between align-items-center">
+                     <div class="results-count">
+                        <h4><span id="resultsCount">12</span> Courses Found</h4>
+                     </div>
+                  </div>
+
+                  <!-- Course Grid -->
+                  <div class="row" id="courseGrid">
+                           
+                           <!-- Course 1: Real Estate Pre-Licensing -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="GA" 
+                                data-education="pre-licensing" 
+                                data-license="salesperson" 
+                                data-delivery="online-self-paced" 
+                                data-price="299"
+                                data-title="Real Estate Pre-Licensing - GA">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/real-estate.jpg" alt="Real Estate Pre-Licensing">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6>
+                                       <span>$299</span>
+                                    </h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>75 Hours</li>
+                                          <li><i class="fas fa-laptop"></i>Self-Paced</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Real Estate Pre-Licensing - GA</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Complete 75-hour pre-licensing course for Georgia real estate salesperson license with comprehensive exam prep.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 2: Mortgage NMLS -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="mortgage" 
+                                data-state="FL" 
+                                data-education="pre-licensing" 
+                                data-license="salesperson" 
+                                data-delivery="live-virtual" 
+                                data-price="449"
+                                data-title="NMLS Licensing Course - FL">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/mortgage.jpg" alt="NMLS Licensing Course">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$449</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>20 Hours</li>
+                                          <li><i class="fas fa-video"></i>Live Virtual</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">NMLS Licensing Course - FL</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>20-hour NMLS approved pre-licensing education for mortgage loan originators with live instructor support.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 3: Real Estate CE -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="SC" 
+                                data-education="continuing-education" 
+                                data-license="salesperson" 
+                                data-delivery="online-interactive" 
+                                data-price="99"
+                                data-title="Real Estate CE Bundle - SC">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/real-estate.jpg" alt="Real Estate CE">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$99</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>8 Hours</li>
+                                          <li><i class="fas fa-laptop"></i>Interactive</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Real Estate CE Bundle - SC</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Complete your South Carolina 8-hour continuing education requirement online with interactive modules.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 4: OSHA 30 -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="osha" 
+                                data-state="TX" 
+                                data-education="pre-licensing" 
+                                data-license="" 
+                                data-delivery="in-person" 
+                                data-price="349"
+                                data-title="OSHA 30-Hour Construction">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/osha.jpg" alt="OSHA 30">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$349</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>30 Hours</li>
+                                          <li><i class="fas fa-chalkboard-teacher"></i>In-Person</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">OSHA 30-Hour Construction</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Comprehensive safety training for construction supervisors and workers covering all major safety topics.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 5: Appraisal Training -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="appraisal" 
+                                data-state="GA" 
+                                data-education="pre-licensing" 
+                                data-license="salesperson" 
+                                data-delivery="online-self-paced" 
+                                data-price="599"
+                                data-title="Appraisal Principles & Procedures">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/appraisal.jpg" alt="Appraisal Training">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$599</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>75 Hours</li>
+                                          <li><i class="fas fa-laptop"></i>Self-Paced</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Appraisal Principles & Procedures</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>75-hour foundational course covering valuation principles and methodologies for aspiring appraisers.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 6: Healthcare HIPAA -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="healthcare" 
+                                data-state="CA" 
+                                data-education="continuing-education" 
+                                data-license="" 
+                                data-delivery="online-self-paced" 
+                                data-price="149"
+                                data-title="HIPAA Compliance Training">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/healthcare.jpg" alt="HIPAA Training">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$149</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>2 Hours</li>
+                                          <li><i class="fas fa-laptop"></i>Self-Paced</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">HIPAA Compliance Training</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Essential privacy and security training for healthcare professionals covering all HIPAA requirements.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 7: Real Estate Broker -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="NC" 
+                                data-education="post-licensing" 
+                                data-license="broker" 
+                                data-delivery="live-virtual" 
+                                data-price="399"
+                                data-title="Broker Pre-Licensing - NC">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/real-estate.jpg" alt="Broker Course">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$399</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>90 Hours</li>
+                                          <li><i class="fas fa-video"></i>Live Virtual</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Broker Pre-Licensing - NC</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>90-hour course to upgrade from salesperson to broker license in North Carolina with expert instruction.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 8: HR Compliance -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="hr" 
+                                data-state="NY" 
+                                data-education="continuing-education" 
+                                data-license="" 
+                                data-delivery="online-interactive" 
+                                data-price="199"
+                                data-title="Sexual Harassment Prevention - NY">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/compliance.jpg" alt="HR Compliance">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$199</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>1 Hour</li>
+                                          <li><i class="fas fa-laptop"></i>Interactive</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Sexual Harassment Prevention - NY</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>NYS mandated training for all employees and supervisors covering prevention and reporting procedures.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 9: OSHA 10 -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="osha" 
+                                data-state="FL" 
+                                data-education="pre-licensing" 
+                                data-license="" 
+                                data-delivery="online-self-paced" 
+                                data-price="129"
+                                data-title="OSHA 10-Hour General Industry">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/osha.jpg" alt="OSHA 10">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$129</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>10 Hours</li>
+                                          <li><i class="fas fa-laptop"></i>Self-Paced</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">OSHA 10-Hour General Industry</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Entry-level safety training for general industry workers covering essential workplace safety topics.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 10: Mortgage CE -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="mortgage" 
+                                data-state="GA" 
+                                data-education="continuing-education" 
+                                data-license="salesperson" 
+                                data-delivery="online-self-paced" 
+                                data-price="179"
+                                data-title="NMLS CE 8-Hour Package">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/mortgage.jpg" alt="Mortgage CE">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$179</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>8 Hours</li>
+                                          <li><i class="fas fa-laptop"></i>Self-Paced</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">NMLS CE 8-Hour Package</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Complete your annual continuing education requirement online with comprehensive NMLS-approved content.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 11: Real Estate Exam Prep -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="TX" 
+                                data-education="exam-prep" 
+                                data-license="salesperson" 
+                                data-delivery="live-virtual" 
+                                data-price="199"
+                                data-title="Real Estate Exam Prep - TX">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/real-estate.jpg" alt="Exam Prep">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$199</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>16 Hours</li>
+                                          <li><i class="fas fa-video"></i>Live Virtual</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Real Estate Exam Prep - TX</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Live review course with practice exams to help you pass on the first try with confidence.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Course 12: Appraisal CE -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="appraisal" 
+                                data-state="SC" 
+                                data-education="continuing-education" 
+                                data-license="salesperson" 
+                                data-delivery="in-person" 
+                                data-price="249"
+                                data-title="USPAP 7-Hour Update">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/home/appraisal.jpg" alt="USPAP Update">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$249</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="far fa-clock"></i>7 Hours</li>
+                                          <li><i class="fas fa-chalkboard-teacher"></i>In-Person</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">USPAP 7-Hour Update</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(Course Details)</span>
+                                       </div>
+                                       <p>Required biennial update course for certified appraisers covering the latest standards and practices.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">View Details<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="post-navigation-wrap mt-5">
+                           <nav>
+                              <ul class="pagination justify-content-center">
+                                 <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                       <i class="fas fa-arrow-left"></i>
+                                    </a>
+                                 </li>
+                                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                 <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                       <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </nav>
+                        </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Search Results Section End -->
+         </main>
+         <div data-include="partials/footer.html"></div>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+      <!-- Modern search modal -->
+      <div class="search-modal-backdrop" id="searchBackdrop" style="display: none;">
+         <div class="search-modal">
+            <div class="search-modal-header">
+               <i class="fas fa-search search-modal-icon"></i>
+               <input type="text" id="searchModalInput" placeholder="Search courses..." autocomplete="off">
+               <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                  <i class="fas fa-times"></i>
+               </button>
+            </div>
+            <div class="search-modal-results" id="searchModalResults" style="display: none;">
+               <!-- Results populated by JS -->
+            </div>
+         </div>
+      </div>
+         <!-- header html end -->
+      </div>
+
+      <!-- JavaScript -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="assets/js/jquery.counterup.js"></script>
+      <script src="assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="assets/vendors/slick/slick.min.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/layout.js"></script>
+      <script src="assets/js/custom.min.js"></script>
+      <script src="assets/js/header-search.js?t=1762483431"></script>
+      <script src="assets/js/search-page.js?v=bs4-native"></script>
+   </body>
+</html>
+

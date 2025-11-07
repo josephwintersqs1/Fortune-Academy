@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Disable all caching during development -->
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+
+      <!-- favicon -->
+      <link rel="icon" type="image/png" href="assets/images/favicon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/fontawesome/css/all.min.css">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/jquery-ui/jquery-ui.min.css">
+      <!-- modal video css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/modal-video/modal-video.min.css">
+      <!-- light box css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/lightbox/dist/css/lightbox.min.css">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick.css">
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick-theme.css">
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="style.css?bust=1762497475">
+      <link rel="stylesheet" type="text/css" href="custom.css?bust=1762501900">
+      <link rel="stylesheet" type="text/css" href="assets/css/hero-form.css?v=1762478000">
+      <title>Fortune Academy | Real Estate</title>
+   </head>
+   <body class="industry-page industry-real-estate">
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="assets/images/loader1.gif" alt="">
+         </div>
+      </div>
+      <div id="page" class="full-page">
+         <div
+            data-include="partials/header.html"
+            data-logo-white="assets/images/fa-logo-for-dark.png"
+            data-logo-dark="assets/images/fa-logo-for-light.png"
+            data-active-vertical="real-estate"></div>
+         <main id="content" class="site-main">
+            <!-- Home banner html start -->
+            <!-- ===== Hero / Home banner (keeps trip-search-section) ===== -->
+<section class="home-banner-section industry-hero">
+  <div class="home-banner-items">
+    <!-- Background image -->
+    <div class="banner-inner-wrap" style="background-image: url(assets/images/slider-banner-2-varient.jpg);"></div>
+
+    <div class="banner-content-wrap">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left: Messaging (updated) -->
+          <div class="col-lg-8">
+            <div class="banner-content section-heading section-heading-white">
+              <p class="banner-kicker">Pioneers of Real Estate Education Since 1982</p>
+
+              <h1 class="banner-title"><span class="accent-industry">Real Estate.</span> <wbr>Real Training. <wbr>Real Success.</h1>
+
+
+
+              <p class="banner-delivery">
+                Providing lifelong real estate training and tools for success. Learn in a highly convenient and flexible school system with a variety of delivery methods:
+                <strong>In-Person</strong> • <strong>Live Virtual</strong> • <strong>Online Self-Paced</strong> • <strong>Online Interactive</strong>
+              </p>
+
+              <!--div class="slider-button">
+                <a href="#courses" class="button-primary">Explore Courses</a>
+                <a href="#book-appointment" class="button-secondary">Talk to an Advisor</a>
+              </div-->
+
+              <p class="approval-note">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                ALL OUR COURSES ARE APPROVED BY THE REAL ESTATE COMMISSION OF THE RELEVANT STATE.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: keep the original trip-search (unchanged) -->
+          <div class="col-lg-4">
+            <!-- Home search field html start -->
+            <div class="trip-search-section">
+  <div class="container">
+    <form class="fa-form" action="search.html" method="get" autocomplete="off" data-fa-hero-form>
+      <h3 class="fa-form-title">Find Your Course</h3>
+
+      <!-- State Field with Custom Dropdown -->
+      <div class="fa-field">
+        <label for="faState" class="fa-label">State*</label>
+        <div class="fa-state-picker" data-fa-state-picker>
+          <input 
+            type="text" 
+            id="faState" 
+            class="fa-state-input" 
+            placeholder="Select State" 
+            readonly 
+            required
+          >
+          <div class="fa-state-dropdown" hidden>
+            <div class="fa-state-search">
+              <input type="text" placeholder="Search states..." aria-label="Search states">
+            </div>
+            <div class="fa-state-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Field -->
+      <div class="fa-field">
+        <label for="faEducation" class="fa-label">Education*</label>
+        <select id="faEducation" name="education" class="fa-select" required>
+          <option value="">Select Your Education</option>
+          <option>Pre-Licensing</option>
+          <option>Exam Prep</option>
+          <option>Post Licensing</option>
+          <option>Continuing Education</option>
+        </select>
+      </div>
+
+      <!-- License Type Field -->
+      <div class="fa-field">
+        <label for="faLicense" class="fa-label">License Type*</label>
+        <select id="faLicense" name="license" class="fa-select" required>
+          <option value="">Select Your License Type</option>
+          <option>Salesperson/Agent</option>
+          <option>Property Manager/In-charge</option>
+          <option>Broker/Principal Broker</option>
+        </select>
+      </div>
+
+      <!-- Delivery Method Field -->
+      <div class="fa-field">
+        <label for="faDelivery" class="fa-label">Delivery Method*</label>
+        <select id="faDelivery" name="delivery" class="fa-select" required>
+          <option value="">Select Learning Style</option>
+          <option>In-Person Classroom</option>
+          <option>Online Live/Zoom Class</option>
+          <option>Online Interactive</option>
+          <option>Online Self-Paced</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="fa-field">
+        <button type="button" class="fa-submit" onclick="window.location.href='search.html';">Find Courses</button>
+      </div>
+    </form>
+  </div>
+</div>
+            <!-- search field html end -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- keep overlay -->
+    <div class="overlay"></div>
+
+    <!-- bottom color stripe -->
+    <div class="industry-stripe" aria-hidden="true"></div>
+  </div>
+</section>
+<!-- ===== /Hero ===== -->
+           <!-- ===== Real Estate Catalog (state + carousel) ===== -->
+<section class="re-catalog" id="catalog">
+  <div class="container">
+    <div class="re-catalog__header">
+      <div class="section-heading text-center">
+        <h5 class="dash-style">Real Estate</h5>
+        <h2>Find Courses by Category &amp; State</h2>
+        <p class="lead">Choose your state to view our most popular licensing, upgrade, CE, post-licensing, and exam prep bundles.</p>
+      </div>
+    <div class="re-catalog__state-picker">
+      <label for="reCatalogState" class="state-label">Get Training In:</label>
+      <div class="re-catalog__state-select-wrapper">
+        <input type="text" id="reCatalogState" class="re-catalog__state-select" aria-label="Select a state to view training" readonly>
+        <span class="re-catalog__select-icon"><i class="fas fa-chevron-down"></i></span>
+        <div class="re-catalog__select-dropdown" hidden>
+          <div class="re-catalog__select-search">
+            <input type="text" placeholder="Search states..." aria-label="Search states">
+          </div>
+          <div class="re-catalog__select-groups">
+            <!-- options populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="re-catalog__tabs" role="tablist" aria-label="Real estate course categories">
+      <button class="re-catalog__tab active" role="tab" aria-selected="true" data-tab="pre-license">Pre-Licensing</button>
+      <button class="re-catalog__tab" role="tab" aria-selected="false" data-tab="upgrade">Upgrade Licensing</button>
+      <button class="re-catalog__tab" role="tab" aria-selected="false" data-tab="ce">Continuing Education</button>
+      <button class="re-catalog__tab" role="tab" aria-selected="false" data-tab="post">Post Licensing</button>
+      <button class="re-catalog__tab" role="tab" aria-selected="false" data-tab="exam">Exam Prep</button>
+    </div>
+
+    <p class="re-catalog__helper" id="reCatalogHelper">Showing featured courses for <strong>Georgia</strong>.</p>
+
+    <div class="re-catalog__carousel-shell">
+      <div class="re-catalog__carousel" aria-live="polite">
+        <!-- slides injected via JS -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== /Real Estate Catalog ===== -->
+
+<!-- Home activity section html start -->
+<section class="activity-section activity-bg-image" style="background-image: url(assets/images/img29.jpg);">
+  <div class="container">
+    <div class="section-heading section-heading-white text-center">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h5>OUR PARTNERS</h5>
+          <h2>ESTEEMED ACADEMIC PARTNERS</h2>
+          <p>Partnering with the leading academic institutions to revolutionize Real Estate education.</p>
+          <div class="title-icon-divider">
+            <!-- changed from fa-suitcase-rolling -->
+            <i class="fas fa-handshake"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="activity-inner row justify-content-between">
+  <!-- 1 -->
+  <div class="col-6 col-md-4 col-lg">
+    <div class="activity-item">
+      <div class="activity-icon">
+        <a href="#"><img src="assets/images/partner-1-white.png" alt="Technical College of the Lowcountry"></a>
+      </div>
+      <div class="activity-content">
+        <h4><a href="#">Technical College of the Lowcountry</a></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="col-6 col-md-4 col-lg">
+    <div class="activity-item">
+      <div class="activity-icon">
+        <a href="#"><img src="assets/images/partner-2-white.png" alt="Trident Technical College"></a>
+      </div>
+      <div class="activity-content">
+        <h4><a href="#">Trident Technical College</a></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="col-6 col-md-4 col-lg">
+    <div class="activity-item">
+      <div class="activity-icon">
+        <a href="#"><img src="assets/images/partner-3-white.png" alt="Aiken Technical College"></a>
+      </div>
+      <div class="activity-content">
+        <h4><a href="#">Aiken Technical College</a></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="col-6 col-md-4 col-lg">
+    <div class="activity-item">
+      <div class="activity-icon">
+        <a href="#"><img src="assets/images/partner-4-white.png" alt="Denmark Technical College"></a>
+      </div>
+      <div class="activity-content">
+        <h4><a href="#">Denmark Technical College</a></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="col-6 col-md-4 col-lg">
+    <div class="activity-item">
+      <div class="activity-icon">
+        <a href="#"><img src="assets/images/partner-5-white.png" alt="Horry-Georgetown Technical College"></a>
+      </div>
+      <div class="activity-content">
+        <h4><a href="#">Horry-Georgetown Technical College</a></h4>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+<!-- activity html end -->
+
+        <!-- ===== Guided CTA ===== -->
+        <section class="contact-section">
+          <div class="container">
+            <div class="row">
+              <!-- Left image -->
+              <div class="col-lg-4">
+                <div class="contact-img" style="background-image: url(assets/images/img24-training.jpg);"></div>
+              </div>
+
+              <!-- Right content -->
+              <div class="col-lg-8">
+                <div class="contact-details-wrap">
+                  <div class="row">
+                    <!-- Email -->
+                    <div class="col-sm-5">
+                      <div class="contact-details">
+                        <div class="contact-icon">
+                          <img src="assets/images/icon12.png" alt="">
+                        </div>
+                        <ul>
+                          <li><a href="mailto:contact@fortuneacademy.com">contact@fortuneacademy.com</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="col-sm-3">
+                      <div class="contact-details">
+                        <div class="contact-icon">
+                          <img src="assets/images/icon13.png" alt="">
+                        </div>
+                        <ul>
+                          <li><a href="tel:+18009222245">(800) 922 2245</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Office -->
+                    <div class="col-sm-4">
+                      <div class="contact-details">
+                        <div class="contact-icon">
+                          <img src="assets/images/icon14.png" alt="">
+                        </div>
+                        <ul>
+                          <li>Office:</li>
+                          <li>3135 Fred Nash Blvd</li>
+                          <li>Myrtle Beach, SC 29577</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CTA row -->
+                <div class="contact-btn-wrap">
+                  <div class="contact-cta-copy">
+                    <h3 class="mb-1">Ready to Launch Your Real Estate Career?</h3>
+                    <p class="contact-subcopy mb-0">
+                      <strong>Need help choosing the right licensing path or CE courses?</strong><br>
+                      Our advisors will guide you through pre-licensing, exam prep, and continuing education options for your state.
+                    </p><br><br>
+                  </div>
+                  <a href="#catalog" class="button-primary">Speak with an Advisor</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+         </main>
+         <div data-include="partials/footer.html" data-footer-logo="assets/images/fa-logo-for-dark-real-estate.png"></div>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+      <!-- Modern search modal -->
+      <div class="search-modal-backdrop" id="searchBackdrop" style="display: none;">
+         <div class="search-modal">
+            <div class="search-modal-header">
+               <i class="fas fa-search search-modal-icon"></i>
+               <input type="text" id="searchModalInput" placeholder="Search courses..." autocomplete="off">
+               <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                  <i class="fas fa-times"></i>
+               </button>
+            </div>
+            <div class="search-modal-results" id="searchModalResults" style="display: none;">
+               <!-- Results populated by JS -->
+            </div>
+         </div>
+      </div>
+         <!-- header html end -->
+      </div>
+
+      <!-- JavaScript -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="assets/js/jquery.counterup.js"></script>
+      <script src="assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="assets/vendors/slick/slick.min.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/layout.js"></script>
+      <script src="assets/js/custom.min.js"></script>
+      <script src="assets/js/fa-states.js?v=1762478000"></script>
+      <script src="assets/js/hero-form-new.js?v=1762478000"></script>
+      <script src="assets/js/real-estate-catalog.js?v=1762499470"></script>
+      <script src="assets/js/header-search.js?t=1762483431"></script>
+   </body>
+</html>
