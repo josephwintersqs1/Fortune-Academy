@@ -1176,6 +1176,36 @@ background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
 display: none !important;
 }
 
+/* Read More/Less Toggle Styles */
+.delivery-method-section.collapsed {
+margin-bottom: 20px;
+}
+
+.delivery-method-section h3 {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.read-more-toggle {
+font-size: 0.9rem;
+font-weight: 400;
+color: var(--real-estate-primary);
+text-decoration: none;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.read-more-toggle:hover {
+color: var(--real-estate-secondary);
+text-decoration: underline;
+}
+
+.collapsible-content {
+overflow: hidden;
+transition: all 0.3s ease-in-out;
+}
+
 @media (max-width: 768px) {
 .tab-pricing-box {
 flex-direction: column;
@@ -1717,8 +1747,11 @@ SCREC Approved #004
 </div>
 
 <!-- Section 2: In-Person Classroom Learning -->
-<div class="delivery-method-section">
-<h3>About This Delivery Method</h3>
+<div class="delivery-method-section collapsed">
+<h3>About This Delivery Method 
+<a href="#" class="read-more-toggle">Read more</a>
+</h3>
+<div class="collapsible-content" style="display: none;">
 <p>The best education option for students who prefer a traditional, in-person learning format where instructors and students share a learning environment.</p>
 <ul>
 <li>Face-to-face instruction with expert teachers</li>
@@ -1726,6 +1759,7 @@ SCREC Approved #004
 <li>Structured schedule keeps you on track</li>
 <li>Hands-on learning activities and real-time Q&A</li>
 </ul>
+</div>
 </div>
 
 <!-- Section 3: Choose Your Package -->
@@ -1810,8 +1844,11 @@ SCREC Approved #004
 </div>
 
 <!-- Section 2: Online Live Zoom Learning -->
-<div class="delivery-method-section">
-<h3>About This Delivery Method</h3>
+<div class="delivery-method-section collapsed">
+<h3>About This Delivery Method 
+<a href="#" class="read-more-toggle">Read more</a>
+</h3>
+<div class="collapsible-content" style="display: none;">
 <p>Enjoy the flexibility of learning from anywhere while benefiting from real-time interaction with instructors and peers through live video sessions.</p>
 <ul>
 <li>Learn from anywhere with internet access</li>
@@ -1819,6 +1856,7 @@ SCREC Approved #004
 <li>Real-time Q&A and discussions</li>
 <li>Recorded sessions available for review</li>
 </ul>
+</div>
 </div>
 
 <!-- Section 3: Choose Your Package -->
@@ -1903,8 +1941,11 @@ SCREC Approved #004
 </div>
 
 <!-- Section 2: Online Self-Paced Learning -->
-<div class="delivery-method-section">
-<h3>About This Delivery Method</h3>
+<div class="delivery-method-section collapsed">
+<h3>About This Delivery Method 
+<a href="#" class="read-more-toggle">Read more</a>
+</h3>
+<div class="collapsible-content" style="display: none;">
 <p>Complete your education on your own schedule with 24/7 access to all course materials, video lessons, and interactive content.</p>
 <ul>
 <li>Learn at your own pace, anytime, anywhere</li>
@@ -1912,6 +1953,7 @@ SCREC Approved #004
 <li>Progress tracking dashboard</li>
 <li>Video lessons & interactive quizzes</li>
 </ul>
+</div>
 </div>
 
 <!-- Section 3: Choose Your Package -->
@@ -1996,8 +2038,11 @@ SCREC Approved #004
 </div>
 
 <!-- Section 2: About This Delivery Method -->
-<div class="delivery-method-section">
-<h3>About This Delivery Method</h3>
+<div class="delivery-method-section collapsed">
+<h3>About This Delivery Method 
+<a href="#" class="read-more-toggle">Read more</a>
+</h3>
+<div class="collapsible-content" style="display: none;">
 <p>Study from your smartphone or tablet with our fully-featured mobile application, designed for learning on the go.</p>
 <ul>
 <li>Native iOS and Android apps</li>
@@ -2006,6 +2051,7 @@ SCREC Approved #004
 <li>Push notifications for study reminders</li>
 <li>Optimized for mobile screens</li>
 </ul>
+</div>
 </div>
 
 <!-- Section 3: Choose Your Package -->
@@ -2091,8 +2137,11 @@ SCREC Approved #004
 </div>
 
 <!-- Section 2: About This Delivery Method -->
-<div class="delivery-method-section">
-<h3>About This Delivery Method</h3>
+<div class="delivery-method-section collapsed">
+<h3>About This Delivery Method 
+<a href="#" class="read-more-toggle">Read more</a>
+</h3>
+<div class="collapsible-content" style="display: none;">
 <p>Learn through professionally-narrated audio lessons that you can listen to anytime, anywhere—perfect for auditory learners and multitaskers.</p>
 <ul>
 <li>Full 90-hour course in audio format</li>
@@ -2101,6 +2150,7 @@ SCREC Approved #004
 <li>Includes PDF transcripts for reference</li>
 <li>Listen in your car, gym, or anywhere</li>
 </ul>
+</div>
 </div>
 
 <!-- Section 3: Choose Your Package -->
@@ -2876,6 +2926,27 @@ $(document).ready(function() {
 		// Redirect to enrollment page or close modal
 		// $('#paymentScheduleModal').modal('hide');
 		// window.location.href = 'enrollment-page.html';
+	});
+
+	// Read More/Less Toggle for Delivery Method sections
+	$('.read-more-toggle').on('click', function(e) {
+		e.preventDefault();
+		
+		const $toggle = $(this);
+		const $section = $toggle.closest('.delivery-method-section');
+		const $content = $section.find('.collapsible-content');
+		
+		if ($content.is(':visible')) {
+			// Collapse
+			$content.slideUp(300);
+			$toggle.text('Read more');
+			$section.addClass('collapsed');
+		} else {
+			// Expand
+			$content.slideDown(300);
+			$toggle.text('Read less');
+			$section.removeClass('collapsed');
+		}
 	});
 });
 </script>
