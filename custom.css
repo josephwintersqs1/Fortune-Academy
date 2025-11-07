@@ -4212,90 +4212,92 @@ body.industry-compliance {
 }
 
 /* ===================================================================
-   TESTIMONIALS SECTION - Updated with Avatar Style
+   FORTUNE ACADEMY CUSTOM REVIEWS SECTION - NO CONFLICTS
    =================================================================== */
-.testimonial-page-section {
+
+.fa-reviews-section {
   padding: 80px 0;
   background: #ffffff;
 }
 
-.testimonial-page-section .section-heading {
+.fa-reviews-section .section-heading {
   margin-bottom: 50px;
 }
 
-/* Force equal heights using flexbox */
-.testimonial-page-section .row {
+.fa-trustpilot-link {
+  text-align: center;
+}
+
+.fa-trustpilot-link a:hover {
+  opacity: 0.8;
+}
+
+/* Equal height grid */
+.fa-reviews-row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
-.testimonial-page-section .col-lg-4,
-.testimonial-page-section .col-md-6 {
+.fa-review-col {
   display: flex;
-  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
 }
 
-.testimonial-page-section .testimonial-item {
-  margin-bottom: 30px;
+.fa-review-card {
   background: #f8f9fa;
   padding: 30px 20px 25px;
   border-radius: 8px;
-  transition: all 0.3s ease;
   border: 2px solid transparent;
-  flex: 1;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.testimonial-page-section .testimonial-item:hover {
+.fa-review-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #2c75ba;
 }
 
-/* Override all existing testimonial-img styles */
-.testimonial-page-section .testimonial-item .testimonial-img {
-  margin: 0 auto 20px !important;
-  width: 100px !important;
-  height: 100px !important;
-  border: none !important;
-  overflow: visible !important;
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  background: transparent !important;
+/* Avatar circle */
+.fa-review-avatar-wrap {
+  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
 }
 
-.testimonial-page-section .testimonial-item .testimonial-img img {
-  display: none !important;
+.fa-review-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #2c75ba;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: 4px solid #2c75ba;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  line-height: 1;
+  text-align: center;
+  margin: 0 auto;
 }
 
-/* Avatar circle - solid color with text */
-.testimonial-page-section .review-avatar {
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50% !important;
-  background: #2c75ba !important;
-  color: #ffffff !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  margin: 0 auto !important;
-  border: 4px solid #2c75ba !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  line-height: 1 !important;
-  text-align: center !important;
-}
-
-.testimonial-page-section .testimonial-content {
+/* Review content */
+.fa-review-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.testimonial-page-section .testimonial-content p {
+.fa-review-text {
   font-size: 15px;
   line-height: 1.8;
   color: #555;
@@ -4303,22 +4305,51 @@ body.industry-compliance {
   flex-grow: 1;
 }
 
-.testimonial-page-section .testimonial-content .start-wrap {
+.fa-review-stars {
   margin-bottom: 15px;
+  display: inline-block;
 }
 
-.testimonial-page-section .testimonial-content .rating-start span {
-  background: #2c75ba !important;
+.fa-rating-stars {
+  position: relative;
+  display: inline-block;
+  height: 18px;
+  line-height: 1;
+  font-size: 18px;
+  letter-spacing: 2px;
 }
 
-.testimonial-page-section .testimonial-content h3 {
+.fa-rating-stars:before {
+  content: "★★★★★";
+  color: #e0e0e0;
+}
+
+.fa-rating-stars span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #2c75ba;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fa-rating-stars span:before {
+  content: "★★★★★";
+  color: #2c75ba;
+  -webkit-text-fill-color: #2c75ba;
+}
+
+.fa-review-name {
   font-size: 18px;
   font-weight: 700;
   color: #333;
   margin-bottom: 8px;
 }
 
-.testimonial-page-section .testimonial-content .posted-on {
+.fa-review-source {
   display: inline-flex;
   align-items: center;
   font-size: 13px;
@@ -4326,127 +4357,149 @@ body.industry-compliance {
   font-style: italic;
 }
 
-.trustpilot-link,
-.trustpilot-link-top {
-  text-align: center;
-}
-
-.trustpilot-link {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 40px;
-}
-
-.trustpilot-link a:hover,
-.trustpilot-link-top a:hover {
-  color: #00b67a !important;
-  text-decoration: none;
-}
-
 /* ===================================================================
-   INDUSTRY-SPECIFIC TESTIMONIAL COLORS
+   INDUSTRY-SPECIFIC COLORS FOR REVIEWS
    =================================================================== */
 
 /* Real Estate - Blue */
-.industry-real-estate .testimonial-page-section .review-avatar {
-  background: #2c75ba !important;
-  border-color: #2c75ba !important;
+.industry-real-estate .fa-review-avatar {
+  background: #2c75ba;
+  border-color: #2c75ba;
 }
 
-.industry-real-estate .testimonial-page-section .testimonial-item:hover {
-  border-color: #2c75ba !important;
+.industry-real-estate .fa-review-card:hover {
+  border-color: #2c75ba;
 }
 
-.industry-real-estate .testimonial-page-section .rating-start span {
-  background: #2c75ba !important;
+.industry-real-estate .fa-rating-stars span {
+  background: #2c75ba;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.industry-real-estate .fa-rating-stars span:before {
+  color: #2c75ba;
+  -webkit-text-fill-color: #2c75ba;
 }
 
 /* Mortgage - Purple */
-.industry-mortgage .testimonial-page-section .review-avatar {
-  background: #7b1fa2 !important;
-  border-color: #7b1fa2 !important;
+.industry-mortgage .fa-review-avatar {
+  background: #7b1fa2;
+  border-color: #7b1fa2;
 }
 
-.industry-mortgage .testimonial-page-section .testimonial-item:hover {
-  border-color: #7b1fa2 !important;
+.industry-mortgage .fa-review-card:hover {
+  border-color: #7b1fa2;
 }
 
-.industry-mortgage .testimonial-page-section .rating-start span {
-  background: #7b1fa2 !important;
+.industry-mortgage .fa-rating-stars span {
+  background: #7b1fa2;
+}
+
+.industry-mortgage .fa-rating-stars span:before {
+  color: #7b1fa2;
+  -webkit-text-fill-color: #7b1fa2;
 }
 
 /* Appraisal - Blue */
-.industry-appraisal .testimonial-page-section .review-avatar {
-  background: #2c75ba !important;
-  border-color: #2c75ba !important;
+.industry-appraisal .fa-review-avatar {
+  background: #2c75ba;
+  border-color: #2c75ba;
 }
 
-.industry-appraisal .testimonial-page-section .testimonial-item:hover {
-  border-color: #2c75ba !important;
+.industry-appraisal .fa-review-card:hover {
+  border-color: #2c75ba;
 }
 
-.industry-appraisal .testimonial-page-section .rating-start span {
-  background: #2c75ba !important;
+.industry-appraisal .fa-rating-stars span {
+  background: #2c75ba;
+}
+
+.industry-appraisal .fa-rating-stars span:before {
+  color: #2c75ba;
+  -webkit-text-fill-color: #2c75ba;
 }
 
 /* OSHA - Orange */
-.industry-osha .testimonial-page-section .review-avatar {
-  background: #ff6f00 !important;
-  border-color: #ff6f00 !important;
+.industry-osha .fa-review-avatar {
+  background: #ff6f00;
+  border-color: #ff6f00;
 }
 
-.industry-osha .testimonial-page-section .testimonial-item:hover {
-  border-color: #ff6f00 !important;
+.industry-osha .fa-review-card:hover {
+  border-color: #ff6f00;
 }
 
-.industry-osha .testimonial-page-section .rating-start span {
-  background: #ff6f00 !important;
+.industry-osha .fa-rating-stars span {
+  background: #ff6f00;
+}
+
+.industry-osha .fa-rating-stars span:before {
+  color: #ff6f00;
+  -webkit-text-fill-color: #ff6f00;
 }
 
 /* Healthcare - Red */
-.industry-healthcare .testimonial-page-section .review-avatar {
-  background: #c1241a !important;
-  border-color: #c1241a !important;
+.industry-healthcare .fa-review-avatar {
+  background: #c1241a;
+  border-color: #c1241a;
 }
 
-.industry-healthcare .testimonial-page-section .testimonial-item:hover {
-  border-color: #c1241a !important;
+.industry-healthcare .fa-review-card:hover {
+  border-color: #c1241a;
 }
 
-.industry-healthcare .testimonial-page-section .rating-start span {
-  background: #c1241a !important;
+.industry-healthcare .fa-rating-stars span {
+  background: #c1241a;
+}
+
+.industry-healthcare .fa-rating-stars span:before {
+  color: #c1241a;
+  -webkit-text-fill-color: #c1241a;
 }
 
 /* HR Compliance - Green */
-.industry-compliance .testimonial-page-section .review-avatar {
-  background: #4caf50 !important;
-  border-color: #4caf50 !important;
+.industry-compliance .fa-review-avatar {
+  background: #4caf50;
+  border-color: #4caf50;
 }
 
-.industry-compliance .testimonial-page-section .testimonial-item:hover {
-  border-color: #4caf50 !important;
+.industry-compliance .fa-review-card:hover {
+  border-color: #4caf50;
 }
 
-.industry-compliance .testimonial-page-section .rating-start span {
-  background: #4caf50 !important;
+.industry-compliance .fa-rating-stars span {
+  background: #4caf50;
 }
 
-/* Responsive adjustments */
+.industry-compliance .fa-rating-stars span:before {
+  color: #4caf50;
+  -webkit-text-fill-color: #4caf50;
+}
+
+/* Responsive */
 @media (max-width: 991px) {
-  .testimonial-page-section {
+  .fa-reviews-section {
     padding: 60px 0;
+  }
+  
+  .fa-review-col {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 767px) {
-  .testimonial-page-section {
+  .fa-reviews-section {
     padding: 50px 0;
   }
   
-  .testimonial-item {
-    margin-bottom: 20px;
+  .fa-review-avatar-wrap {
+    width: 80px;
+    height: 80px;
   }
   
-  .review-avatar {
+  .fa-review-avatar {
     width: 80px;
     height: 80px;
     font-size: 16px;
