@@ -739,6 +739,65 @@ padding: 12px 15px;
 font-size: 0.9rem;
 }
 }
+
+/* Override Fortune Academy default colors with Real Estate industry colors */
+.button-primary,
+.btn-primary {
+background: var(--real-estate-primary) !important;
+border-color: var(--real-estate-primary) !important;
+}
+
+.button-primary:hover,
+.btn-primary:hover {
+background: var(--real-estate-secondary) !important;
+border-color: var(--real-estate-secondary) !important;
+}
+
+.inner-banner-wrap .inner-title {
+text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+/* Real estate color for links and accents */
+a:hover {
+color: var(--real-estate-secondary);
+}
+
+.package-price .price span {
+color: var(--real-estate-primary);
+}
+
+/* Ensure sidebar widgets match real estate theme */
+.widget-bg.information-content .button-primary {
+background: var(--real-estate-accent) !important;
+border: 2px solid var(--real-estate-accent) !important;
+}
+
+.widget-bg.information-content .button-primary:hover {
+background: #b8960f !important;
+border-color: #b8960f !important;
+}
+
+/* Package meta styling */
+.package-meta {
+background: linear-gradient(135deg, var(--real-estate-primary) 0%, var(--real-estate-secondary) 100%);
+}
+
+.package-meta ul li {
+color: white;
+}
+
+.package-meta ul li i {
+color: var(--real-estate-accent);
+}
+
+/* Back to top button */
+#backTotop {
+background: var(--real-estate-primary);
+}
+
+#backTotop:hover {
+background: var(--real-estate-secondary);
+}
 </style>
 </head>
 <body class="search-page">
