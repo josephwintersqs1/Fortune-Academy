@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Modal Version</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #1f2937; }
+        
+        .pricing-section { padding: 4rem 0; min-height: 100vh; }
+        .section-title { font-family: 'Raleway', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+        .section-subtitle { color: #6b7280; margin-bottom: 3rem; }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px rgba(0,0,0,0.1); }
+        .pricing-card.popular { border-color: #16a34a; }
+        .pricing-card.premium { border-color: #f59e0b; }
+        
+        .badge-popular { 
+            background: #16a34a; 
+            color: white; 
+            padding: 0.5rem 1rem; 
+            border-radius: 0.5rem; 
+            font-size: 0.75rem; 
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .package-name { font-family: 'Raleway', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .package-subtitle { color: #6b7280; font-size: 0.875rem; margin-bottom: 1.5rem; }
+        
+        .price { font-size: 3rem; font-weight: 800; font-family: 'Raleway', sans-serif; line-height: 1; }
+        .price-original { color: #9ca3af; text-decoration: line-through; font-size: 1.25rem; margin-left: 0.5rem; }
+        .savings { 
+            background: #dcfce7; 
+            color: #166534; 
+            padding: 0.25rem 0.75rem; 
+            border-radius: 0.375rem; 
+            font-size: 0.875rem; 
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 1.5rem 0;
+            margin: 0;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .features-list li { 
+            padding: 0.5rem 0; 
+            display: flex; 
+            align-items: center; 
+            font-size: 0.875rem; 
+        }
+        .features-list i { color: #10b981; margin-right: 0.5rem; }
+        
+        .btn-enroll {
+            width: 100%;
+            padding: 1rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+        .btn-enroll:hover { background: #1e40af; transform: translateY(-2px); }
+        .btn-enroll.popular { background: #16a34a; }
+        .btn-enroll.popular:hover { background: #15803d; }
+        .btn-enroll.premium { background: linear-gradient(90deg, #f59e0b, #fb923c); }
+        
+        .btn-details {
+            width: 100%;
+            padding: 0.75rem;
+            background: transparent;
+            color: #2563eb;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+        .btn-details:hover { border-color: #2563eb; background: #eff6ff; }
+        
+        /* Modal Styles */
+        .modal-content { border-radius: 1rem; border: none; }
+        .modal-header { border-bottom: 2px solid #e5e7eb; padding: 1.5rem; }
+        .modal-title { font-family: 'Raleway', sans-serif; font-weight: 700; }
+        .modal-body { padding: 2rem; max-height: 70vh; overflow-y: auto; }
+        
+        .detail-section { margin-bottom: 2rem; }
+        .detail-section:last-child { margin-bottom: 0; }
+        .detail-section h4 { 
+            font-weight: 700; 
+            margin-bottom: 1rem; 
+            color: #1f2937;
+            font-size: 1.125rem;
+        }
+        .detail-section p { color: #6b7280; line-height: 1.6; margin-bottom: 0.5rem; }
+        .detail-section ul { 
+            list-style: none; 
+            padding-left: 1.5rem; 
+        }
+        .detail-section ul li { 
+            position: relative; 
+            padding: 0.25rem 0;
+            color: #6b7280;
+        }
+        .detail-section ul li:before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-section { padding: 2rem 0; }
+            .section-title { font-size: 1.75rem; }
+            .price { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="pricing-section">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="section-title">Choose Your Package</h1>
+                <p class="section-subtitle">Start your real estate career with the right course</p>
+            </div>
+
+            <div class="row g-4">
+                
+                <!-- Bronze -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card">
+                        <h3 class="package-name">Bronze</h3>
+                        <p class="package-subtitle">Core Courses Only</p>
+                        
+                        <div>
+                            <span class="price">$207</span>
+                            <span class="price-original">$295</span>
+                            <div class="savings">Save $89</div>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 75-Hours GA Pre-Licensing</li>
+                            <li><i class="fas fa-check"></i> Digital Ebooks</li>
+                            <li><i class="fas fa-check"></i> Career Resources</li>
+                            <li><i class="fas fa-check"></i> Flashcards</li>
+                        </ul>
+                        
+                        <button class="btn-enroll">Enroll Now</button>
+                        <button class="btn-details" data-bs-toggle="modal" data-bs-target="#bronzeModal">
+                            <i class="fas fa-info-circle"></i> View Full Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Silver -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card popular">
+                        <span class="badge-popular">Most Popular</span>
+                        <h3 class="package-name">Silver</h3>
+                        <p class="package-subtitle">Exam Prep Included</p>
+                        
+                        <div>
+                            <span class="price">$277</span>
+                            <span class="price-original">$395</span>
+                            <div class="savings">Save $118</div>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 75-Hours GA Pre-Licensing</li>
+                            <li><i class="fas fa-check"></i> Exam Prep Edge</li>
+                            <li><i class="fas fa-check"></i> Digital Ebooks</li>
+                            <li><i class="fas fa-check"></i> Career Resources</li>
+                            <li><i class="fas fa-check"></i> Flashcards</li>
+                        </ul>
+                        
+                        <button class="btn-enroll popular">Enroll Now</button>
+                        <button class="btn-details" data-bs-toggle="modal" data-bs-target="#silverModal">
+                            <i class="fas fa-info-circle"></i> View Full Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gold -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card">
+                        <h3 class="package-name">Gold</h3>
+                        <p class="package-subtitle">Business Building Included</p>
+                        
+                        <div>
+                            <span class="price">$328</span>
+                            <span class="price-original">$469</span>
+                            <div class="savings">Save $141</div>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 75-Hours GA Pre-Licensing</li>
+                            <li><i class="fas fa-check"></i> Exam Prep Edge</li>
+                            <li><i class="fas fa-check"></i> Business Building Courses</li>
+                            <li><i class="fas fa-check"></i> Digital Ebooks</li>
+                            <li><i class="fas fa-check"></i> Flashcards</li>
+                        </ul>
+                        
+                        <button class="btn-enroll">Enroll Now</button>
+                        <button class="btn-details" data-bs-toggle="modal" data-bs-target="#goldModal">
+                            <i class="fas fa-info-circle"></i> View Full Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Platinum -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card premium">
+                        <h3 class="package-name">Platinum</h3>
+                        <p class="package-subtitle">Complete Package + Post Licensing</p>
+                        
+                        <div>
+                            <span class="price">$424</span>
+                            <span class="price-original">$605</span>
+                            <div class="savings">Save $182</div>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 75-Hours GA Pre-Licensing</li>
+                            <li><i class="fas fa-check"></i> Exam Prep Edge</li>
+                            <li><i class="fas fa-check"></i> Business Building</li>
+                            <li><i class="fas fa-check"></i> 25-Hours Post Licensing</li>
+                            <li><i class="fas fa-check"></i> Everything included</li>
+                        </ul>
+                        
+                        <button class="btn-enroll premium">Enroll Now</button>
+                        <button class="btn-details" data-bs-toggle="modal" data-bs-target="#platinumModal">
+                            <i class="fas fa-info-circle"></i> View Full Details
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Bronze Modal -->
+    <div class="modal fade" id="bronzeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bronze Package - Full Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-section">
+                        <h4>75-Hour Pre-License Courses</h4>
+                        <p>State-approved pre-license courses covering all essential real estate principles and practices required for Georgia licensing.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Digital Ebooks</h4>
+                        <p>Comprehensive digital textbooks written by industry experts, accessible anytime on any device.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Career Resources</h4>
+                        <p>Essential resources to jumpstart your real estate career including templates, checklists, and professional development guides.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Flashcards</h4>
+                        <p>Downloadable flashcards for on-the-go learning to help you retain key concepts and terminology.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Real Estate Vocabulary</h4>
+                        <p>Comprehensive glossary making real estate terminology simple and easy to understand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Silver Modal -->
+    <div class="modal fade" id="silverModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Silver Package - Full Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-section">
+                        <h4>Everything in Bronze, Plus:</h4>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Exam Prep Edge</h4>
+                        <p>Comprehensive exam preparation system designed to help you pass on your first try.</p>
+                        <ul>
+                            <li>National and State Prep Audio/Video Lessons</li>
+                            <li>Practice Questions with detailed explanations</li>
+                            <li>Digital Exam Prep Guide Book</li>
+                            <li>Comprehensive exam prep with commentary</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Why Silver is Most Popular</h4>
+                        <p>The perfect balance of essential coursework and exam preparation. Students who choose Silver have the highest first-time pass rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gold Modal -->
+    <div class="modal fade" id="goldModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gold Package - Full Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-section">
+                        <h4>Everything in Silver, Plus:</h4>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Business Building Courses</h4>
+                        <p>Professional development program to help you launch and grow your real estate business from day one.</p>
+                        <ul>
+                            <li>3 Pro-Path Business Courses</li>
+                            <li>Marketing fundamentals for agents</li>
+                            <li>Client acquisition strategies</li>
+                            <li>Personal branding essentials</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Kickstarter Professional Development</h4>
+                        <p>Get your new career started with proven strategies from successful agents who've built thriving businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Platinum Modal -->
+    <div class="modal fade" id="platinumModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Platinum Package - Full Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-section">
+                        <h4>Everything in Gold, Plus:</h4>
+                    </div>
+                    <div class="detail-section">
+                        <h4>25-Hour Post Licensing Package</h4>
+                        <p>Required continuing education to maintain your license after your first year. Included FREE with Platinum - a $200+ value!</p>
+                        <ul>
+                            <li>State-approved post-licensing courses</li>
+                            <li>Covers advanced real estate topics</li>
+                            <li>Contract law and risk management</li>
+                            <li>Valid for license renewal</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Complete Career Path</h4>
+                        <p>The most comprehensive package covering everything from pre-licensing through your first year as a licensed agent. Save money and prepare for long-term success.</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Best Value</h4>
+                        <p>Save $182 compared to purchasing courses separately. Get everything you need for a complete real estate education and career launch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

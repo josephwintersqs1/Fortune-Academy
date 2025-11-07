@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <!-- favicon -->
+      <link rel="icon" type="image/png" href="../../../assets/images/favicon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="../../../assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="../../../assets/vendors/fontawesome/css/all.min.css">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="../../../assets/vendors/jquery-ui/jquery-ui.min.css">
+      <!-- modal video css -->
+      <link rel="stylesheet" type="text/css" href="../../../assets/vendors/modal-video/modal-video.min.css">
+      <!-- light box css -->
+      <link rel="stylesheet" type="text/css" href="../../../assets/vendors/lightbox/dist/css/lightbox.min.css">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="../../../assets/vendors/slick/slick.css">
+      <link rel="stylesheet" type="text/css" href="../../../assets/vendors/slick/slick-theme.css">
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="../../../style.css">
+      <link rel="stylesheet" type="text/css" href="../../../custom.css">
+      
+      <title>Georgia Real Estate Pre-Licensing | Fortune Academy</title>
+      
+      <style>
+        /* Pricing Section Styles from option5-tabs.html */
+        .pricing-section { 
+            padding: 4rem 0; 
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+        .pricing-section .section-title { 
+            font-family: 'Raleway', sans-serif; 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .pricing-section .section-subtitle { 
+            color: #6b7280; 
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        /* Custom Tabs */
+        .pricing-section .package-tabs {
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .pricing-section .package-tabs .nav-link {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-bottom: none;
+            border-radius: 0.75rem 0.75rem 0 0;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            color: #6b7280;
+            transition: all 0.3s;
+            position: relative;
+            margin-bottom: -2px;
+        }
+        
+        .pricing-section .package-tabs .nav-link:hover {
+            color: #2563eb;
+            border-color: #d1d5db;
+        }
+        
+        .pricing-section .package-tabs .nav-link.active {
+            background: white;
+            color: #2563eb;
+            border-color: #2563eb;
+            border-bottom: 2px solid white;
+        }
+        
+        .pricing-section .package-tabs .nav-link.popular {
+            background: #f0fdf4;
+        }
+        
+        .pricing-section .package-tabs .nav-link.popular.active {
+            background: white;
+            border-color: #16a34a;
+        }
+        
+        .pricing-section .package-tabs .nav-link.premium {
+            background: #fffbeb;
+        }
+        
+        .pricing-section .package-tabs .nav-link.premium.active {
+            background: white;
+            border-color: #f59e0b;
+        }
+        
+        .pricing-section .badge-small {
+            font-size: 0.65rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            margin-left: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .pricing-section .badge-popular { background: #16a34a; color: white; }
+        .pricing-section .badge-premium { background: #f59e0b; color: white; }
+        
+        /* Tab Content */
+        .pricing-section .tab-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-section .package-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .pricing-section .package-header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-section .package-name {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-section .package-tagline {
+            color: #6b7280;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-section .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-section .price {
+            font-size: 4rem;
+            font-weight: 800;
+            font-family: 'Raleway', sans-serif;
+            line-height: 1;
+        }
+        
+        .pricing-section .price-details {
+            text-align: left;
+        }
+        
+        .pricing-section .price-original {
+            color: #9ca3af;
+            text-decoration: line-through;
+            font-size: 1.25rem;
+            display: block;
+        }
+        
+        .pricing-section .savings {
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+        
+        .pricing-section .package-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-section .features-column h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        
+        .pricing-section .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pricing-section .features-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .pricing-section .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-section .features-list i {
+            color: #10b981;
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        
+        .pricing-section .detail-box {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .pricing-section .detail-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+        
+        .pricing-section .detail-box p {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        
+        .pricing-section .cta-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+        }
+        
+        .pricing-section .btn-enroll {
+            padding: 1.25rem 3rem;
+            background: #c1241a;
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .pricing-section .btn-enroll:hover {
+            background: #a01e15;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(193, 36, 26, 0.3);
+            color: white;
+        }
+        
+        .pricing-section .btn-enroll.popular { background: #16a34a; }
+        .pricing-section .btn-enroll.popular:hover { 
+            background: #15803d; 
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+        
+        .pricing-section .btn-enroll.premium { 
+            background: linear-gradient(90deg, #f59e0b, #fb923c); 
+        }
+        .pricing-section .btn-enroll.premium:hover { 
+            background: linear-gradient(90deg, #d97706, #ea580c); 
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        .pricing-section .payment-info {
+            margin-top: 1.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .pricing-section .payment-info strong {
+            color: #1f2937;
+        }
+        
+        @media (max-width: 992px) {
+            .pricing-section .package-body {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-section { padding: 2rem 0; }
+            .pricing-section .section-title { font-size: 1.75rem; }
+            .pricing-section .tab-content { padding: 2rem 1.5rem; }
+            .pricing-section .price { font-size: 3rem; }
+            .pricing-section .package-name { font-size: 2rem; }
+            
+            .pricing-section .package-tabs .nav-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+      </style>
+   </head>
+   <body class="industry-page industry-real-estate state-page state-georgia">
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="../../../assets/images/loader1.gif" alt="">
+         </div>
+      </div>
+      <div id="page" class="full-page">
+         <div
+            data-include="../../../partials/header.html"
+            data-base-path="../../../"
+            data-logo-white="../../../assets/images/fa-logo-for-dark.png"
+            data-logo-dark="../../../assets/images/fa-logo-for-light.png"
+            data-active-vertical="real-estate"></div>
+         <main id="content" class="site-main">
+            
+            <!-- Hero Section -->
+            <section class="home-banner-section industry-hero">
+              <div class="home-banner-items">
+                <div class="banner-inner-wrap" style="background-image: url(../../../assets/images/real_estate_products/AdobeStock_1727862879_Preview.jpeg);"></div>
+                <div class="banner-content-wrap">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="banner-content section-heading section-heading-white text-center">
+                          <p class="banner-kicker">Pioneers of Real Estate Education Since 1982</p>
+                          <h1 class="banner-title">GEORGIA REAL ESTATE <br><span class="accent-industry">SALESPERSON LICENSING PROGRAMS</span></h1>
+                          <p class="lead" style="max-width: 800px; margin: 1.5rem auto 2rem;">11 Campuses, 3 Learning Methods, 1 Real Estate License Destination.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="overlay"></div>
+              </div>
+            </section>
+            
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+        <div class="container">
+            <!-- Tabs Navigation -->
+            <ul class="nav package-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#bronze" type="button" role="tab">
+                        Bronze
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link popular" data-bs-toggle="tab" data-bs-target="#silver" type="button" role="tab">
+                        Silver
+                        <span class="badge-small badge-popular">Popular</span>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gold" type="button" role="tab">
+                        Gold
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link premium" data-bs-toggle="tab" data-bs-target="#platinum" type="button" role="tab">
+                        Platinum
+                        <span class="badge-small badge-premium">Best Value</span>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                
+                <!-- Bronze Package -->
+                <div class="tab-pane fade show active" id="bronze" role="tabpanel">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h2 class="package-name">Bronze Package</h2>
+                            <p class="package-tagline">Essential Pre-Licensing Education</p>
+                            
+                            <div class="price-container">
+                                <span class="price">$207</span>
+                                <div class="price-details">
+                                    <span class="price-original">Was $295</span>
+                                    <div class="savings">Save $89</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="package-body">
+                            <div class="features-column">
+                                <h3>What's Included</h3>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>75-Hour Pre-Licensing Course</strong><br>
+                                        State-approved coursework covering all fundamentals</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Digital Ebooks</strong><br>
+                                        Comprehensive textbooks accessible anywhere</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Career Resources</strong><br>
+                                        Templates and guides to start your career</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Flashcards</strong><br>
+                                        Downloadable study aids for key concepts</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Real Estate Vocabulary</strong><br>
+                                        Complete glossary of industry terms</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="features-column">
+                                <h3>Perfect For</h3>
+                                <div class="detail-box">
+                                    <h4>Getting Started</h4>
+                                    <p>Ideal if you're just beginning your real estate journey and want to complete the required pre-licensing education without extras.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Delivery Options</h4>
+                                    <p>Choose from online self-paced, live Zoom classes, or in-person classroom instruction.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>What's Not Included</h4>
+                                    <p>Exam prep materials, business building courses, and post-licensing education are available in higher tiers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <a href="#" class="btn-enroll">Enroll in Bronze - $207</a>
+                            <p class="payment-info">Or start now with payment plan for only <strong>$148</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver Package -->
+                <div class="tab-pane fade" id="silver" role="tabpanel">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h2 class="package-name">Silver Package</h2>
+                            <p class="package-tagline">Pre-Licensing + Exam Preparation</p>
+                            
+                            <div class="price-container">
+                                <span class="price">$277</span>
+                                <div class="price-details">
+                                    <span class="price-original">Was $395</span>
+                                    <div class="savings">Save $118</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="package-body">
+                            <div class="features-column">
+                                <h3>What's Included</h3>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Everything in Bronze</strong><br>
+                                        All core pre-licensing materials</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Exam Prep Video Lessons</strong><br>
+                                        National and state-specific preparation</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Practice Questions</strong><br>
+                                        Hundreds of questions with detailed explanations</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Digital Exam Prep Guide</strong><br>
+                                        Comprehensive prep book with commentary</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Exam Success Strategies</strong><br>
+                                        Tips and techniques to pass the first time</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="features-column">
+                                <h3>Why It's Popular</h3>
+                                <div class="detail-box">
+                                    <h4>Highest Pass Rates</h4>
+                                    <p>Students who use our exam prep materials have significantly higher first-time pass rates compared to those who don't.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Complete Preparation</h4>
+                                    <p>Get both your required education and the tools to pass your licensing exam - everything you need to become licensed.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Best Balance</h4>
+                                    <p>The perfect middle ground between essential education and comprehensive preparation without overwhelming extras.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <a href="#" class="btn-enroll popular">Enroll in Silver - $277</a>
+                            <p class="payment-info">Or start now with payment plan for only <strong>$152</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gold Package -->
+                <div class="tab-pane fade" id="gold" role="tabpanel">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h2 class="package-name">Gold Package</h2>
+                            <p class="package-tagline">Complete Education + Business Launch</p>
+                            
+                            <div class="price-container">
+                                <span class="price">$328</span>
+                                <div class="price-details">
+                                    <span class="price-original">Was $469</span>
+                                    <div class="savings">Save $141</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="package-body">
+                            <div class="features-column">
+                                <h3>What's Included</h3>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Everything in Silver</strong><br>
+                                        All education and exam prep materials</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>3 Business Building Courses</strong><br>
+                                        Professional development pro-path courses</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Marketing Fundamentals</strong><br>
+                                        Learn to market yourself effectively</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Client Acquisition Strategies</strong><br>
+                                        Proven methods to build your client base</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Personal Branding</strong><br>
+                                        Stand out in a competitive market</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="features-column">
+                                <h3>Perfect For</h3>
+                                <div class="detail-box">
+                                    <h4>Career-Focused Professionals</h4>
+                                    <p>Ideal for those serious about building a successful real estate business from day one, not just getting licensed.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Competitive Advantage</h4>
+                                    <p>Start your career with business skills that many agents learn through trial and error over years.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Investment in Success</h4>
+                                    <p>The business building courses alone are valued at $200+. Get them bundled with your education and save.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <a href="#" class="btn-enroll">Enroll in Gold - $328</a>
+                            <p class="payment-info">Or start now with payment plan for only <strong>$156</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platinum Package -->
+                <div class="tab-pane fade" id="platinum" role="tabpanel">
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h2 class="package-name">Platinum Package</h2>
+                            <p class="package-tagline">Complete Career Path - Pre to Post Licensing</p>
+                            
+                            <div class="price-container">
+                                <span class="price">$424</span>
+                                <div class="price-details">
+                                    <span class="price-original">Was $605</span>
+                                    <div class="savings">Save $182</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="package-body">
+                            <div class="features-column">
+                                <h3>What's Included</h3>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Everything in Gold</strong><br>
+                                        All education, exam prep, and business courses</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>25-Hour Post Licensing Package</strong><br>
+                                        Required continuing education (worth $200+)</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Advanced Contract Law</strong><br>
+                                        Master complex real estate contracts</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>Risk Management Training</strong><br>
+                                        Protect yourself and your clients</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <span><strong>License Renewal Ready</strong><br>
+                                        Fulfill first-year continuing education requirements</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="features-column">
+                                <h3>Why Choose Platinum</h3>
+                                <div class="detail-box">
+                                    <h4>Complete Career Path</h4>
+                                    <p>The only package covering your entire first year - from pre-licensing through post-licensing requirements.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Maximum Savings</h4>
+                                    <p>Save $182 compared to buying courses separately. The post-licensing package alone costs $200+ if purchased later.</p>
+                                </div>
+                                
+                                <div class="detail-box">
+                                    <h4>Peace of Mind</h4>
+                                    <p>One purchase covers everything you'll need for your first year as a licensed agent. No surprises or additional costs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <a href="#" class="btn-enroll premium">Enroll in Platinum - $424</a>
+                            <p class="payment-info">Or start now with payment plan for only <strong>$202</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+            
+            <!-- Section 1: Key Benefits -->
+            <section class="activity-section fa-activity">
+              <div class="container">
+                <div class="section-heading text-center">
+                  <h5 class="dash-style">What You Get</h5>
+                  <h2>Georgia Real Estate Salesperson Pre-Licensing</h2>
+                  <p>Everything you need to pass your exam and launch your career in real estate.</p>
+                </div>
+
+                <div class="row">
+                  <!-- GREC APPROVED COURSES -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-laptop" aria-hidden="true"></i></div>
+                      <h4>GREC APPROVED COURSES</h4>
+                      <p>Georgia requires one course to get your real estate license: a 75-Hr. GA Salesperson Pre-Licensing Course.</p>
+                    </div>
+                  </div>
+
+                  <!-- MULTIPLE TRAINING DELIVERY METHODS -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-th" aria-hidden="true"></i></div>
+                      <h4>MULTIPLE TRAINING DELIVERY METHODS</h4>
+                      <p>We understand the need for convenience, ease and flexibility. You can choose from any of the delivery method: In-person Classes, Virtual Classroom, Online Self-paced, and Online Interactive to fit your learning style.</p>
+                    </div>
+                  </div>
+
+                  <!-- PASSING EXAM IN THE FIRST ATTEMPT -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+                      <h4>PASSING EXAM IN THE FIRST ATTEMPT</h4>
+                      <p>Fortune Academy has the highest pass rates in the state for last several decades. We assure passing your class and state exam in the first attempt or you get your money back - guaranteed.</p>
+                    </div>
+                  </div>
+
+                  <!-- 24/7 EXPERT CONNECT -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                      <h4>24/7 EXPERT CONNECT</h4>
+                      <p>You can connect with a Real Estate guru at any time to ask any question or seek help with your training program. We are available 24/7 via phone, email and chat to provide support for your career success.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <!-- Section 2: Delivery Methods -->
+            <section class="activity-section fa-activity" style="background-color: #f8f9fa;">
+              <div class="container">
+                <div class="section-heading text-center">
+                  <h5 class="dash-style">State-of-the-Art Delivery Methods</h5>
+                  <h2>Learn Your Way</h2>
+                  <p>Our instructor-led online real estate classes equip you with the knowledge that will help you get your real estate license in GA on your first try.</p>
+                </div>
+
+                <div class="row">
+                  <!-- In-Person Learning -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-user" aria-hidden="true"></i></div>
+                      <h4>In-Person Learning</h4>
+                      <p>The best education option for students who prefer a traditional, in-person learning format where instructors and students share a learning environment.</p>
+                      <a href="#" class="button-primary button-sm">View Demo</a>
+                    </div>
+                  </div>
+
+                  <!-- Virtual Learning -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-video" aria-hidden="true"></i></div>
+                      <h4>Virtual Learning</h4>
+                      <p>Learn Real Estate at a comfortable pace, in an online environment where you can access learning materials and examinations.</p>
+                      <a href="#" class="button-primary button-sm">View Demo</a>
+                    </div>
+                  </div>
+
+                  <!-- Online Interactive Learning -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-play-circle" aria-hidden="true"></i></div>
+                      <h4><span class="badge badge-success" style="font-size: 10px; vertical-align: middle;">NEW</span> Online Interactive Learning</h4>
+                      <p>Complete quizzes, submit assignments and learn from tenured Real Estate experts in an integrative online classroom experience.</p>
+                      <a href="#" class="button-primary button-sm">View Demo</a>
+                    </div>
+                  </div>
+
+                  <!-- Online Self-Paced Learning -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-laptop" aria-hidden="true"></i></div>
+                      <h4>Online Self-Paced Learning</h4>
+                      <p>View on-demand video lessons from virtual Real Estate instructors and receive 24/7 email support for help completing assignments.</p>
+                      <a href="#" class="button-primary button-sm">View Demo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <!-- Section 3: Why Fortune Academy -->
+            <section class="activity-section fa-activity">
+              <div class="container">
+                <div class="section-heading text-center">
+                  <h5 class="dash-style">Our Track Record</h5>
+                  <h2>Why Fortune Academy?</h2>
+                  <p>Trusted by over 300,000 professionals nationwide for quality education and exceptional support.</p>
+                </div>
+
+                <div class="row">
+                  <!-- 300,000+ Trained Professionals -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-award" aria-hidden="true"></i></div>
+                      <h4>300,000+ Trained Professionals</h4>
+                      <p>Fortune Academy is one of the best online real estate schools in Georgia. We've continued to help real estate professionals meet new challenges since pioneering the real estate education space in 1982.</p>
+                    </div>
+                  </div>
+
+                  <!-- 100% Money Back Guarantee -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-devices" aria-hidden="true"></i></div>
+                      <h4>100% Money Back Guarantee</h4>
+                      <p>Your success is our success. We'll fully refund your initial investment if you don't pass your real estate license examination on your first attempt, after graduating from a Fortune Academy program.</p>
+                    </div>
+                  </div>
+
+                  <!-- State-High Pass Rates -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-comments" aria-hidden="true"></i></div>
+                      <h4>State-High Pass Rates</h4>
+                      <p>We've helped 85% of our 300,000+ program graduates pass their real estate licensure exam on their first attempt. Our certified instructors make complex curriculums easy to understand, regardless of your real estate experience.</p>
+                    </div>
+                  </div>
+
+                  <!-- Ease and Convenience -->
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="fa-activity-item">
+                      <div class="fa-ico"><i class="fas fa-medal" aria-hidden="true"></i></div>
+                      <h4>Ease and Convenience</h4>
+                      <p>We offer convenient class schedules with day, evening, and weekend classes. Our real estate license courses are accessible anywhere in GA through our mobile friendly education, no matter if you are in Atlanta, Augusta, Columbus, or Savannah.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+         </main>
+         <div data-include="../../../partials/footer.html" data-base-path="../../../"></div>
+      </div>
+      
+      <!-- JavaScript -->
+      <script src="../../../assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="../../../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../../../assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="../../../assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="../../../assets/js/jquery.counterup.js"></script>
+      <script src="../../../assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="../../../assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="../../../assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="../../../assets/vendors/slick/slick.min.js"></script>
+      <script src="../../../assets/js/jquery.slicknav.js"></script>
+      <script src="../../../assets/js/layout.js"></script>
+      <script src="../../../assets/js/custom.min.js"></script>
+      <!-- Bootstrap 5 for Pricing Tabs -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   </body>
+</html>
+

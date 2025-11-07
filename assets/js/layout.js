@@ -170,6 +170,32 @@
         navLink.setAttribute("aria-current", "page");
       }
     }
+
+    // Apply base path to all relative URLs if specified (do this LAST after other options are set)
+    if (options.basePath) {
+      var basePath = options.basePath;
+      
+      // Handle root links specially (logo, etc.)
+      toArray(root.querySelectorAll('a[data-root-link]')).forEach(function(link) {
+        link.setAttribute('href', basePath + 'index.html');
+      });
+      
+      // Update all other href attributes
+      toArray(root.querySelectorAll('a[href]:not([data-root-link])')).forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && !href.match(/^(https?:\/\/|mailto:|tel:|#|\.\.\/)/)) {
+          link.setAttribute('href', basePath + href);
+        }
+      });
+      
+      // Update all src attributes (images, scripts, etc.) - but skip if already set to absolute/relative path
+      toArray(root.querySelectorAll('[src]')).forEach(function(element) {
+        var src = element.getAttribute('src');
+        if (src && !src.match(/^(https?:\/\/|data:|\.\.\/)/)) {
+          element.setAttribute('src', basePath + src);
+        }
+      });
+    }
   }
 
   function applyFooterOptions(root, options) {
@@ -194,6 +220,32 @@
           footerLink.setAttribute("title", options.footerLogoAlt);
         }
       }
+    }
+
+    // Apply base path to all relative URLs if specified (do this LAST after other options are set)
+    if (options.basePath) {
+      var basePath = options.basePath;
+      
+      // Handle root links specially
+      toArray(root.querySelectorAll('a[data-root-link]')).forEach(function(link) {
+        link.setAttribute('href', basePath + 'index.html');
+      });
+      
+      // Update all other href attributes
+      toArray(root.querySelectorAll('a[href]:not([data-root-link])')).forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && !href.match(/^(https?:\/\/|mailto:|tel:|#|\.\.\/)/)) {
+          link.setAttribute('href', basePath + href);
+        }
+      });
+      
+      // Update all src attributes (images, scripts, etc.) - but skip if already set to absolute/relative path
+      toArray(root.querySelectorAll('[src]')).forEach(function(element) {
+        var src = element.getAttribute('src');
+        if (src && !src.match(/^(https?:\/\/|data:|\.\.\/)/)) {
+          element.setAttribute('src', basePath + src);
+        }
+      });
     }
   }
 

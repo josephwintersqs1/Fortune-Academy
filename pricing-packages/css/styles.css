@@ -1,0 +1,429 @@
+/* =============================================
+   MODERN PRICING PACKAGE STYLES
+   ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    color: #1f2937;
+    background: #f9fafb;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================
+   PRICING SECTION
+   ============================================= */
+
+.pricing-section {
+    padding: 4rem 0;
+    min-height: 100vh;
+}
+
+/* =============================================
+   SECTION HEADER
+   ============================================= */
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =============================================
+   PRICING CARDS
+   ============================================= */
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.pricing-card-premium {
+    border-color: #f59e0b;
+    position: relative;
+}
+
+.pricing-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b 0%, #fb923c 100%);
+}
+
+.card-header {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+}
+
+.badge-popular {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #16a34a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.package-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.package-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================================
+   FEATURE LIST
+   ============================================= */
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.feature-list li {
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.875rem;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+.feature-list li i {
+    color: #10b981;
+    margin-right: 0.75rem;
+    font-size: 0.875rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* =============================================
+   DELIVERY SECTION
+   ============================================= */
+
+.delivery-section {
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.delivery-options .form-check {
+    margin-bottom: 0.75rem;
+}
+
+.delivery-options .form-check:last-child {
+    margin-bottom: 0;
+}
+
+.delivery-options .form-check-input {
+    cursor: pointer;
+}
+
+.delivery-options .form-check-input:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.delivery-options .form-check-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+.delivery-options .form-check-label {
+    font-size: 0.875rem;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+/* =============================================
+   PRICING
+   ============================================= */
+
+.pricing {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.price-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+    color: #1f2937;
+    line-height: 1;
+}
+
+.price-original {
+    font-size: 1.125rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+.savings {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* =============================================
+   CTA BUTTON
+   ============================================= */
+
+.btn-enroll {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.btn-enroll:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-enroll:active {
+    transform: translateY(0);
+}
+
+.btn-enroll-popular {
+    background: #16a34a;
+}
+
+.btn-enroll-popular:hover {
+    background: #15803d;
+}
+
+.btn-enroll-premium {
+    background: linear-gradient(90deg, #f59e0b 0%, #fb923c 100%);
+}
+
+.btn-enroll-premium:hover {
+    background: linear-gradient(90deg, #d97706 0%, #ea580c 100%);
+}
+
+/* =============================================
+   PAYMENT PLAN
+   ============================================= */
+
+.payment-plan {
+    text-align: center;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.payment-plan p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.payment-plan p strong {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.link-learn {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+
+.link-learn:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+/* =============================================
+   DETAILS ACCORDION
+   ============================================= */
+
+.details-accordion {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    cursor: pointer;
+    transition: color 0.15s ease;
+    text-align: left;
+}
+
+.btn-details:hover {
+    color: #2563eb;
+}
+
+.btn-details[aria-expanded="true"] i {
+    transform: rotate(45deg);
+}
+
+.btn-details i {
+    color: #2563eb;
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.details-content {
+    padding: 1rem 0;
+}
+
+.details-content h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.details-content h4:first-child {
+    margin-top: 0;
+}
+
+.details-content p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 991px) {
+    .pricing-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 2rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .pricing-card .card-header,
+    .pricing-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .pricing-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .pricing-card .card-header,
+    .pricing-card .card-body {
+        padding: 1rem;
+    }
+}

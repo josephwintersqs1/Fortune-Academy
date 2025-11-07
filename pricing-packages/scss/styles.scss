@@ -1,0 +1,515 @@
+// =============================================
+// VARIABLES
+// =============================================
+
+// Colors
+$primary-color: #2563eb;
+$primary-dark: #1e40af;
+$secondary-color: #f59e0b;
+$success-color: #10b981;
+$text-dark: #1f2937;
+$text-medium: #6b7280;
+$text-light: #9ca3af;
+$bg-light: #f9fafb;
+$bg-card: #ffffff;
+$border-color: #e5e7eb;
+$popular-badge: #16a34a;
+
+// Typography
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-heading: 'Raleway', sans-serif;
+
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Border Radius
+$border-radius-sm: 0.375rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// =============================================
+// MIXINS
+// =============================================
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin card-hover {
+    transition: transform $transition-base, box-shadow $transition-base;
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-xl;
+    }
+}
+
+// =============================================
+// BASE STYLES
+// =============================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    color: $text-dark;
+    background: $bg-light;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// =============================================
+// PRICING SECTION
+// =============================================
+
+.pricing-section {
+    padding: 4rem 0;
+    min-height: 100vh;
+    
+    @media (max-width: 768px) {
+        padding: 2rem 0;
+    }
+}
+
+// =============================================
+// SECTION HEADER
+// =============================================
+
+.section-header {
+    margin-bottom: $spacing-2xl;
+    
+    .section-title {
+        font-family: $font-heading;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: $text-dark;
+        margin-bottom: $spacing-md;
+        letter-spacing: -0.02em;
+    }
+    
+    .section-subtitle {
+        font-size: $font-size-lg;
+        color: $text-medium;
+        font-weight: 400;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+// =============================================
+// PRICING CARDS
+// =============================================
+
+.pricing-card {
+    background: $bg-card;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-md;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    @include card-hover;
+    
+    // Premium styling for Platinum package
+    &.pricing-card-premium {
+        border-color: $secondary-color;
+        position: relative;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, $secondary-color 0%, #fb923c 100%);
+        }
+    }
+    
+    .card-header {
+        padding: $spacing-xl;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-bottom: 1px solid $border-color;
+        position: relative;
+        
+        .badge-popular {
+            position: absolute;
+            top: $spacing-md;
+            right: $spacing-md;
+            background: $popular-badge;
+            color: white;
+            padding: $spacing-xs $spacing-md;
+            border-radius: $border-radius-lg;
+            font-size: $font-size-sm;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        
+        .package-name {
+            font-family: $font-heading;
+            font-size: $font-size-xl;
+            font-weight: 700;
+            color: $text-dark;
+            margin-bottom: $spacing-xs;
+        }
+        
+        .package-subtitle {
+            font-size: $font-size-sm;
+            color: $text-medium;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+    }
+    
+    .card-body {
+        padding: $spacing-xl;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// =============================================
+// FEATURE LIST
+// =============================================
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: $spacing-lg;
+    
+    li {
+        padding: $spacing-sm 0;
+        display: flex;
+        align-items: flex-start;
+        font-size: $font-size-sm;
+        color: $text-dark;
+        line-height: 1.5;
+        
+        i {
+            color: $success-color;
+            margin-right: $spacing-sm;
+            font-size: 0.875rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+// =============================================
+// DELIVERY SECTION
+// =============================================
+
+.delivery-section {
+    margin-bottom: $spacing-lg;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $border-color;
+    
+    .section-label {
+        display: block;
+        font-size: $font-size-sm;
+        font-weight: 600;
+        color: $text-dark;
+        margin-bottom: $spacing-md;
+    }
+    
+    .delivery-options {
+        .form-check {
+            margin-bottom: $spacing-sm;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        
+        .form-check-input {
+            cursor: pointer;
+            
+            &:checked {
+                background-color: $primary-color;
+                border-color: $primary-color;
+            }
+            
+            &:focus {
+                border-color: $primary-color;
+                box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+            }
+        }
+        
+        .form-check-label {
+            font-size: $font-size-sm;
+            color: $text-dark;
+            cursor: pointer;
+        }
+    }
+}
+
+// =============================================
+// PRICING
+// =============================================
+
+.pricing {
+    margin-bottom: $spacing-lg;
+    padding: $spacing-lg 0;
+    border-top: 1px solid $border-color;
+    
+    .price-main {
+        @include flex-between;
+        margin-bottom: $spacing-xs;
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: $font-heading;
+            color: $text-dark;
+            line-height: 1;
+        }
+        
+        .price-original {
+            font-size: $font-size-lg;
+            color: $text-light;
+            text-decoration: line-through;
+        }
+    }
+    
+    .savings {
+        display: inline-block;
+        background: #dcfce7;
+        color: #166534;
+        padding: $spacing-xs $spacing-md;
+        border-radius: $border-radius-md;
+        font-size: $font-size-sm;
+        font-weight: 600;
+    }
+}
+
+// =============================================
+// CTA BUTTON
+// =============================================
+
+.btn-enroll {
+    width: 100%;
+    padding: $spacing-md $spacing-lg;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-base;
+    margin-bottom: $spacing-lg;
+    
+    &:hover {
+        background: $primary-dark;
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+    
+    &.btn-enroll-popular {
+        background: $popular-badge;
+        
+        &:hover {
+            background: darken($popular-badge, 10%);
+        }
+    }
+    
+    &.btn-enroll-premium {
+        background: linear-gradient(90deg, $secondary-color 0%, #fb923c 100%);
+        
+        &:hover {
+            background: linear-gradient(90deg, darken($secondary-color, 10%) 0%, darken(#fb923c, 10%) 100%);
+        }
+    }
+}
+
+// =============================================
+// PAYMENT PLAN
+// =============================================
+
+.payment-plan {
+    text-align: center;
+    padding: $spacing-md;
+    background: $bg-light;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-lg;
+    
+    p {
+        font-size: $font-size-sm;
+        color: $text-medium;
+        margin-bottom: $spacing-xs;
+        
+        strong {
+            color: $text-dark;
+            font-weight: 700;
+        }
+    }
+    
+    .link-learn {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: $font-size-sm;
+        font-weight: 600;
+        transition: color $transition-fast;
+        
+        &:hover {
+            color: $primary-dark;
+            text-decoration: underline;
+        }
+    }
+}
+
+// =============================================
+// DETAILS ACCORDION
+// =============================================
+
+.details-accordion {
+    margin-top: auto;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $border-color;
+    
+    .btn-details {
+        width: 100%;
+        @include flex-between;
+        background: transparent;
+        border: none;
+        padding: $spacing-md 0;
+        font-size: $font-size-sm;
+        font-weight: 600;
+        color: $text-dark;
+        cursor: pointer;
+        transition: color $transition-fast;
+        text-align: left;
+        
+        &:hover {
+            color: $primary-color;
+        }
+        
+        &[aria-expanded="true"] {
+            i {
+                transform: rotate(45deg);
+            }
+        }
+        
+        i {
+            color: $primary-color;
+            font-size: 0.75rem;
+            transition: transform $transition-base;
+        }
+    }
+    
+    .collapse {
+        .details-content {
+            padding: $spacing-md 0;
+            
+            h4 {
+                font-size: $font-size-sm;
+                font-weight: 600;
+                color: $text-dark;
+                margin-bottom: $spacing-xs;
+                margin-top: $spacing-md;
+                
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            
+            p {
+                font-size: $font-size-sm;
+                color: $text-medium;
+                margin-bottom: 0;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+// =============================================
+// RESPONSIVE
+// =============================================
+
+@media (max-width: 991px) {
+    .pricing-card {
+        margin-bottom: $spacing-lg;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 2rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: $spacing-xl;
+    }
+    
+    .pricing-card {
+        .card-header,
+        .card-body {
+            padding: $spacing-lg;
+        }
+        
+        &:hover {
+            transform: translateY(-4px);
+        }
+    }
+    
+    .pricing {
+        .price-main {
+            .price {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .pricing-card {
+        .card-header,
+        .card-body {
+            padding: $spacing-md;
+        }
+    }
+}
