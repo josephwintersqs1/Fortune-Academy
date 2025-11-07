@@ -915,6 +915,14 @@ html { scroll-behavior: smooth; }
 
 /* ========= Industry Hero tweaks (keeps default theme spacing) ========= */
 .industry-hero { position: relative; }
+
+/* Hide any video buttons that might appear in the hero section */
+.industry-hero .video-button,
+.home-banner-section .video-button,
+.home-banner-items .video-button,
+.banner-inner-wrap .video-button {
+  display: none !important;
+}
 .industry-hero .banner-kicker{
   text-transform: uppercase;
   letter-spacing: .12em;
