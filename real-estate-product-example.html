@@ -1138,7 +1138,19 @@ margin-top: 3px;
     padding: 80px 20px;
     background: linear-gradient(135deg, #d4af37 0%, #b8960f 100%);
     color: white;
-    margin-top: 80px;
+    margin: 80px 20px 0;
+    border-radius: 16px;
+}
+
+.timeline-completion-banner-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.timeline-completion-banner-content.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .timeline-completion-banner h2 {
@@ -2764,7 +2776,7 @@ SCREC Approved #004
 <div class="full-width-tabs-section">
 
 <!-- Delivery Method Tabs -->
-<div class="tab-container">
+<div class="tab-container" id="course-selection">
 <ul class="nav nav-tabs" id="deliveryTabs" role="tablist">
 <li class="nav-item">
 <a class="nav-link active" id="in-person-tab" data-toggle="tab" href="#in-person" role="tab" aria-controls="in-person" aria-selected="true">
@@ -3548,7 +3560,7 @@ See Schedule
                         </div>
                     </div>
 
-                    <a href="#pricing-packages" class="timeline-step-cta">Choose a Program</a>
+                    <a href="#course-selection" class="timeline-step-cta">Choose a Program</a>
                 </div>
             </div>
         </div>
@@ -3597,7 +3609,7 @@ See Schedule
                         </p>
                     </div>
 
-                    <a href="#pricing-packages" class="timeline-step-cta">Enroll Now</a>
+                    <a href="#course-selection" class="timeline-step-cta">Enroll Now</a>
                 </div>
             </div>
         </div>
@@ -3652,7 +3664,7 @@ See Schedule
                         </div>
                     </div>
 
-                    <a href="#pricing-packages" class="timeline-step-cta">Get Started</a>
+                    <a href="#course-selection" class="timeline-step-cta">Get Started</a>
                 </div>
             </div>
         </div>
@@ -3707,7 +3719,7 @@ See Schedule
                         </div>
                     </div>
 
-                    <a href="#pricing-packages" class="timeline-step-cta">Begin Your Journey</a>
+                    <a href="#course-selection" class="timeline-step-cta">Begin Your Journey</a>
                 </div>
             </div>
         </div>
@@ -3762,7 +3774,7 @@ See Schedule
                         </div>
                     </div>
 
-                    <a href="#pricing-packages" class="timeline-step-cta">Start Your Career Today</a>
+                    <a href="#course-selection" class="timeline-step-cta">Start Your Career Today</a>
                 </div>
             </div>
         </div>
@@ -3770,12 +3782,14 @@ See Schedule
 
     <!-- Completion Banner -->
     <div class="timeline-completion-banner">
-        <h2>🎉 Ready to Begin?</h2>
-        <p>Join thousands of successful real estate agents who started their journey with Fortune Academy</p>
-        <a href="#pricing-packages" class="timeline-completion-cta">
-            Choose Your Program
-            <span style="font-size: 24px;">→</span>
-        </a>
+        <div class="timeline-completion-banner-content">
+            <h2>🎉 Ready to Begin?</h2>
+            <p>Join thousands of successful real estate agents who started their journey with Fortune Academy</p>
+            <a href="#course-selection" class="timeline-completion-cta">
+                Choose Your Program
+                <span style="font-size: 24px;">→</span>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -4718,6 +4732,20 @@ $(document).ready(function() {
         }, { threshold: 0.2 });
         
         heroObserver.observe(heroContent);
+    }
+
+    // Observe completion banner for fade-in
+    const completionBanner = document.querySelector('.timeline-completion-banner-content');
+    if (completionBanner) {
+        const bannerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        bannerObserver.observe(completionBanner);
     }
 
     // Progress line animation
