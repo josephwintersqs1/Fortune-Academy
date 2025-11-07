@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Disable all caching during development -->
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+
+      <!-- favicon -->
+      <link rel="icon" type="image/png" href="assets/images/favicon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/fontawesome/css/all.min.css">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/jquery-ui/jquery-ui.min.css">
+      <!-- modal video css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/modal-video/modal-video.min.css">
+      <!-- light box css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/lightbox/dist/css/lightbox.min.css">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick.css">
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick-theme.css">
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="style.css?v=no-banner-padding">
+      <link rel="stylesheet" type="text/css" href="custom.css?v=bs4-native">
+      <title>Book Store | Fortune Academy</title>
+   </head>
+   <body class="search-page">
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="assets/images/loader1.gif" alt="">
+         </div>
+      </div>
+      <div id="page" class="full-page">
+         <div data-include="partials/header.html"></div>
+         <main id="content" class="site-main">
+            <!-- Inner Banner html start-->
+            <section class="inner-banner-wrap">
+               <div class="inner-baner-container" style="background-image: url(assets/images/discount-bg.jpg);">
+                  <div class="container">
+                     <div class="inner-banner-content">
+                        <h1 class="inner-title">Book Store</h1>
+                        <p style="color: #fff; font-size: 18px; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                           Browse our comprehensive collection of professional study materials, textbooks, and exam prep resources across all industries.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="inner-shape"></div>
+            </section>
+            <!-- Inner Banner html end-->
+
+            <!-- Search Results Section -->
+            <div class="search-results-section">
+               <div class="container">
+                  
+                 <!-- Search & Filter Bar -->
+               <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                  <div class="row align-items-center">
+                     <div class="col-lg-5 mb-3 mb-lg-0">
+                        <!-- Search Field -->
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" style="background: white; border-right: 0; border-radius: 4px 0 0 4px; height: 46px; display: flex; align-items: center;"><i class="fas fa-search"></i></span>
+                           </div>
+                           <input type="text" id="searchInput" class="form-control" placeholder="Search books..." style="border-left: 0; border-radius: 0 4px 4px 0; font-size: 15px; font-weight: 400; height: 46px;">
+                        </div>
+                     </div>
+                     <div class="col-lg-7">
+                        <div class="d-flex justify-content-end" style="gap: 12px; flex-wrap: wrap;">
+                           <!-- State Picker Dropdown -->
+                           <div class="dropdown" id="statePickerDropdown">
+                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="statePickerToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="white-space: nowrap; border-radius: 4px; font-size: 15px; font-weight: 400; min-width: 160px; text-align: left; height: 46px; display: inline-flex; align-items: center; justify-content: space-between;">
+                                 <span id="statePickerLabel">All States</span>
+                              </button>
+                              <div class="dropdown-menu p-3" id="statePickerMenu" style="min-width: 280px; max-height: 400px;">
+                                 <input type="text" class="form-control form-control-sm mb-2" id="stateSearch" placeholder="Search states..." style="font-size: 14px;">
+                                 <div style="max-height: 300px; overflow-y: auto;">
+                                    <div class="mb-2" id="featuredStates">
+                                       <h6 class="font-weight-bold mb-2" style="font-size: 12px; text-transform: uppercase; color: #666;">Featured</h6>
+                                       <div class="custom-control custom-radio mb-1">
+                                          <input class="custom-control-input" type="radio" name="stateFilter" value="GA" id="state-GA">
+                                          <label class="custom-control-label" for="state-GA" style="font-size: 14px;">⭐ Georgia</label>
+                                       </div>
+                                       <div class="custom-control custom-radio mb-1">
+                                          <input class="custom-control-input" type="radio" name="stateFilter" value="NC" id="state-NC">
+                                          <label class="custom-control-label" for="state-NC" style="font-size: 14px;">⭐ North Carolina</label>
+                                       </div>
+                                       <div class="custom-control custom-radio mb-2">
+                                          <input class="custom-control-input" type="radio" name="stateFilter" value="SC" id="state-SC">
+                                          <label class="custom-control-label" for="state-SC" style="font-size: 14px;">⭐ South Carolina</label>
+                                       </div>
+                                    </div>
+                                    <div id="allStates">
+                                       <h6 class="font-weight-bold mb-2" style="font-size: 12px; text-transform: uppercase; color: #666; border-top: 1px solid #dee2e6; padding-top: 8px;">All States</h6>
+                                       <div id="stateList"></div>
+                                    </div>
+                                 </div>
+                                 <div class="pt-2 mt-2" style="border-top: 1px solid #dee2e6;">
+                                    <button class="btn btn-sm btn-block btn-outline-secondary" id="clearStateFilter">Clear Selection</button>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Filters Button & Dropdown -->
+                           <div class="dropdown">
+                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="filterToggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="white-space: nowrap; border-radius: 4px; font-size: 15px; font-weight: 400; height: 46px; display: inline-flex; align-items: center;">
+                                 <i class="fas fa-filter"></i> Filters <span class="badge badge-danger ml-1" id="filterCount" style="display: none;"></span>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right p-3" id="filterMenu" style="min-width: 350px; max-height: 500px; overflow-y: auto;">
+                                 <div class="mb-3 pb-3" style="border-bottom: 1px solid #dee2e6;">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Industry</h6>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="real-estate" id="ind1">
+                                       <label class="custom-control-label" for="ind1">Real Estate</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="mortgage" id="ind2">
+                                       <label class="custom-control-label" for="ind2">Mortgage</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="appraisal" id="ind3">
+                                       <label class="custom-control-label" for="ind3">Appraisal</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="osha" id="ind4">
+                                       <label class="custom-control-label" for="ind4">OSHA Safety</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="healthcare" id="ind5">
+                                       <label class="custom-control-label" for="ind5">Healthcare</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="industry" value="hr" id="ind6">
+                                       <label class="custom-control-label" for="ind6">HR Compliance</label>
+                                    </div>
+                                 </div>
+                                 <div class="mb-3 pb-3" style="border-bottom: 1px solid #dee2e6;">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Book Type</h6>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="pre-licensing" id="ed1">
+                                       <label class="custom-control-label" for="ed1">Pre-Licensing</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="continuing-education" id="ed2">
+                                       <label class="custom-control-label" for="ed2">Continuing Education</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="exam-prep" id="ed3">
+                                       <label class="custom-control-label" for="ed3">Exam Prep</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="education" value="reference" id="ed4">
+                                       <label class="custom-control-label" for="ed4">Reference</label>
+                                    </div>
+                                 </div>
+                                 <div class="mb-3">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Format</h6>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="hardcopy" id="del1">
+                                       <label class="custom-control-label" for="del1">Hardcopy</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="ebook" id="del2">
+                                       <label class="custom-control-label" for="del2">E-Book</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="flashcard" id="del3">
+                                       <label class="custom-control-label" for="del3">E-Flashcard</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="delivery" value="bundle" id="del4">
+                                       <label class="custom-control-label" for="del4">Bundle</label>
+                                    </div>
+                                 </div>
+                                 <div class="d-flex justify-content-end pt-3" style="border-top: 1px solid #dee2e6; gap: 10px;">
+                                    <button class="btn btn-sm btn-outline-secondary" id="clearFiltersInMenu">Clear All</button>
+                                    <button class="btn btn-sm btn-primary" id="applyFilters">Apply</button>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Sort Dropdown -->
+                           <select class="form-control" id="sortBy" style="width: auto; min-width: 200px; border-radius: 4px; font-size: 15px; font-weight: 400; height: 46px;">
+                              <option value="default">Sort By</option>
+                              <option value="title-asc">A-Z</option>
+                              <option value="title-desc">Z-A</option>
+                              <option value="price-low">Price: Low to High</option>
+                              <option value="price-high">Price: High to Low</option>
+                           </select>
+
+                           <!-- Clear All Button -->
+                           <button type="button" class="btn btn-outline-secondary" id="clearFilters" style="border-radius: 4px; font-size: 15px; font-weight: 400; height: 46px; display: inline-flex; align-items: center;">Clear All</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+                  <!-- Results Header -->
+                  <div class="results-header d-flex justify-content-between align-items-center">
+                     <div class="results-count">
+                        <h4><span id="resultsCount">12</span> Books Available</h4>
+                     </div>
+                  </div>
+
+                  <!-- Book Grid -->
+                  <div class="row" id="courseGrid">
+                           
+                           <!-- Book 1: Real Estate Introduction -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="GA" 
+                                data-education="pre-licensing" 
+                                data-license="" 
+                                data-delivery="ebook" 
+                                data-price="90"
+                                data-title="Real Estate: An Introduction to the Profession, 12th Edition">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_134349439_Preview.jpeg" alt="Real Estate Introduction">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6>
+                                       <span>$90</span>
+                                    </h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>E-Book</li>
+                                          <li><i class="fas fa-tag"></i>Best Seller</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Real Estate: An Introduction to the Profession, 12th Edition</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Comprehensive introduction to real estate fundamentals, covering principles, practices, and professional standards.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 2: Georgia Salesperson Pre-License -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="GA" 
+                                data-education="pre-licensing" 
+                                data-license="" 
+                                data-delivery="hardcopy" 
+                                data-price="70"
+                                data-title="Georgia Real Estate Salesperson Pre-License">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_227656591_Preview.jpeg" alt="Georgia Pre-License">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$70</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>Hardcopy</li>
+                                          <li><i class="fas fa-tag"></i>Best Seller</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Georgia Real Estate Salesperson Pre-License</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Complete Georgia-specific pre-licensing textbook with state laws, regulations, and practice questions.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 3: SC Exam Prep -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="SC" 
+                                data-education="exam-prep" 
+                                data-license="" 
+                                data-delivery="ebook" 
+                                data-price="30"
+                                data-title="South Carolina Real Estate Exam Prep">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_282051680_Preview.jpeg" alt="SC Exam Prep">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$30</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>E-Book</li>
+                                          <li><i class="fas fa-check-circle"></i>Updated</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">South Carolina Real Estate Exam Prep</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Focused exam preparation with practice questions and study tips for the South Carolina state exam.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 4: NMLS Study Guide -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="mortgage" 
+                                data-state="FL" 
+                                data-education="pre-licensing" 
+                                data-license="" 
+                                data-delivery="hardcopy" 
+                                data-price="65"
+                                data-title="NMLS Licensing Study Guide">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/mortgage/AdobeStock_287067334_Preview.jpeg" alt="NMLS Study Guide">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$65</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>Hardcopy</li>
+                                          <li><i class="fas fa-certificate"></i>NMLS Approved</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">NMLS Licensing Study Guide</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Complete study guide for mortgage loan originators preparing for NMLS licensing exam.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 5: USPAP Fundamentals -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="appraisal" 
+                                data-state="GA" 
+                                data-education="reference" 
+                                data-license="" 
+                                data-delivery="hardcopy" 
+                                data-price="75"
+                                data-title="USPAP Fundamentals for Appraisers">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_330758315_Preview.jpeg" alt="USPAP Fundamentals">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$75</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>Hardcopy</li>
+                                          <li><i class="fas fa-star"></i>Essential</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">USPAP Fundamentals for Appraisers</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Essential reference guide covering Uniform Standards of Professional Appraisal Practice.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 6: OSHA Safety Standards -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="osha" 
+                                data-state="TX" 
+                                data-education="reference" 
+                                data-license="" 
+                                data-delivery="hardcopy" 
+                                data-price="45"
+                                data-title="OSHA Safety Standards Handbook">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_292561185_Preview.jpeg" alt="OSHA Handbook">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$45</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>Hardcopy</li>
+                                          <li><i class="fas fa-hard-hat"></i>Safety</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">OSHA Safety Standards Handbook</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Comprehensive reference guide to OSHA construction and general industry safety standards.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 7: HIPAA Compliance Guide -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="healthcare" 
+                                data-state="CA" 
+                                data-education="reference" 
+                                data-license="" 
+                                data-delivery="ebook" 
+                                data-price="55"
+                                data-title="HIPAA Compliance Guide for Healthcare Professionals">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_232729870_Preview.jpeg" alt="HIPAA Guide">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$55</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>E-Book</li>
+                                          <li><i class="fas fa-shield-alt"></i>Compliance</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">HIPAA Compliance Guide for Healthcare Professionals</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Essential guide to HIPAA privacy and security rules for healthcare workers and administrators.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 8: NC Broker License Book -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="NC" 
+                                data-education="pre-licensing" 
+                                data-license="" 
+                                data-delivery="bundle" 
+                                data-price="85"
+                                data-title="North Carolina Broker License Package">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_374540173_Preview.jpeg" alt="NC Broker Package">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$85</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>Bundle</li>
+                                          <li><i class="fas fa-tag"></i>Best Value</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">North Carolina Broker License Package</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Complete package with textbook and practice exams for North Carolina broker licensing.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 9: HR Employment Law -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="hr" 
+                                data-state="NY" 
+                                data-education="reference" 
+                                data-license="" 
+                                data-delivery="hardcopy" 
+                                data-price="60"
+                                data-title="Employment Law Essentials for HR Professionals">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_461502029_Preview.jpeg" alt="HR Employment Law">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$60</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>Hardcopy</li>
+                                          <li><i class="fas fa-balance-scale"></i>Legal</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Employment Law Essentials for HR Professionals</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Comprehensive guide to federal and state employment laws for HR compliance professionals.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 10: Mortgage Finance Textbook -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="mortgage" 
+                                data-state="GA" 
+                                data-education="continuing-education" 
+                                data-license="" 
+                                data-delivery="ebook" 
+                                data-price="48"
+                                data-title="Real Estate Finance & Investment Principles">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/mortgage/AdobeStock_334660578_Preview.jpeg" alt="Finance Textbook">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$48</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>E-Book</li>
+                                          <li><i class="fas fa-chart-line"></i>Finance</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Real Estate Finance & Investment Principles</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>In-depth coverage of real estate finance, mortgages, and investment analysis fundamentals.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 11: Texas Real Estate Flashcards -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="real-estate" 
+                                data-state="TX" 
+                                data-education="exam-prep" 
+                                data-license="" 
+                                data-delivery="flashcard" 
+                                data-price="30"
+                                data-title="Texas Real Estate Exam Flashcards">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_461557983_Preview.jpeg" alt="TX Flashcards">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$30</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>E-Flashcard</li>
+                                          <li><i class="fas fa-mobile-alt"></i>Digital</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Texas Real Estate Exam Flashcards</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Digital flashcard set with 500+ practice questions for Texas real estate licensing exam.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Book 12: Appraisal Practice Questions -->
+                           <div class="col-lg-4 col-md-6 mb-4 course-item" 
+                                data-industry="appraisal" 
+                                data-state="SC" 
+                                data-education="exam-prep" 
+                                data-license="" 
+                                data-delivery="ebook" 
+                                data-price="35"
+                                data-title="Appraisal Practice Question Data Bank">
+                              <div class="package-wrap">
+                                 <figure class="feature-image">
+                                    <a href="#">
+                                       <img src="assets/images/real_estate_products/AdobeStock_538839062_Preview.jpeg" alt="Appraisal Questions">
+                                    </a>
+                                 </figure>
+                                 <div class="package-price">
+                                    <h6><span>$35</span></h6>
+                                 </div>
+                                 <div class="package-content-wrap">
+                                    <div class="package-meta text-center">
+                                       <ul>
+                                          <li><i class="fas fa-book"></i>E-Book</li>
+                                          <li><i class="fas fa-question-circle"></i>Practice</li>
+                                       </ul>
+                                    </div>
+                                    <div class="package-content">
+                                       <h3><a href="#">Appraisal Practice Question Data Bank</a></h3>
+                                       <div class="review-area">
+                                          <span class="review-text">(View Details)</span>
+                                       </div>
+                                       <p>Extensive collection of practice questions and scenarios for appraisal certification exams.</p>
+                                       <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="post-navigation-wrap mt-5">
+                           <nav>
+                              <ul class="pagination justify-content-center">
+                                 <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                       <i class="fas fa-arrow-left"></i>
+                                    </a>
+                                 </li>
+                                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                 <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                       <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </nav>
+                        </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Search Results Section End -->
+         </main>
+         <div data-include="partials/footer.html"></div>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+      <!-- Modern search modal -->
+      <div class="search-modal-backdrop" id="searchBackdrop" style="display: none;">
+         <div class="search-modal">
+            <div class="search-modal-header">
+               <i class="fas fa-search search-modal-icon"></i>
+               <input type="text" id="searchModalInput" placeholder="Search books..." autocomplete="off">
+               <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                  <i class="fas fa-times"></i>
+               </button>
+            </div>
+            <div class="search-modal-results" id="searchModalResults" style="display: none;">
+               <!-- Results populated by JS -->
+            </div>
+         </div>
+      </div>
+         <!-- header html end -->
+      </div>
+
+      <!-- JavaScript -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="assets/js/jquery.counterup.js"></script>
+      <script src="assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="assets/vendors/slick/slick.min.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/layout.js"></script>
+      <script src="assets/js/custom.min.js"></script>
+      <script src="assets/js/header-search.js?t=1762483431"></script>
+      <script src="assets/js/search-page.js?v=bs4-native"></script>
+   </body>
+</html>
+
