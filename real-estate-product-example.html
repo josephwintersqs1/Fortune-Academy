@@ -840,6 +840,98 @@ text-decoration: none;
 transform: translateY(-2px);
 }
 
+/* Tab Pricing Box */
+.tab-pricing-box {
+background: linear-gradient(135deg, var(--real-estate-primary) 0%, var(--real-estate-secondary) 100%);
+border-radius: 12px;
+padding: 35px 40px;
+margin: 30px 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 6px 20px rgba(30, 58, 138, 0.2);
+}
+
+.tab-pricing-content {
+display: flex;
+align-items: center;
+gap: 25px;
+}
+
+.tab-price-main {
+color: white;
+font-size: 3.5rem;
+font-weight: 800;
+line-height: 1;
+}
+
+.tab-price-save {
+color: #4ade80;
+background: rgba(255, 255, 255, 0.15);
+padding: 8px 18px;
+border-radius: 8px;
+font-size: 1.1rem;
+font-weight: 700;
+}
+
+.tab-price-original {
+color: rgba(255, 255, 255, 0.7);
+font-size: 1.5rem;
+font-weight: 600;
+text-decoration: line-through;
+}
+
+.tab-enroll-btn {
+background: var(--real-estate-accent) !important;
+color: white !important;
+border: none !important;
+padding: 16px 50px !important;
+border-radius: 8px !important;
+font-weight: 700 !important;
+font-size: 1.1rem !important;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all 0.3s !important;
+white-space: nowrap;
+}
+
+.tab-enroll-btn:hover {
+background: #b8960f !important;
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
+}
+
+@media (max-width: 768px) {
+.tab-pricing-box {
+flex-direction: column;
+gap: 25px;
+padding: 25px 20px;
+text-align: center;
+}
+
+.tab-pricing-content {
+flex-direction: column;
+gap: 15px;
+text-align: center;
+}
+
+.tab-price-main {
+font-size: 2.5rem;
+}
+
+.tab-price-save {
+font-size: 1rem;
+}
+
+.tab-price-original {
+font-size: 1.2rem;
+}
+
+.tab-enroll-btn {
+width: 100%;
+}
+}
+
 /* Payment Schedule Modal Styling */
 #paymentScheduleModal .modal-dialog {
 max-width: 600px;
@@ -1136,6 +1228,16 @@ SCREC Approved #004
 <li>Hands-on learning activities and real-time Q&A</li>
 </ul>
 
+<!-- Pricing Box for In-Person -->
+<div class="tab-pricing-box">
+<div class="tab-pricing-content">
+<div class="tab-price-main">$453</div>
+<div class="tab-price-save">Save $302</div>
+<div class="tab-price-original">$755</div>
+</div>
+<button class="btn btn-primary tab-enroll-btn">ENROLL NOW</button>
+</div>
+
 <h3 style="margin-top: 30px;">Select Your Class Schedule</h3>
 <div class="schedule-filters">
 <div class="form-group">
@@ -1317,6 +1419,16 @@ SCREC Approved #004
 <li>Real-time Q&A and discussions</li>
 <li>Recorded sessions available for review</li>
 </ul>
+
+<!-- Pricing Box for Zoom -->
+<div class="tab-pricing-box">
+<div class="tab-pricing-content">
+<div class="tab-price-main">$453</div>
+<div class="tab-price-save">Save $302</div>
+<div class="tab-price-original">$755</div>
+</div>
+<button class="btn btn-primary tab-enroll-btn">ENROLL NOW</button>
+</div>
 
 <h3 style="margin-top: 30px;">Select Your Zoom Class Schedule</h3>
 <div class="schedule-filters">
