@@ -818,7 +818,7 @@ margin-top: 3px;
 .timeline-steps-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 80px 20px;
     position: relative;
 }
 
@@ -849,7 +849,7 @@ margin-top: 3px;
 /* Timeline Step */
 .timeline-animated-step {
     position: relative;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -928,7 +928,7 @@ margin-top: 3px;
     flex: 1;
     background: white;
     border-radius: 16px;
-    padding: 40px;
+    padding: 30px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     transition: all 0.5s ease;
     position: relative;
@@ -957,28 +957,28 @@ margin-top: 3px;
 }
 
 .timeline-step-header {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .timeline-step-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     color: #1e3a8a;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .timeline-step-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: #6c757d;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .timeline-step-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 24px;
-    padding: 24px;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 20px;
     background: #f8f9fa;
     border-radius: 12px;
 }
@@ -1025,14 +1025,14 @@ margin-top: 3px;
 
 /* Course Topics */
 .timeline-course-topics {
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 .timeline-topics-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #495057;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -1040,7 +1040,7 @@ margin-top: 3px;
 .timeline-topics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
+    gap: 10px;
 }
 
 .timeline-topic-item {
@@ -1068,11 +1068,11 @@ margin-top: 3px;
 
 /* CTA Button */
 .timeline-step-cta {
-    margin-top: 28px;
+    margin-top: 20px;
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 32px;
+    padding: 14px 28px;
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: white;
     font-size: 16px;
@@ -1107,7 +1107,9 @@ margin-top: 3px;
 }
 
 .timeline-final-step .timeline-step-title,
-.timeline-final-step .timeline-detail-value {
+.timeline-final-step .timeline-detail-value,
+.timeline-final-step .timeline-step-subtitle,
+.timeline-final-step .timeline-course-topics p {
     color: white;
 }
 
@@ -1130,6 +1132,14 @@ margin-top: 3px;
 
 .timeline-final-step .timeline-step-cta:hover {
     color: #1e3a8a;
+}
+
+.timeline-final-step .timeline-topics-title {
+    color: white;
+}
+
+.timeline-final-step .timeline-topic-item {
+    color: rgba(255,255,255,0.95);
 }
 
 /* Completion Banner */
@@ -1224,15 +1234,16 @@ margin-top: 3px;
     }
 
     .timeline-step-card {
-        padding: 24px;
+        padding: 20px;
     }
 
     .timeline-step-title {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .timeline-step-details {
         grid-template-columns: 1fr;
+        padding: 16px;
     }
 
     .timeline-topics-grid {
