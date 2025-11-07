@@ -1638,12 +1638,12 @@ SCREC Approved #004
 <div class="pricing-card">
 <h4>Core Courses Only</h4>
 <div class="pricing-amount">
-<span class="price-current">$164</span>
-<span class="price-original">$219</span>
-<span class="price-save">Save $55</span>
+<span class="price-current">$453</span>
+<span class="price-original">$755</span>
+<span class="price-save">Save $302</span>
 </div>
 <div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
-<strong>Start now for only $180</strong>
+<strong>Start now for only $159</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
 <ul class="pricing-features">
@@ -1653,40 +1653,40 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Lifetime Access</li>
 <li><i class="fas fa-check"></i> Certificate of Completion</li>
 </ul>
-<button class="btn btn-primary">Start Learning Now</button>
+<button class="btn btn-primary">Enroll Now</button>
 </div>
 
 <div class="pricing-card recommended">
 <span class="pricing-badge">Most Popular</span>
 <h4>Core + Exam Prep</h4>
 <div class="pricing-amount">
-<span class="price-current">$245</span>
-<span class="price-original">$327</span>
-<span class="price-save">Save $82</span>
+<span class="price-current">$534</span>
+<span class="price-original">$836</span>
+<span class="price-save">Save $302</span>
 </div>
 <div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
-<strong>Start now for only $180</strong>
+<strong>Start now for only $179</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
 <ul class="pricing-features">
 <li><i class="fas fa-check"></i> Everything in Core</li>
-<li><i class="fas fa-check"></i> State Exam Prep Course</li>
-<li><i class="fas fa-check"></i> Practice Exams (Unlimited)</li>
+<li><i class="fas fa-check"></i> Unlimited Practice Exams</li>
 <li><i class="fas fa-check"></i> AI Study Assistant</li>
 <li><i class="fas fa-check"></i> Exam Strategy Sessions</li>
+<li><i class="fas fa-check"></i> Pass Guarantee</li>
 </ul>
-<button class="btn btn-primary">Start Learning Now</button>
+<button class="btn btn-primary">Enroll Now</button>
 </div>
 
 <div class="pricing-card">
-<h4>Complete Package</h4>
+<h4>Premium Package</h4>
 <div class="pricing-amount">
-<span class="price-current">$408</span>
-<span class="price-original">$544</span>
-<span class="price-save">Save $136</span>
+<span class="price-current">$697</span>
+<span class="price-original">$999</span>
+<span class="price-save">Save $302</span>
 </div>
 <div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
-<strong>Start now for only $180</strong>
+<strong>Start now for only $199</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
 <ul class="pricing-features">
@@ -1696,30 +1696,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Resume Review</li>
 <li><i class="fas fa-check"></i> Interview Preparation</li>
 </ul>
-<button class="btn btn-primary">Start Learning Now</button>
+<button class="btn btn-primary">Enroll Now</button>
 </div>
 </div>
 
-<div class="upsell-section">
-<h4>🎁 Add More Value to Your Learning</h4>
-<label class="upsell-option">
-<input type="checkbox" class="upsell-checkbox" data-price="81">
-<div class="upsell-details">
-<strong>Add Exam Prep Package</strong>
-<span>Unlimited practice exams, AI assistant & exam strategy sessions</span>
-</div>
-<div class="upsell-price">+$81</div>
-</label>
-<label class="upsell-option">
-<input type="checkbox" class="upsell-checkbox" data-price="163">
-<div class="upsell-details">
-<strong>Add Expert Support</strong>
-<span>24/7 support, career coaching, resume review & interview prep</span>
-</div>
-<div class="upsell-price">+$163</div>
-</label>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2047,48 +2027,96 @@ Yes! All students get lifetime access to course materials, so you can review con
 
 <!-- Payment Schedule Modal -->
 <div class="modal fade" id="paymentScheduleModal" tabindex="-1" role="dialog" aria-labelledby="paymentScheduleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="paymentScheduleModalLabel">Learning made easy with flexible payment schedule.</h5>
+<h5 class="modal-title" id="paymentScheduleModalLabel">Payment Plan Details</h5>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
 </div>
 <div class="modal-body">
+<!-- Important Notice Box -->
+<div class="payment-notice-box">
+<div class="notice-icon">
+<i class="fas fa-info-circle"></i>
+</div>
+<div class="notice-content">
+<h6>Important: Full Price When Using Payment Plans</h6>
+<p>Payment plans are charged at the <strong>full original price</strong> without any discount. The discount shown is only available when paying in full upfront.</p>
+</div>
+</div>
+
+<!-- Package Info Section -->
+<div class="package-info-section">
+<h6>Selected Package</h6>
+<div class="package-details">
+<div class="detail-item">
+<span class="detail-label">Package:</span>
+<span class="detail-value" id="modal-package-name">Silver Package</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Delivery Method:</span>
+<span class="detail-value" id="modal-delivery-method">Online Live/Zoom Classes</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Payment Frequency:</span>
+<span class="detail-value" id="modal-payment-frequency">Bi-Weekly</span>
+</div>
+</div>
+</div>
+
+<!-- Payment Schedule Table -->
+<div class="payment-schedule-section">
+<h6>Your Payment Schedule</h6>
 <table class="payment-schedule-table">
 <thead>
 <tr>
-<th>Payments</th>
+<th>Payment #</th>
 <th>Date</th>
 <th>Amount</th>
+<th>Running Total</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>1st Payment</td>
-<td>11/07/2025</td>
-<td>$179.75</td>
-</tr>
-<tr>
-<td>Bi-Weekly</td>
-<td></td>
-<td>$179.75</td>
-</tr>
-<tr>
-<td>Last Payment</td>
-<td>12/22/2025</td>
-<td>$179.75</td>
-</tr>
+<tbody id="payment-schedule-tbody">
+<!-- Rows will be populated by JavaScript -->
 </tbody>
 </table>
+</div>
 
-<div class="total-price-row">
-Total Price: $719
+<!-- Summary Section -->
+<div class="payment-summary-section">
+<div class="summary-row">
+<div class="summary-item">
+<span class="summary-label">Total with Payment Plan:</span>
+<span class="summary-value total-payment-plan" id="modal-total-price">$803</span>
+</div>
+</div>
+<div class="summary-row discount-comparison">
+<div class="summary-item">
+<span class="summary-label">Discount if Paid in Full:</span>
+<span class="summary-value discount-amount" id="modal-discount-lost">-$321</span>
+</div>
+<div class="summary-item">
+<span class="summary-label">Price if Paid in Full:</span>
+<span class="summary-value discounted-price" id="modal-discounted-price">$482</span>
+</div>
+</div>
+<div class="summary-row payment-info">
+<div class="summary-item">
+<span class="summary-label">Number of Payments:</span>
+<span class="summary-value" id="modal-num-payments">4 payments</span>
+</div>
+<div class="summary-item">
+<span class="summary-label">First Payment Due:</span>
+<span class="summary-value" id="modal-first-payment-date">Today</span>
+</div>
+</div>
 </div>
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-enroll">ENROLL NOW</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<button type="button" class="btn btn-enroll">PROCEED TO ENROLLMENT</button>
 </div>
 </div>
 </div>
