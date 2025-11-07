@@ -30,13 +30,16 @@
   function calculateTotals() {
     let subtotal = 0;
     let originalTotal = 0;
+    let totalQuantity = 0;
 
     selectedCourses.forEach(course => {
-      subtotal += parseFloat(course.price);
-      originalTotal += parseFloat(course.originalPrice || course.price);
+      const qty = course.quantity || 1;
+      subtotal += parseFloat(course.price) * qty;
+      originalTotal += parseFloat(course.originalPrice || course.price) * qty;
+      totalQuantity += qty;
     });
 
-    const discount = calculateBulkDiscount(selectedCourses.length);
+    const discount = calculateBulkDiscount(totalQuantity);
     const discountAmount = subtotal * discount;
     const finalSubtotal = subtotal - discountAmount;
     const totalSavings = (originalTotal - finalSubtotal);
@@ -45,7 +48,8 @@
       subtotal: finalSubtotal,
       savings: totalSavings,
       discount: discount,
-      count: selectedCourses.length
+      count: selectedCourses.length,
+      totalQuantity: totalQuantity
     };
   }
 
@@ -76,16 +80,18 @@
     }
   }
 
-  function addCourse(courseId) {
+  function addCourse(courseId, quantity = 1) {
     const course = allCourses.find(c => c.id === courseId);
     if (!course) return;
 
     // Check if already added
-    if (selectedCourses.find(c => c.id === courseId)) {
-      return;
+    const existing = selectedCourses.find(c => c.id === courseId);
+    if (existing) {
+      existing.quantity = quantity;
+    } else {
+      selectedCourses.push({...course, quantity: quantity});
     }
 
-    selectedCourses.push(course);
     updateSummary();
     updateButtonState(courseId, true);
   }
@@ -165,7 +171,10 @@
 
     // Render courses
     coursesToShow.forEach(course => {
-      const isAdded = selectedCourses.find(c => c.id === course.id);
+      const selectedCourse = selectedCourses.find(c => c.id === course.id);
+      const isAdded = !!selectedCourse;
+      const quantity = selectedCourse ? selectedCourse.quantity : 1;
+      
       const courseHTML = `
         <div class="course-item" data-course="${course.id}">
           <div class="course-info">
@@ -181,6 +190,16 @@
                 `<span class="original-price">$${parseFloat(course.originalPrice).toFixed(2)}</span>` : ''}
               <span class="current-price">$${parseFloat(course.price).toFixed(2)}</span>
             </div>
+            <div class="qty-controls">
+              <label for="qty-${course.id}" class="qty-label">QTY:</label>
+              <input type="number" 
+                     id="qty-${course.id}" 
+                     class="qty-input" 
+                     min="1" 
+                     max="999" 
+                     value="${quantity}" 
+                     data-course-id="${course.id}">
+            </div>
             <button class="add-course-btn ${isAdded ? 'added' : ''}" data-course-id="${course.id}">
               ${isAdded ? 'ADDED' : 'ADD'}
             </button>
@@ -190,7 +209,21 @@
       courseList.insertAdjacentHTML('beforeend', courseHTML);
     });
 
-    // Attach event listeners to new buttons
+    // Attach event listeners to quantity inputs
+    document.querySelectorAll('.qty-input').forEach(input => {
+      const courseId = input.getAttribute('data-course-id');
+      
+      input.addEventListener('change', (e) => {
+        const qty = parseInt(e.target.value) || 1;
+        const selectedCourse = selectedCourses.find(c => c.id === courseId);
+        if (selectedCourse) {
+          selectedCourse.quantity = qty;
+          updateSummary();
+        }
+      });
+    });
+
+    // Attach event listeners to add buttons
     document.querySelectorAll('.add-course-btn').forEach(btn => {
       const courseId = btn.getAttribute('data-course-id');
       const isAdded = selectedCourses.find(c => c.id === courseId);
@@ -200,7 +233,9 @@
         if (isAdded) {
           removeCourse(courseId);
         } else {
-          addCourse(courseId);
+          const qtyInput = document.getElementById(`qty-${courseId}`);
+          const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+          addCourse(courseId, quantity);
         }
       };
     });

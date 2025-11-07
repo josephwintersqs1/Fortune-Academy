@@ -582,6 +582,42 @@
   color: #111827;
 }
 
+/* Quantity Controls */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.qty-input {
+  width: 70px;
+  padding: 0.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.qty-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
 .add-course-btn {
   padding: 0.75rem 1.5rem;
   background: #f97316;
@@ -593,6 +629,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .add-course-btn:hover {
@@ -961,6 +998,20 @@
   .course-pricing {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .qty-controls {
+    order: 1;
+  }
+
+  .price-display {
+    order: 2;
+  }
+
+  .add-course-btn {
+    order: 3;
+    width: 100%;
   }
 
   .lms-benefits-header h2,
