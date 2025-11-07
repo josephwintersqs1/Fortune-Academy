@@ -4210,3 +4210,193 @@ body.industry-compliance {
     background-color: var(--color-hr-hover) !important;
     border-color: var(--color-hr-hover) !important;
 }
+
+/* ===================================================================
+   TESTIMONIALS SECTION
+   =================================================================== */
+.testimonials-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.testimonials-section .section-heading {
+  margin-bottom: 50px;
+}
+
+.testimonial-widget {
+  text-align: center;
+}
+
+.testimonial-widget .widget-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.testimonial-widget .widget-note {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.trustpilot-placeholder,
+.google-reviews-placeholder {
+  transition: all 0.3s ease;
+}
+
+.trustpilot-placeholder:hover,
+.google-reviews-placeholder:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================================================
+   LEARNING STYLES SECTION
+   =================================================================== */
+.learning-styles-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.learning-styles-section .section-heading {
+  margin-bottom: 50px;
+}
+
+.learning-style-card {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.learning-style-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.learning-style-image {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.learning-style-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.learning-style-card:hover .learning-style-image::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.learning-style-image .video-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.learning-style-image .video-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  color: #ff6f00;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.learning-style-image .video-button a:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+.learning-style-image .video-button i {
+  padding-left: 3px;
+}
+
+.learning-style-content {
+  padding: 30px 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.learning-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f33 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.learning-style-content h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.learning-style-content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .testimonials-section,
+  .learning-styles-section {
+    padding: 60px 0;
+  }
+  
+  .learning-style-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonials-section,
+  .learning-styles-section {
+    padding: 50px 0;
+  }
+  
+  .learning-style-card {
+    margin-bottom: 20px;
+  }
+  
+  .learning-style-image {
+    height: 160px;
+  }
+  
+  .testimonial-widget .widget-title {
+    font-size: 1.25rem;
+  }
+}

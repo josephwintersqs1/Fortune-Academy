@@ -241,6 +241,14 @@ $("#video-container").modalVideo({
   }
 });
 
+/* Learning Styles video modals */
+$(".video-container").modalVideo({
+  youtube:{
+    controls:0,
+    nocookie: true
+  }
+});
+
 /* counter up*/
 $('.counter').counterUp();
 
