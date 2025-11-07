@@ -54,7 +54,8 @@ var COURSE_DATA = {
           duration: "75 Hours",
           format: "Online + Live",
           focus: "North Carolina",
-          licenses: ["Real Estate Broker"]
+          licenses: ["Real Estate Broker"],roles: ["Real Estate Broker"],
+          roles: ["Real Estate Broker"]
         },
         {
           title: "Instructor-led NC Broker Licensing Live Virtual",
@@ -68,7 +69,8 @@ var COURSE_DATA = {
           duration: "8 Weeks",
           format: "Live Virtual",
           focus: "North Carolina",
-          licenses: ["Real Estate Broker"]
+          licenses: ["Real Estate Broker"],roles: ["Real Estate Broker"],
+          roles: ["Real Estate Broker"]
         },
         {
           title: "NC Broker Weekend Intensive Course",
@@ -81,7 +83,8 @@ var COURSE_DATA = {
           duration: "4 Days",
           format: "In-Person",
           focus: "Charlotte",
-          licenses: ["Real Estate Broker"]
+          licenses: ["Real Estate Broker"],roles: ["Real Estate Broker"],
+          roles: ["Real Estate Broker"]
         },
         {
           title: "Self-Paced NC Broker Pre-License",
@@ -94,7 +97,8 @@ var COURSE_DATA = {
           duration: "12 Weeks",
           format: "Self-Paced",
           focus: "North Carolina",
-          licenses: ["Real Estate Broker"]
+          licenses: ["Real Estate Broker"],roles: ["Real Estate Broker"],
+          roles: ["Real Estate Broker"]
         }
       ],
       "post": [],
@@ -116,7 +120,8 @@ var COURSE_DATA = {
           duration: "90 Hours",
           format: "Hybrid",
           focus: "South Carolina",
-          licenses: ["Salesperson"]
+          licenses: ["Salesperson"],roles: ["Real Estate Agent"],
+          roles: ["Real Estate Agent"]
         },
         {
           title: "SC Salesperson Weekend Bootcamp",
@@ -129,7 +134,8 @@ var COURSE_DATA = {
           duration: "2 Weekends",
           format: "In-Person",
           focus: "Columbia",
-          licenses: ["Salesperson"]
+          licenses: ["Salesperson"],roles: ["Real Estate Agent"],
+          roles: ["Real Estate Agent"]
         },
         {
           title: "60 + 30-Hour SC Broker-in-Charge Package",
@@ -142,7 +148,8 @@ var COURSE_DATA = {
           duration: "10 Weeks",
           format: "Online",
           focus: "South Carolina",
-          licenses: ["Broker-in-Charge"]
+          licenses: ["Broker-in-Charge"],roles: ["Real Estate Broker"],
+          roles: ["Real Estate Broker"]
         },
         {
           title: "SC Salesperson Self-Paced Course",
@@ -155,7 +162,8 @@ var COURSE_DATA = {
           duration: "6-12 Weeks",
           format: "Self-Paced",
           focus: "South Carolina",
-          licenses: ["Salesperson"]
+          licenses: ["Salesperson"],roles: ["Real Estate Agent"],
+          roles: ["Real Estate Agent"]
         }
       ],
       "post": [],
@@ -177,7 +185,8 @@ var COURSE_DATA = {
           duration: "8-10 Weeks",
           format: "Online + Live",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Premium GA Pre-License + Exam Cram Workshop",
@@ -191,7 +200,8 @@ var COURSE_DATA = {
           duration: "10 Weeks",
           format: "Hybrid",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Georgia Pre-License Fast Track (Evening)",
@@ -205,7 +215,8 @@ var COURSE_DATA = {
           duration: "6 Weeks",
           format: "Live Virtual",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Self-Paced Salesperson Licensing Essentials",
@@ -218,7 +229,8 @@ var COURSE_DATA = {
           duration: "4-12 Weeks",
           format: "Self-Paced",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Weekend GA Pre-License Bootcamp",
@@ -231,7 +243,8 @@ var COURSE_DATA = {
           duration: "4 Days",
           format: "In-Person",
           focus: "Atlanta",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "GA Pre-License + Career Starter Bundle",
@@ -244,7 +257,8 @@ var COURSE_DATA = {
           duration: "12 Weeks",
           format: "Hybrid",
           focus: "Statewide",
-          licenses: ["Real Estate Agent", "Property Manager"]
+          licenses: ["Real Estate Agent", "Property Manager"],
+        roles: ["Real Estate Agent","Property Manager"]
         },
         {
           title: "Spanish GA Salesperson Licensing",
@@ -258,7 +272,8 @@ var COURSE_DATA = {
           duration: "8 Weeks",
           format: "Live Virtual",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Real Estate Math Mastery Add-On",
@@ -271,7 +286,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Online",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Military Spouse Licensing Express",
@@ -284,7 +300,8 @@ var COURSE_DATA = {
           duration: "6-10 Weeks",
           format: "Self-Paced",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Agent Launch Pre-License + Mentorship",
@@ -297,7 +314,8 @@ var COURSE_DATA = {
           duration: "12 Weeks",
           format: "Hybrid",
           focus: "Georgia",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         }
       ],
       upgrade: [
@@ -313,7 +331,8 @@ var COURSE_DATA = {
           duration: "60 Hours",
           format: "Online",
           focus: "Broker Upgrade",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "GA Broker-in-Charge Leadership Lab",
@@ -326,7 +345,8 @@ var COURSE_DATA = {
           duration: "24 Hours",
           format: "Live Virtual",
           focus: "Leadership",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Commercial Broker Foundations (GA)",
@@ -339,7 +359,8 @@ var COURSE_DATA = {
           duration: "30 Hours",
           format: "Online",
           focus: "Commercial",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Property Management Broker Course",
@@ -352,7 +373,8 @@ var COURSE_DATA = {
           duration: "25 Hours",
           format: "Self-Paced",
           focus: "Property Mgmt",
-          licenses: ["Broker", "Property Manager"]
+          licenses: ["Broker", "Property Manager"],
+        roles: ["Real Estate Broker","Property Manager"]
         },
         {
           title: "Luxury & Boutique Brokerage Masterclass",
@@ -365,7 +387,8 @@ var COURSE_DATA = {
           duration: "18 Hours",
           format: "Live Virtual",
           focus: "Luxury",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Broker Technology Stack Intensive",
@@ -378,7 +401,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Online",
           focus: "Tech Stack",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Team Leader Broker Bootcamp",
@@ -391,7 +415,8 @@ var COURSE_DATA = {
           duration: "20 Hours",
           format: "Hybrid",
           focus: "Team Leadership",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Managing Broker Compliance Clinic",
@@ -404,7 +429,8 @@ var COURSE_DATA = {
           duration: "16 Hours",
           format: "Live Virtual",
           focus: "Compliance",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Georgia Brokerage Finance Workshop",
@@ -417,7 +443,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Self-Paced",
           focus: "Finance",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         },
         {
           title: "Recruiting Accelerator for Brokers",
@@ -430,7 +457,8 @@ var COURSE_DATA = {
           duration: "15 Hours",
           format: "Live Virtual",
           focus: "Recruiting",
-          licenses: ["Broker"]
+          licenses: ["Broker"],
+        roles: ["Real Estate Broker"]
         }
       ],
       ce: [
@@ -446,7 +474,8 @@ var COURSE_DATA = {
           duration: "36 Hours",
           format: "Self-paced",
           focus: "Georgia CE",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Risk Management Essentials (12-Hour CE)",
@@ -460,7 +489,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Online",
           focus: "Risk Management",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Ethics & Fair Housing Update (4-Hour)",
@@ -473,7 +503,8 @@ var COURSE_DATA = {
           duration: "4 Hours",
           format: "Self-Paced",
           focus: "Ethics",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Contracts & Agency Refresher (6-Hour)",
@@ -486,7 +517,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Live Virtual",
           focus: "Contracts",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Property Management CE Essentials",
@@ -499,7 +531,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Self-Paced",
           focus: "Property Mgmt",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Marketing & Social Media Compliance",
@@ -512,7 +545,8 @@ var COURSE_DATA = {
           duration: "4 Hours",
           format: "Online",
           focus: "Marketing",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Commercial CE: Lease Negotiations",
@@ -525,7 +559,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Self-Paced",
           focus: "Commercial",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Luxury Listing Strategies CE",
@@ -538,7 +573,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Live Virtual",
           focus: "Luxury",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "Investor & 1031 Exchange CE",
@@ -551,7 +587,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Self-Paced",
           focus: "Investors",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         },
         {
           title: "CE Subscription: Teams & Leadership Bundle",
@@ -564,7 +601,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Self-Paced",
           focus: "Leadership",
-          licenses: ["Real Estate Agent", "Broker"]
+          licenses: ["Real Estate Agent", "Broker"],
+        roles: ["Real Estate Agent","Real Estate Broker"]
         }
       ],
       post: [
@@ -579,7 +617,8 @@ var COURSE_DATA = {
           duration: "25 Hours",
           format: "Live Virtual",
           focus: "Post License",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Contracts in Practice",
@@ -592,7 +631,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Self-Paced",
           focus: "Contracts",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Business Planning & Marketing",
@@ -605,7 +645,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Self-Paced",
           focus: "Business Planning",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: License Law & Risk Management",
@@ -618,7 +659,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Self-Paced",
           focus: "Risk Management",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Working with Sellers",
@@ -631,7 +673,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Live Virtual",
           focus: "Sellers",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Working with Buyers",
@@ -644,7 +687,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Live Virtual",
           focus: "Buyers",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Smart Growth Playbook",
@@ -657,7 +701,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Self-Paced",
           focus: "Business Systems",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Negotiation Mastery",
@@ -670,7 +715,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Live Virtual",
           focus: "Negotiation",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Lead Generation Playbook",
@@ -683,7 +729,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Self-Paced",
           focus: "Lead Gen",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Transaction Coordination 101",
@@ -696,7 +743,8 @@ var COURSE_DATA = {
           duration: "8 Hours",
           format: "Self-Paced",
           focus: "Operations",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Referral & Sphere Strategies",
@@ -709,7 +757,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Live Virtual",
           focus: "Sphere Building",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: Investment Fundamentals",
@@ -722,7 +771,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Self-Paced",
           focus: "Investors",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Post-License: New Construction Toolkit",
@@ -735,7 +785,8 @@ var COURSE_DATA = {
           duration: "9 Hours",
           format: "Self-Paced",
           focus: "New Construction",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         }
       ],
       exam: [
@@ -750,7 +801,8 @@ var COURSE_DATA = {
           duration: "Self-Paced",
           format: "Online",
           focus: "Exam Prep",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Georgia Exam Cram Weekend",
@@ -763,7 +815,8 @@ var COURSE_DATA = {
           duration: "2 Days",
           format: "Live Virtual",
           focus: "Georgia Law",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "National Concepts Drill Deck",
@@ -776,7 +829,8 @@ var COURSE_DATA = {
           duration: "Self-Paced",
           format: "Online",
           focus: "National",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Math Mini-Camp for GA Exam",
@@ -789,7 +843,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Live Virtual",
           focus: "Math",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Exam Prep Flashcard App Access",
@@ -802,7 +857,8 @@ var COURSE_DATA = {
           duration: "Self-Paced",
           format: "Mobile",
           focus: "Flashcards",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Live Exam Coaching Sessions",
@@ -815,7 +871,8 @@ var COURSE_DATA = {
           duration: "3 Weeks",
           format: "Live Virtual",
           focus: "Coaching",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Exam Simulation Bundle",
@@ -828,7 +885,8 @@ var COURSE_DATA = {
           duration: "Self-Paced",
           format: "Online",
           focus: "Simulation",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Exam Prep Audio Companion",
@@ -841,7 +899,8 @@ var COURSE_DATA = {
           duration: "Self-Paced",
           format: "Audio",
           focus: "Audio Review",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Exam Prep Intensive (One-on-One)",
@@ -854,7 +913,8 @@ var COURSE_DATA = {
           duration: "4 Weeks",
           format: "Coaching",
           focus: "Personal Coaching",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         },
         {
           title: "Last-Minute Exam Blitz",
@@ -867,7 +927,8 @@ var COURSE_DATA = {
           duration: "2 Days",
           format: "Live Virtual",
           focus: "Final Review",
-          licenses: ["Real Estate Agent"]
+          licenses: ["Real Estate Agent"],
+        roles: ["Real Estate Agent"]
         }
       ]
     },
@@ -885,7 +946,8 @@ var COURSE_DATA = {
           duration: "20 Hours",
           format: "Online",
           focus: "Federal",
-          licenses: ["MLO"]
+          licenses: ["MLO"],
+        roles: []
         },
         {
           title: "Georgia MLO State-Specific Licensing",
@@ -898,7 +960,8 @@ var COURSE_DATA = {
           duration: "3-5 Days",
           format: "Hybrid",
           focus: "Georgia",
-          licenses: ["MLO"]
+          licenses: ["MLO"],
+        roles: []
         },
         {
           title: "MLO Exam Prep Intensive",
@@ -911,7 +974,8 @@ var COURSE_DATA = {
           duration: "2 Weeks",
           format: "Live Virtual",
           focus: "Exam Prep",
-          licenses: ["MLO"]
+          licenses: ["MLO"],
+        roles: []
         },
         {
           title: "Mortgage Fundamentals Bundle",
@@ -924,7 +988,8 @@ var COURSE_DATA = {
           duration: "30 Hours",
           format: "Self-Paced",
           focus: "Complete Package",
-          licenses: ["MLO"]
+          licenses: ["MLO"],
+        roles: []
         },
         {
           title: "Fast-Track MLO Certification",
@@ -937,7 +1002,8 @@ var COURSE_DATA = {
           duration: "10 Days",
           format: "Hybrid",
           focus: "Accelerated",
-          licenses: ["MLO"]
+          licenses: ["MLO"],
+        roles: []
         },
         {
           title: "Spanish MLO Pre-License Course",
@@ -950,7 +1016,8 @@ var COURSE_DATA = {
           duration: "20 Hours",
           format: "Live Virtual",
           focus: "Spanish",
-          licenses: ["MLO"]
+          licenses: ["MLO"],
+        roles: []
         }
       ],
       "exam": [],
@@ -972,7 +1039,8 @@ var COURSE_DATA = {
           duration: "75 Hours",
           format: "Online + Live",
           focus: "Trainee Level",
-          licenses: ["Trainee Appraiser"]
+          licenses: ["Trainee Appraiser"],
+        roles: []
         },
         {
           title: "Licensed Residential Appraiser Package",
@@ -985,7 +1053,8 @@ var COURSE_DATA = {
           duration: "150 Hours",
           format: "Self-Paced",
           focus: "Residential",
-          licenses: ["Licensed Appraiser"]
+          licenses: ["Licensed Appraiser"],
+        roles: []
         },
         {
           title: "FHA Appraiser Certification",
@@ -998,7 +1067,8 @@ var COURSE_DATA = {
           duration: "40 Hours",
           format: "Hybrid",
           focus: "FHA Certification",
-          licenses: ["FHA Appraiser"]
+          licenses: ["FHA Appraiser"],
+        roles: []
         },
         {
           title: "Commercial Appraisal Fundamentals",
@@ -1011,7 +1081,8 @@ var COURSE_DATA = {
           duration: "8 Weeks",
           format: "Live Virtual",
           focus: "Commercial",
-          licenses: ["Commercial Appraiser"]
+          licenses: ["Commercial Appraiser"],
+        roles: []
         },
         {
           title: "Appraisal Report Writing Mastery",
@@ -1024,7 +1095,8 @@ var COURSE_DATA = {
           duration: "5 Days",
           format: "Online",
           focus: "Report Writing",
-          licenses: ["Licensed Appraiser"]
+          licenses: ["Licensed Appraiser"],
+        roles: []
         },
         {
           title: "Appraisal Exam Prep Bootcamp",
@@ -1037,7 +1109,8 @@ var COURSE_DATA = {
           duration: "3 Days",
           format: "In-Person",
           focus: "Exam Preparation",
-          licenses: ["All Levels"]
+          licenses: ["All Levels"],
+        roles: []
         }
       ],
       "exam": [],
@@ -1059,7 +1132,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Online",
           focus: "Construction",
-          licenses: ["OSHA 10"]
+          licenses: ["OSHA 10"],
+        roles: []
         },
         {
           title: "OSHA 10-Hour General Industry",
@@ -1072,7 +1146,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Online",
           focus: "General Industry",
-          licenses: ["OSHA 10"]
+          licenses: ["OSHA 10"],
+        roles: []
         },
         {
           title: "Construction Safety Fundamentals",
@@ -1085,7 +1160,8 @@ var COURSE_DATA = {
           duration: "2 Days",
           format: "In-Person",
           focus: "Job Site Safety",
-          licenses: ["OSHA 10"]
+          licenses: ["OSHA 10"],
+        roles: []
         },
         {
           title: "Spanish OSHA 10-Hour Construction",
@@ -1098,7 +1174,8 @@ var COURSE_DATA = {
           duration: "10 Hours",
           format: "Live Virtual",
           focus: "Spanish Language",
-          licenses: ["OSHA 10"]
+          licenses: ["OSHA 10"],
+        roles: []
         },
         {
           title: "OSHA 10 + First Aid Bundle",
@@ -1111,7 +1188,8 @@ var COURSE_DATA = {
           duration: "12 Hours",
           format: "Hybrid",
           focus: "Emergency Prep",
-          licenses: ["OSHA 10", "First Aid"]
+          licenses: ["OSHA 10", "First Aid"],
+        roles: []
         },
         {
           title: "OSHA 10 On-Site Group Training",
@@ -1124,7 +1202,8 @@ var COURSE_DATA = {
           duration: "1 Day",
           format: "On-Site",
           focus: "Group Training",
-          licenses: ["OSHA 10"]
+          licenses: ["OSHA 10"],
+        roles: []
         }
       ],
       "exam": [],
@@ -1146,7 +1225,8 @@ var COURSE_DATA = {
           duration: "8 Hours",
           format: "Online",
           focus: "All Staff",
-          licenses: ["Healthcare Worker"]
+          licenses: ["Healthcare Worker"],
+        roles: []
         },
         {
           title: "Annual Staff Compliance Bundle",
@@ -1159,7 +1239,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Self-Paced",
           focus: "Annual Training",
-          licenses: ["All Staff"]
+          licenses: ["All Staff"],
+        roles: []
         },
         {
           title: "HIPAA Privacy & Security Training",
@@ -1172,7 +1253,8 @@ var COURSE_DATA = {
           duration: "2 Hours",
           format: "Online",
           focus: "Data Privacy",
-          licenses: ["All Staff"]
+          licenses: ["All Staff"],
+        roles: []
         },
         {
           title: "Bloodborne Pathogens Certification",
@@ -1185,7 +1267,8 @@ var COURSE_DATA = {
           duration: "2 Hours",
           format: "Online",
           focus: "Safety Training",
-          licenses: ["Clinical Staff"]
+          licenses: ["Clinical Staff"],
+        roles: []
         },
         {
           title: "Infection Control & Prevention",
@@ -1198,7 +1281,8 @@ var COURSE_DATA = {
           duration: "4 Hours",
           format: "Self-Paced",
           focus: "Infection Control",
-          licenses: ["Clinical Staff"]
+          licenses: ["Clinical Staff"],
+        roles: []
         },
         {
           title: "Emergency Preparedness for Healthcare",
@@ -1211,7 +1295,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Live Virtual",
           focus: "Emergency Response",
-          licenses: ["All Staff"]
+          licenses: ["All Staff"],
+        roles: []
         }
       ],
       "exam": [],
@@ -1233,7 +1318,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Online",
           focus: "Legal Compliance",
-          licenses: ["HR Professional"]
+          licenses: ["HR Professional"],
+        roles: []
         },
         {
           title: "HR Compliance for Small Business",
@@ -1246,7 +1332,8 @@ var COURSE_DATA = {
           duration: "4 Hours",
           format: "Self-Paced",
           focus: "Small Business",
-          licenses: ["Business Owner"]
+          licenses: ["Business Owner"],
+        roles: []
         },
         {
           title: "Workplace Investigations Training",
@@ -1259,7 +1346,8 @@ var COURSE_DATA = {
           duration: "8 Hours",
           format: "Live Virtual",
           focus: "Investigations",
-          licenses: ["HR Manager"]
+          licenses: ["HR Manager"],
+        roles: []
         },
         {
           title: "FMLA & Leave Management",
@@ -1272,7 +1360,8 @@ var COURSE_DATA = {
           duration: "4 Hours",
           format: "Online",
           focus: "Leave Administration",
-          licenses: ["HR Professional"]
+          licenses: ["HR Professional"],
+        roles: []
         },
         {
           title: "I-9 Compliance & E-Verify",
@@ -1285,7 +1374,8 @@ var COURSE_DATA = {
           duration: "3 Hours",
           format: "Self-Paced",
           focus: "Immigration",
-          licenses: ["HR Professional"]
+          licenses: ["HR Professional"],
+        roles: []
         },
         {
           title: "Wage & Hour Law Essentials",
@@ -1298,7 +1388,8 @@ var COURSE_DATA = {
           duration: "6 Hours",
           format: "Hybrid",
           focus: "Wage & Hour",
-          licenses: ["HR Manager"]
+          licenses: ["HR Manager"],
+        roles: []
         }
       ],
       "exam": [],
@@ -1356,7 +1447,7 @@ var COURSE_DATA = {
     dropdown.setAttribute("hidden", "hidden");
   }
 
-function getCourses(state, tab) {
+function getCourses(state, tab, role) {
   // Detect current industry from body class or use state for Real Estate
   var industryKey = state;
   
@@ -1376,18 +1467,27 @@ function getCourses(state, tab) {
   var stateData = COURSE_DATA[industryKey] || DEFAULT_COURSES;
   var tabData = stateData[tab] || [];
 
-    if (tabData.length === 0) {
-      return [
-        {
-          empty: true,
-          title: "Courses coming soon",
-          description: "We're finalizing offerings for this state and category. Check back shortly or contact our team for custom options."
-        }
-      ];
-    }
-
-    return tabData;
+  // Filter by role if one is selected
+  if (role && role !== "") {
+    tabData = tabData.filter(function(course) {
+      return course.roles && course.roles.indexOf(role) !== -1;
+    });
   }
+
+  if (tabData.length === 0) {
+    return [
+      {
+        empty: true,
+        title: "Courses coming soon",
+        description: role && role !== "" 
+          ? "No courses available for the selected state and role combination. Please try a different selection."
+          : "We're finalizing offerings for this state and category. Check back shortly or contact our team for custom options."
+      }
+    ];
+  }
+
+  return tabData;
+}
 
   function renderStars(count) {
     if (!count) return "";
@@ -1465,11 +1565,11 @@ function getCourses(state, tab) {
     helper.innerHTML = 'Showing featured courses for <strong>' + state + "</strong>.";
   }
 
-  function buildCarousel(state, tab) {
+  function buildCarousel(state, tab, role) {
     var $carousel = $(".re-catalog__carousel");
     if (!$carousel.length) return;
 
-    var courses = getCourses(state, tab);
+    var courses = getCourses(state, tab, role);
     var slides = courses.map(createCard).join("");
 
     if ($carousel.hasClass("slick-initialized")) {
@@ -1502,7 +1602,7 @@ function getCourses(state, tab) {
     $arrows.toggle(showArrows);
   }
 
-  function handleTabChange(state, tab) {
+  function handleTabChange(state, tab, role) {
     $(".re-catalog__tab").each(function () {
       var $btn = $(this);
       var isActive = $btn.data("tab") === tab;
@@ -1510,18 +1610,29 @@ function getCourses(state, tab) {
       $btn.attr("aria-selected", isActive ? "true" : "false");
     });
     updateHelper(state);
-    buildCarousel(state, tab);
+    buildCarousel(state, tab, role);
   }
 
   function init() {
     var stateInput = document.getElementById("reCatalogState");
+    var roleSelect = document.getElementById("reCatalogRole");
     var dropdown = document.querySelector(".re-catalog__select-dropdown");
     var searchInput = document.querySelector(".re-catalog__select-search input");
     if (!stateInput || !dropdown || !searchInput) return;
 
     populateStates();
     updateHelper(DEFAULT_STATE);
-    buildCarousel(DEFAULT_STATE, DEFAULT_TAB);
+    buildCarousel(DEFAULT_STATE, DEFAULT_TAB, "");
+
+    // Handle role selection change
+    if (roleSelect) {
+      roleSelect.addEventListener("change", function() {
+        var currentState = stateInput.value || DEFAULT_STATE;
+        var currentTab = $(".re-catalog__tab.active").data("tab") || DEFAULT_TAB;
+        var selectedRole = this.value;
+        handleTabChange(currentState, currentTab, selectedRole);
+      });
+    }
 
     function openDropdown() {
       dropdown.removeAttribute("hidden");
@@ -1549,7 +1660,8 @@ function getCourses(state, tab) {
       evt.preventDefault();
       var tab = $(this).data("tab");
       var currentState = stateInput.value || DEFAULT_STATE;
-      handleTabChange(currentState, tab);
+      var selectedRole = roleSelect ? roleSelect.value : "";
+      handleTabChange(currentState, tab, selectedRole);
     });
 
     $(".re-catalog__state-picker .re-catalog__state-select-wrapper").on("click", function (evt) {
@@ -1578,7 +1690,8 @@ function getCourses(state, tab) {
           stateInput.value = newState;
           closeDropdown();
           var currentTab = $(".re-catalog__tab.active").data("tab") || DEFAULT_TAB;
-          handleTabChange(newState, currentTab);
+          var selectedRole = roleSelect ? roleSelect.value : "";
+          handleTabChange(newState, currentTab, selectedRole);
         });
       });
     }
@@ -1590,7 +1703,7 @@ function getCourses(state, tab) {
       }
     });
 
-    handleTabChange(DEFAULT_STATE, DEFAULT_TAB);
+    handleTabChange(DEFAULT_STATE, DEFAULT_TAB, "");
   }
 
   $(document).ready(init);
