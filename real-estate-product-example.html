@@ -1263,6 +1263,308 @@ margin-top: 3px;
 
 /* ==================== END ANIMATED TIMELINE STYLES ==================== */
 
+/* ==================== À LA CARTE COURSES SECTION STYLES ==================== */
+
+/* Section Container */
+.alacarte-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 2px solid #e9ecef;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #fff3e6;
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+/* Compact Card */
+.compact-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.compact-card:hover {
+    border-color: #d4af37;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+.compact-header {
+    background: white;
+    padding: 24px 28px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.compact-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #1e3a8a;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.compact-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.compact-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.compact-body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.compact-description {
+    font-size: 15px;
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+.compact-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.compact-price {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e3a8a;
+    line-height: 1;
+}
+
+.price-suffix {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.compact-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* Buttons */
+.btn-primary-alacarte,
+.btn-secondary-alacarte {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.btn-primary-alacarte {
+    background: linear-gradient(135deg, #d4af37 0%, #b8960f 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary-alacarte:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary-alacarte {
+    background: white;
+    color: #1e3a8a;
+    border: 2px solid #1e3a8a;
+}
+
+.btn-secondary-alacarte:hover {
+    background: #1e3a8a;
+    color: white;
+    text-decoration: none;
+}
+
+/* Info Banner */
+.info-banner-alacarte {
+    background: #e7f3ff;
+    border-left: 4px solid #3b82f6;
+    padding: 20px 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.info-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    font-size: 16px;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.info-content p {
+    font-size: 14px;
+    color: #1e3a8a;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.info-content a {
+    color: #3b82f6;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.info-content a:hover {
+    color: #1e3a8a;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .alacarte-section {
+        margin-top: 60px;
+        padding-top: 40px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+
+    .compact-header {
+        padding: 20px;
+    }
+
+    .compact-body {
+        padding: 20px;
+    }
+
+    .compact-title {
+        font-size: 20px;
+    }
+
+    .compact-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .compact-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .compact-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary-alacarte,
+    .btn-secondary-alacarte {
+        width: 100%;
+    }
+
+    .compact-price {
+        font-size: 32px;
+    }
+
+    .info-banner-alacarte {
+        padding: 16px;
+    }
+}
+
+/* ==================== END À LA CARTE COURSES SECTION STYLES ==================== */
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
 .schedule-filters {
@@ -3491,6 +3793,97 @@ See Schedule
 </div>
 </div>
 </div>
+
+<!-- À La Carte Courses Section -->
+<section class="alacarte-section">
+    <div class="section-header">
+        <span class="section-tag">Prefer À La Carte?</span>
+        <h2 class="section-title">Individual Courses</h2>
+        <p class="section-subtitle">
+            Not ready for a package? Purchase each course separately at your own pace.
+            Both courses are required for SC licensure.
+        </p>
+    </div>
+
+    <div class="courses-grid">
+        <!-- Course 1 -->
+        <div class="compact-card">
+            <div class="compact-header">
+                <span class="compact-badge">Course 1 • 60 Hours</span>
+                <h3 class="compact-title">60-Hr. Real Estate Agent Pre-License Unit-I</h3>
+                <div class="compact-meta">
+                    <span class="meta-item">
+                        <span>📚</span>
+                        <span>Foundation Course</span>
+                    </span>
+                    <span class="meta-item">
+                        <span>✓</span>
+                        <span>Exam Included</span>
+                    </span>
+                </div>
+            </div>
+            <div class="compact-body">
+                <p class="compact-description">
+                    This mandatory course provides foundational information and practical business skills needed to succeed as a real estate professional. Covers fundamentals, agency regulations, tenant-landlord relationships, and real estate agreements.
+                </p>
+                <div class="compact-footer">
+                    <div>
+                        <span class="compact-price">$263</span>
+                        <span class="price-suffix">/ course</span>
+                    </div>
+                    <div class="compact-buttons">
+                        <a href="#course-selection" class="btn btn-primary-alacarte">Enroll →</a>
+                        <a href="#course-selection" class="btn btn-secondary-alacarte">📅 Schedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="compact-card">
+            <div class="compact-header">
+                <span class="compact-badge">Course 2 • 30 Hours</span>
+                <h3 class="compact-title">30-Hr. Real Estate Agent Advanced Principles Unit-II</h3>
+                <div class="compact-meta">
+                    <span class="meta-item">
+                        <span>🎓</span>
+                        <span>Advanced Course</span>
+                    </span>
+                    <span class="meta-item">
+                        <span>✓</span>
+                        <span>Exam Included</span>
+                    </span>
+                </div>
+            </div>
+            <div class="compact-body">
+                <p class="compact-description">
+                    All candidates are required to complete this 30-hour course on advanced real estate principles. Covers agency disclosure, contracts, ethics, measurements, valuation, and fair housing. Must be taken after completing Course 1.
+                </p>
+                <div class="compact-footer">
+                    <div>
+                        <span class="compact-price">$140</span>
+                        <span class="price-suffix">/ course</span>
+                    </div>
+                    <div class="compact-buttons">
+                        <a href="#course-selection" class="btn btn-primary-alacarte">Enroll →</a>
+                        <a href="#course-selection" class="btn btn-secondary-alacarte">📅 Schedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-banner-alacarte">
+        <span class="info-icon">💰</span>
+        <div class="info-content">
+            <h4>Save up to $173 with our packages</h4>
+            <p>
+                Bundle both courses with exam prep and additional resources. 
+                <a href="#course-selection">Compare packages above</a> to find the best option for you.
+            </p>
+        </div>
+    </div>
+</section>
 
 <!-- Animated Licensing Path Timeline - Full Width Section -->
 <section class="licensing-path-timeline-section">
