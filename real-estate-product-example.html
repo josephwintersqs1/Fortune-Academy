@@ -1089,7 +1089,7 @@ width: 100%;
 
 /* Payment Schedule Modal Styling */
 #paymentScheduleModal .modal-dialog {
-max-width: 600px;
+max-width: 750px;
 margin: 1.75rem auto;
 }
 
@@ -1131,45 +1131,106 @@ color: var(--real-estate-accent);
 
 #paymentScheduleModal .modal-body {
 padding: 30px;
+background: #f9fafb;
 }
 
-.payment-schedule-header {
+/* Notice Box Styling */
+.payment-notice-box {
+display: flex;
+gap: 15px;
+background: #fef3c7;
+border: 2px solid #f59e0b;
+border-radius: 8px;
+padding: 20px;
 margin-bottom: 25px;
-padding-bottom: 20px;
-border-bottom: 2px solid #e5e7eb;
 }
 
-.payment-schedule-header h6 {
-font-size: 1.1rem;
-color: #111827;
-margin-bottom: 10px;
+.payment-notice-box .notice-icon {
+flex-shrink: 0;
 }
 
-.schedule-type-badge {
-display: inline-flex;
-align-items: center;
-gap: 10px;
+.payment-notice-box .notice-icon i {
+font-size: 2rem;
+color: #f59e0b;
 }
 
-.schedule-type-badge strong {
-color: var(--real-estate-primary);
+.payment-notice-box .notice-content h6 {
 font-size: 1rem;
+font-weight: 700;
+color: #92400e;
+margin: 0 0 8px 0;
 }
 
-.schedule-type-badge .change-link {
-color: var(--real-estate-secondary);
+.payment-notice-box .notice-content p {
 font-size: 0.9rem;
-text-decoration: underline;
+color: #78350f;
+margin: 0;
+line-height: 1.5;
 }
 
-.schedule-type-badge .change-link:hover {
-color: var(--real-estate-primary);
+/* Package Info Section */
+.package-info-section {
+background: white;
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 25px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.package-info-section h6 {
+font-size: 1rem;
+font-weight: 700;
+color: #111827;
+margin: 0 0 15px 0;
+border-bottom: 2px solid var(--real-estate-primary);
+padding-bottom: 10px;
+}
+
+.package-details {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
+}
+
+.detail-item {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.detail-label {
+font-size: 0.85rem;
+color: #6b7280;
+font-weight: 600;
+}
+
+.detail-value {
+font-size: 1rem;
+color: #111827;
+font-weight: 700;
+}
+
+/* Payment Schedule Section */
+.payment-schedule-section {
+background: white;
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 25px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.payment-schedule-section h6 {
+font-size: 1rem;
+font-weight: 700;
+color: #111827;
+margin: 0 0 15px 0;
+border-bottom: 2px solid var(--real-estate-primary);
+padding-bottom: 10px;
 }
 
 .payment-schedule-table {
 width: 100%;
 border-collapse: collapse;
-margin-bottom: 20px;
 }
 
 .payment-schedule-table thead {
@@ -1179,45 +1240,135 @@ background: var(--real-estate-primary);
 .payment-schedule-table thead th {
 color: white;
 font-weight: 700;
-padding: 15px;
+padding: 12px 10px;
 text-align: left;
-font-size: 1rem;
+font-size: 0.9rem;
+}
+
+.payment-schedule-table thead th:first-child {
+border-radius: 6px 0 0 0;
+}
+
+.payment-schedule-table thead th:last-child {
+border-radius: 0 6px 0 0;
+text-align: right;
 }
 
 .payment-schedule-table tbody tr {
 border-bottom: 1px solid #e5e7eb;
+transition: background 0.2s;
+}
+
+.payment-schedule-table tbody tr:hover {
+background: #f3f4f6;
 }
 
 .payment-schedule-table tbody tr:last-child {
 border-bottom: none;
+font-weight: 700;
+background: #e0e7ff;
 }
 
 .payment-schedule-table tbody td {
-padding: 15px;
+padding: 12px 10px;
 color: #374151;
-font-size: 0.95rem;
+font-size: 0.9rem;
 }
 
-.payment-schedule-table tbody tr:nth-child(even) {
+.payment-schedule-table tbody td:last-child {
+text-align: right;
+font-weight: 600;
+}
+
+.payment-schedule-table tbody tr:nth-child(even):not(:last-child) {
 background: #f9fafb;
 }
 
-.total-price-row {
-text-align: right;
-font-size: 1.5rem;
-font-weight: 700;
-color: var(--real-estate-primary);
-margin-top: 20px;
-padding-top: 20px;
-border-top: 2px solid var(--real-estate-primary);
+/* Payment Summary Section */
+.payment-summary-section {
+background: white;
+border-radius: 8px;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.summary-row {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+padding: 15px 0;
+}
+
+.summary-row:not(:last-child) {
+border-bottom: 1px solid #e5e7eb;
+}
+
+.summary-row.discount-comparison {
+background: #fef2f2;
+margin: 0 -20px;
+padding: 15px 20px;
+border-radius: 8px;
+}
+
+.summary-item {
+flex: 1;
+min-width: 200px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.summary-label {
+font-size: 0.9rem;
+color: #6b7280;
+font-weight: 600;
+}
+
+.summary-value {
+font-size: 1.1rem;
+color: #111827;
+font-weight: 700;
+}
+
+.summary-value.total-payment-plan {
+color: var(--real-estate-primary);
+font-size: 1.5rem;
+}
+
+.summary-value.discount-amount {
+color: #dc2626;
+font-size: 1.2rem;
+}
+
+.summary-value.discounted-price {
+color: #16a34a;
+font-size: 1.2rem;
+}
+
+/* Modal Footer */
 #paymentScheduleModal .modal-footer {
 padding: 20px 30px;
 border-top: 1px solid #e5e7eb;
 display: flex;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
+gap: 15px;
+background: white;
+}
+
+#paymentScheduleModal .btn-secondary {
+background: #6b7280;
+color: white;
+border: none;
+padding: 12px 30px;
+border-radius: 8px;
+font-weight: 600;
+font-size: 1rem;
+transition: all 0.3s;
+}
+
+#paymentScheduleModal .btn-secondary:hover {
+background: #4b5563;
 }
 
 #paymentScheduleModal .btn-enroll {
@@ -1231,7 +1382,8 @@ font-size: 1.05rem;
 transition: all 0.3s;
 text-transform: uppercase;
 letter-spacing: 1px;
-min-width: 200px;
+flex: 1;
+max-width: 300px;
 }
 
 #paymentScheduleModal .btn-enroll:hover {
@@ -1240,6 +1392,7 @@ transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
 }
 
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
 .package-price-display .price-amount {
 font-size: 3rem;
@@ -1257,14 +1410,60 @@ margin: 0.5rem;
 padding: 20px;
 }
 
-.payment-schedule-table thead th,
-.payment-schedule-table tbody td {
-padding: 10px 8px;
-font-size: 0.85rem;
+.payment-notice-box {
+flex-direction: column;
+padding: 15px;
 }
 
-.total-price-row {
+.payment-notice-box .notice-icon i {
+font-size: 1.5rem;
+}
+
+.package-details {
+grid-template-columns: 1fr;
+}
+
+.payment-schedule-section,
+.package-info-section,
+.payment-summary-section {
+padding: 15px;
+}
+
+.payment-schedule-table {
+font-size: 0.8rem;
+}
+
+.payment-schedule-table thead th,
+.payment-schedule-table tbody td {
+padding: 8px 5px;
+}
+
+.payment-schedule-table thead th {
+font-size: 0.75rem;
+}
+
+.summary-row {
+flex-direction: column;
+gap: 10px;
+}
+
+.summary-item {
+min-width: 100%;
+}
+
+.summary-value.total-payment-plan {
 font-size: 1.2rem;
+}
+
+#paymentScheduleModal .modal-footer {
+flex-direction: column;
+gap: 10px;
+}
+
+#paymentScheduleModal .btn-enroll,
+#paymentScheduleModal .btn-secondary {
+width: 100%;
+max-width: 100%;
 }
 }
 </style>
@@ -1511,6 +1710,8 @@ SCREC Approved #004
 </div>
 </div>
 
+</div>
+</div>
 </div>
 
 <!-- Online Live Tab -->
@@ -2193,11 +2394,292 @@ console.log('Total upsell: $' + totalUpsell);
 	});
 });
 
-// Payment Schedule Modal functionality
+// Payment Schedule Modal functionality with enhanced features
 $(document).ready(function() {
-	// Prevent default action on payment links (both versions)
-	$('.payment-link, .tab-payment-link').on('click', function(e) {
-		e.preventDefault();
+	// Comprehensive pricing data structure for all packages and delivery methods
+	const pricingData = {
+		'in-person': {
+			'bronze': {
+				packageName: 'Bronze Package',
+				deliveryMethod: 'In-Person Classroom',
+				originalPrice: 755,
+				discountedPrice: 453,
+				paymentPlanPrice: 755,
+				firstPayment: 126,
+				numPayments: 6,
+				frequency: 'Weekly',
+				intervalDays: 7
+			},
+			'silver': {
+				packageName: 'Silver Package',
+				deliveryMethod: 'In-Person Classroom',
+				originalPrice: 836,
+				discountedPrice: 534,
+				paymentPlanPrice: 836,
+				firstPayment: 179,
+				numPayments: 4,
+				frequency: 'Bi-Weekly',
+				intervalDays: 14
+			},
+			'gold': {
+				packageName: 'Gold Package',
+				deliveryMethod: 'In-Person Classroom',
+				originalPrice: 999,
+				discountedPrice: 697,
+				paymentPlanPrice: 999,
+				firstPayment: 199,
+				numPayments: 5,
+				frequency: 'Bi-Weekly',
+				intervalDays: 14
+			}
+		},
+		'online-live': {
+			'bronze': {
+				packageName: 'Bronze Package',
+				deliveryMethod: 'Online Live/Zoom Classes',
+				originalPrice: 755,
+				discountedPrice: 453,
+				paymentPlanPrice: 755,
+				firstPayment: 126,
+				numPayments: 6,
+				frequency: 'Weekly',
+				intervalDays: 7
+			},
+			'silver': {
+				packageName: 'Silver Package',
+				deliveryMethod: 'Online Live/Zoom Classes',
+				originalPrice: 803,
+				discountedPrice: 482,
+				paymentPlanPrice: 803,
+				firstPayment: 201,
+				numPayments: 4,
+				frequency: 'Bi-Weekly',
+				intervalDays: 14
+			},
+			'gold': {
+				packageName: 'Gold Package',
+				deliveryMethod: 'Online Live/Zoom Classes',
+				originalPrice: 860,
+				discountedPrice: 516,
+				paymentPlanPrice: 860,
+				firstPayment: 215,
+				numPayments: 4,
+				frequency: 'Bi-Weekly',
+				intervalDays: 14
+			}
+		},
+		'self-paced': {
+			'bronze': {
+				packageName: 'Bronze Package',
+				deliveryMethod: 'Online Self-Paced',
+				originalPrice: 619,
+				discountedPrice: 433,
+				paymentPlanPrice: 619,
+				firstPayment: 62,
+				numPayments: 10,
+				frequency: 'Weekly',
+				intervalDays: 7
+			},
+			'silver': {
+				packageName: 'Silver Package',
+				deliveryMethod: 'Online Self-Paced',
+				originalPrice: 719,
+				discountedPrice: 503,
+				paymentPlanPrice: 719,
+				firstPayment: 180,
+				numPayments: 4,
+				frequency: 'Bi-Weekly',
+				intervalDays: 14
+			},
+			'gold': {
+				packageName: 'Gold Package',
+				deliveryMethod: 'Online Self-Paced',
+				originalPrice: 795,
+				discountedPrice: 557,
+				paymentPlanPrice: 795,
+				firstPayment: 199,
+				numPayments: 4,
+				frequency: 'Bi-Weekly',
+				intervalDays: 14
+			}
+		},
+		'mobile-app': {
+			'bronze': {
+				packageName: 'Bronze Package',
+				deliveryMethod: 'Mobile App',
+				originalPrice: 953,
+				discountedPrice: 619,
+				paymentPlanPrice: null,
+				firstPayment: null,
+				numPayments: null,
+				frequency: null,
+				intervalDays: null
+			},
+			'silver': {
+				packageName: 'Silver Package',
+				deliveryMethod: 'Mobile App',
+				originalPrice: 999,
+				discountedPrice: 649,
+				paymentPlanPrice: null,
+				firstPayment: null,
+				numPayments: null,
+				frequency: null,
+				intervalDays: null
+			},
+			'gold': {
+				packageName: 'Gold Package',
+				deliveryMethod: 'Mobile App',
+				originalPrice: 1057,
+				discountedPrice: 687,
+				paymentPlanPrice: null,
+				firstPayment: null,
+				numPayments: null,
+				frequency: null,
+				intervalDays: null
+			}
+		},
+		'audio-course': {
+			'bronze': {
+				packageName: 'Bronze Package',
+				deliveryMethod: 'Audio Course',
+				originalPrice: 953,
+				discountedPrice: 619,
+				paymentPlanPrice: null,
+				firstPayment: null,
+				numPayments: null,
+				frequency: null,
+				intervalDays: null
+			},
+			'silver': {
+				packageName: 'Silver Package',
+				deliveryMethod: 'Audio Course',
+				originalPrice: 999,
+				discountedPrice: 649,
+				paymentPlanPrice: null,
+				firstPayment: null,
+				numPayments: null,
+				frequency: null,
+				intervalDays: null
+			},
+			'gold': {
+				packageName: 'Gold Package',
+				deliveryMethod: 'Audio Course',
+				originalPrice: 1057,
+				discountedPrice: 687,
+				paymentPlanPrice: null,
+				firstPayment: null,
+				numPayments: null,
+				frequency: null,
+				intervalDays: null
+			}
+		}
+	};
+
+	// Function to format currency
+	function formatCurrency(amount) {
+		return '$' + amount.toFixed(0);
+	}
+
+	// Function to format date
+	function formatDate(date) {
+		const month = (date.getMonth() + 1).toString().padStart(2, '0');
+		const day = date.getDate().toString().padStart(2, '0');
+		const year = date.getFullYear();
+		return `${month}/${day}/${year}`;
+	}
+
+	// Function to calculate payment schedule
+	function calculatePaymentSchedule(packageData) {
+		const schedule = [];
+		const today = new Date();
+		let currentDate = new Date(today);
+		const paymentAmount = packageData.paymentPlanPrice / packageData.numPayments;
+		
+		for (let i = 0; i < packageData.numPayments; i++) {
+			schedule.push({
+				paymentNumber: i + 1,
+				date: new Date(currentDate),
+				amount: paymentAmount
+			});
+			
+			// Add interval days for next payment
+			currentDate.setDate(currentDate.getDate() + packageData.intervalDays);
+		}
+		
+		return schedule;
+	}
+
+	// Function to populate modal with data
+	function populateModal(deliveryMethod, packageType) {
+		const packageData = pricingData[deliveryMethod][packageType];
+		
+		// Check if payment plan is available
+		if (!packageData.paymentPlanPrice) {
+			console.error('Payment plan not available for this combination');
+			return;
+		}
+
+		// Update package info
+		$('#modal-package-name').text(packageData.packageName);
+		$('#modal-delivery-method').text(packageData.deliveryMethod);
+		$('#modal-payment-frequency').text(packageData.frequency);
+
+		// Calculate and display payment schedule
+		const schedule = calculatePaymentSchedule(packageData);
+		const tbody = $('#payment-schedule-tbody');
+		tbody.empty();
+
+		let runningTotal = 0;
+		schedule.forEach((payment, index) => {
+			runningTotal += payment.amount;
+			const isLastPayment = index === schedule.length - 1;
+			
+			const row = `
+				<tr${isLastPayment ? ' style="font-weight: 700; background: #e0e7ff;"' : ''}>
+					<td>${payment.paymentNumber}${isLastPayment ? ' (Final)' : ''}</td>
+					<td>${formatDate(payment.date)}</td>
+					<td>${formatCurrency(payment.amount)}</td>
+					<td>${formatCurrency(runningTotal)}</td>
+				</tr>
+			`;
+			tbody.append(row);
+		});
+
+		// Update summary section
+		const discount = packageData.originalPrice - packageData.discountedPrice;
+		$('#modal-total-price').text(formatCurrency(packageData.paymentPlanPrice));
+		$('#modal-discount-lost').text('-' + formatCurrency(discount));
+		$('#modal-discounted-price').text(formatCurrency(packageData.discountedPrice));
+		$('#modal-num-payments').text(`${packageData.numPayments} payments`);
+		$('#modal-first-payment-date').text(formatDate(new Date()));
+	}
+
+	// Handle payment plan badge clicks with data attributes
+	$('.payment-plan-badge').on('click', function() {
+		const $card = $(this).closest('.pricing-card');
+		const $tabPane = $(this).closest('.tab-pane');
+		
+		// Determine delivery method from active tab or parent
+		let deliveryMethod = '';
+		if ($tabPane.attr('id')) {
+			deliveryMethod = $tabPane.attr('id');
+		}
+		
+		// Determine package type (bronze, silver, gold)
+		let packageType = '';
+		const cardIndex = $card.index();
+		if ($card.find('h4').text().includes('Core Courses Only')) {
+			packageType = 'bronze';
+		} else if ($card.find('h4').text().includes('Core + Exam Prep')) {
+			packageType = 'silver';
+		} else if ($card.find('h4').text().includes('Complete Licensing + Business')) {
+			packageType = 'gold';
+		}
+		
+		// Populate modal with the appropriate data
+		if (deliveryMethod && packageType) {
+			populateModal(deliveryMethod, packageType);
+		}
 	});
 
 	// Handle ESC key to close modal
@@ -2215,6 +2697,18 @@ $(document).ready(function() {
 		// $('#paymentScheduleModal').modal('hide');
 		// window.location.href = 'enrollment-page.html';
 	});
+
+	// Hide payment plan badges for Mobile App and Audio Course delivery methods
+	function updatePaymentPlanVisibility() {
+		// Hide payment plans in mobile-app tab
+		$('#mobile-app .payment-plan-badge').hide();
+		
+		// Hide payment plans in audio-course tab
+		$('#audio-course .payment-plan-badge').hide();
+	}
+
+	// Call on page load
+	updatePaymentPlanVisibility();
 });
 </script>
 </body>
