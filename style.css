@@ -1283,7 +1283,7 @@ input[type=submit]:focus {
 }
 
 .to-top-icon {
-  background-color: rgba(245, 105, 96, 0.7);
+  background-color: rgba(255, 111, 0, 0.9);
   color: #ffffff;
   font-size: 20px;
   display: none;
@@ -2716,7 +2716,7 @@ input[type=submit]:focus {
   padding: 7px 24px;
 }
 .desti-item .bg-meta-cat a:hover, .desti-item .bg-meta-cat a:focus {
-  background-color: rgba(245, 105, 96, 0.85);
+  background-color: rgba(255, 111, 0, 0.9);
   color: #ffffff;
 }
 .desti-item .rating-start span:before {
@@ -4758,7 +4758,7 @@ Due to the split circle of progress-left and progress right, we must use the ani
   padding: 10px;
 }
 .fullwidth-callback .callback-counter-wrap .counter-item-inner {
-  background-color: rgba(245, 105, 96, 0.8);
+  background-color: rgba(255, 111, 0, 0.9);
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
