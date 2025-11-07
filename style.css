@@ -6496,9 +6496,9 @@ procduct details css
 }
 
 /*--------------------------------------------------------------
->>> Testimonial Pages
+>>> Testimonial Pages - DISABLED - Using custom.css instead
 ----------------------------------------------------------------*/
-.testimonial-page-section .testimonial-item {
+/* .testimonial-page-section .testimonial-item {
   background-color: #F8F8F8;
   padding: 80px 40px 32px 40px;
   position: relative;
@@ -6534,7 +6534,7 @@ procduct details css
 .testimonial-page-section .start-wrap {
   display: inline-block;
   margin-bottom: 20px;
-}
+} */
 
 /*--------------------------------------------------------------
 >>> Career Pages

@@ -4214,161 +4214,156 @@ body.industry-compliance {
 }
 
 /* ===================================================================
-   FORTUNE ACADEMY CUSTOM REVIEWS SECTION - NO CONFLICTS
-   Updated: 2025-01-07 - Cache Bust v2
+   FORTUNE ACADEMY REVIEWS SECTION - Clean Implementation
+   Based on travele testimonial design, no conflicts
    =================================================================== */
 
 .fa-reviews-section {
-  padding: 80px 0 !important;
-  background: #ffffff !important;
+  padding: 80px 0;
+  background: #ffffff;
 }
 
 .fa-reviews-section .section-heading {
-  margin-bottom: 50px !important;
+  margin-bottom: 50px;
 }
 
 .fa-trustpilot-link {
-  text-align: center !important;
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+.fa-trustpilot-link a {
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
 .fa-trustpilot-link a:hover {
-  opacity: 0.8 !important;
+  opacity: 0.8;
 }
 
-/* Equal height grid */
+/* Grid layout */
 .fa-reviews-row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  margin-left: -15px !important;
-  margin-right: -15px !important;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .fa-review-col {
-  display: flex !important;
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  margin-bottom: 30px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
 }
 
+/* Review Card */
 .fa-review-card {
-  background: #f8f9fa !important;
-  padding: 30px 20px 25px !important;
-  border-radius: 8px !important;
-  border: 2px solid #e0e0e0 !important;
-  transition: all 0.3s ease !important;
-  text-align: center !important;
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  background-color: #f8f9fa;
+  padding: 30px 25px 25px;
+  border-radius: 8px;
+  border: 2px solid #e5e5e5;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .fa-review-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
-  border-color: #2c75ba !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-color: #2c75ba;
 }
 
-/* Avatar circle */
+/* Avatar */
 .fa-review-avatar-wrap {
-  margin: 0 auto 20px !important;
-  width: 100px !important;
-  height: 100px !important;
+  margin: 0 auto 20px;
 }
 
 .fa-review-avatar {
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50% !important;
-  background: #2c75ba !important;
-  color: #ffffff !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  border: 4px solid #2c75ba !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  line-height: 1 !important;
-  text-align: center !important;
-  margin: 0 auto !important;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #2c75ba;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: 4px solid #2c75ba;
+  box-shadow: 0 4px 12px rgba(44, 117, 186, 0.3);
+  margin: 0 auto;
+  line-height: 1;
 }
 
-/* Review content */
+/* Content */
 .fa-review-body {
-  flex-grow: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .fa-review-text {
-  font-size: 15px !important;
-  line-height: 1.8 !important;
-  color: #555 !important;
-  margin-bottom: 20px !important;
-  flex-grow: 1 !important;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
+/* Stars */
 .fa-review-stars {
-  margin-bottom: 15px !important;
-  display: inline-block !important;
+  margin-bottom: 15px;
 }
 
 .fa-rating-stars {
-  position: relative !important;
-  display: inline-block !important;
-  height: 18px !important;
-  line-height: 1 !important;
-  font-size: 18px !important;
-  letter-spacing: 2px !important;
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #e0e0e0;
 }
 
-.fa-rating-stars:before {
-  content: "★★★★★" !important;
-  color: #e0e0e0 !important;
+.fa-rating-stars::before {
+  content: "★★★★★";
+  display: block;
 }
 
 .fa-rating-stars span {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  overflow: hidden !important;
-  white-space: nowrap !important;
-  background: #2c75ba !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #2c75ba;
 }
 
-.fa-rating-stars span:before {
-  content: "★★★★★" !important;
-  color: #2c75ba !important;
-  -webkit-text-fill-color: #2c75ba !important;
+.fa-rating-stars span::before {
+  content: "★★★★★";
 }
 
 .fa-review-name {
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  color: #333 !important;
-  margin-bottom: 8px !important;
+  font-size: 18px;
+  font-weight: 700;
+  color: #04206a;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .fa-review-source {
-  display: inline-flex !important;
-  align-items: center !important;
-  font-size: 13px !important;
-  color: #888 !important;
-  font-style: italic !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
 }
 
-/* ===================================================================
-   INDUSTRY-SPECIFIC COLORS FOR REVIEWS
-   =================================================================== */
-
-/* Real Estate - Blue */
+/* Industry Colors */
 .industry-real-estate .fa-review-avatar {
   background: #2c75ba;
   border-color: #2c75ba;
+  box-shadow: 0 4px 12px rgba(44, 117, 186, 0.3);
 }
 
 .industry-real-estate .fa-review-card:hover {
@@ -4376,21 +4371,13 @@ body.industry-compliance {
 }
 
 .industry-real-estate .fa-rating-stars span {
-  background: #2c75ba;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.industry-real-estate .fa-rating-stars span:before {
   color: #2c75ba;
-  -webkit-text-fill-color: #2c75ba;
 }
 
-/* Mortgage - Purple */
 .industry-mortgage .fa-review-avatar {
   background: #7b1fa2;
   border-color: #7b1fa2;
+  box-shadow: 0 4px 12px rgba(123, 31, 162, 0.3);
 }
 
 .industry-mortgage .fa-review-card:hover {
@@ -4398,18 +4385,13 @@ body.industry-compliance {
 }
 
 .industry-mortgage .fa-rating-stars span {
-  background: #7b1fa2;
-}
-
-.industry-mortgage .fa-rating-stars span:before {
   color: #7b1fa2;
-  -webkit-text-fill-color: #7b1fa2;
 }
 
-/* Appraisal - Blue */
 .industry-appraisal .fa-review-avatar {
   background: #2c75ba;
   border-color: #2c75ba;
+  box-shadow: 0 4px 12px rgba(44, 117, 186, 0.3);
 }
 
 .industry-appraisal .fa-review-card:hover {
@@ -4417,18 +4399,13 @@ body.industry-compliance {
 }
 
 .industry-appraisal .fa-rating-stars span {
-  background: #2c75ba;
-}
-
-.industry-appraisal .fa-rating-stars span:before {
   color: #2c75ba;
-  -webkit-text-fill-color: #2c75ba;
 }
 
-/* OSHA - Orange */
 .industry-osha .fa-review-avatar {
   background: #ff6f00;
   border-color: #ff6f00;
+  box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
 }
 
 .industry-osha .fa-review-card:hover {
@@ -4436,18 +4413,13 @@ body.industry-compliance {
 }
 
 .industry-osha .fa-rating-stars span {
-  background: #ff6f00;
-}
-
-.industry-osha .fa-rating-stars span:before {
   color: #ff6f00;
-  -webkit-text-fill-color: #ff6f00;
 }
 
-/* Healthcare - Red */
 .industry-healthcare .fa-review-avatar {
   background: #c1241a;
   border-color: #c1241a;
+  box-shadow: 0 4px 12px rgba(193, 36, 26, 0.3);
 }
 
 .industry-healthcare .fa-review-card:hover {
@@ -4455,18 +4427,13 @@ body.industry-compliance {
 }
 
 .industry-healthcare .fa-rating-stars span {
-  background: #c1241a;
-}
-
-.industry-healthcare .fa-rating-stars span:before {
   color: #c1241a;
-  -webkit-text-fill-color: #c1241a;
 }
 
-/* HR Compliance - Green */
 .industry-compliance .fa-review-avatar {
   background: #4caf50;
   border-color: #4caf50;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
 .industry-compliance .fa-review-card:hover {
@@ -4474,22 +4441,13 @@ body.industry-compliance {
 }
 
 .industry-compliance .fa-rating-stars span {
-  background: #4caf50;
-}
-
-.industry-compliance .fa-rating-stars span:before {
   color: #4caf50;
-  -webkit-text-fill-color: #4caf50;
 }
 
 /* Responsive */
 @media (max-width: 991px) {
   .fa-reviews-section {
     padding: 60px 0;
-  }
-  
-  .fa-review-col {
-    margin-bottom: 20px;
   }
 }
 
@@ -4498,19 +4456,16 @@ body.industry-compliance {
     padding: 50px 0;
   }
   
-  .fa-review-avatar-wrap {
-    width: 80px;
-    height: 80px;
-  }
-  
   .fa-review-avatar {
     width: 80px;
     height: 80px;
     font-size: 16px;
   }
+  
+  .fa-review-card {
+    padding: 25px 20px;
+  }
 }
-
-
 
 /* ===================================================================
    LEARNING STYLES SECTION
