@@ -7,23 +7,23 @@
     --color-umbrella: #04206A;
     --color-umbrella-hover: #173C97;
 
-    --color-real-estate: #c1241a;
-    --color-real-estate-hover: #ff857d;
+    --color-real-estate: #00897B;        /* Blue (was red) - Now using teal/blue */
+    --color-real-estate-hover: #26A69A;  /* Lighter blue hover */
 
-    --color-mortgage: #00897B;        /* Material Teal 600 - Professional & Financial */
-    --color-mortgage-hover: #26A69A;  /* Material Teal 400 - Lighter hover */
+    --color-mortgage: #7b1fa2;           /* Purple (NEW) - Material Purple 700 */
+    --color-mortgage-hover: #9c27b0;     /* Purple hover - Material Purple 600 */
 
     --color-appraisal: #2c75ba;
     --color-appraisal-hover: #4c8ed0;
 
-    --color-osha: #4caf50;
-    --color-osha-hover: #6ccf71;
+    --color-osha: #ff6f00;               /* Orange (was green) - Now HR orange */
+    --color-osha-hover: #ff8f33;         /* Orange hover */
 
-    --color-healthcare: #9c27b0;
-    --color-healthcare-hover: #b94ac9;
+    --color-healthcare: #c1241a;         /* Red (was purple) - Now Real Estate red */
+    --color-healthcare-hover: #ff857d;   /* Red hover */
 
-    --color-hr: #ff6f00;
-    --color-hr-hover: #ff8f33;
+    --color-hr: #4caf50;                 /* Green (was orange) - Now OSHA green */
+    --color-hr-hover: #6ccf71;           /* Green hover */
 
     --color-compliance: var(--color-hr);
     --color-compliance-hover: var(--color-hr-hover);
