@@ -917,21 +917,21 @@ box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
 }
 
 .tab-payment-link {
-color: white;
+color: white !important;
 font-size: 0.9rem;
-text-decoration: underline;
+text-decoration: underline !important;
 transition: all 0.3s;
 cursor: pointer;
 white-space: nowrap;
 }
 
 .tab-payment-link:hover {
-color: var(--real-estate-accent);
-text-decoration: none;
+color: var(--real-estate-accent) !important;
+text-decoration: underline !important;
 }
 
 .tab-payment-link .highlight-price {
-color: #4ade80;
+color: #4ade80 !important;
 font-weight: 700;
 }
 
@@ -973,6 +973,14 @@ display: flex !important;
 #online-live .tab-price-details {
 display: flex !important;
 flex-direction: column !important;
+}
+
+/* Ensure payment link displays inline with proper styling */
+#in-person .tab-payment-link,
+#online-live .tab-payment-link {
+display: inline !important;
+color: white !important;
+text-decoration: underline !important;
 }
 
 /* Hide "Other Real Estate Courses" section temporarily */
