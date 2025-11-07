@@ -1659,6 +1659,7 @@ Yes! All students get lifetime access to course materials, so you can review con
 <script src="../../../../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../../assets/vendors/jquery-ui/jquery-ui.min.js"></script>
 <script src="../../../../assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+<script src="../../../../assets/vendors/slick/slick.min.js"></script>
 <script src="../../../../assets/js/custom.min.js"></script>
 <script>
 // Include header/footer
@@ -1667,6 +1668,9 @@ document.querySelectorAll('[data-include]').forEach(function(el) {
 fetch(el.getAttribute('data-include'))
 .then(response => response.text())
 .then(data => {
+// Fix relative paths for images in included files (we're 4 levels deep)
+data = data.replace(/src="assets\//g, 'src="../../../../assets/');
+data = data.replace(/href="assets\//g, 'href="../../../../assets/');
 el.outerHTML = data;
 });
 });
