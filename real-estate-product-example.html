@@ -798,6 +798,239 @@ background: var(--real-estate-primary);
 #backTotop:hover {
 background: var(--real-estate-secondary);
 }
+
+/* Package Price Display */
+.package-price-display {
+background: var(--real-estate-primary);
+padding: 40px 30px;
+text-align: center;
+margin: 30px 0;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+.package-price-display .price-label {
+color: white;
+font-size: 0.9rem;
+font-weight: 600;
+letter-spacing: 2px;
+margin-bottom: 12px;
+text-transform: uppercase;
+}
+
+.package-price-display .price-amount {
+color: white;
+font-size: 4rem;
+font-weight: 800;
+line-height: 1;
+margin-bottom: 15px;
+}
+
+.package-price-display .payment-link {
+color: white;
+font-size: 1.05rem;
+text-decoration: underline;
+transition: all 0.3s;
+display: inline-block;
+}
+
+.package-price-display .payment-link:hover {
+color: var(--real-estate-accent);
+text-decoration: none;
+transform: translateY(-2px);
+}
+
+/* Payment Schedule Modal Styling */
+#paymentScheduleModal .modal-dialog {
+max-width: 600px;
+margin: 1.75rem auto;
+}
+
+#paymentScheduleModal .modal-content {
+border-radius: 12px;
+border: none;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+#paymentScheduleModal .modal-header {
+background: linear-gradient(135deg, var(--real-estate-primary) 0%, var(--real-estate-secondary) 100%);
+color: white;
+border-radius: 12px 12px 0 0;
+padding: 25px 30px;
+border-bottom: none;
+position: relative;
+}
+
+#paymentScheduleModal .modal-title {
+font-size: 1.5rem;
+font-weight: 700;
+color: white;
+}
+
+#paymentScheduleModal .close {
+color: white;
+opacity: 1;
+text-shadow: none;
+font-size: 2rem;
+font-weight: 300;
+position: absolute;
+right: 20px;
+top: 20px;
+}
+
+#paymentScheduleModal .close:hover {
+color: var(--real-estate-accent);
+}
+
+#paymentScheduleModal .modal-body {
+padding: 30px;
+}
+
+.payment-schedule-header {
+margin-bottom: 25px;
+padding-bottom: 20px;
+border-bottom: 2px solid #e5e7eb;
+}
+
+.payment-schedule-header h6 {
+font-size: 1.1rem;
+color: #111827;
+margin-bottom: 10px;
+}
+
+.schedule-type-badge {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.schedule-type-badge strong {
+color: var(--real-estate-primary);
+font-size: 1rem;
+}
+
+.schedule-type-badge .change-link {
+color: var(--real-estate-secondary);
+font-size: 0.9rem;
+text-decoration: underline;
+}
+
+.schedule-type-badge .change-link:hover {
+color: var(--real-estate-primary);
+}
+
+.payment-schedule-table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+
+.payment-schedule-table thead {
+background: var(--real-estate-primary);
+}
+
+.payment-schedule-table thead th {
+color: white;
+font-weight: 700;
+padding: 15px;
+text-align: left;
+font-size: 1rem;
+}
+
+.payment-schedule-table tbody tr {
+border-bottom: 1px solid #e5e7eb;
+}
+
+.payment-schedule-table tbody tr:last-child {
+border-bottom: none;
+}
+
+.payment-schedule-table tbody td {
+padding: 15px;
+color: #374151;
+font-size: 0.95rem;
+}
+
+.payment-schedule-table tbody tr:nth-child(even) {
+background: #f9fafb;
+}
+
+.total-price-row {
+text-align: right;
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--real-estate-primary);
+margin-top: 20px;
+padding-top: 20px;
+border-top: 2px solid var(--real-estate-primary);
+}
+
+#paymentScheduleModal .modal-footer {
+padding: 20px 30px;
+border-top: 1px solid #e5e7eb;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+#paymentScheduleModal .btn-enroll {
+background: var(--real-estate-accent);
+color: white;
+border: none;
+padding: 14px 40px;
+border-radius: 8px;
+font-weight: 700;
+font-size: 1.1rem;
+transition: all 0.3s;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+#paymentScheduleModal .btn-enroll:hover {
+background: #b8960f;
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+#paymentScheduleModal .no-thanks-link {
+color: var(--real-estate-secondary);
+font-size: 1rem;
+text-decoration: underline;
+transition: color 0.3s;
+}
+
+#paymentScheduleModal .no-thanks-link:hover {
+color: var(--real-estate-primary);
+text-decoration: none;
+}
+
+@media (max-width: 768px) {
+.package-price-display .price-amount {
+font-size: 3rem;
+}
+
+.package-price-display {
+padding: 30px 20px;
+}
+
+#paymentScheduleModal .modal-dialog {
+margin: 0.5rem;
+}
+
+#paymentScheduleModal .modal-body {
+padding: 20px;
+}
+
+.payment-schedule-table thead th,
+.payment-schedule-table tbody td {
+padding: 10px 8px;
+font-size: 0.85rem;
+}
+
+.total-price-row {
+font-size: 1.2rem;
+}
+}
 </style>
 </head>
 <body class="industry-page industry-real-estate">
@@ -1718,6 +1951,64 @@ Yes! All students get lifetime access to course materials, so you can review con
 <a id="backTotop" href="#" class="to-top-icon">
 <i class="fas fa-chevron-up"></i>
 </a>
+
+<!-- Payment Schedule Modal -->
+<div class="modal fade" id="paymentScheduleModal" tabindex="-1" role="dialog" aria-labelledby="paymentScheduleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="paymentScheduleModalLabel">Learning made easy with flexible payment schedule.</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="payment-schedule-header">
+<div class="schedule-type-badge">
+<strong>Online Self-Paced</strong>
+<a href="#" class="change-link">Change</a>
+</div>
+</div>
+
+<table class="payment-schedule-table">
+<thead>
+<tr>
+<th>Payments</th>
+<th>Date</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st Payment</td>
+<td>11/07/2025</td>
+<td>$179.75</td>
+</tr>
+<tr>
+<td>Bi-Weekly</td>
+<td></td>
+<td>$179.75</td>
+</tr>
+<tr>
+<td>Last Payment</td>
+<td>12/22/2025</td>
+<td>$179.75</td>
+</tr>
+</tbody>
+</table>
+
+<div class="total-price-row">
+Total Price: $719
+</div>
+</div>
+<div class="modal-footer">
+<a href="#" class="no-thanks-link" data-dismiss="modal">No Thanks</a>
+<button type="button" class="btn btn-enroll">ENROLL</button>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 
 <!-- JavaScript -->
@@ -1782,7 +2073,38 @@ if (totalUpsell > 0) {
 console.log('Total upsell: $' + totalUpsell);
 }
 });
+	});
 });
+
+// Payment Schedule Modal functionality
+$(document).ready(function() {
+	// Prevent default action on payment link
+	$('.payment-link').on('click', function(e) {
+		e.preventDefault();
+	});
+
+	// Close modal on "No Thanks" click
+	$('.no-thanks-link').on('click', function(e) {
+		e.preventDefault();
+		$('#paymentScheduleModal').modal('hide');
+	});
+
+	// Handle ESC key to close modal
+	$(document).on('keydown', function(e) {
+		if (e.keyCode === 27 && $('#paymentScheduleModal').hasClass('show')) {
+			$('#paymentScheduleModal').modal('hide');
+		}
+	});
+
+	// Optional: Handle enrollment button click
+	$('#paymentScheduleModal .btn-enroll').on('click', function() {
+		// You can add enrollment logic here or link to enrollment page
+		console.log('Enroll button clicked');
+		// For now, we'll just close the modal
+		// $('#paymentScheduleModal').modal('hide');
+		// Or redirect to enrollment page:
+		// window.location.href = 'enrollment-page.html';
+	});
 });
 </script>
 </body>
