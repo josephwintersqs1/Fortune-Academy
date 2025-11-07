@@ -1040,6 +1040,18 @@ color: var(--real-estate-primary);
 margin-bottom: 15px;
 }
 
+/* Make payment-plan-badge clickable */
+.payment-plan-badge[data-toggle="modal"] {
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.payment-plan-badge[data-toggle="modal"]:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+}
+
 @media (max-width: 768px) {
 .tab-pricing-box {
 flex-direction: column;
@@ -1431,22 +1443,7 @@ SCREC Approved #004
 </ul>
 </div>
 
-<!-- Section 3: Pricing Box -->
-<div class="tab-pricing-box">
-<div class="tab-pricing-content">
-<div class="tab-price-main">$453</div>
-<div class="tab-price-details">
-<div class="tab-price-original">$755</div>
-<div class="tab-price-save">Save $302</div>
-</div>
-</div>
-<div class="tab-pricing-cta">
-<button class="btn btn-primary tab-enroll-btn">ENROLL NOW</button>
-<a href="#" class="tab-payment-link" data-toggle="modal" data-target="#paymentScheduleModal">Start now for only <span class="highlight-price">$159</span></a>
-</div>
-</div>
-
-<!-- Section 5: Choose Your Package -->
+<!-- Section 3: Choose Your Package -->
 <h3 style="margin-top: 40px;">Choose Your Package</h3>
 <div class="pricing-grid">
 <div class="pricing-card">
@@ -1456,7 +1453,7 @@ SCREC Approved #004
 <span class="price-original">$755</span>
 <span class="price-save">Save $302</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $159</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1478,7 +1475,7 @@ SCREC Approved #004
 <span class="price-original">$836</span>
 <span class="price-save">Save $302</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $179</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1499,7 +1496,7 @@ SCREC Approved #004
 <span class="price-original">$999</span>
 <span class="price-save">Save $302</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $199</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1536,21 +1533,6 @@ SCREC Approved #004
 <li>Real-time Q&A and discussions</li>
 <li>Recorded sessions available for review</li>
 </ul>
-</div>
-
-<!-- Section 3: Pricing Box -->
-<div class="tab-pricing-box">
-<div class="tab-pricing-content">
-<div class="tab-price-main">$453</div>
-<div class="tab-price-details">
-<div class="tab-price-original">$755</div>
-<div class="tab-price-save">Save $302</div>
-</div>
-</div>
-<div class="tab-pricing-cta">
-<button class="btn btn-primary tab-enroll-btn">ENROLL NOW</button>
-<a href="#" class="tab-payment-link" data-toggle="modal" data-target="#paymentScheduleModal">Start now for only <span class="highlight-price">$159</span></a>
-</div>
 </div>
 
 <h3 style="margin-top: 30px;">Select Your Zoom Class Schedule</h3>
@@ -1631,7 +1613,7 @@ SCREC Approved #004
 <span class="price-original">$219</span>
 <span class="price-save">Save $55</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $180</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1653,7 +1635,7 @@ SCREC Approved #004
 <span class="price-original">$327</span>
 <span class="price-save">Save $82</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $180</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1674,7 +1656,7 @@ SCREC Approved #004
 <span class="price-original">$544</span>
 <span class="price-save">Save $136</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $180</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1747,7 +1729,7 @@ SCREC Approved #004
 <span class="price-original">$219</span>
 <span class="price-save">Save $55</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $180</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1769,7 +1751,7 @@ SCREC Approved #004
 <span class="price-original">$327</span>
 <span class="price-save">Save $82</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $180</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
@@ -1790,7 +1772,7 @@ SCREC Approved #004
 <span class="price-original">$544</span>
 <span class="price-save">Save $136</span>
 </div>
-<div class="payment-plan-badge">
+<div class="payment-plan-badge" data-toggle="modal" data-target="#paymentScheduleModal" style="cursor: pointer;">
 <strong>Start now for only $180</strong>
 <small style="display: block; font-size: 0.85rem;">with flexible payment plan</small>
 </div>
