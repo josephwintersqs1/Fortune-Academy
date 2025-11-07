@@ -97,7 +97,8 @@ $( function() {
 $('.home-slider').slick({
   dots: false,
   infinite: true,
-  autoplay: false,
+  autoplay: true,
+  autoplaySpeed: 5000,
   speed: 1200,
   fade: true,
   slidesToShow: 1,
