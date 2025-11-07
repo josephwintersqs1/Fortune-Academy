@@ -129,6 +129,22 @@
   height: auto;
 }
 
+/* Placeholder logos if images don't exist */
+.partner-logo-placeholder {
+  width: 150px;
+  height: 80px;
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+}
+
 /* ===================================================================
    LEAD GENERATION FORM SECTION
    =================================================================== */
@@ -734,6 +750,136 @@
 
 .cart-link:hover {
   color: #60a5fa;
+}
+
+/* ===================================================================
+   INDUSTRY-SPECIFIC COLORS
+   =================================================================== */
+
+/* Real Estate - Red */
+.real-estate-business .lead-gen-section {
+  background: linear-gradient(135deg, #c1241a 0%, #d9534f 100%);
+}
+
+.real-estate-business .lms-benefit-icon {
+  background: linear-gradient(135deg, #c1241a 0%, #d9534f 100%);
+}
+
+.real-estate-business .business-hero .button-primary {
+  background: #c1241a;
+}
+
+.real-estate-business .business-hero .button-primary:hover {
+  background: #ff857d;
+}
+
+.real-estate-business .lead-gen-form .submit-btn {
+  background: linear-gradient(135deg, #c1241a 0%, #d9534f 100%);
+}
+
+/* Mortgage - Teal */
+.mortgage-business .lead-gen-section {
+  background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+}
+
+.mortgage-business .lms-benefit-icon {
+  background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+}
+
+.mortgage-business .business-hero .button-primary {
+  background: #00897B;
+}
+
+.mortgage-business .business-hero .button-primary:hover {
+  background: #26A69A;
+}
+
+.mortgage-business .lead-gen-form .submit-btn {
+  background: linear-gradient(135deg, #00897B 0%, #26A69A 100%);
+}
+
+/* Appraisal - Blue */
+.appraisal-business .lead-gen-section {
+  background: linear-gradient(135deg, #2c75ba 0%, #4c8ed0 100%);
+}
+
+.appraisal-business .lms-benefit-icon {
+  background: linear-gradient(135deg, #2c75ba 0%, #4c8ed0 100%);
+}
+
+.appraisal-business .business-hero .button-primary {
+  background: #2c75ba;
+}
+
+.appraisal-business .business-hero .button-primary:hover {
+  background: #4c8ed0;
+}
+
+.appraisal-business .lead-gen-form .submit-btn {
+  background: linear-gradient(135deg, #2c75ba 0%, #4c8ed0 100%);
+}
+
+/* OSHA - Green */
+.osha-business .lead-gen-section {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.osha-business .lms-benefit-icon {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.osha-business .business-hero .button-primary {
+  background: #4caf50;
+}
+
+.osha-business .business-hero .button-primary:hover {
+  background: #6ccf71;
+}
+
+.osha-business .lead-gen-form .submit-btn {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+}
+
+/* Healthcare - Purple */
+.healthcare-business .lead-gen-section {
+  background: linear-gradient(135deg, #9c27b0 0%, #ab47bc 100%);
+}
+
+.healthcare-business .lms-benefit-icon {
+  background: linear-gradient(135deg, #9c27b0 0%, #ab47bc 100%);
+}
+
+.healthcare-business .business-hero .button-primary {
+  background: #9c27b0;
+}
+
+.healthcare-business .business-hero .button-primary:hover {
+  background: #b94ac9;
+}
+
+.healthcare-business .lead-gen-form .submit-btn {
+  background: linear-gradient(135deg, #9c27b0 0%, #ab47bc 100%);
+}
+
+/* Compliance - Orange */
+.compliance-business .lead-gen-section {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+}
+
+.compliance-business .lms-benefit-icon {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+}
+
+.compliance-business .business-hero .button-primary {
+  background: #ff6f00;
+}
+
+.compliance-business .business-hero .button-primary:hover {
+  background: #ff8f33;
+}
+
+.compliance-business .lead-gen-form .submit-btn {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
 }
 
 /* ===================================================================
