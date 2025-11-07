@@ -4241,24 +4241,37 @@ body.industry-compliance {
   border-color: var(--industry-color, #2c75ba);
 }
 
-.testimonial-img {
+.testimonial-page-section .testimonial-img {
   margin: 0 auto 20px;
+  width: 100px !important;
+  height: 100px !important;
+  border: none !important;
+  overflow: visible !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+.testimonial-page-section .testimonial-img img {
+  display: none !important;
 }
 
 .review-avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: var(--industry-color, #2c75ba);
-  color: #ffffff;
-  display: flex;
+  background: var(--industry-color, #2c75ba) !important;
+  color: #ffffff !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 700;
   margin: 0 auto;
-  border: 3px solid var(--industry-color, #2c75ba);
+  border: 3px solid var(--industry-color, #2c75ba) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  line-height: 1;
 }
 
 .testimonial-content {
@@ -4316,8 +4329,8 @@ body.industry-compliance {
 
 /* Industry-specific colors for Real Estate page */
 .industry-real-estate .review-avatar {
-  background: #2c75ba;
-  border-color: #2c75ba;
+  background: #2c75ba !important;
+  border-color: #2c75ba !important;
 }
 
 .industry-real-estate .testimonial-item:hover {
@@ -4326,6 +4339,76 @@ body.industry-compliance {
 
 .industry-real-estate .rating-start span {
   background: #2c75ba !important;
+}
+
+/* Industry-specific colors for Mortgage page */
+.industry-mortgage .review-avatar {
+  background: #7b1fa2 !important;
+  border-color: #7b1fa2 !important;
+}
+
+.industry-mortgage .testimonial-item:hover {
+  border-color: #7b1fa2;
+}
+
+.industry-mortgage .rating-start span {
+  background: #7b1fa2 !important;
+}
+
+/* Industry-specific colors for Appraisal page */
+.industry-appraisal .review-avatar {
+  background: #2c75ba !important;
+  border-color: #2c75ba !important;
+}
+
+.industry-appraisal .testimonial-item:hover {
+  border-color: #2c75ba;
+}
+
+.industry-appraisal .rating-start span {
+  background: #2c75ba !important;
+}
+
+/* Industry-specific colors for OSHA page */
+.industry-osha .review-avatar {
+  background: #ff6f00 !important;
+  border-color: #ff6f00 !important;
+}
+
+.industry-osha .testimonial-item:hover {
+  border-color: #ff6f00;
+}
+
+.industry-osha .rating-start span {
+  background: #ff6f00 !important;
+}
+
+/* Industry-specific colors for Healthcare page */
+.industry-healthcare .review-avatar {
+  background: #c1241a !important;
+  border-color: #c1241a !important;
+}
+
+.industry-healthcare .testimonial-item:hover {
+  border-color: #c1241a;
+}
+
+.industry-healthcare .rating-start span {
+  background: #c1241a !important;
+}
+
+/* Industry-specific colors for HR Compliance page */
+.industry-compliance .review-avatar {
+  background: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+
+.industry-compliance .testimonial-item:hover {
+  border-color: #4caf50;
+}
+
+.industry-compliance .rating-start span {
+  background: #4caf50 !important;
 }
 
 /* Responsive adjustments */
