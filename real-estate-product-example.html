@@ -988,6 +988,34 @@ text-decoration: underline !important;
 display: none !important;
 }
 
+/* Two-column layout with equal height columns */
+@media (min-width: 992px) {
+/* Make parent row use flexbox for equal height columns */
+.single-tour-section .row {
+display: flex;
+flex-wrap: wrap;
+}
+
+/* Make sidebar stretch to match left column height */
+.sidebar {
+display: flex;
+flex-direction: column;
+height: 100%;
+}
+
+.sidebar .widget-bg.information-content {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+}
+
+/* Full-width tabs section styling */
+.full-width-tabs-section {
+margin-top: 40px;
+}
+
 @media (max-width: 768px) {
 .tab-pricing-box {
 flex-direction: column;
@@ -1278,6 +1306,53 @@ SCREC Approved #004
 </div>
 </div>
 </div>
+
+</div>
+</div>
+<!-- End of left column with h2, feature-image, course-meta-box -->
+
+<!-- Sidebar -->
+<div class="col-lg-4">
+<div class="sidebar">
+<div class="widget-bg information-content text-center">
+<h5>HAVE QUESTIONS?</h5>
+<h3>NEED MORE INFORMATION?</h3>
+<p>Our team is here to help you choose the right program and answer any questions about becoming a licensed real estate agent in South Carolina.</p>
+<a href="contact.html" class="button-primary">CONTACT US</a>
+<div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+<p style="margin-bottom: 5px;"><strong>Call Us:</strong></p>
+<p style="font-size: 1.3rem; color: var(--real-estate-primary); font-weight: 700; margin-bottom: 0;">(800) 922-2245</p>
+</div>
+</div>
+
+<div class="travel-package-content text-center" style="background-image: url(assets/images/img11.jpg); background-size: cover; background-position: center;">
+<h5>MORE COURSES</h5>
+<h3>OTHER REAL ESTATE COURSES</h3>
+<p>Explore our full range of real estate education programs</p>
+<ul style="text-align: left;">
+<li>
+<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Post-Licensing Courses</a>
+</li>
+<li>
+<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Broker Courses</a>
+</li>
+<li>
+<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Continuing Education</a>
+</li>
+<li>
+<a href="courses-programs.html"><i class="far fa-arrow-alt-circle-right"></i>All Courses</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- End of two-column row -->
+
+<!-- Full-width tabs section -->
+<div class="row">
+<div class="col-lg-12">
+<div class="full-width-tabs-section">
 
 <!-- Delivery Method Tabs -->
 <div class="tab-container">
@@ -2089,44 +2164,12 @@ Yes! All students get lifetime access to course materials, so you can review con
 </div>
 </div>
 </div>
-</div>
 
-<!-- Sidebar -->
-<div class="col-lg-4">
-<div class="sidebar">
-<div class="widget-bg information-content text-center">
-<h5>HAVE QUESTIONS?</h5>
-<h3>NEED MORE INFORMATION?</h3>
-<p>Our team is here to help you choose the right program and answer any questions about becoming a licensed real estate agent in South Carolina.</p>
-<a href="contact.html" class="button-primary">CONTACT US</a>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-<p style="margin-bottom: 5px;"><strong>Call Us:</strong></p>
-<p style="font-size: 1.3rem; color: var(--real-estate-primary); font-weight: 700; margin-bottom: 0;">(800) 922-2245</p>
 </div>
 </div>
+</div>
+<!-- End of full-width tabs section -->
 
-<div class="travel-package-content text-center" style="background-image: url(assets/images/img11.jpg); background-size: cover; background-position: center;">
-<h5>MORE COURSES</h5>
-<h3>OTHER REAL ESTATE COURSES</h3>
-<p>Explore our full range of real estate education programs</p>
-<ul style="text-align: left;">
-<li>
-<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Post-Licensing Courses</a>
-</li>
-<li>
-<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Broker Courses</a>
-</li>
-<li>
-<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Continuing Education</a>
-</li>
-<li>
-<a href="courses-programs.html"><i class="far fa-arrow-alt-circle-right"></i>All Courses</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </main>
