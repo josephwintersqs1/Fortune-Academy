@@ -351,19 +351,21 @@
          <a id="backTotop" href="#" class="to-top-icon">
             <i class="fas fa-chevron-up"></i>
          </a>
-         <!-- custom search field html -->
-         <div class="header-search-form">
-            <div class="container">
-               <div class="header-search-container">
-                  <form class="search-form" role="search" method="get" >
-                     <input type="text" name="s" placeholder="Enter your text...">
-                  </form>
-                  <a href="#" class="search-close">
-                     <i class="fas fa-times"></i>
-                  </a>
-               </div>
+      <!-- Modern search modal -->
+      <div class="search-modal-backdrop" id="searchBackdrop" style="display: none;">
+         <div class="search-modal">
+            <div class="search-modal-header">
+               <i class="fas fa-search search-modal-icon"></i>
+               <input type="text" id="searchModalInput" placeholder="Search courses..." autocomplete="off">
+               <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                  <i class="fas fa-times"></i>
+               </button>
+            </div>
+            <div class="search-modal-results" id="searchModalResults" style="display: none;">
+               <!-- Results populated by JS -->
             </div>
          </div>
+      </div>
       </div>
 
       <!-- JavaScript -->
@@ -380,6 +382,7 @@
       <script src="assets/js/jquery.slicknav.js"></script>
       <script src="assets/js/custom.min.js"></script>
       <script src="assets/js/layout.js"></script>
+      <script src="assets/js/header-search.js"></script>
    </body>
 </html>
 
