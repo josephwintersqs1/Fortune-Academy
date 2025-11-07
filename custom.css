@@ -1385,11 +1385,11 @@ body.industry-compliance .section-heading .dash-style{
 }
 .re-catalog__carousel .slick-slide{
   padding:0 15px;
+  max-width: 400px !important;
+  margin: 0 auto;
 }
 .re-catalog__carousel .slick-slide > div{
   height:100%;
-  max-width: 400px;
-  margin: 0 auto;
 }
 
 /* Package wrap - use flexbox for equal heights */
