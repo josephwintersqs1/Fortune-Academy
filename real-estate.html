@@ -175,31 +175,33 @@
         <h2>Find Courses by Category &amp; State</h2>
         <p class="lead">Choose your state to view our most popular licensing, upgrade, CE, post-licensing, and exam prep bundles.</p>
       </div>
-    <div class="re-catalog__state-picker">
-      <label for="reCatalogState" class="state-label">Get Training In:</label>
-      <div class="re-catalog__state-select-wrapper">
-        <input type="text" id="reCatalogState" class="re-catalog__state-select" aria-label="Select a state to view training" readonly>
-        <span class="re-catalog__select-icon"><i class="fas fa-chevron-down"></i></span>
-        <div class="re-catalog__select-dropdown" hidden>
-          <div class="re-catalog__select-search">
-            <input type="text" placeholder="Search states..." aria-label="Search states">
-          </div>
-          <div class="re-catalog__select-groups">
-            <!-- options populated by JS -->
+    <div class="re-catalog__filters-wrapper">
+      <div class="re-catalog__state-picker">
+        <label for="reCatalogState" class="state-label">Get Training In:</label>
+        <div class="re-catalog__state-select-wrapper">
+          <input type="text" id="reCatalogState" class="re-catalog__state-select" aria-label="Select a state to view training" readonly>
+          <span class="re-catalog__select-icon"><i class="fas fa-chevron-down"></i></span>
+          <div class="re-catalog__select-dropdown" hidden>
+            <div class="re-catalog__select-search">
+              <input type="text" placeholder="Search states..." aria-label="Search states">
+            </div>
+            <div class="re-catalog__select-groups">
+              <!-- options populated by JS -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="re-catalog__role-picker">
-      <label for="reCatalogRole" class="role-label">In The Role Of:</label>
-      <div class="re-catalog__role-select-wrapper">
-        <select id="reCatalogRole" class="re-catalog__role-select" aria-label="Select your role">
-          <option value="">All Roles</option>
-          <option value="Real Estate Agent">Real Estate Agent</option>
-          <option value="Property Manager">Property Manager</option>
-          <option value="Real Estate Broker">Real Estate Broker</option>
-        </select>
-        <span class="re-catalog__select-icon"><i class="fas fa-chevron-down"></i></span>
+      <div class="re-catalog__role-picker">
+        <label for="reCatalogRole" class="role-label">In The Role Of:</label>
+        <div class="re-catalog__role-select-wrapper">
+          <select id="reCatalogRole" class="re-catalog__role-select" aria-label="Select your role">
+            <option value="">All Roles</option>
+            <option value="Real Estate Agent">Real Estate Agent</option>
+            <option value="Property Manager">Property Manager</option>
+            <option value="Real Estate Broker">Real Estate Broker</option>
+          </select>
+          <span class="re-catalog__select-icon"><i class="fas fa-chevron-down"></i></span>
+        </div>
       </div>
     </div>
     </div>

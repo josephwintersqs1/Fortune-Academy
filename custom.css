@@ -1154,11 +1154,17 @@ body.industry-compliance .section-heading h5,
 body.industry-compliance .section-heading .dash-style{
   color: var(--color-hr);
 }
+.re-catalog__filters-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 .re-catalog__state-picker{
   display: flex;
   align-items: center;
   gap: 12px;
-  justify-content: center;
 }
 .re-catalog__state-picker .state-label{
   font-weight: 700;
@@ -1169,10 +1175,9 @@ body.industry-compliance .section-heading .dash-style{
   margin: 0;
 }
 .re-catalog__role-picker{
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: 30px;
 }
 .re-catalog__role-picker .role-label{
   font-weight: 700;
@@ -1602,14 +1607,16 @@ body.industry-compliance .section-heading .dash-style{
   .re-catalog__header{
     gap:20px;
   }
+  .re-catalog__filters-wrapper{
+    flex-direction: column;
+    gap: 15px;
+  }
   .re-catalog__state-picker{
     flex-direction:column;
   }
   .re-catalog__role-picker{
-    margin-left: 0;
-    margin-top: 15px;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
   }
   .re-catalog__role-select{
     width: 100%;
