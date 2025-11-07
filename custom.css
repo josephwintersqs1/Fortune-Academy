@@ -4223,26 +4223,38 @@ body.industry-compliance {
   margin-bottom: 50px;
 }
 
-.testimonial-item {
-  margin-bottom: 30px;
-  background: #f8f9fa;
-  padding: 30px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  height: 100%;
+/* Force equal heights using flexbox */
+.testimonial-page-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.testimonial-page-section .col-lg-4,
+.testimonial-page-section .col-md-6 {
   display: flex;
   flex-direction: column;
 }
 
-.testimonial-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border-color: var(--industry-color, #2c75ba);
+.testimonial-page-section .testimonial-item {
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  padding: 30px 20px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.testimonial-page-section .testimonial-img {
-  margin: 0 auto 20px;
+.testimonial-page-section .testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Override all existing testimonial-img styles */
+.testimonial-page-section .testimonial-item .testimonial-img {
+  margin: 0 auto 20px !important;
   width: 100px !important;
   height: 100px !important;
   border: none !important;
@@ -4251,36 +4263,39 @@ body.industry-compliance {
   top: auto !important;
   left: auto !important;
   right: auto !important;
+  background: transparent !important;
 }
 
-.testimonial-page-section .testimonial-img img {
+.testimonial-page-section .testimonial-item .testimonial-img img {
   display: none !important;
 }
 
-.review-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: var(--industry-color, #2c75ba) !important;
+/* Avatar circle - solid color with text */
+.testimonial-page-section .review-avatar {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  background: #2c75ba !important;
   color: #ffffff !important;
   display: flex !important;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 auto;
-  border: 3px solid var(--industry-color, #2c75ba) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  line-height: 1;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin: 0 auto !important;
+  border: 4px solid #2c75ba !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  line-height: 1 !important;
+  text-align: center !important;
 }
 
-.testimonial-content {
+.testimonial-page-section .testimonial-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.testimonial-content p {
+.testimonial-page-section .testimonial-content p {
   font-size: 15px;
   line-height: 1.8;
   color: #555;
@@ -4288,22 +4303,22 @@ body.industry-compliance {
   flex-grow: 1;
 }
 
-.testimonial-content .start-wrap {
+.testimonial-page-section .testimonial-content .start-wrap {
   margin-bottom: 15px;
 }
 
-.testimonial-content .rating-start span {
-  background: var(--industry-color, #2c75ba) !important;
+.testimonial-page-section .testimonial-content .rating-start span {
+  background: #2c75ba !important;
 }
 
-.testimonial-content h3 {
+.testimonial-page-section .testimonial-content h3 {
   font-size: 18px;
   font-weight: 700;
   color: #333;
   margin-bottom: 8px;
 }
 
-.testimonial-content .posted-on {
+.testimonial-page-section .testimonial-content .posted-on {
   display: inline-flex;
   align-items: center;
   font-size: 13px;
@@ -4327,87 +4342,91 @@ body.industry-compliance {
   text-decoration: none;
 }
 
-/* Industry-specific colors for Real Estate page */
-.industry-real-estate .review-avatar {
+/* ===================================================================
+   INDUSTRY-SPECIFIC TESTIMONIAL COLORS
+   =================================================================== */
+
+/* Real Estate - Blue */
+.industry-real-estate .testimonial-page-section .review-avatar {
   background: #2c75ba !important;
   border-color: #2c75ba !important;
 }
 
-.industry-real-estate .testimonial-item:hover {
-  border-color: #2c75ba;
+.industry-real-estate .testimonial-page-section .testimonial-item:hover {
+  border-color: #2c75ba !important;
 }
 
-.industry-real-estate .rating-start span {
+.industry-real-estate .testimonial-page-section .rating-start span {
   background: #2c75ba !important;
 }
 
-/* Industry-specific colors for Mortgage page */
-.industry-mortgage .review-avatar {
+/* Mortgage - Purple */
+.industry-mortgage .testimonial-page-section .review-avatar {
   background: #7b1fa2 !important;
   border-color: #7b1fa2 !important;
 }
 
-.industry-mortgage .testimonial-item:hover {
-  border-color: #7b1fa2;
+.industry-mortgage .testimonial-page-section .testimonial-item:hover {
+  border-color: #7b1fa2 !important;
 }
 
-.industry-mortgage .rating-start span {
+.industry-mortgage .testimonial-page-section .rating-start span {
   background: #7b1fa2 !important;
 }
 
-/* Industry-specific colors for Appraisal page */
-.industry-appraisal .review-avatar {
+/* Appraisal - Blue */
+.industry-appraisal .testimonial-page-section .review-avatar {
   background: #2c75ba !important;
   border-color: #2c75ba !important;
 }
 
-.industry-appraisal .testimonial-item:hover {
-  border-color: #2c75ba;
+.industry-appraisal .testimonial-page-section .testimonial-item:hover {
+  border-color: #2c75ba !important;
 }
 
-.industry-appraisal .rating-start span {
+.industry-appraisal .testimonial-page-section .rating-start span {
   background: #2c75ba !important;
 }
 
-/* Industry-specific colors for OSHA page */
-.industry-osha .review-avatar {
+/* OSHA - Orange */
+.industry-osha .testimonial-page-section .review-avatar {
   background: #ff6f00 !important;
   border-color: #ff6f00 !important;
 }
 
-.industry-osha .testimonial-item:hover {
-  border-color: #ff6f00;
+.industry-osha .testimonial-page-section .testimonial-item:hover {
+  border-color: #ff6f00 !important;
 }
 
-.industry-osha .rating-start span {
+.industry-osha .testimonial-page-section .rating-start span {
   background: #ff6f00 !important;
 }
 
-/* Industry-specific colors for Healthcare page */
-.industry-healthcare .review-avatar {
+/* Healthcare - Red */
+.industry-healthcare .testimonial-page-section .review-avatar {
   background: #c1241a !important;
   border-color: #c1241a !important;
 }
 
-.industry-healthcare .testimonial-item:hover {
-  border-color: #c1241a;
+.industry-healthcare .testimonial-page-section .testimonial-item:hover {
+  border-color: #c1241a !important;
 }
 
-.industry-healthcare .rating-start span {
+.industry-healthcare .testimonial-page-section .rating-start span {
   background: #c1241a !important;
 }
 
-/* Industry-specific colors for HR Compliance page */
-.industry-compliance .review-avatar {
+/* HR Compliance - Green */
+.industry-compliance .testimonial-page-section .review-avatar {
   background: #4caf50 !important;
   border-color: #4caf50 !important;
 }
 
-.industry-compliance .testimonial-item:hover {
-  border-color: #4caf50;
+.industry-compliance .testimonial-page-section .testimonial-item:hover {
+  border-color: #4caf50 !important;
 }
 
-.industry-compliance .rating-start span {
+.industry-compliance .testimonial-page-section .rating-start span {
   background: #4caf50 !important;
 }
 
