@@ -855,7 +855,7 @@ box-shadow: 0 6px 20px rgba(30, 58, 138, 0.2);
 .tab-pricing-content {
 display: flex;
 align-items: center;
-gap: 25px;
+gap: 20px;
 }
 
 .tab-price-main {
@@ -865,18 +865,25 @@ font-weight: 800;
 line-height: 1;
 }
 
+.tab-price-details {
+display: flex;
+flex-direction: column;
+gap: 8px;
+justify-content: center;
+}
+
 .tab-price-save {
 color: #4ade80;
 background: rgba(255, 255, 255, 0.15);
-padding: 8px 18px;
-border-radius: 8px;
-font-size: 1.1rem;
+padding: 6px 14px;
+border-radius: 6px;
+font-size: 1rem;
 font-weight: 700;
 }
 
 .tab-price-original {
 color: rgba(255, 255, 255, 0.7);
-font-size: 1.5rem;
+font-size: 1.3rem;
 font-weight: 600;
 text-decoration: line-through;
 }
@@ -919,12 +926,16 @@ text-align: center;
 font-size: 2.5rem;
 }
 
+.tab-price-details {
+align-items: center;
+}
+
 .tab-price-save {
-font-size: 1rem;
+font-size: 0.9rem;
 }
 
 .tab-price-original {
-font-size: 1.2rem;
+font-size: 1.1rem;
 }
 
 .tab-enroll-btn {
@@ -1232,8 +1243,10 @@ SCREC Approved #004
 <div class="tab-pricing-box">
 <div class="tab-pricing-content">
 <div class="tab-price-main">$453</div>
+<div class="tab-price-details">
 <div class="tab-price-save">Save $302</div>
 <div class="tab-price-original">$755</div>
+</div>
 </div>
 <button class="btn btn-primary tab-enroll-btn">ENROLL NOW</button>
 </div>
@@ -1424,8 +1437,10 @@ SCREC Approved #004
 <div class="tab-pricing-box">
 <div class="tab-pricing-content">
 <div class="tab-price-main">$453</div>
+<div class="tab-price-details">
 <div class="tab-price-save">Save $302</div>
 <div class="tab-price-original">$755</div>
+</div>
 </div>
 <button class="btn btn-primary tab-enroll-btn">ENROLL NOW</button>
 </div>
