@@ -1003,37 +1003,33 @@ display: flex;
 flex-wrap: wrap;
 }
 
-/* Make sidebar stretch to match left column height */
+/* Make sidebar natural height instead of stretching */
 .sidebar {
 display: flex;
 flex-direction: column;
-height: 100%;
 }
 
 .sidebar .widget-bg.information-content,
 .sidebar .widget-bg.included-features-sidebar {
-flex: 1;
 display: flex;
 flex-direction: column;
-justify-content: flex-start;
 }
 }
 
 /* What's Included Sidebar Styles */
 .included-features-sidebar {
 background: white;
-padding: 25px 20px 40px 20px;
+padding: 20px 18px;
 border-radius: 8px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-min-height: 100%;
 }
 
 .included-features-sidebar h5 {
 color: var(--real-estate-primary);
 font-weight: 700;
-font-size: 1.15rem;
-margin-bottom: 18px;
-padding-bottom: 12px;
+font-size: 1.1rem;
+margin-bottom: 15px;
+padding-bottom: 10px;
 border-bottom: 2px solid var(--real-estate-accent);
 text-align: center;
 }
@@ -1041,8 +1037,8 @@ text-align: center;
 .feature-item {
 display: flex;
 align-items: center;
-padding: 8px 6px;
-margin-bottom: 4px;
+padding: 6px 4px;
+margin-bottom: 2px;
 border-radius: 6px;
 transition: all 0.3s ease;
 cursor: help;
@@ -1135,6 +1131,164 @@ font-size: 0.9rem;
 }
 }
 
+/* Sidebar Divider and CTA Styles */
+.sidebar-divider {
+height: 1px;
+background: linear-gradient(90deg, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent);
+margin: 15px 0 12px 0;
+}
+
+.sidebar-cta-btn {
+width: 100%;
+background: var(--real-estate-accent);
+color: white;
+border: none;
+padding: 12px 18px;
+border-radius: 8px;
+font-weight: 700;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+outline: none;
+}
+
+.sidebar-cta-btn:hover,
+.sidebar-cta-btn:focus,
+.sidebar-cta-btn:active {
+background: #e6c348;
+color: white;
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+outline: none;
+border: none;
+}
+
+.sidebar-cta-btn i {
+font-size: 1.1rem;
+}
+
+/* Contact Modal Styles */
+#contactModal .modal-dialog {
+max-width: 500px;
+}
+
+#contactModal .modal-content {
+border-radius: 12px;
+border: none;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+#contactModal .modal-header {
+background: linear-gradient(135deg, var(--real-estate-primary) 0%, var(--real-estate-secondary) 100%);
+color: white;
+border-radius: 12px 12px 0 0;
+padding: 25px 30px;
+border-bottom: none;
+}
+
+#contactModal .modal-title {
+font-size: 1.5rem;
+font-weight: 700;
+color: white;
+}
+
+#contactModal .close {
+color: white;
+opacity: 1;
+text-shadow: none;
+font-size: 2rem;
+font-weight: 300;
+}
+
+#contactModal .close:hover {
+color: var(--real-estate-accent);
+}
+
+#contactModal .modal-body {
+padding: 30px;
+}
+
+#contactModal .form-group {
+margin-bottom: 20px;
+}
+
+#contactModal label {
+font-weight: 600;
+color: var(--real-estate-primary);
+margin-bottom: 8px;
+font-size: 0.95rem;
+display: block;
+}
+
+#contactModal .required-asterisk {
+color: #dc2626;
+}
+
+#contactModal .form-control {
+border: 2px solid #e5e7eb;
+border-radius: 6px;
+padding: 12px 15px;
+font-size: 0.95rem;
+transition: all 0.3s;
+}
+
+#contactModal .form-control:focus {
+border-color: var(--real-estate-primary);
+box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+outline: none;
+}
+
+#contactModal .form-control::placeholder {
+color: #9ca3af;
+}
+
+#contactModal textarea.form-control {
+resize: vertical;
+min-height: 100px;
+}
+
+#contactModal .btn-submit-contact {
+width: 100%;
+background: var(--real-estate-primary);
+color: white;
+border: none;
+padding: 14px 20px;
+border-radius: 8px;
+font-weight: 700;
+font-size: 1.05rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all 0.3s;
+margin-top: 10px;
+}
+
+#contactModal .btn-submit-contact:hover {
+background: var(--real-estate-secondary);
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+@media (max-width: 576px) {
+#contactModal .modal-dialog {
+margin: 0.5rem;
+}
+
+#contactModal .modal-body {
+padding: 20px;
+}
+
+#contactModal .modal-header {
+padding: 20px;
+}
+}
+
 /* Full-width tabs section styling */
 .full-width-tabs-section {
 margin-top: 40px;
@@ -1174,6 +1328,369 @@ background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
 #mobile-app .payment-plan-badge,
 #audio-course .payment-plan-badge {
 display: none !important;
+}
+
+/* Schedule Button - Secondary CTA */
+.schedule-btn {
+width: 100%;
+margin-top: 12px;
+padding: 12px 24px;
+background: transparent;
+border: 2px solid #dee2e6;
+color: #495057;
+font-weight: 600;
+font-size: 15px;
+border-radius: 6px;
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+
+.schedule-btn i {
+font-size: 16px;
+}
+
+.schedule-btn:hover {
+background: #f8f9fa;
+border-color: #adb5bd;
+color: #212529;
+}
+
+.schedule-btn:active {
+transform: scale(0.98);
+}
+
+/* Schedule Modal Styles */
+.schedule-modal-header {
+background: linear-gradient(135deg, var(--real-estate-primary) 0%, var(--real-estate-secondary) 100%);
+color: white;
+padding: 24px 32px;
+border-bottom: none;
+}
+
+.schedule-modal-header .modal-title {
+font-size: 22px;
+font-weight: 700;
+margin-bottom: 4px;
+color: white;
+}
+
+.schedule-modal-subtitle {
+font-size: 14px;
+opacity: 0.9;
+margin: 0;
+color: white;
+}
+
+.schedule-modal-header .close {
+color: white;
+opacity: 1;
+text-shadow: none;
+}
+
+.schedule-modal-header .close:hover {
+color: var(--real-estate-accent);
+}
+
+/* Course Schedule Tabs */
+.course-schedule-tabs {
+background: #f8f9fa;
+border-bottom: 1px solid #dee2e6;
+margin-bottom: 0;
+}
+
+.course-schedule-tabs .nav-link {
+padding: 18px 24px;
+border: none;
+border-bottom: 3px solid transparent;
+color: #6c757d;
+font-weight: 600;
+text-align: left;
+transition: all 0.2s;
+}
+
+.course-schedule-tabs .nav-link:hover {
+background: #e9ecef;
+color: #495057;
+}
+
+.course-schedule-tabs .nav-link.active {
+background: white;
+color: var(--real-estate-primary);
+border-bottom-color: var(--real-estate-primary);
+}
+
+.schedule-tab-title {
+font-size: 15px;
+}
+
+.schedule-tab-subtitle {
+font-size: 13px;
+font-weight: 400;
+color: #6c757d;
+margin-top: 2px;
+}
+
+.course-schedule-tabs .nav-link.active .schedule-tab-subtitle {
+color: var(--real-estate-primary);
+opacity: 0.8;
+}
+
+/* Info Banner */
+.schedule-info-banner {
+background: #e7f3ff;
+border-left: 4px solid var(--real-estate-primary);
+padding: 16px 20px;
+margin-bottom: 24px;
+border-radius: 4px;
+font-size: 14px;
+color: #004085;
+}
+
+.schedule-info-banner strong {
+font-weight: 600;
+}
+
+/* Schedule Filters */
+.schedule-filters {
+display: flex;
+gap: 16px;
+margin-bottom: 24px;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.schedule-filters .filter-group {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.schedule-filters .filter-group label {
+font-size: 14px;
+font-weight: 600;
+color: #495057;
+margin: 0;
+white-space: nowrap;
+}
+
+.schedule-filters .form-select {
+min-width: 150px;
+font-size: 14px;
+}
+
+.schedule-filters .view-toggle-group {
+margin-left: auto;
+}
+
+/* Schedule Grid View */
+.schedule-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+gap: 20px;
+}
+
+.session-card {
+background: white;
+border: 2px solid #e9ecef;
+border-radius: 8px;
+padding: 20px;
+transition: all 0.2s;
+cursor: pointer;
+}
+
+.session-card:hover {
+border-color: var(--real-estate-primary);
+box-shadow: 0 4px 12px rgba(30, 60, 114, 0.1);
+transform: translateY(-2px);
+}
+
+.session-card .card-header {
+display: flex;
+justify-content: space-between;
+align-items: start;
+margin-bottom: 12px;
+}
+
+.session-type {
+padding: 6px 12px;
+border-radius: 4px;
+font-size: 12px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.type-day {
+background: #fff3cd;
+color: #856404;
+}
+
+.type-evening {
+background: #d1ecf1;
+color: #0c5460;
+}
+
+.type-weekend {
+background: #d4edda;
+color: #155724;
+}
+
+.session-code {
+font-size: 12px;
+color: #6c757d;
+font-weight: 600;
+}
+
+.card-dates {
+margin-bottom: 12px;
+}
+
+.date-range {
+font-size: 16px;
+font-weight: 600;
+color: #212529;
+margin-bottom: 4px;
+}
+
+.duration-text {
+font-size: 13px;
+color: #6c757d;
+}
+
+.card-details {
+display: flex;
+flex-direction: column;
+gap: 8px;
+padding-top: 12px;
+border-top: 1px solid #e9ecef;
+}
+
+.detail-row {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 14px;
+color: #495057;
+}
+
+.detail-icon {
+width: 18px;
+}
+
+/* Schedule List View */
+.schedule-list.d-none {
+display: none;
+}
+
+.schedule-table {
+background: white;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.schedule-table thead {
+background: #f8f9fa;
+}
+
+.schedule-table th {
+padding: 14px 16px;
+text-align: left;
+font-size: 13px;
+font-weight: 600;
+color: #495057;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+border-bottom: 2px solid #dee2e6;
+}
+
+.schedule-table td {
+padding: 16px;
+border-top: 1px solid #e9ecef;
+font-size: 14px;
+color: #495057;
+}
+
+.schedule-table tbody tr {
+transition: background 0.2s;
+}
+
+.schedule-table tbody tr:hover {
+background: #f8f9fa;
+}
+
+/* Empty State */
+.schedule-empty-state {
+text-align: center;
+padding: 60px 20px;
+color: #6c757d;
+}
+
+.schedule-empty-state .empty-icon {
+font-size: 48px;
+margin-bottom: 16px;
+}
+
+.schedule-empty-state h3 {
+font-size: 18px;
+color: #495057;
+margin-bottom: 8px;
+}
+
+.schedule-empty-state p {
+font-size: 14px;
+}
+
+/* Responsive Styles for Schedule Modal */
+@media (max-width: 768px) {
+.schedule-modal-header {
+padding: 20px;
+}
+
+.schedule-filters {
+flex-direction: column;
+align-items: stretch;
+}
+
+.schedule-filters .filter-group {
+flex-direction: column;
+align-items: stretch;
+gap: 8px;
+}
+
+.schedule-filters .form-select {
+width: 100%;
+}
+
+.schedule-filters .view-toggle-group {
+margin-left: 0;
+width: 100%;
+}
+
+.schedule-filters .view-toggle-group .btn {
+flex: 1;
+}
+
+.schedule-grid {
+grid-template-columns: 1fr;
+}
+
+.course-schedule-tabs .nav-link {
+padding: 14px 16px;
+font-size: 14px;
+}
+
+.schedule-table {
+font-size: 13px;
+}
+
+.schedule-table th,
+.schedule-table td {
+padding: 10px;
+}
 }
 
 /* Read More/Less Toggle Styles */
@@ -1674,6 +2191,13 @@ SCREC Approved #004
 					</div>
 					<div class="feature-text">Exam Prep Advantage</div>
 				</div>
+				
+				<!-- Divider and CTA -->
+				<div class="sidebar-divider"></div>
+				<button class="sidebar-cta-btn" data-toggle="modal" data-target="#contactModal">
+					<i class="fas fa-comments"></i>
+					Got Questions? Contact Us
+				</button>
 			</div>
 
 <div class="travel-package-content text-center" style="background-image: url(assets/images/img11.jpg); background-size: cover; background-position: center;">
@@ -1784,6 +2308,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Certificate of Completion</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
+<button class="btn-secondary schedule-btn" onclick="openScheduleModal()">
+<i class="fas fa-calendar-alt"></i>
+See Schedule
+</button>
 </div>
 
 <div class="pricing-card recommended">
@@ -1806,6 +2334,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Pass Guarantee</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
+<button class="btn-secondary schedule-btn" onclick="openScheduleModal()">
+<i class="fas fa-calendar-alt"></i>
+See Schedule
+</button>
 </div>
 
 <div class="pricing-card">
@@ -1827,6 +2359,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Interview Preparation</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
+<button class="btn-secondary schedule-btn" onclick="openScheduleModal()">
+<i class="fas fa-calendar-alt"></i>
+See Schedule
+</button>
 </div>
 </div>
 
@@ -1881,6 +2417,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Certificate of Completion</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
+<button class="btn-secondary schedule-btn" onclick="openScheduleModal()">
+<i class="fas fa-calendar-alt"></i>
+See Schedule
+</button>
 </div>
 
 <div class="pricing-card recommended">
@@ -1903,6 +2443,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Pass Guarantee</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
+<button class="btn-secondary schedule-btn" onclick="openScheduleModal()">
+<i class="fas fa-calendar-alt"></i>
+See Schedule
+</button>
 </div>
 
 <div class="pricing-card">
@@ -1924,6 +2468,10 @@ SCREC Approved #004
 <li><i class="fas fa-check"></i> Interview Preparation</li>
 </ul>
 <button class="btn btn-primary">Enroll Now</button>
+<button class="btn-secondary schedule-btn" onclick="openScheduleModal()">
+<i class="fas fa-calendar-alt"></i>
+See Schedule
+</button>
 </div>
 </div>
 
@@ -2616,6 +3164,208 @@ Yes! All students get lifetime access to course materials, so you can review con
 
 </div>
 
+<!-- Contact Form Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="contactForm">
+					<div class="form-group">
+						<label for="fullName">Full Name <span class="required-asterisk">*</span></label>
+						<input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Enter your full name">
+					</div>
+					
+					<div class="form-group">
+						<label for="email">Email Address <span class="required-asterisk">*</span></label>
+						<input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+					</div>
+					
+					<div class="form-group">
+						<label for="phone">Phone Number</label>
+						<input type="tel" class="form-control" id="phone" name="phone" placeholder="(123) 456-7890">
+					</div>
+					
+					<div class="form-group">
+						<label for="comments">Comments/Questions <span class="required-asterisk">*</span></label>
+						<textarea class="form-control" id="comments" name="comments" rows="4" required placeholder="How can we help you?"></textarea>
+					</div>
+					
+					<button type="submit" class="btn btn-submit-contact">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Schedule Viewer Modal -->
+<div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header schedule-modal-header">
+				<div>
+					<h2 class="modal-title" id="scheduleModalLabel">2026 Class Schedule</h2>
+					<p class="schedule-modal-subtitle">South Carolina Real Estate Agent Pre-Licensing</p>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<!-- Course Navigation Tabs -->
+			<ul class="nav nav-tabs course-schedule-tabs" id="courseScheduleTabs" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active" id="schedule-course1-tab" data-toggle="tab" href="#schedule-course1" role="tab">
+						<div class="schedule-tab-title">Course 1: 60-Hr Pre-License</div>
+						<div class="schedule-tab-subtitle">60 hours • Unit-I</div>
+					</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="schedule-course2-tab" data-toggle="tab" href="#schedule-course2" role="tab">
+						<div class="schedule-tab-title">Course 2: 30-Hr Advanced Principles</div>
+						<div class="schedule-tab-subtitle">30 hours • Unit-II</div>
+					</a>
+				</li>
+			</ul>
+
+			<!-- Modal Body -->
+			<div class="modal-body">
+				<div class="tab-content" id="scheduleTabContent">
+					<!-- Course 1 Tab -->
+					<div class="tab-pane fade show active" id="schedule-course1" role="tabpanel">
+						<div class="schedule-info-banner">
+							<strong>📚 About this course:</strong> The 60-hour Pre-License Unit-I course is required first. Classes are offered year-round in Day, Evening, and Weekend formats.
+						</div>
+
+						<!-- Filters -->
+						<div class="schedule-filters">
+							<div class="filter-group">
+								<label>Class Type:</label>
+								<select class="form-control form-select" id="course1TypeFilter" onchange="filterScheduleCourse('course1')">
+									<option value="">All Types</option>
+									<option value="Day">Day</option>
+									<option value="Evening">Evening</option>
+									<option value="Weekend">Weekend</option>
+								</select>
+							</div>
+							<div class="filter-group">
+								<label>Month:</label>
+								<select class="form-control form-select" id="course1MonthFilter" onchange="filterScheduleCourse('course1')">
+									<option value="">All Months</option>
+									<option value="January">January</option>
+									<option value="February">February</option>
+									<option value="March">March</option>
+									<option value="April">April</option>
+									<option value="May">May</option>
+									<option value="June">June</option>
+								</select>
+							</div>
+							<button class="btn btn-outline-secondary" onclick="resetScheduleFilters('course1')">Reset</button>
+							
+							<!-- View Toggle -->
+							<div class="btn-group ml-auto view-toggle-group" role="group">
+								<button type="button" class="btn btn-sm btn-outline-secondary active" onclick="toggleScheduleView('course1', 'grid')">Grid</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleScheduleView('course1', 'list')">List</button>
+							</div>
+						</div>
+
+						<!-- Schedule Grid -->
+						<div class="schedule-grid" id="course1ScheduleGrid">
+							<!-- Populated by JavaScript -->
+						</div>
+
+						<!-- Schedule List -->
+						<div class="schedule-list d-none" id="course1ScheduleList">
+							<table class="table table-hover schedule-table">
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th>Start Date</th>
+										<th>End Date</th>
+										<th>Days</th>
+										<th>Timings</th>
+									</tr>
+								</thead>
+								<tbody id="course1ScheduleListBody">
+									<!-- Populated by JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Course 2 Tab -->
+					<div class="tab-pane fade" id="schedule-course2" role="tabpanel">
+						<div class="schedule-info-banner">
+							<strong>📚 About this course:</strong> The 30-hour Advanced Principles Unit-II course completes your pre-licensing requirement. Take this after completing Course 1.
+						</div>
+
+						<!-- Filters -->
+						<div class="schedule-filters">
+							<div class="filter-group">
+								<label>Class Type:</label>
+								<select class="form-control form-select" id="course2TypeFilter" onchange="filterScheduleCourse('course2')">
+									<option value="">All Types</option>
+									<option value="Day">Day</option>
+									<option value="Evening">Evening</option>
+									<option value="Weekend">Weekend</option>
+								</select>
+							</div>
+							<div class="filter-group">
+								<label>Month:</label>
+								<select class="form-control form-select" id="course2MonthFilter" onchange="filterScheduleCourse('course2')">
+									<option value="">All Months</option>
+									<option value="January">January</option>
+									<option value="February">February</option>
+									<option value="March">March</option>
+									<option value="April">April</option>
+									<option value="May">May</option>
+									<option value="June">June</option>
+								</select>
+							</div>
+							<button class="btn btn-outline-secondary" onclick="resetScheduleFilters('course2')">Reset</button>
+							
+							<!-- View Toggle -->
+							<div class="btn-group ml-auto view-toggle-group" role="group">
+								<button type="button" class="btn btn-sm btn-outline-secondary active" onclick="toggleScheduleView('course2', 'grid')">Grid</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleScheduleView('course2', 'list')">List</button>
+							</div>
+						</div>
+
+						<!-- Schedule Grid -->
+						<div class="schedule-grid" id="course2ScheduleGrid">
+							<!-- Populated by JavaScript -->
+						</div>
+
+						<!-- Schedule List -->
+						<div class="schedule-list d-none" id="course2ScheduleList">
+							<table class="table table-hover schedule-table">
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th>Start Date</th>
+										<th>End Date</th>
+										<th>Days</th>
+										<th>Timings</th>
+									</tr>
+								</thead>
+								<tbody id="course2ScheduleListBody">
+									<!-- Populated by JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- JavaScript -->
 <script src="assets/js/jquery.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
@@ -2948,6 +3698,199 @@ $(document).ready(function() {
 			$section.removeClass('collapsed');
 		}
 	});
+
+	// Contact Form Submission Handler
+	$('#contactForm').on('submit', function(e) {
+		e.preventDefault();
+		
+		// Get form values
+		const formData = {
+			fullName: $('#fullName').val(),
+			email: $('#email').val(),
+			phone: $('#phone').val(),
+			comments: $('#comments').val()
+		};
+		
+		// Log form data (in production, this would send to server)
+		console.log('Contact Form Submitted:', formData);
+		
+		// Clear the form
+		$('#contactForm')[0].reset();
+		
+		// Close the modal
+		$('#contactModal').modal('hide');
+		
+		// Optional: Show a brief success message (you could add this)
+		// alert('Thank you! We will be in touch soon.');
+	});
+	
+	// Reset form when modal is closed
+	$('#contactModal').on('hidden.bs.modal', function() {
+		$('#contactForm')[0].reset();
+	});
+
+	// ===== Schedule Viewer Modal Functionality =====
+	
+	// Sample schedule data (in production, this would come from backend API)
+	const course1Sessions = [
+		{ code: 'PL-01-001', type: 'Day', start: 'Jan 12, 2026', end: 'Jan 22, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'January', duration: '11 days' },
+		{ code: 'PL-01-002', type: 'Evening', start: 'Jan 20, 2026', end: 'Mar 5, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'January', duration: '7 weeks' },
+		{ code: 'PL-01-003', type: 'Weekend', start: 'Jan 31, 2026', end: 'Feb 21, 2026', days: 'Sat, Sun', time: '8:30 AM - 5:30 PM', month: 'January', duration: '4 weekends' },
+		{ code: 'PL-02-004', type: 'Day', start: 'Feb 9, 2026', end: 'Feb 19, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'February', duration: '11 days' },
+		{ code: 'PL-02-005', type: 'Evening', start: 'Feb 17, 2026', end: 'Apr 2, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'February', duration: '7 weeks' },
+		{ code: 'PL-02-006', type: 'Weekend', start: 'Feb 28, 2026', end: 'Mar 21, 2026', days: 'Sat, Sun', time: '8:30 AM - 5:30 PM', month: 'February', duration: '4 weekends' },
+		{ code: 'PL-03-007', type: 'Day', start: 'Mar 9, 2026', end: 'Mar 19, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'March', duration: '11 days' },
+		{ code: 'PL-03-008', type: 'Evening', start: 'Mar 17, 2026', end: 'Apr 30, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'March', duration: '7 weeks' },
+	];
+
+	const course2Sessions = [
+		{ code: 'AP-01-001', type: 'Day', start: 'Jan 26, 2026', end: 'Jan 30, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'January', duration: '5 days' },
+		{ code: 'AP-02-003', type: 'Day', start: 'Feb 23, 2026', end: 'Feb 27, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'February', duration: '5 days' },
+		{ code: 'AP-02-002', type: 'Weekend', start: 'Feb 28, 2026', end: 'Mar 14, 2026', days: 'Sat, Sun', time: '8:30 AM - 3:00 PM', month: 'February', duration: '3 weekends' },
+		{ code: 'AP-03-004', type: 'Evening', start: 'Mar 9, 2026', end: 'Apr 8, 2026', days: 'Mon, Wed', time: '6:00 PM - 8:45 PM', month: 'March', duration: '5 weeks' },
+		{ code: 'AP-03-005', type: 'Day', start: 'Mar 23, 2026', end: 'Mar 27, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'March', duration: '5 days' },
+		{ code: 'AP-03-006', type: 'Weekend', start: 'Mar 28, 2026', end: 'Apr 11, 2026', days: 'Sat, Sun', time: '8:30 AM - 3:00 PM', month: 'March', duration: '3 weekends' },
+	];
+
+	// Store full data for filtering
+	let course1FullData = [...course1Sessions];
+	let course2FullData = [...course2Sessions];
+	
+	// Initialize schedule modal on page load
+	renderScheduleGrid('course1', course1Sessions);
+	renderScheduleList('course1', course1Sessions);
+	renderScheduleGrid('course2', course2Sessions);
+	renderScheduleList('course2', course2Sessions);
+});
+
+// Open schedule modal (called from onclick)
+function openScheduleModal() {
+	$('#scheduleModal').modal('show');
+}
+
+// Render schedule grid view
+function renderScheduleGrid(courseId, sessions) {
+	const gridContainer = $('#' + courseId + 'ScheduleGrid');
+	
+	if (sessions.length === 0) {
+		gridContainer.html(`
+			<div class="schedule-empty-state" style="grid-column: 1/-1;">
+				<div class="empty-icon">📅</div>
+				<h3>No sessions found</h3>
+				<p>Try adjusting your filters to see more options</p>
+			</div>
+		`);
+		return;
+	}
+	
+	const html = sessions.map(session => `
+		<div class="session-card">
+			<div class="card-header">
+				<span class="session-type type-${session.type.toLowerCase()}">${session.type}</span>
+				<span class="session-code">${session.code}</span>
+			</div>
+			<div class="card-dates">
+				<div class="date-range">${session.start} - ${session.end}</div>
+				<div class="duration-text">${session.duration}</div>
+			</div>
+			<div class="card-details">
+				<div class="detail-row">
+					<span class="detail-icon">📆</span>
+					<span>${session.days}</span>
+				</div>
+				<div class="detail-row">
+					<span class="detail-icon">🕐</span>
+					<span>${session.time}</span>
+				</div>
+			</div>
+		</div>
+	`).join('');
+	
+	gridContainer.html(html);
+}
+
+// Render schedule list view
+function renderScheduleList(courseId, sessions) {
+	const tbody = $('#' + courseId + 'ScheduleListBody');
+	
+	if (sessions.length === 0) {
+		tbody.html(`
+			<tr>
+				<td colspan="5" style="text-align: center; padding: 40px;">
+					<div class="schedule-empty-state">
+						<div class="empty-icon">📅</div>
+						<h3>No sessions found</h3>
+						<p>Try adjusting your filters to see more options</p>
+					</div>
+				</td>
+			</tr>
+		`);
+		return;
+	}
+	
+	const html = sessions.map(session => `
+		<tr>
+			<td><span class="session-type type-${session.type.toLowerCase()}">${session.type}</span></td>
+			<td>${session.start}</td>
+			<td>${session.end}</td>
+			<td>${session.days}</td>
+			<td>${session.time}</td>
+		</tr>
+	`).join('');
+	
+	tbody.html(html);
+}
+
+// Filter course sessions
+function filterScheduleCourse(courseId) {
+	const typeFilter = $('#' + courseId + 'TypeFilter').val();
+	const monthFilter = $('#' + courseId + 'MonthFilter').val();
+	
+	const allData = courseId === 'course1' ? course1FullData : course2FullData;
+	
+	const filtered = allData.filter(session => {
+		const matchesType = !typeFilter || session.type === typeFilter;
+		const matchesMonth = !monthFilter || session.month === monthFilter;
+		return matchesType && matchesMonth;
+	});
+	
+	// Update both views
+	renderScheduleGrid(courseId, filtered);
+	renderScheduleList(courseId, filtered);
+}
+
+// Reset filters
+function resetScheduleFilters(courseId) {
+	$('#' + courseId + 'TypeFilter').val('');
+	$('#' + courseId + 'MonthFilter').val('');
+	filterScheduleCourse(courseId);
+}
+
+// Toggle between grid and list view
+function toggleScheduleView(courseId, viewType) {
+	const gridEl = $('#' + courseId + 'ScheduleGrid');
+	const listEl = $('#' + courseId + 'ScheduleList');
+	const buttons = event.target.closest('.view-toggle-group').querySelectorAll('.btn');
+	
+	// Update button states
+	buttons.forEach(btn => btn.classList.remove('active'));
+	event.target.classList.add('active');
+	
+	// Toggle views
+	if (viewType === 'grid') {
+		gridEl.show();
+		listEl.addClass('d-none');
+	} else {
+		gridEl.hide();
+		listEl.removeClass('d-none');
+	}
+}
+
+// Make data arrays available globally for filtering
+let course1FullData, course2FullData;
+
+$(document).ready(function() {
+	// Already initialized above in the main document.ready
 });
 </script>
 </body>
