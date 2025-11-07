@@ -842,7 +842,7 @@ transform: translateY(-2px);
 
 /* Tab Pricing Box */
 .tab-pricing-box {
-background: linear-gradient(135deg, var(--real-estate-primary) 0%, var(--real-estate-secondary) 100%);
+background: var(--real-estate-primary);
 border-radius: 12px;
 padding: 35px 40px;
 margin: 30px 0;
@@ -889,9 +889,9 @@ text-decoration: line-through;
 }
 
 .tab-enroll-btn {
-background: var(--real-estate-accent) !important;
-color: white !important;
-border: none !important;
+background: white !important;
+color: var(--real-estate-primary) !important;
+border: 2px solid white !important;
 padding: 16px 50px !important;
 border-radius: 8px !important;
 font-weight: 700 !important;
@@ -903,7 +903,9 @@ white-space: nowrap;
 }
 
 .tab-enroll-btn:hover {
-background: #b8960f !important;
+background: var(--real-estate-accent) !important;
+color: white !important;
+border-color: var(--real-estate-accent) !important;
 transform: translateY(-2px);
 box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
 }
