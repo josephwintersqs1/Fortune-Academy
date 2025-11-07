@@ -933,6 +933,12 @@ color: #4ade80;
 font-weight: 700;
 }
 
+/* Hide schedule selection and package sections temporarily in In-Person and Zoom tabs */
+#in-person-classroom .tab-pricing-box ~ *,
+#online-live .tab-pricing-box ~ * {
+display: none !important;
+}
+
 @media (max-width: 768px) {
 .tab-pricing-box {
 flex-direction: column;
