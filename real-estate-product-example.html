@@ -1134,82 +1134,6 @@ padding: 30px;
 background: #f9fafb;
 }
 
-/* Notice Box Styling */
-.payment-notice-box {
-display: flex;
-gap: 15px;
-background: #fef3c7;
-border: 2px solid #f59e0b;
-border-radius: 8px;
-padding: 20px;
-margin-bottom: 25px;
-}
-
-.payment-notice-box .notice-icon {
-flex-shrink: 0;
-}
-
-.payment-notice-box .notice-icon i {
-font-size: 2rem;
-color: #f59e0b;
-}
-
-.payment-notice-box .notice-content h6 {
-font-size: 1rem;
-font-weight: 700;
-color: #92400e;
-margin: 0 0 8px 0;
-}
-
-.payment-notice-box .notice-content p {
-font-size: 0.9rem;
-color: #78350f;
-margin: 0;
-line-height: 1.5;
-}
-
-/* Package Info Section */
-.package-info-section {
-background: white;
-border-radius: 8px;
-padding: 20px;
-margin-bottom: 25px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.package-info-section h6 {
-font-size: 1rem;
-font-weight: 700;
-color: #111827;
-margin: 0 0 15px 0;
-border-bottom: 2px solid var(--real-estate-primary);
-padding-bottom: 10px;
-}
-
-.package-details {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 15px;
-}
-
-.detail-item {
-display: flex;
-flex-direction: column;
-gap: 5px;
-}
-
-.detail-label {
-font-size: 0.85rem;
-color: #6b7280;
-font-weight: 600;
-}
-
-.detail-value {
-font-size: 1rem;
-color: #111827;
-font-weight: 700;
-}
-
 /* Payment Schedule Section */
 .payment-schedule-section {
 background: white;
@@ -1223,9 +1147,16 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 font-size: 1rem;
 font-weight: 700;
 color: #111827;
-margin: 0 0 15px 0;
+margin: 0 0 10px 0;
 border-bottom: 2px solid var(--real-estate-primary);
 padding-bottom: 10px;
+}
+
+.payment-plan-note {
+font-size: 0.9rem;
+color: #6b7280;
+margin: 0 0 15px 0;
+font-style: italic;
 }
 
 .payment-schedule-table {
@@ -1350,25 +1281,10 @@ font-size: 1.2rem;
 padding: 20px 30px;
 border-top: 1px solid #e5e7eb;
 display: flex;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
 gap: 15px;
 background: white;
-}
-
-#paymentScheduleModal .btn-secondary {
-background: #6b7280;
-color: white;
-border: none;
-padding: 12px 30px;
-border-radius: 8px;
-font-weight: 600;
-font-size: 1rem;
-transition: all 0.3s;
-}
-
-#paymentScheduleModal .btn-secondary:hover {
-background: #4b5563;
 }
 
 #paymentScheduleModal .btn-enroll {
@@ -1410,22 +1326,7 @@ margin: 0.5rem;
 padding: 20px;
 }
 
-.payment-notice-box {
-flex-direction: column;
-padding: 15px;
-}
-
-.payment-notice-box .notice-icon i {
-font-size: 1.5rem;
-}
-
-.package-details {
-grid-template-columns: 1fr;
-}
-
-.payment-schedule-section,
-.package-info-section,
-.payment-summary-section {
+.payment-schedule-section {
 padding: 15px;
 }
 
@@ -1456,12 +1357,10 @@ font-size: 1.2rem;
 }
 
 #paymentScheduleModal .modal-footer {
-flex-direction: column;
 gap: 10px;
 }
 
-#paymentScheduleModal .btn-enroll,
-#paymentScheduleModal .btn-secondary {
+#paymentScheduleModal .btn-enroll {
 width: 100%;
 max-width: 100%;
 }
@@ -2239,39 +2138,10 @@ Yes! All students get lifetime access to course materials, so you can review con
 </button>
 </div>
 <div class="modal-body">
-<!-- Important Notice Box -->
-<div class="payment-notice-box">
-<div class="notice-icon">
-<i class="fas fa-info-circle"></i>
-</div>
-<div class="notice-content">
-<h6>Important: Full Price When Using Payment Plans</h6>
-<p>Payment plans are charged at the <strong>full original price</strong> without any discount. The discount shown is only available when paying in full upfront.</p>
-</div>
-</div>
-
-<!-- Package Info Section -->
-<div class="package-info-section">
-<h6>Selected Package</h6>
-<div class="package-details">
-<div class="detail-item">
-<span class="detail-label">Package:</span>
-<span class="detail-value" id="modal-package-name">Silver Package</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Delivery Method:</span>
-<span class="detail-value" id="modal-delivery-method">Online Live/Zoom Classes</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Payment Frequency:</span>
-<span class="detail-value" id="modal-payment-frequency">Bi-Weekly</span>
-</div>
-</div>
-</div>
-
 <!-- Payment Schedule Table -->
 <div class="payment-schedule-section">
 <h6>Your Payment Schedule</h6>
+<p class="payment-plan-note">Payment plans will be available as an option during checkout.</p>
 <table class="payment-schedule-table">
 <thead>
 <tr>
@@ -2318,8 +2188,7 @@ Yes! All students get lifetime access to course materials, so you can review con
 </div>
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<button type="button" class="btn btn-enroll">PROCEED TO ENROLLMENT</button>
+<button type="button" class="btn btn-enroll">ENROLL NOW</button>
 </div>
 </div>
 </div>
