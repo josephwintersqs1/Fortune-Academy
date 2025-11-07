@@ -737,6 +737,8 @@ margin-top: 3px;
     color: white;
     position: relative;
     overflow: hidden;
+    border-radius: 16px;
+    margin: 0 20px;
 }
 
 .timeline-hero::before {
@@ -767,6 +769,18 @@ margin-top: 3px;
     font-weight: 800;
     margin-bottom: 16px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: #d4af37;
+}
+
+.timeline-hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.timeline-hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .timeline-subtitle {
@@ -4765,6 +4779,20 @@ $(document).ready(function() {
         observer.observe(step);
     });
 
+    // Observe hero content for fade-in
+    const heroContent = document.querySelector('.timeline-hero-content');
+    if (heroContent) {
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        heroObserver.observe(heroContent);
+    }
+
     // Progress line animation
     function updateProgressLine() {
         const container = document.querySelector('.timeline-steps-container');
@@ -4773,21 +4801,24 @@ $(document).ready(function() {
         if (!container || !progressFill) return;
         
         const containerRect = container.getBoundingClientRect();
-        const containerTop = containerRect.top + window.pageYOffset;
+        const containerTop = containerRect.top + window.scrollY;
         const containerHeight = containerRect.height;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollTop = window.scrollY;
         const windowHeight = window.innerHeight;
         
-        // Calculate how much of the container has been scrolled through
-        const scrollStart = containerTop;
-        const scrollEnd = containerTop + containerHeight - windowHeight;
+        // Calculate scroll progress through the timeline container
+        const scrollPosition = scrollTop + windowHeight;
+        const containerStart = containerTop;
+        const containerEnd = containerTop + containerHeight;
         
-        if (scrollTop < scrollStart) {
+        if (scrollPosition < containerStart) {
             progressFill.style.height = '0%';
-        } else if (scrollTop > scrollEnd) {
+        } else if (scrollPosition > containerEnd) {
             progressFill.style.height = '100%';
         } else {
-            const scrollPercentage = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100;
+            const scrolled = scrollPosition - containerStart;
+            const scrollableHeight = containerHeight;
+            const scrollPercentage = (scrolled / scrollableHeight) * 100;
             progressFill.style.height = `${Math.min(Math.max(scrollPercentage, 0), 100)}%`;
         }
     }
