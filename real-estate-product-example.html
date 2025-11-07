@@ -1587,7 +1587,15 @@ font-size: 14px;
 }
 
 /* Schedule List View */
+.schedule-list {
+display: block;
+}
+
 .schedule-list.d-none {
+display: none;
+}
+
+.schedule-grid.d-none {
 display: none;
 }
 
@@ -3273,20 +3281,20 @@ Yes! All students get lifetime access to course materials, so you can review con
 							</div>
 							<button class="btn btn-outline-secondary" onclick="resetScheduleFilters('course1')">Reset</button>
 							
-							<!-- View Toggle -->
-							<div class="btn-group ml-auto view-toggle-group" role="group">
-								<button type="button" class="btn btn-sm btn-outline-secondary active" onclick="toggleScheduleView('course1', 'grid')">Grid</button>
-								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleScheduleView('course1', 'list')">List</button>
-							</div>
+						<!-- View Toggle -->
+						<div class="btn-group ml-auto view-toggle-group" role="group">
+							<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleScheduleView('course1', 'grid')">Grid</button>
+							<button type="button" class="btn btn-sm btn-outline-secondary active" onclick="toggleScheduleView('course1', 'list')">List</button>
 						</div>
+					</div>
 
-						<!-- Schedule Grid -->
-						<div class="schedule-grid" id="course1ScheduleGrid">
-							<!-- Populated by JavaScript -->
-						</div>
+					<!-- Schedule Grid -->
+					<div class="schedule-grid d-none" id="course1ScheduleGrid">
+						<!-- Populated by JavaScript -->
+					</div>
 
-						<!-- Schedule List -->
-						<div class="schedule-list d-none" id="course1ScheduleList">
+					<!-- Schedule List -->
+					<div class="schedule-list" id="course1ScheduleList">
 							<table class="table table-hover schedule-table">
 								<thead>
 									<tr>
@@ -3335,20 +3343,20 @@ Yes! All students get lifetime access to course materials, so you can review con
 							</div>
 							<button class="btn btn-outline-secondary" onclick="resetScheduleFilters('course2')">Reset</button>
 							
-							<!-- View Toggle -->
-							<div class="btn-group ml-auto view-toggle-group" role="group">
-								<button type="button" class="btn btn-sm btn-outline-secondary active" onclick="toggleScheduleView('course2', 'grid')">Grid</button>
-								<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleScheduleView('course2', 'list')">List</button>
-							</div>
+						<!-- View Toggle -->
+						<div class="btn-group ml-auto view-toggle-group" role="group">
+							<button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleScheduleView('course2', 'grid')">Grid</button>
+							<button type="button" class="btn btn-sm btn-outline-secondary active" onclick="toggleScheduleView('course2', 'list')">List</button>
 						</div>
+					</div>
 
-						<!-- Schedule Grid -->
-						<div class="schedule-grid" id="course2ScheduleGrid">
-							<!-- Populated by JavaScript -->
-						</div>
+					<!-- Schedule Grid -->
+					<div class="schedule-grid d-none" id="course2ScheduleGrid">
+						<!-- Populated by JavaScript -->
+					</div>
 
-						<!-- Schedule List -->
-						<div class="schedule-list d-none" id="course2ScheduleList">
+					<!-- Schedule List -->
+					<div class="schedule-list" id="course2ScheduleList">
 							<table class="table table-hover schedule-table">
 								<thead>
 									<tr>
@@ -3883,10 +3891,10 @@ function toggleScheduleView(courseId, viewType) {
 	
 	// Toggle views
 	if (viewType === 'grid') {
-		gridEl.show();
+		gridEl.removeClass('d-none');
 		listEl.addClass('d-none');
 	} else {
-		gridEl.hide();
+		gridEl.addClass('d-none');
 		listEl.removeClass('d-none');
 	}
 }
