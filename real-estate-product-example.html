@@ -3721,14 +3721,25 @@ See Schedule
                 <p class="compact-description">
                     This mandatory course provides foundational information and practical business skills needed to succeed as a real estate professional. Covers fundamentals, agency regulations, tenant-landlord relationships, and real estate agreements.
                 </p>
+                
+                <!-- Learning Style Selector -->
+                <div class="learning-style-selector" style="margin: 15px 0;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Select Learning Style:</label>
+                    <select class="form-control learning-style-select" id="course1LearningStyle" style="max-width: 250px;">
+                        <option value="">Choose...</option>
+                        <option value="in-person">In-Person Classroom</option>
+                        <option value="online-live">Online Live Virtual</option>
+                        <option value="self-paced">Self-Paced Online</option>
+                    </select>
+                </div>
+                
                 <div class="compact-footer">
                     <div>
                         <span class="compact-price">$263</span>
                         <span class="price-suffix">/ course</span>
                     </div>
                     <div class="compact-buttons">
-                        <a href="#course-selection" class="btn btn-primary-alacarte">Enroll →</a>
-                        <a href="#course-selection" class="btn btn-secondary-alacarte">📅 Schedule</a>
+                        <button class="btn btn-primary-alacarte" onclick="enrollCourse('course1', 'Course 1: 60-Hr Pre-License')">Enroll →</button>
                     </div>
                 </div>
             </div>
