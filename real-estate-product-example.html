@@ -4633,6 +4633,19 @@ Yes! All students get lifetime access to course materials, so you can review con
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="assets/js/jquery.slicknav.js"></script>
 <script src="assets/js/layout.js"></script>
+<script>
+// Prevent modalVideo error if element doesn't exist
+$(document).ready(function() {
+if ($('#video-container').length && typeof $.fn.modalVideo === 'function') {
+$('#video-container').modalVideo({
+youtube: {
+controls: 0,
+nocookie: true
+}
+});
+}
+});
+</script>
 <script src="assets/js/custom.min.js"></script>
 <script>
 // Include header/footer
