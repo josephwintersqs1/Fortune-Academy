@@ -2192,30 +2192,21 @@ Yes! The program is designed for working adults. The self-paced online option gi
 
 <script>
 // FAQ Accordion
-$(document).ready(function() {
-// Remove any existing click handlers to prevent conflicts
-$('.faq-question').off('click');
-
-// Add click handler
-$('.faq-question').on('click', function() {
-$(this).toggleClass('active');
-$(this).next('.faq-answer').slideToggle(300);
+document.addEventListener('DOMContentLoaded', function() {
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+const question = item.querySelector('.faq-question');
+const answer = item.querySelector('.faq-answer');
+if (question && answer) {
+question.addEventListener('click', () => {
+const isActive = question.classList.contains('active');
+question.classList.toggle('active');
+if (!isActive) {
+answer.style.maxHeight = answer.scrollHeight + 'px';
+} else {
+answer.style.maxHeight = '0';
+}
 });
-
-// Tooltips
-$('[data-toggle="tooltip"]').tooltip();
-
-// Smooth scroll for anchor links
-$('a[href^="#"]').on('click', function(e) {
-const href = $(this).attr('href');
-if (href === '#' || !href) return;
-
-const target = $(href);
-if (target.length) {
-e.preventDefault();
-$('html, body').animate({
-scrollTop: target.offset().top - 80
-}, 600);
 }
 });
 });
