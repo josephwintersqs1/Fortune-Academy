@@ -3765,14 +3765,25 @@ See Schedule
                 <p class="compact-description">
                     All candidates are required to complete this 30-hour course on advanced real estate principles. Covers agency disclosure, contracts, ethics, measurements, valuation, and fair housing. Must be taken after completing Course 1.
                 </p>
+                
+                <!-- Learning Style Selector -->
+                <div class="learning-style-selector" style="margin: 15px 0;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Select Learning Style:</label>
+                    <select class="form-control learning-style-select" id="course2LearningStyle" style="max-width: 250px;">
+                        <option value="">Choose...</option>
+                        <option value="in-person">In-Person Classroom</option>
+                        <option value="online-live">Online Live Virtual</option>
+                        <option value="self-paced">Self-Paced Online</option>
+                    </select>
+                </div>
+                
                 <div class="compact-footer">
                     <div>
                         <span class="compact-price">$140</span>
                         <span class="price-suffix">/ course</span>
                     </div>
                     <div class="compact-buttons">
-                        <a href="#course-selection" class="btn btn-primary-alacarte">Enroll →</a>
-                        <a href="#course-selection" class="btn btn-secondary-alacarte">📅 Schedule</a>
+                        <button class="btn btn-primary-alacarte" onclick="enrollCourse('course2', 'Course 2: 30-Hr Advanced Principles')">Enroll →</button>
                     </div>
                 </div>
             </div>
@@ -5362,6 +5373,38 @@ if (testimonialBtn && testimonialCards.length <= 3) {
 testimonialBtn.style.display = 'none';
 }
 });
+
+// Enroll course function for Individual Courses
+function enrollCourse(courseId, courseName) {
+const learningStyleSelect = document.getElementById(courseId + 'LearningStyle');
+const learningStyle = learningStyleSelect.value;
+
+if (!learningStyle) {
+alert('Please select a learning style before enrolling.');
+learningStyleSelect.focus();
+learningStyleSelect.style.borderColor = '#dc3545';
+setTimeout(() => {
+learningStyleSelect.style.borderColor = '';
+}, 2000);
+return;
+}
+
+// Get learning style display name
+const learningStyleText = learningStyleSelect.options[learningStyleSelect.selectedIndex].text;
+
+// In production, this would add to cart and redirect
+console.log('Adding to cart:', {
+course: courseName,
+learningStyle: learningStyleText,
+courseId: courseId
+});
+
+// Simulate cart addition with visual feedback
+alert(`Added to cart:\n${courseName}\nLearning Style: ${learningStyleText}\n\nRedirecting to cart...`);
+
+// Redirect to cart page (update with actual cart URL)
+// window.location.href = '/cart?course=' + courseId + '&style=' + learningStyle;
+}
 
 let instructorsShown = 4;
 const INSTRUCTORS_PER_BATCH = 4;
