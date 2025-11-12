@@ -5378,6 +5378,14 @@ body.industry-compliance {
 }
 
 /* Testimonials Masonry Grid */
+/* Remove blue background from stars */
+.testimonial-item .start-wrap,
+.testimonial-item .rating-start,
+.testimonial-item .rating-start span {
+    background: none !important;
+    background-color: transparent !important;
+}
+
 .testimonials-grid {
     display: block;
     width: 100%;
