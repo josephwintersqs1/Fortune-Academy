@@ -815,20 +815,34 @@
           function initMasonry() {
             if (masonryInstance) {
               masonryInstance.destroy();
+              masonryInstance = null;
             }
             
-            // Small delay to ensure DOM is ready
+            // Initialize Masonry immediately
+            $grid.masonry({
+              itemSelector: '.testimonial-grid-item:not(.testimonial-hidden)',
+              columnWidth: '.testimonial-grid-item',
+              percentPosition: true,
+              horizontalOrder: true,
+              gutter: 0,
+              transitionDuration: '0.3s',
+              fitWidth: false
+            });
+            masonryInstance = $grid.data('masonry');
+            
+            // Force layout after a brief moment to ensure everything is rendered
             setTimeout(function() {
-              $grid.masonry({
-                itemSelector: '.testimonial-grid-item:not(.testimonial-hidden)',
-                columnWidth: '.testimonial-grid-item',
-                percentPosition: true,
-                horizontalOrder: true,
-                gutter: 0,
-                transitionDuration: 0
-              });
-              masonryInstance = $grid.data('masonry');
-            }, 100);
+              if (masonryInstance) {
+                $grid.masonry('layout');
+              }
+            }, 300);
+            
+            // Also force layout on window load (images fully loaded)
+            $(window).on('load', function() {
+              if (masonryInstance) {
+                $grid.masonry('layout');
+              }
+            });
           }
           
           // Show fade overlay when hidden items exist

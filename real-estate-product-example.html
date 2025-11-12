@@ -4498,30 +4498,41 @@ Yes! All students get lifetime access to course materials, so you can review con
 							<strong>📚 About this course:</strong> The 60-hour Pre-License Unit-I course is required first. Classes are offered year-round in Day, Evening, and Weekend formats.
 						</div>
 
-						<!-- Filters -->
-						<div class="schedule-filters">
-							<div class="filter-group">
-								<label>Class Type:</label>
-								<select class="form-control form-select" id="course1TypeFilter" onchange="filterScheduleCourse('course1')">
-									<option value="">All Types</option>
-									<option value="Day">Day</option>
-									<option value="Evening">Evening</option>
-									<option value="Weekend">Weekend</option>
-								</select>
-							</div>
-							<div class="filter-group">
-								<label>Month:</label>
-								<select class="form-control form-select" id="course1MonthFilter" onchange="filterScheduleCourse('course1')">
-									<option value="">All Months</option>
-									<option value="January">January</option>
-									<option value="February">February</option>
-									<option value="March">March</option>
-									<option value="April">April</option>
-									<option value="May">May</option>
-									<option value="June">June</option>
-								</select>
-							</div>
-							<button class="btn btn-outline-secondary" onclick="resetScheduleFilters('course1')">Reset</button>
+					<!-- Filters -->
+					<div class="schedule-filters">
+						<div class="filter-group">
+							<label>Location:</label>
+							<select class="form-control form-select" id="course1LocationFilter" onchange="filterScheduleCourse('course1')">
+								<option value="">All Locations</option>
+								<option value="Columbia">Columbia</option>
+								<option value="Charleston">Charleston</option>
+								<option value="Greenville">Greenville</option>
+								<option value="Myrtle Beach">Myrtle Beach</option>
+								<option value="Online">Online</option>
+							</select>
+						</div>
+						<div class="filter-group">
+							<label>Class Type:</label>
+							<select class="form-control form-select" id="course1TypeFilter" onchange="filterScheduleCourse('course1')">
+								<option value="">All Types</option>
+								<option value="Day">Day</option>
+								<option value="Evening">Evening</option>
+								<option value="Weekend">Weekend</option>
+							</select>
+						</div>
+						<div class="filter-group">
+							<label>Month:</label>
+							<select class="form-control form-select" id="course1MonthFilter" onchange="filterScheduleCourse('course1')">
+								<option value="">All Months</option>
+								<option value="January">January</option>
+								<option value="February">February</option>
+								<option value="March">March</option>
+								<option value="April">April</option>
+								<option value="May">May</option>
+								<option value="June">June</option>
+							</select>
+						</div>
+						<button class="btn btn-outline-secondary" onclick="resetScheduleFilters('course1')">Reset</button>
 							
 						<!-- View Toggle -->
 						<div class="btn-group ml-auto view-toggle-group" role="group">
@@ -4537,20 +4548,21 @@ Yes! All students get lifetime access to course materials, so you can review con
 
 					<!-- Schedule List -->
 					<div class="schedule-list" id="course1ScheduleList">
-							<table class="table table-hover schedule-table">
-								<thead>
-									<tr>
-										<th>Type</th>
-										<th>Start Date</th>
-										<th>End Date</th>
-										<th>Days</th>
-										<th>Timings</th>
-									</tr>
-								</thead>
-								<tbody id="course1ScheduleListBody">
-									<!-- Populated by JavaScript -->
-								</tbody>
-							</table>
+						<table class="table table-hover schedule-table">
+							<thead>
+								<tr>
+									<th>Location</th>
+									<th>Type</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+									<th>Days</th>
+									<th>Timings</th>
+								</tr>
+							</thead>
+							<tbody id="course1ScheduleListBody">
+								<!-- Populated by JavaScript -->
+							</tbody>
+						</table>
 						</div>
 					</div>
 
@@ -4560,22 +4572,33 @@ Yes! All students get lifetime access to course materials, so you can review con
 							<strong>📚 About this course:</strong> The 30-hour Advanced Principles Unit-II course completes your pre-licensing requirement. Take this after completing Course 1.
 						</div>
 
-						<!-- Filters -->
-						<div class="schedule-filters">
-							<div class="filter-group">
-								<label>Class Type:</label>
-								<select class="form-control form-select" id="course2TypeFilter" onchange="filterScheduleCourse('course2')">
-									<option value="">All Types</option>
-									<option value="Day">Day</option>
-									<option value="Evening">Evening</option>
-									<option value="Weekend">Weekend</option>
-								</select>
-							</div>
-							<div class="filter-group">
-								<label>Month:</label>
-								<select class="form-control form-select" id="course2MonthFilter" onchange="filterScheduleCourse('course2')">
-									<option value="">All Months</option>
-									<option value="January">January</option>
+					<!-- Filters -->
+					<div class="schedule-filters">
+						<div class="filter-group">
+							<label>Location:</label>
+							<select class="form-control form-select" id="course2LocationFilter" onchange="filterScheduleCourse('course2')">
+								<option value="">All Locations</option>
+								<option value="Columbia">Columbia</option>
+								<option value="Charleston">Charleston</option>
+								<option value="Greenville">Greenville</option>
+								<option value="Myrtle Beach">Myrtle Beach</option>
+								<option value="Online">Online</option>
+							</select>
+						</div>
+						<div class="filter-group">
+							<label>Class Type:</label>
+							<select class="form-control form-select" id="course2TypeFilter" onchange="filterScheduleCourse('course2')">
+								<option value="">All Types</option>
+								<option value="Day">Day</option>
+								<option value="Evening">Evening</option>
+								<option value="Weekend">Weekend</option>
+							</select>
+						</div>
+						<div class="filter-group">
+							<label>Month:</label>
+							<select class="form-control form-select" id="course2MonthFilter" onchange="filterScheduleCourse('course2')">
+								<option value="">All Months</option>
+								<option value="January">January</option>
 									<option value="February">February</option>
 									<option value="March">March</option>
 									<option value="April">April</option>
@@ -4599,21 +4622,22 @@ Yes! All students get lifetime access to course materials, so you can review con
 
 					<!-- Schedule List -->
 					<div class="schedule-list" id="course2ScheduleList">
-							<table class="table table-hover schedule-table">
-								<thead>
-									<tr>
-										<th>Type</th>
-										<th>Start Date</th>
-										<th>End Date</th>
-										<th>Days</th>
-										<th>Timings</th>
-									</tr>
-								</thead>
-								<tbody id="course2ScheduleListBody">
-									<!-- Populated by JavaScript -->
-								</tbody>
-							</table>
-						</div>
+						<table class="table table-hover schedule-table">
+							<thead>
+								<tr>
+									<th>Location</th>
+									<th>Type</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+									<th>Days</th>
+									<th>Timings</th>
+								</tr>
+							</thead>
+							<tbody id="course2ScheduleListBody">
+								<!-- Populated by JavaScript -->
+							</tbody>
+						</table>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -5006,23 +5030,23 @@ $(document).ready(function() {
 	
 	// Sample schedule data (in production, this would come from backend API)
 	const course1Sessions = [
-		{ code: 'PL-01-001', type: 'Day', start: 'Jan 12, 2026', end: 'Jan 22, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'January', duration: '11 days' },
-		{ code: 'PL-01-002', type: 'Evening', start: 'Jan 20, 2026', end: 'Mar 5, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'January', duration: '7 weeks' },
-		{ code: 'PL-01-003', type: 'Weekend', start: 'Jan 31, 2026', end: 'Feb 21, 2026', days: 'Sat, Sun', time: '8:30 AM - 5:30 PM', month: 'January', duration: '4 weekends' },
-		{ code: 'PL-02-004', type: 'Day', start: 'Feb 9, 2026', end: 'Feb 19, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'February', duration: '11 days' },
-		{ code: 'PL-02-005', type: 'Evening', start: 'Feb 17, 2026', end: 'Apr 2, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'February', duration: '7 weeks' },
-		{ code: 'PL-02-006', type: 'Weekend', start: 'Feb 28, 2026', end: 'Mar 21, 2026', days: 'Sat, Sun', time: '8:30 AM - 5:30 PM', month: 'February', duration: '4 weekends' },
-		{ code: 'PL-03-007', type: 'Day', start: 'Mar 9, 2026', end: 'Mar 19, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'March', duration: '11 days' },
-		{ code: 'PL-03-008', type: 'Evening', start: 'Mar 17, 2026', end: 'Apr 30, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'March', duration: '7 weeks' },
+		{ code: 'PL-01-001', type: 'Day', start: 'Jan 12, 2026', end: 'Jan 22, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'January', duration: '11 days', location: 'Columbia' },
+		{ code: 'PL-01-002', type: 'Evening', start: 'Jan 20, 2026', end: 'Mar 5, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'January', duration: '7 weeks', location: 'Charleston' },
+		{ code: 'PL-01-003', type: 'Weekend', start: 'Jan 31, 2026', end: 'Feb 21, 2026', days: 'Sat, Sun', time: '8:30 AM - 5:30 PM', month: 'January', duration: '4 weekends', location: 'Online' },
+		{ code: 'PL-02-004', type: 'Day', start: 'Feb 9, 2026', end: 'Feb 19, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'February', duration: '11 days', location: 'Greenville' },
+		{ code: 'PL-02-005', type: 'Evening', start: 'Feb 17, 2026', end: 'Apr 2, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'February', duration: '7 weeks', location: 'Columbia' },
+		{ code: 'PL-02-006', type: 'Weekend', start: 'Feb 28, 2026', end: 'Mar 21, 2026', days: 'Sat, Sun', time: '8:30 AM - 5:30 PM', month: 'February', duration: '4 weekends', location: 'Myrtle Beach' },
+		{ code: 'PL-03-007', type: 'Day', start: 'Mar 9, 2026', end: 'Mar 19, 2026', days: 'Mon, Tue, Wed, Thu', time: '8:30 AM - 5:30 PM', month: 'March', duration: '11 days', location: 'Charleston' },
+		{ code: 'PL-03-008', type: 'Evening', start: 'Mar 17, 2026', end: 'Apr 30, 2026', days: 'Tue, Thu', time: '6:00 PM - 10:00 PM', month: 'March', duration: '7 weeks', location: 'Online' },
 	];
 
 	const course2Sessions = [
-		{ code: 'AP-01-001', type: 'Day', start: 'Jan 26, 2026', end: 'Jan 30, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'January', duration: '5 days' },
-		{ code: 'AP-02-003', type: 'Day', start: 'Feb 23, 2026', end: 'Feb 27, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'February', duration: '5 days' },
-		{ code: 'AP-02-002', type: 'Weekend', start: 'Feb 28, 2026', end: 'Mar 14, 2026', days: 'Sat, Sun', time: '8:30 AM - 3:00 PM', month: 'February', duration: '3 weekends' },
-		{ code: 'AP-03-004', type: 'Evening', start: 'Mar 9, 2026', end: 'Apr 8, 2026', days: 'Mon, Wed', time: '6:00 PM - 8:45 PM', month: 'March', duration: '5 weeks' },
-		{ code: 'AP-03-005', type: 'Day', start: 'Mar 23, 2026', end: 'Mar 27, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'March', duration: '5 days' },
-		{ code: 'AP-03-006', type: 'Weekend', start: 'Mar 28, 2026', end: 'Apr 11, 2026', days: 'Sat, Sun', time: '8:30 AM - 3:00 PM', month: 'March', duration: '3 weekends' },
+		{ code: 'AP-01-001', type: 'Day', start: 'Jan 26, 2026', end: 'Jan 30, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'January', duration: '5 days', location: 'Columbia' },
+		{ code: 'AP-02-003', type: 'Day', start: 'Feb 23, 2026', end: 'Feb 27, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'February', duration: '5 days', location: 'Charleston' },
+		{ code: 'AP-02-002', type: 'Weekend', start: 'Feb 28, 2026', end: 'Mar 14, 2026', days: 'Sat, Sun', time: '8:30 AM - 3:00 PM', month: 'February', duration: '3 weekends', location: 'Online' },
+		{ code: 'AP-03-004', type: 'Evening', start: 'Mar 9, 2026', end: 'Apr 8, 2026', days: 'Mon, Wed', time: '6:00 PM - 8:45 PM', month: 'March', duration: '5 weeks', location: 'Greenville' },
+		{ code: 'AP-03-005', type: 'Day', start: 'Mar 23, 2026', end: 'Mar 27, 2026', days: 'Mon-Fri', time: '8:30 AM - 3:00 PM', month: 'March', duration: '5 days', location: 'Myrtle Beach' },
+		{ code: 'AP-03-006', type: 'Weekend', start: 'Mar 28, 2026', end: 'Apr 11, 2026', days: 'Sat, Sun', time: '8:30 AM - 3:00 PM', month: 'March', duration: '3 weekends', location: 'Columbia' },
 	];
 
 	// Store full data for filtering
@@ -5103,6 +5127,7 @@ function renderScheduleList(courseId, sessions) {
 	
 	const html = sessions.map(session => `
 		<tr>
+			<td><span class="location-badge">${session.location}</span></td>
 			<td><span class="session-type type-${session.type.toLowerCase()}">${session.type}</span></td>
 			<td>${session.start}</td>
 			<td>${session.end}</td>
@@ -5116,15 +5141,17 @@ function renderScheduleList(courseId, sessions) {
 
 // Filter course sessions
 function filterScheduleCourse(courseId) {
+	const locationFilter = $('#' + courseId + 'LocationFilter').val();
 	const typeFilter = $('#' + courseId + 'TypeFilter').val();
 	const monthFilter = $('#' + courseId + 'MonthFilter').val();
 	
 	const allData = courseId === 'course1' ? course1FullData : course2FullData;
 	
 	const filtered = allData.filter(session => {
+		const matchesLocation = !locationFilter || session.location === locationFilter;
 		const matchesType = !typeFilter || session.type === typeFilter;
 		const matchesMonth = !monthFilter || session.month === monthFilter;
-		return matchesType && matchesMonth;
+		return matchesLocation && matchesType && matchesMonth;
 	});
 	
 	// Update both views
