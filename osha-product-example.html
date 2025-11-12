@@ -2256,6 +2256,22 @@ fadeInObserver.observe(section);
 
 <script>
 // Show More/Less functionality
+document.addEventListener('DOMContentLoaded', function() {
+// Initialize instructor button visibility
+const instructorCards = document.querySelectorAll('.instructor-card');
+const instructorBtn = document.querySelector('.show-more-btn button[onclick*="toggleInstructors"]');
+if (instructorBtn && instructorCards.length <= 4) {
+instructorBtn.style.display = 'none';
+}
+
+// Initialize testimonial button visibility
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const testimonialBtn = document.querySelector('.show-more-btn button[onclick*="toggleTestimonials"]');
+if (testimonialBtn && testimonialCards.length <= 3) {
+testimonialBtn.style.display = 'none';
+}
+});
+
 let instructorsShown = 4;
 const INSTRUCTORS_PER_BATCH = 4;
 
