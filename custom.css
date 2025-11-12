@@ -5289,7 +5289,7 @@ body.industry-compliance {
 /* ========== HELPFUL LINKS SECTION STYLES ========== */
 /* Helpful Links Section - Redesigned to match Activity Style */
 .helpful-links-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background: #fff;
 }
 
@@ -5308,8 +5308,8 @@ body.industry-compliance {
 }
 
 .helpful-links-section .activity-icon {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--industry-accent, #173C97) 0%, rgba(23, 60, 151, 0.8) 100%);
     margin: 0 auto 20px;
@@ -5335,7 +5335,7 @@ body.industry-compliance {
 }
 
 .helpful-links-section .activity-icon i {
-    font-size: 48px;
+    font-size: 64px;
     color: #fff;
 }
 
@@ -5364,12 +5364,12 @@ body.industry-compliance {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .helpful-links-section .activity-icon {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
     }
     
     .helpful-links-section .activity-icon i {
-        font-size: 40px;
+        font-size: 52px;
     }
     
     .helpful-links-section .activity-content h4 {

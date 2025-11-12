@@ -2193,7 +2193,11 @@ Yes! The program is designed for working adults. The self-paced online option gi
 <script>
 // FAQ Accordion
 $(document).ready(function() {
-$('.faq-question').click(function() {
+// Remove any existing click handlers to prevent conflicts
+$('.faq-question').off('click');
+
+// Add click handler
+$('.faq-question').on('click', function() {
 $(this).toggleClass('active');
 $(this).next('.faq-answer').slideToggle(300);
 });

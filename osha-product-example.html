@@ -2122,7 +2122,11 @@ Yes! Our online self-paced course is fully mobile-responsive and works on smartp
 <script>
 // FAQ Accordion
 $(document).ready(function() {
-$('.faq-question').click(function() {
+// Remove any existing click handlers to prevent conflicts
+$('.faq-question').off('click');
+
+// Add click handler
+$('.faq-question').on('click', function() {
 $(this).toggleClass('active');
 $(this).next('.faq-answer').slideToggle(300);
 });
