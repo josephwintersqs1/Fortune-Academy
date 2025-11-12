@@ -1,0 +1,2226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- favicon -->
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
+<!-- Fonts Awesome CSS -->
+<link rel="stylesheet" type="text/css" href="assets/vendors/fontawesome/css/all.min.css">
+<!-- jquery-ui css -->
+<link rel="stylesheet" type="text/css" href="assets/vendors/jquery-ui/jquery-ui.min.css">
+<!-- google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="style.css?v=1762543705">
+<link rel="stylesheet" type="text/css" href="custom.css?v=1762543705">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal-video@2.4.8/css/modal-video.min.css">
+<title>OSHA 10-Hour Training Course | Fortune Academy</title>
+<style>
+/* OSHA Industry Color Scheme */
+:root {
+--osha-primary: #ea580c;
+--osha-secondary: #f59e0b;
+--osha-accent: #fbbf24;
+}
+
+/* Custom course detail styles */
+.course-meta-box {
+background: white;
+padding: 25px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+margin-bottom: 25px;
+}
+
+.course-meta-box h5 {
+color: var(--osha-primary);
+font-weight: 700;
+margin-bottom: 18px;
+padding-bottom: 12px;
+border-bottom: 2px solid #e5e7eb;
+}
+
+.trust-badge-row {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+margin-top: 20px;
+padding: 20px 0;
+border-top: 1px solid #e5e7eb;
+}
+
+.trust-badge-item {
+text-align: center;
+flex: 1;
+min-width: 120px;
+}
+
+.trust-badge-item i {
+font-size: 2rem;
+color: var(--osha-accent);
+margin-bottom: 8px;
+}
+
+.trust-badge-item strong {
+display: block;
+font-size: 1.1rem;
+color: var(--osha-primary);
+margin-bottom: 3px;
+}
+
+.trust-badge-item span {
+font-size: 0.85rem;
+color: #6b7280;
+}
+
+/* Delivery Method Tabs */
+.tab-container .nav-tabs {
+border-bottom: 3px solid var(--osha-primary);
+margin-bottom: 30px;
+}
+
+.tab-container .nav-tabs .nav-item {
+margin-bottom: -3px;
+}
+
+.tab-container .nav-tabs .nav-link {
+border: none;
+background: #f3f4f6;
+color: #6b7280;
+font-weight: 600;
+padding: 15px 30px;
+margin-right: 5px;
+border-radius: 8px 8px 0 0;
+transition: all 0.3s;
+}
+
+.tab-container .nav-tabs .nav-link:hover {
+background: #e5e7eb;
+color: var(--osha-primary);
+}
+
+.tab-container .nav-tabs .nav-link.active {
+background: var(--osha-primary);
+color: white;
+border-bottom: 3px solid var(--osha-primary);
+}
+
+.tab-container .nav-link i {
+margin-right: 8px;
+}
+
+/* Course Module Cards */
+.module-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 20px;
+margin-bottom: 30px;
+}
+
+.module-card {
+background: white;
+border: 2px solid #e5e7eb;
+border-radius: 10px;
+padding: 20px;
+transition: all 0.3s;
+}
+
+.module-card:hover {
+border-color: var(--osha-secondary);
+box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
+transform: translateY(-3px);
+}
+
+.module-card-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin-bottom: 12px;
+}
+
+.module-number {
+font-weight: 700;
+font-size: 1.1rem;
+color: var(--osha-primary);
+}
+
+.module-hours {
+font-size: 0.85rem;
+color: #6b7280;
+background: #f3f4f6;
+padding: 4px 10px;
+border-radius: 12px;
+}
+
+.module-title {
+font-weight: 600;
+font-size: 1rem;
+color: #1f2937;
+margin-bottom: 8px;
+}
+
+.module-description {
+font-size: 0.9rem;
+color: #6b7280;
+line-height: 1.5;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 25px;
+margin-top: 30px;
+margin-bottom: 40px;
+}
+
+.pricing-card {
+background: white;
+border: 2px solid #e5e7eb;
+border-radius: 12px;
+padding: 30px;
+position: relative;
+transition: all 0.3s;
+display: flex;
+flex-direction: column;
+}
+
+.pricing-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.pricing-card.recommended {
+border-color: var(--osha-primary);
+border-width: 3px;
+}
+
+.pricing-badge {
+position: absolute;
+top: -15px;
+left: 50%;
+transform: translateX(-50%);
+background: var(--osha-accent);
+color: #78350f;
+padding: 6px 20px;
+border-radius: 20px;
+font-weight: 700;
+font-size: 0.85rem;
+letter-spacing: 0.5px;
+}
+
+.pricing-card h4 {
+color: var(--osha-primary);
+font-weight: 700;
+margin-bottom: 15px;
+text-align: center;
+}
+
+.pricing-amount {
+text-align: center;
+margin-bottom: 15px;
+}
+
+.price-current {
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--osha-primary);
+display: block;
+}
+
+.price-per {
+font-size: 0.9rem;
+color: #6b7280;
+display: block;
+margin-top: 5px;
+}
+
+.price-save {
+display: block;
+color: var(--osha-secondary);
+font-weight: 600;
+font-size: 0.9rem;
+margin-top: 5px;
+}
+
+.pricing-features {
+list-style: none;
+padding: 0;
+margin: 20px 0;
+flex-grow: 1;
+}
+
+.pricing-features li {
+padding: 10px 0;
+border-bottom: 1px solid #f3f4f6;
+color: #4b5563;
+}
+
+.pricing-features li:last-child {
+border-bottom: none;
+}
+
+.pricing-features i {
+color: var(--osha-secondary);
+margin-right: 10px;
+}
+
+.pricing-card .btn {
+width: 100%;
+padding: 15px;
+font-weight: 700;
+border-radius: 8px;
+margin-top: 10px;
+}
+
+.pricing-card .btn-primary {
+background: var(--osha-primary);
+border: none;
+color: white;
+}
+
+.pricing-card .btn-primary:hover {
+background: var(--osha-secondary);
+}
+
+/* Certification Badge Section */
+.certification-section {
+background: linear-gradient(135deg, var(--osha-primary) 0%, var(--osha-secondary) 100%);
+padding: 50px 30px;
+border-radius: 12px;
+color: white;
+margin: 40px 0;
+text-align: center;
+}
+
+.certification-section h3 {
+color: white;
+margin-bottom: 20px;
+}
+
+.cert-card {
+background: rgba(255,255,255,0.15);
+border: 2px solid rgba(255,255,255,0.3);
+border-radius: 10px;
+padding: 30px;
+max-width: 600px;
+margin: 0 auto;
+text-align: center;
+backdrop-filter: blur(10px);
+}
+
+.cert-card-icon {
+width: 100px;
+height: 100px;
+background: rgba(255,255,255,0.2);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+font-size: 3rem;
+}
+
+.cert-card h4 {
+color: white;
+margin-bottom: 15px;
+font-size: 1.8rem;
+}
+
+.cert-card p {
+color: rgba(255,255,255,0.9);
+margin-bottom: 15px;
+line-height: 1.6;
+font-size: 1.1rem;
+}
+
+/* Timeline Section */
+.licensing-path-timeline-section {
+background: linear-gradient(180deg, #f9fafb 0%, white 100%);
+padding: 80px 0;
+}
+
+.timeline-hero {
+text-align: center;
+margin-bottom: 60px;
+}
+
+.timeline-hero-content h2 {
+font-size: 2.5rem;
+color: var(--osha-primary);
+margin-bottom: 15px;
+}
+
+.timeline-hero-content p {
+font-size: 1.2rem;
+color: #6b7280;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.timeline-steps-container {
+position: relative;
+max-width: 900px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.timeline-vertical-line {
+position: absolute;
+left: 50%;
+top: 0;
+bottom: 0;
+width: 4px;
+background: #e5e7eb;
+transform: translateX(-50%);
+z-index: 0;
+}
+
+.timeline-progress-fill {
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 0%;
+background: var(--osha-primary);
+transition: height 0.3s ease;
+}
+
+.timeline-animated-step {
+position: relative;
+margin-bottom: 80px;
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.6s ease;
+z-index: 1;
+}
+
+.timeline-animated-step.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.timeline-animated-step:last-child {
+margin-bottom: 0;
+}
+
+.timeline-step-wrapper {
+background: white;
+border-radius: 12px;
+padding: 35px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+margin-left: 60px;
+}
+
+.timeline-animated-step:nth-child(even) .timeline-step-wrapper {
+margin-left: 0;
+margin-right: 60px;
+}
+
+.timeline-step-number {
+position: absolute;
+left: 50%;
+top: 30px;
+transform: translateX(-50%);
+width: 60px;
+height: 60px;
+background: var(--osha-primary);
+border: 5px solid white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+font-weight: 700;
+color: white;
+box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+.timeline-step-content h3 {
+color: var(--osha-primary);
+margin-bottom: 15px;
+font-size: 1.8rem;
+}
+
+.timeline-step-content p {
+color: #6b7280;
+line-height: 1.8;
+margin-bottom: 20px;
+}
+
+.timeline-step-details {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 15px;
+margin: 25px 0;
+}
+
+.timeline-detail-item {
+display: flex;
+gap: 12px;
+padding: 15px;
+background: #f9fafb;
+border-radius: 8px;
+}
+
+.timeline-detail-icon {
+font-size: 1.5rem;
+}
+
+.timeline-detail-label {
+font-size: 0.85rem;
+color: #6b7280;
+margin-bottom: 3px;
+}
+
+.timeline-detail-value {
+font-weight: 600;
+color: var(--osha-primary);
+}
+
+.timeline-step-cta {
+display: inline-block;
+background: var(--osha-primary);
+color: white;
+padding: 15px 35px;
+border-radius: 8px;
+font-weight: 700;
+text-decoration: none;
+transition: all 0.3s;
+margin-top: 15px;
+}
+
+.timeline-step-cta:hover {
+background: var(--osha-secondary);
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+color: white;
+text-decoration: none;
+}
+
+.timeline-completion-banner {
+background: linear-gradient(135deg, var(--osha-primary) 0%, var(--osha-secondary) 100%);
+border-radius: 12px;
+padding: 50px 30px;
+text-align: center;
+margin-top: 60px;
+}
+
+.timeline-completion-banner-content h2 {
+color: white;
+font-size: 2rem;
+margin-bottom: 15px;
+}
+
+.timeline-completion-banner-content p {
+color: rgba(255,255,255,0.9);
+font-size: 1.1rem;
+margin-bottom: 25px;
+}
+
+.timeline-completion-cta {
+display: inline-block;
+background: white;
+color: var(--osha-primary);
+padding: 15px 40px;
+border-radius: 8px;
+font-weight: 700;
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.timeline-completion-cta:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+text-decoration: none;
+color: var(--osha-primary);
+}
+
+/* Instructor Grid */
+.instructor-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 25px;
+margin-top: 25px;
+}
+
+.instructor-card {
+background: white;
+border: 2px solid #e5e7eb;
+border-radius: 12px;
+padding: 25px;
+text-align: center;
+transition: all 0.3s;
+}
+
+.instructor-card:hover {
+border-color: var(--osha-secondary);
+box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
+}
+
+.instructor-photo {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--osha-primary) 0%, var(--osha-secondary) 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.8rem;
+font-weight: 700;
+color: white;
+margin: 0 auto 15px;
+}
+
+.instructor-card h5 {
+color: var(--osha-primary);
+margin-bottom: 5px;
+border: none;
+padding: 0;
+}
+
+.instructor-credentials {
+color: #6b7280;
+font-size: 0.9rem;
+margin-bottom: 10px;
+}
+
+.experience-badge {
+display: inline-block;
+background: #fef3c7;
+color: var(--osha-primary);
+padding: 4px 12px;
+border-radius: 12px;
+font-size: 0.85rem;
+font-weight: 600;
+margin-bottom: 12px;
+}
+
+.instructor-bio {
+color: #6b7280;
+font-size: 0.9rem;
+line-height: 1.6;
+margin-bottom: 15px;
+}
+
+.specialization-tags {
+display: flex;
+gap: 8px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.specialization-tag {
+background: #f3f4f6;
+color: #4b5563;
+padding: 4px 10px;
+border-radius: 12px;
+font-size: 0.8rem;
+}
+
+/* Testimonials */
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 25px;
+margin-top: 25px;
+}
+
+.testimonial-card {
+background: white;
+border: 2px solid #e5e7eb;
+border-radius: 12px;
+padding: 25px;
+position: relative;
+}
+
+.testimonial-quote {
+font-size: 4rem;
+color: var(--osha-accent);
+opacity: 0.2;
+position: absolute;
+top: 10px;
+left: 20px;
+font-family: Georgia, serif;
+line-height: 1;
+}
+
+.testimonial-stars {
+color: #fbbf24;
+margin-bottom: 15px;
+position: relative;
+z-index: 1;
+}
+
+.testimonial-text {
+color: #4b5563;
+line-height: 1.7;
+margin-bottom: 20px;
+position: relative;
+z-index: 1;
+}
+
+.testimonial-author {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.author-photo {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--osha-primary) 0%, var(--osha-secondary) 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+color: white;
+flex-shrink: 0;
+}
+
+.author-info {
+flex-grow: 1;
+}
+
+.author-info strong {
+display: block;
+color: var(--osha-primary);
+margin-bottom: 3px;
+}
+
+.author-info span {
+display: block;
+font-size: 0.85rem;
+color: #6b7280;
+}
+
+.passed-badge {
+background: #fef3c7;
+color: var(--osha-secondary);
+padding: 3px 10px;
+border-radius: 12px;
+font-size: 0.75rem;
+font-weight: 600;
+display: inline-block !important;
+margin-top: 5px;
+}
+
+/* FAQ Section */
+.faq-section .faq-item {
+border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-question {
+width: 100%;
+background: none;
+border: none;
+padding: 20px 0;
+text-align: left;
+font-size: 1.1rem;
+font-weight: 600;
+color: var(--osha-primary);
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: all 0.3s;
+}
+
+.faq-question:hover {
+color: var(--osha-secondary);
+}
+
+.faq-question i {
+transition: transform 0.3s;
+}
+
+.faq-question.active i {
+transform: rotate(180deg);
+}
+
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+
+.faq-answer-content {
+padding-bottom: 20px;
+color: #6b7280;
+line-height: 1.7;
+}
+
+/* Sidebar Styles */
+.widget-bg {
+background: white;
+border-radius: 12px;
+padding: 25px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+margin-bottom: 25px;
+}
+
+.widget-bg h5 {
+color: var(--osha-primary);
+font-weight: 700;
+margin-bottom: 20px;
+padding-bottom: 12px;
+border-bottom: 2px solid #e5e7eb;
+}
+
+.feature-item {
+display: flex;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px solid #f3f4f6;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.feature-item:hover {
+background: #f9fafb;
+padding-left: 10px;
+}
+
+.feature-item:last-child {
+border-bottom: none;
+}
+
+.feature-icon {
+width: 40px;
+height: 40px;
+border-radius: 8px;
+background: linear-gradient(135deg, var(--osha-primary) 0%, var(--osha-secondary) 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.2rem;
+margin-right: 12px;
+flex-shrink: 0;
+}
+
+.feature-text {
+color: #4b5563;
+font-weight: 500;
+flex-grow: 1;
+}
+
+.sidebar-divider {
+height: 1px;
+background: #e5e7eb;
+margin: 20px 0;
+}
+
+.sidebar-cta-btn {
+width: 100%;
+background: var(--osha-primary);
+color: white;
+border: none;
+padding: 15px;
+border-radius: 8px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.sidebar-cta-btn:hover {
+background: var(--osha-secondary);
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+}
+
+.travel-package-content {
+padding: 30px;
+border-radius: 12px;
+background: linear-gradient(rgba(234, 88, 12, 0.9), rgba(245, 158, 11, 0.9)), url(assets/images/img11.jpg);
+background-size: cover;
+background-position: center;
+color: white;
+}
+
+.travel-package-content h5 {
+color: white;
+border: none;
+padding: 0;
+margin-bottom: 10px;
+}
+
+.travel-package-content h3 {
+color: white;
+margin-bottom: 15px;
+}
+
+.travel-package-content p {
+color: rgba(255,255,255,0.9);
+margin-bottom: 20px;
+}
+
+.travel-package-content ul {
+list-style: none;
+padding: 0;
+}
+
+.travel-package-content ul li {
+padding: 8px 0;
+border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.travel-package-content ul li:last-child {
+border-bottom: none;
+}
+
+.travel-package-content ul li a {
+color: white;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+transition: all 0.3s;
+}
+
+.travel-package-content ul li a:hover {
+padding-left: 10px;
+}
+
+/* Fade-in animations */
+.fade-in-section {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.6s ease;
+}
+
+.fade-in-section.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.timeline-animated-step:nth-child(even) .timeline-step-wrapper {
+margin-right: 0;
+margin-left: 60px;
+}
+
+.pricing-grid {
+grid-template-columns: 1fr;
+}
+
+.module-grid {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body class="industry-page industry-osha">
+<div id="siteLoader" class="site-loader">
+<div class="preloader-content">
+<img src="assets/images/loader1.gif" alt="">
+</div>
+</div>
+<div id="page" class="full-page">
+<div data-include="partials/header.html"></div>
+<main id="content" class="site-main">
+<!-- Inner Banner html start-->
+<section class="inner-banner-wrap">
+<div class="inner-baner-container" style="background-image: url(assets/images/osha/construction-safety-banner.jpg);">
+<div class="container">
+<div class="inner-banner-content">
+<h1 class="inner-title">OSHA 10-Hour General Industry Training</h1>
+<p style="color: white; font-size: 1.1rem; margin-top: 15px;">DOL OSHA Authorized | Official 10-Hour Wallet Card</p>
+</div>
+</div>
+</div>
+<div class="inner-shape"></div>
+</section>
+<!-- Inner Banner html end-->
+<div class="single-tour-section">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<div class="single-tour-inner">
+<h2>OSHA 10-HOUR SAFETY TRAINING FOR GENERAL INDUSTRY WORKERS</h2>
+<figure class="feature-image">
+<img src="assets/images/osha/construction-safety-feature.jpg" alt="OSHA 10-Hour Training">
+<div class="package-meta text-center">
+<ul>
+<li>
+<i class="far fa-clock"></i>
+10 Hours Training
+</li>
+<li>
+<i class="fas fa-certificate"></i>
+Official OSHA Card
+</li>
+<li>
+<i class="fas fa-check-circle"></i>
+DOL Authorized
+</li>
+</ul>
+</div>
+</figure>
+
+<!-- Trust Badges Row -->
+<div class="course-meta-box">
+<div class="trust-badge-row">
+<div class="trust-badge-item">
+<i class="fas fa-shield-alt"></i>
+<strong>DOL Authorized</strong>
+<span>OSHA Certified Training</span>
+</div>
+<div class="trust-badge-item">
+<i class="fas fa-id-card"></i>
+<strong>Official Card</strong>
+<span>OSHA 10 Wallet Card</span>
+</div>
+<div class="trust-badge-item">
+<i class="fas fa-globe-americas"></i>
+<strong>Valid Nationwide</strong>
+<span>Recognized Everywhere</span>
+</div>
+<div class="trust-badge-item">
+<i class="fas fa-clock"></i>
+<strong>2 Days</strong>
+<span>Or 6 Weeks Online</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<!-- End of left column with h2, feature-image, course-meta-box -->
+
+<!-- Sidebar -->
+<div class="col-lg-4">
+<div class="sidebar">
+<div class="widget-bg included-features-sidebar">
+<h5>WHAT'S INCLUDED</h5>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Complete OSHA 10-hour curriculum covering essential safety topics">
+<div class="feature-icon">
+<i class="fas fa-hard-hat"></i>
+</div>
+<div class="feature-text">10-Hour Course Content</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Official OSHA 10 wallet card issued by DOL">
+<div class="feature-icon">
+<i class="fas fa-id-card"></i>
+</div>
+<div class="feature-text">OSHA 10 Wallet Card</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Learn from DOL-authorized OSHA instructors">
+<div class="feature-icon">
+<i class="fas fa-chalkboard-teacher"></i>
+</div>
+<div class="feature-text">Expert OSHA Instructors</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Choose in-person, online self-paced, or onsite corporate training">
+<div class="feature-icon">
+<i class="fas fa-laptop"></i>
+</div>
+<div class="feature-text">Flexible Learning Options</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Comprehensive course materials and handouts">
+<div class="feature-icon">
+<i class="fas fa-book"></i>
+</div>
+<div class="feature-text">Course Materials Included</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Official certificate of completion">
+<div class="feature-icon">
+<i class="fas fa-certificate"></i>
+</div>
+<div class="feature-text">Certificate of Completion</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Practice tests to prepare for final exam">
+<div class="feature-icon">
+<i class="fas fa-clipboard-check"></i>
+</div>
+<div class="feature-text">Practice Tests</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Available for groups and corporate clients">
+<div class="feature-icon">
+<i class="fas fa-users"></i>
+</div>
+<div class="feature-text">Group & Corporate Options</div>
+</div>
+
+<div class="feature-item" data-toggle="tooltip" data-placement="left" title="Digital record of your OSHA training">
+<div class="feature-icon">
+<i class="fas fa-file-alt"></i>
+</div>
+<div class="feature-text">Digital Training Record</div>
+</div>
+
+<!-- Divider and CTA -->
+<div class="sidebar-divider"></div>
+<button class="sidebar-cta-btn" data-toggle="modal" data-target="#contactModal">
+<i class="fas fa-comments"></i>
+Got Questions? Contact Us
+</button>
+</div>
+
+<div class="travel-package-content text-center" style="background-image: url(assets/images/img11.jpg); background-size: cover; background-position: center;">
+<h5>MORE TRAINING</h5>
+<h3>OTHER OSHA COURSES</h3>
+<p>Explore our full range of OSHA safety training programs</p>
+<ul style="text-align: left;">
+<li>
+<a href="#"><i class="far fa-arrow-alt-circle-right"></i>OSHA 30-Hour Training</a>
+</li>
+<li>
+<a href="#"><i class="far fa-arrow-alt-circle-right"></i>HAZWOPER Certification</a>
+</li>
+<li>
+<a href="#"><i class="far fa-arrow-alt-circle-right"></i>Safety Leadership Training</a>
+</li>
+<li>
+<a href="courses-programs.html"><i class="far fa-arrow-alt-circle-right"></i>All Safety Courses</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- End of two-column row -->
+
+<!-- Full-width tabs section -->
+<div class="row">
+<div class="col-lg-12">
+<div class="full-width-tabs-section">
+
+<!-- Delivery Method Tabs -->
+<div class="tab-container fade-in-section" id="course-selection">
+<ul class="nav nav-tabs" id="deliveryTabs" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="in-person-tab" data-toggle="tab" href="#in-person" role="tab" aria-controls="in-person" aria-selected="true">
+<i class="fas fa-building"></i> IN-PERSON CLASSROOM
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="self-paced-tab" data-toggle="tab" href="#self-paced" role="tab" aria-controls="self-paced" aria-selected="false">
+<i class="fas fa-laptop"></i> ONLINE SELF-PACED
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="onsite-tab" data-toggle="tab" href="#onsite" role="tab" aria-controls="onsite" aria-selected="false">
+<i class="fas fa-industry"></i> ONSITE CORPORATE
+</a>
+</li>
+</ul>
+
+<div class="tab-content" id="deliveryTabContent">
+<!-- In-Person Tab -->
+<div class="tab-pane fade show active" id="in-person" role="tabpanel" aria-labelledby="in-person-tab">
+<div class="overview-content">
+
+<!-- Section 1: About This Training -->
+<div class="about-course-section">
+<h3>About This Training</h3>
+<p>Our OSHA 10-Hour General Industry training is delivered in a traditional classroom setting at convenient locations. Experience hands-on learning with expert OSHA-authorized instructors, participate in safety discussions with fellow workers, and receive immediate feedback. This 2-day intensive course covers all 10 required hours and prepares you for safer workplace practices.</p>
+</div>
+
+<!-- Section 2: Course Modules -->
+<h3 style="margin-top: 40px;">10-Hour Curriculum</h3>
+<div class="module-grid">
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 1</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Introduction to OSHA</h4>
+<p class="module-description">Overview of OSHA, worker rights, employer responsibilities, and how to file complaints.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 2</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Walking & Working Surfaces</h4>
+<p class="module-description">Slip, trip, and fall hazards, ladder safety, and proper housekeeping practices.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 3</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Exit Routes & Emergency Action</h4>
+<p class="module-description">Emergency evacuation procedures, exit route requirements, and fire prevention.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 4</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Electrical Safety</h4>
+<p class="module-description">Electrical hazards, safe work practices, and lockout/tagout procedures.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 5</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Personal Protective Equipment</h4>
+<p class="module-description">Proper selection, use, and maintenance of PPE for various workplace hazards.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 6</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Hazard Communication</h4>
+<p class="module-description">Chemical safety, Safety Data Sheets (SDS), and GHS labeling system.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 7</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Materials Handling</h4>
+<p class="module-description">Safe lifting techniques, forklift safety, and material storage best practices.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 8</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Machine Guarding</h4>
+<p class="module-description">Protecting workers from machine hazards and proper guarding requirements.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 9</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Fall Protection</h4>
+<p class="module-description">Fall hazards, protection systems, and safety equipment in general industry settings.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 10</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Health Hazards in Industry</h4>
+<p class="module-description">Recognition of health hazards including noise, chemicals, and ergonomic issues.</p>
+</div>
+</div>
+
+<!-- Section 3: Choose Your Package -->
+<h3 id="pricing-packages" style="margin-top: 40px;">Enrollment Options</h3>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h4>Individual Enrollment</h4>
+<div class="pricing-amount">
+<span class="price-current">$125</span>
+<span class="price-per">per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> 10-Hour OSHA Training</li>
+<li><i class="fas fa-check"></i> 2-Day Classroom Schedule</li>
+<li><i class="fas fa-check"></i> Official OSHA 10 Card</li>
+<li><i class="fas fa-check"></i> Course Materials Included</li>
+<li><i class="fas fa-check"></i> Certificate of Completion</li>
+</ul>
+<button class="btn btn-primary">Enroll Now</button>
+</div>
+
+<div class="pricing-card recommended">
+<span class="pricing-badge">Best for Teams</span>
+<h4>Group Training (5-10)</h4>
+<div class="pricing-amount">
+<span class="price-current">$110</span>
+<span class="price-per">per person</span>
+<span class="price-save">Save $15 per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Everything in Individual</li>
+<li><i class="fas fa-check"></i> Group Discount Pricing</li>
+<li><i class="fas fa-check"></i> Flexible Scheduling</li>
+<li><i class="fas fa-check"></i> Team-Based Learning</li>
+<li><i class="fas fa-check"></i> Bulk Certificates</li>
+</ul>
+<button class="btn btn-primary">Request Group Quote</button>
+</div>
+
+<div class="pricing-card">
+<h4>Corporate Package (10+)</h4>
+<div class="pricing-amount">
+<span class="price-current">$95</span>
+<span class="price-per">per person</span>
+<span class="price-save">Save $30 per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Everything in Group</li>
+<li><i class="fas fa-check"></i> Maximum Discount</li>
+<li><i class="fas fa-check"></i> Priority Scheduling</li>
+<li><i class="fas fa-check"></i> Dedicated Coordinator</li>
+<li><i class="fas fa-check"></i> Custom Reporting</li>
+<li><i class="fas fa-check"></i> Onsite Option Available</li>
+</ul>
+<button class="btn btn-primary">Contact for Corporate Rate</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Online Self-Paced Tab -->
+<div class="tab-pane fade" id="self-paced" role="tabpanel" aria-labelledby="self-paced-tab">
+<div class="overview-content">
+
+<!-- Section 1: About This Training -->
+<div class="about-course-section">
+<h3>About This Training</h3>
+<p>Complete your OSHA 10-Hour General Industry training entirely online at your own pace. Access the course 24/7 from any device, watch video lectures, review safety scenarios, and take quizzes to test your knowledge. Perfect for busy workers who need flexibility. Complete within 6 weeks with at least 2 hours per day to allow proper comprehension and retention.</p>
+</div>
+
+<!-- Section 2: Course Modules -->
+<h3 style="margin-top: 40px;">10-Hour Curriculum</h3>
+<div class="module-grid">
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 1</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Introduction to OSHA</h4>
+<p class="module-description">Interactive overview of OSHA standards, rights, and responsibilities with video content.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 2</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Walking & Working Surfaces</h4>
+<p class="module-description">Self-paced learning on fall hazards with real-world examples and safety demonstrations.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 3</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Exit Routes & Emergency Action</h4>
+<p class="module-description">Online training on emergency procedures with interactive evacuation planning exercises.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 4</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Electrical Safety</h4>
+<p class="module-description">Video-based electrical hazard training with animated safety scenarios.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 5</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Personal Protective Equipment</h4>
+<p class="module-description">Interactive PPE selection and use training with visual demonstrations.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 6</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Hazard Communication</h4>
+<p class="module-description">Online HazCom training with downloadable SDS templates and GHS label examples.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 7</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Materials Handling</h4>
+<p class="module-description">Self-paced materials handling safety with video demonstrations of proper techniques.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 8</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Machine Guarding</h4>
+<p class="module-description">Interactive machine safety training with 3D guarding visualization examples.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 9</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Fall Protection</h4>
+<p class="module-description">Online fall protection training with equipment selection guides and safety demos.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number">Module 10</span>
+<span class="module-hours">1 Hour</span>
+</div>
+<h4 class="module-title">Health Hazards in Industry</h4>
+<p class="module-description">Self-paced health hazard recognition training with case studies and examples.</p>
+</div>
+</div>
+
+<!-- Section 3: Choose Your Package -->
+<h3 style="margin-top: 40px;">Enrollment Options</h3>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h4>Individual Online</h4>
+<div class="pricing-amount">
+<span class="price-current">$75</span>
+<span class="price-per">per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> 10-Hour OSHA Online Training</li>
+<li><i class="fas fa-check"></i> 6-Week Access Period</li>
+<li><i class="fas fa-check"></i> Official OSHA 10 Card</li>
+<li><i class="fas fa-check"></i> 24/7 Course Access</li>
+<li><i class="fas fa-check"></i> Certificate of Completion</li>
+</ul>
+<button class="btn btn-primary">Start Training Now</button>
+</div>
+
+<div class="pricing-card recommended">
+<span class="pricing-badge">Most Flexible</span>
+<h4>Group Online (5-10)</h4>
+<div class="pricing-amount">
+<span class="price-current">$65</span>
+<span class="price-per">per person</span>
+<span class="price-save">Save $10 per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Everything in Individual</li>
+<li><i class="fas fa-check"></i> Group Management Portal</li>
+<li><i class="fas fa-check"></i> Progress Tracking Dashboard</li>
+<li><i class="fas fa-check"></i> Bulk Enrollment</li>
+<li><i class="fas fa-check"></i> Completion Reports</li>
+</ul>
+<button class="btn btn-primary">Enroll Team Online</button>
+</div>
+
+<div class="pricing-card">
+<h4>Corporate Online (10+)</h4>
+<div class="pricing-amount">
+<span class="price-current">$55</span>
+<span class="price-per">per person</span>
+<span class="price-save">Save $20 per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Everything in Group</li>
+<li><i class="fas fa-check"></i> Maximum Savings</li>
+<li><i class="fas fa-check"></i> Custom Branding Option</li>
+<li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+<li><i class="fas fa-check"></i> Advanced Analytics</li>
+<li><i class="fas fa-check"></i> API Integration Available</li>
+</ul>
+<button class="btn btn-primary">Request Corporate Access</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Onsite Corporate Tab -->
+<div class="tab-pane fade" id="onsite" role="tabpanel" aria-labelledby="onsite-tab">
+<div class="overview-content">
+
+<!-- Section 1: About This Training -->
+<div class="about-course-section">
+<h3>About This Training</h3>
+<p>Bring OSHA 10-Hour training directly to your workplace. Our certified instructors travel to your facility to deliver comprehensive safety training customized to your industry and specific hazards. Minimize downtime, maximize convenience, and ensure all your workers receive consistent, high-quality OSHA training. Ideal for large teams, remote locations, or companies preferring on-premises training.</p>
+</div>
+
+<!-- Section 2: Onsite Benefits -->
+<h3 style="margin-top: 40px;">Onsite Training Benefits</h3>
+<div class="module-grid">
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number"><i class="fas fa-map-marker-alt"></i></span>
+</div>
+<h4 class="module-title">At Your Location</h4>
+<p class="module-description">We come to you—no travel required for your employees. Train at your facility with your equipment.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number"><i class="fas fa-calendar-alt"></i></span>
+</div>
+<h4 class="module-title">Flexible Scheduling</h4>
+<p class="module-description">Choose dates and times that work for your operations. Weekend and evening options available.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number"><i class="fas fa-industry"></i></span>
+</div>
+<h4 class="module-title">Customized Content</h4>
+<p class="module-description">Training tailored to your specific industry, hazards, and workplace conditions.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number"><i class="fas fa-users"></i></span>
+</div>
+<h4 class="module-title">Team Training</h4>
+<p class="module-description">Build a unified safety culture with team-based learning and group discussions.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number"><i class="fas fa-clipboard-check"></i></span>
+</div>
+<h4 class="module-title">Comprehensive Support</h4>
+<p class="module-description">Dedicated coordinator handles logistics, materials, and follow-up documentation.</p>
+</div>
+
+<div class="module-card">
+<div class="module-card-header">
+<span class="module-number"><i class="fas fa-dollar-sign"></i></span>
+</div>
+<h4 class="module-title">Cost-Effective</h4>
+<p class="module-description">Save on travel costs and minimize production downtime with efficient onsite delivery.</p>
+</div>
+</div>
+
+<!-- Section 3: Choose Your Package -->
+<h3 style="margin-top: 40px;">Onsite Training Options</h3>
+<div class="pricing-grid">
+<div class="pricing-card">
+<h4>Small Team (10-20)</h4>
+<div class="pricing-amount">
+<span class="price-current">$95</span>
+<span class="price-per">per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Onsite OSHA Instructor</li>
+<li><i class="fas fa-check"></i> All Course Materials</li>
+<li><i class="fas fa-check"></i> Official OSHA 10 Cards</li>
+<li><i class="fas fa-check"></i> Flexible Schedule</li>
+<li><i class="fas fa-check"></i> Setup & Coordination</li>
+</ul>
+<button class="btn btn-primary">Request Onsite Quote</button>
+</div>
+
+<div class="pricing-card recommended">
+<span class="pricing-badge">Most Popular</span>
+<h4>Medium Team (21-50)</h4>
+<div class="pricing-amount">
+<span class="price-current">$85</span>
+<span class="price-per">per person</span>
+<span class="price-save">Save $10 per person</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Everything in Small Team</li>
+<li><i class="fas fa-check"></i> Volume Discount</li>
+<li><i class="fas fa-check"></i> Custom Schedule Options</li>
+<li><i class="fas fa-check"></i> Completion Tracking</li>
+<li><i class="fas fa-check"></i> Digital Records</li>
+</ul>
+<button class="btn btn-primary">Schedule Onsite Training</button>
+</div>
+
+<div class="pricing-card">
+<h4>Large Team (50+)</h4>
+<div class="pricing-amount">
+<span class="price-current">Custom</span>
+<span class="price-per">volume pricing</span>
+<span class="price-save">Maximum savings</span>
+</div>
+<ul class="pricing-features">
+<li><i class="fas fa-check"></i> Everything in Medium Team</li>
+<li><i class="fas fa-check"></i> Best Volume Pricing</li>
+<li><i class="fas fa-check"></i> Multiple Instructor Teams</li>
+<li><i class="fas fa-check"></i> Multi-Location Support</li>
+<li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+<li><i class="fas fa-check"></i> Enterprise Reporting</li>
+</ul>
+<button class="btn btn-primary">Contact for Enterprise Quote</button>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- End of full-width tabs section -->
+
+<!-- Certification Section -->
+<section class="certification-section">
+<h3>Official OSHA 10-Hour Certification</h3>
+<p style="max-width: 800px; margin: 0 auto 30px;">Upon successful completion of the 10-hour course and final exam, you will receive an official Department of Labor OSHA 10-Hour wallet card recognized nationwide by employers and job sites.</p>
+
+<div class="cert-card">
+<div class="cert-card-icon">
+<i class="fas fa-id-card"></i>
+</div>
+<h4>Official OSHA 10 Card</h4>
+<p>Your OSHA 10-Hour card is issued directly by the Department of Labor and includes your name, completion date, and unique identification number. The card is valid nationwide and recognized by all employers requiring OSHA 10 certification. Cards are typically issued within 30 days of course completion.</p>
+</div>
+</section>
+
+<!-- Animated Licensing Path Timeline - Full Width Section -->
+<section class="licensing-path-timeline-section">
+<!-- Hero Section -->
+<div class="timeline-hero">
+<div class="timeline-hero-content">
+<h2>Your Path to OSHA Certification</h2>
+<p>Complete your OSHA 10-Hour training in just 4 simple steps</p>
+</div>
+</div>
+
+<div class="container">
+<div class="timeline-steps-container">
+<!-- Vertical Line -->
+<div class="timeline-vertical-line">
+<div class="timeline-progress-fill" id="timelineProgressFill"></div>
+</div>
+
+<!-- Step 1 -->
+<div class="timeline-animated-step">
+<div class="timeline-step-number">1</div>
+<div class="timeline-step-wrapper">
+<div class="timeline-step-content">
+<h3>Choose Your Industry & Enroll</h3>
+<p>Select either General Industry or Construction Industry training based on your workplace. Choose your preferred delivery method—in-person classroom, online self-paced, or onsite corporate training—and complete enrollment.</p>
+
+<div class="timeline-step-details">
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">🏭</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Industry Options</div>
+<div class="timeline-detail-value">Construction or General</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">📝</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Prerequisites</div>
+<div class="timeline-detail-value">None Required</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">⏱️</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Time to Start</div>
+<div class="timeline-detail-value">Immediate Access</div>
+</div>
+</div>
+</div>
+
+<a href="#course-selection" class="timeline-step-cta">Enroll Today</a>
+</div>
+</div>
+</div>
+
+<!-- Step 2 -->
+<div class="timeline-animated-step">
+<div class="timeline-step-number">2</div>
+<div class="timeline-step-wrapper">
+<div class="timeline-step-content">
+<h3>Complete 10-Hour Training</h3>
+<p>Work through all 10 required hours of OSHA safety training covering essential topics including hazard recognition, emergency procedures, electrical safety, PPE, and more. Learn from expert instructors and engage with interactive content designed for maximum retention.</p>
+
+<div class="timeline-step-details">
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">📚</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Training Duration</div>
+<div class="timeline-detail-value">10 Hours Required</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">🎯</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Format</div>
+<div class="timeline-detail-value">2 Days or 6 Weeks Online</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">👨‍🏫</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Instructors</div>
+<div class="timeline-detail-value">DOL OSHA Authorized</div>
+</div>
+</div>
+</div>
+
+<a href="#course-selection" class="timeline-step-cta">View Curriculum</a>
+</div>
+</div>
+</div>
+
+<!-- Step 3 -->
+<div class="timeline-animated-step">
+<div class="timeline-step-number">3</div>
+<div class="timeline-step-wrapper">
+<div class="timeline-step-content">
+<h3>Pass Final Exam</h3>
+<p>Demonstrate your knowledge of OSHA standards and workplace safety by completing the final assessment. The exam covers all topics from the 10-hour course and tests your understanding of critical safety concepts and procedures.</p>
+
+<div class="timeline-step-details">
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">📝</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Exam Format</div>
+<div class="timeline-detail-value">Multiple Choice Assessment</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">✅</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Passing Score</div>
+<div class="timeline-detail-value">70% or Higher</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">🔄</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Retakes</div>
+<div class="timeline-detail-value">Included if Needed</div>
+</div>
+</div>
+</div>
+
+<a href="#course-selection" class="timeline-step-cta">Start Your Training</a>
+</div>
+</div>
+</div>
+
+<!-- Step 4 -->
+<div class="timeline-animated-step">
+<div class="timeline-step-number">4</div>
+<div class="timeline-step-wrapper">
+<div class="timeline-step-content">
+<h3>Receive Your OSHA 10 Card</h3>
+<p>Upon successful completion, your information is submitted to the Department of Labor for official OSHA 10-Hour card issuance. Your wallet card will arrive within 30 days and is valid nationwide for any employer or job site requiring OSHA 10 certification.</p>
+
+<div class="timeline-step-details">
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">📬</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Card Delivery</div>
+<div class="timeline-detail-value">30 Days from DOL</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">🌎</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Validity</div>
+<div class="timeline-detail-value">Valid Nationwide</div>
+</div>
+</div>
+<div class="timeline-detail-item">
+<div class="timeline-detail-icon">🎓</div>
+<div class="timeline-detail-content">
+<div class="timeline-detail-label">Digital Copy</div>
+<div class="timeline-detail-value">Immediate Proof</div>
+</div>
+</div>
+</div>
+
+<a href="#course-selection" class="timeline-step-cta">Get Started</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Completion Banner -->
+<div class="timeline-completion-banner">
+<div class="timeline-completion-banner-content">
+<h2>⚠️ Ready to Get Certified?</h2>
+<p>Join thousands of workers who have completed their OSHA 10-Hour training with Fortune Academy</p>
+<a href="#course-selection" class="timeline-completion-cta">
+Choose Your Training
+<span style="font-size: 24px;">→</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Additional Content Sections -->
+<div class="row">
+<div class="col-lg-12">
+
+<!-- Why Fortune Academy Section -->
+<div class="course-meta-box fade-in-section" style="margin-top: 50px;">
+<h5>Why Choose Fortune Academy for OSHA Training?</h5>
+<div class="row">
+<div class="col-md-4 text-center" style="margin-bottom: 25px;">
+<i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--osha-accent); margin-bottom: 10px;"></i>
+<h6 style="margin-bottom: 8px; color: var(--osha-primary);">DOL OSHA Authorized</h6>
+<p style="color: #6b7280; margin-bottom: 0;">Official training provider authorized by the Department of Labor</p>
+</div>
+<div class="col-md-4 text-center" style="margin-bottom: 25px;">
+<i class="fas fa-id-card" style="font-size: 2.5rem; color: var(--osha-accent); margin-bottom: 10px;"></i>
+<h6 style="margin-bottom: 8px; color: var(--osha-primary);">Official OSHA Cards</h6>
+<p style="color: #6b7280; margin-bottom: 0;">Receive DOL-issued wallet cards recognized nationwide</p>
+</div>
+<div class="col-md-4 text-center" style="margin-bottom: 25px;">
+<i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; color: var(--osha-accent); margin-bottom: 10px;"></i>
+<h6 style="margin-bottom: 8px; color: var(--osha-primary);">Expert Instructors</h6>
+<p style="color: #6b7280; margin-bottom: 0;">Learn from experienced safety professionals with real-world expertise</p>
+</div>
+<div class="col-md-4 text-center" style="margin-bottom: 25px;">
+<i class="fas fa-clock" style="font-size: 2.5rem; color: var(--osha-accent); margin-bottom: 10px;"></i>
+<h6 style="margin-bottom: 8px; color: var(--osha-primary);">Flexible Options</h6>
+<p style="color: #6b7280; margin-bottom: 0;">Choose from in-person, online, or onsite corporate training</p>
+</div>
+<div class="col-md-4 text-center" style="margin-bottom: 25px;">
+<i class="fas fa-users" style="font-size: 2.5rem; color: var(--osha-accent); margin-bottom: 10px;"></i>
+<h6 style="margin-bottom: 8px; color: var(--osha-primary);">Group Discounts</h6>
+<p style="color: #6b7280; margin-bottom: 0;">Save money when training teams and larger groups</p>
+</div>
+<div class="col-md-4 text-center" style="margin-bottom: 25px;">
+<i class="fas fa-certificate" style="font-size: 2.5rem; color: var(--osha-accent); margin-bottom: 10px;"></i>
+<h6 style="margin-bottom: 8px; color: var(--osha-primary);">Fast Card Processing</h6>
+<p style="color: #6b7280; margin-bottom: 0;">Quick turnaround on card issuance and digital certificates</p>
+</div>
+</div>
+</div>
+
+<!-- Our Instructors Section -->
+<div class="course-meta-box fade-in-section" style="margin-top: 30px;">
+<h5>Meet Our Safety Instructors</h5>
+<div class="instructor-grid">
+<div class="instructor-card">
+<div class="instructor-photo">MJ</div>
+<h5>Michael Johnson</h5>
+<p class="instructor-credentials">OSHA Authorized Trainer, CSP</p>
+<span class="experience-badge">20+ Years</span>
+<p class="instructor-bio">Certified Safety Professional with extensive construction and general industry experience.</p>
+<div class="specialization-tags">
+<span class="specialization-tag">Construction</span>
+<span class="specialization-tag">General Industry</span>
+</div>
+</div>
+<div class="instructor-card">
+<div class="instructor-photo">SR</div>
+<h5>Sarah Rodriguez</h5>
+<p class="instructor-credentials">OSHA Authorized Trainer, CIH</p>
+<span class="experience-badge">15+ Years</span>
+<p class="instructor-bio">Industrial hygienist specializing in workplace health and safety hazard assessment.</p>
+<div class="specialization-tags">
+<span class="specialization-tag">Health Hazards</span>
+<span class="specialization-tag">PPE</span>
+</div>
+</div>
+<div class="instructor-card">
+<div class="instructor-photo">DT</div>
+<h5>David Thompson</h5>
+<p class="instructor-credentials">OSHA Authorized Trainer, CHST</p>
+<span class="experience-badge">18+ Years</span>
+<p class="instructor-bio">Construction health and safety technician with hands-on field experience.</p>
+<div class="specialization-tags">
+<span class="specialization-tag">Fall Protection</span>
+<span class="specialization-tag">Electrical</span>
+</div>
+</div>
+<div class="instructor-card">
+<div class="instructor-photo">AC</div>
+<h5>Angela Chen</h5>
+<p class="instructor-credentials">OSHA Authorized Trainer, ARM</p>
+<span class="experience-badge">12+ Years</span>
+<p class="instructor-bio">Risk management expert focusing on workplace safety program development.</p>
+<div class="specialization-tags">
+<span class="specialization-tag">Compliance</span>
+<span class="specialization-tag">Training</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Student Testimonials Section -->
+<div class="course-meta-box fade-in-section" style="margin-top: 30px;">
+<h5>What Our Students Say</h5>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<div class="testimonial-quote">"</div>
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">Fortune Academy made OSHA training easy and convenient. The online format was perfect for my schedule, and I received my official card within three weeks. Highly recommend!</p>
+<div class="testimonial-author">
+<div class="author-photo">JM</div>
+<div class="author-info">
+<strong>John Martinez</strong>
+<span>Construction Worker</span>
+<span class="passed-badge">OSHA 10 Certified</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-quote">"</div>
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">We trained our entire crew of 25 workers with Fortune Academy's onsite program. The instructor was knowledgeable, engaging, and made safety training relevant to our specific job site. Great experience!</p>
+<div class="testimonial-author">
+<div class="author-photo">DW</div>
+<div class="author-info">
+<strong>David Wilson</strong>
+<span>Safety Manager</span>
+<span class="passed-badge">Corporate Client</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-quote">"</div>
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<p class="testimonial-text">The in-person class was excellent. Real-world examples, hands-on demonstrations, and plenty of time for questions. I feel much more confident about workplace safety now.</p>
+<div class="testimonial-author">
+<div class="author-photo">LC</div>
+<div class="author-info">
+<strong>Lisa Chen</strong>
+<span>Manufacturing Technician</span>
+<span class="passed-badge">OSHA 10 Certified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="course-meta-box faq-section fade-in-section" style="margin-top: 30px;">
+<h5>Frequently Asked Questions</h5>
+<div class="faq-item">
+<button class="faq-question">
+How long does the OSHA 10-Hour course take to complete?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+The in-person classroom course is completed in 2 full days. The online self-paced version must be completed within 6 weeks, with OSHA requiring you to spend at least 2 hours per day on the course to ensure proper comprehension and retention.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+Is the OSHA 10 card valid nationwide?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Yes! The OSHA 10-Hour card issued by the Department of Labor is recognized nationwide by all employers, contractors, and job sites that require OSHA 10 certification. Your card never expires, though some employers may require refresher training every few years.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+What's the difference between Construction and General Industry?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Construction Industry training is designed for workers in building, demolition, and construction-related fields. General Industry training is for workers in manufacturing, warehousing, retail, healthcare, and other non-construction settings. Choose the course that matches your workplace environment.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+How soon will I receive my OSHA 10 card?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Official OSHA 10 wallet cards are issued by the Department of Labor and typically arrive 3-4 weeks after course completion. You'll receive a temporary digital certificate immediately upon passing that you can use as proof of completion while waiting for your physical card.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+Do you offer group or corporate discounts?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Yes! We offer significant discounts for groups of 5 or more. Corporate packages for 10+ students receive the best pricing, and we can also bring training directly to your workplace with our onsite corporate training option. Contact us for a custom quote.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+Is Fortune Academy DOL OSHA authorized?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Yes, Fortune Academy is an authorized OSHA training provider approved by the Department of Labor. All our instructors are OSHA authorized trainers, and we issue official DOL OSHA 10-Hour cards upon successful completion.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+What if I don't pass the final exam?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Don't worry! If you don't achieve the required 70% passing score, you can retake the exam at no additional cost. We provide study materials and support to help you succeed on your next attempt.
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+Can I complete the training on my mobile device?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Yes! Our online self-paced course is fully mobile-responsive and works on smartphones, tablets, and computers. You can learn on any device with internet access, making it easy to complete training during breaks, commutes, or at home.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<!-- End of additional content sections -->
+
+</div>
+</div>
+</main>
+<div data-include="partials/footer.html"></div>
+<a id="backTotop" href="#" class="to-top-icon">
+<i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- Contact Form Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<form id="contactForm">
+<div class="form-group">
+<label for="fullName">Full Name <span class="required-asterisk">*</span></label>
+<input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Enter your full name">
+</div>
+
+<div class="form-group">
+<label for="email">Email Address <span class="required-asterisk">*</span></label>
+<input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+</div>
+
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" class="form-control" id="phone" name="phone" placeholder="(123) 456-7890">
+</div>
+
+<div class="form-group">
+<label for="comments">Comments/Questions <span class="required-asterisk">*</span></label>
+<textarea class="form-control" id="comments" name="comments" rows="4" required placeholder="How can we help you?"></textarea>
+</div>
+
+<button type="submit" class="btn btn-submit-contact">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- JavaScript -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/custom.min.js"></script>
+
+<script>
+// FAQ Accordion
+$(document).ready(function() {
+$('.faq-question').click(function() {
+$(this).toggleClass('active');
+$(this).next('.faq-answer').slideToggle(300);
+});
+
+// Tooltips
+$('[data-toggle="tooltip"]').tooltip();
+
+// Smooth scroll for anchor links
+$('a[href^="#"]').on('click', function(e) {
+const href = $(this).attr('href');
+if (href === '#' || !href) return;
+
+const target = $(href);
+if (target.length) {
+e.preventDefault();
+$('html, body').animate({
+scrollTop: target.offset().top - 80
+}, 600);
+}
+});
+});
+</script>
+
+<!-- Animated Timeline JavaScript -->
+<script>
+(function() {
+// Scroll-triggered animations for timeline steps
+const observerOptions = {
+threshold: 0.3,
+rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, observerOptions);
+
+// Observe all timeline steps
+document.querySelectorAll('.timeline-animated-step').forEach(step => {
+observer.observe(step);
+});
+
+// Observe hero content for fade-in
+const heroContent = document.querySelector('.timeline-hero-content');
+if (heroContent) {
+const heroObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.2 });
+
+heroObserver.observe(heroContent);
+}
+
+// Observe completion banner for fade-in
+const completionBanner = document.querySelector('.timeline-completion-banner-content');
+if (completionBanner) {
+const bannerObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.2 });
+
+bannerObserver.observe(completionBanner);
+}
+
+// Progress line animation
+function updateProgressLine() {
+const container = document.querySelector('.timeline-steps-container');
+const progressFill = document.getElementById('timelineProgressFill');
+
+if (!container || !progressFill) return;
+
+const containerRect = container.getBoundingClientRect();
+const containerTop = containerRect.top + window.scrollY;
+const containerHeight = containerRect.height;
+const scrollTop = window.scrollY;
+const windowHeight = window.innerHeight;
+
+// Calculate scroll progress through the timeline container
+const scrollPosition = scrollTop + windowHeight;
+const containerStart = containerTop;
+const containerEnd = containerTop + containerHeight;
+
+if (scrollPosition < containerStart) {
+progressFill.style.height = '0%';
+} else if (scrollPosition > containerEnd) {
+progressFill.style.height = '100%';
+} else {
+const scrolled = scrollPosition - containerStart;
+const scrollableHeight = containerHeight;
+const scrollPercentage = (scrolled / scrollableHeight) * 100;
+progressFill.style.height = `${Math.min(Math.max(scrollPercentage, 0), 100)}%`;
+}
+}
+
+// Update on scroll
+window.addEventListener('scroll', updateProgressLine);
+
+// Initial update
+updateProgressLine();
+})();
+
+// Page Section Fade-In Animations
+(function() {
+const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+const fadeInObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, {
+threshold: 0.15,
+rootMargin: '0px 0px -50px 0px'
+});
+
+fadeInSections.forEach(section => {
+fadeInObserver.observe(section);
+});
+})();
+</script>
+
+</body>
+</html>
+

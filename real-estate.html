@@ -28,7 +28,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
       <!-- Custom CSS -->
       <link rel="stylesheet" type="text/css" href="style.css?bust=1762497475">
-      <link rel="stylesheet" type="text/css" href="custom.css?bust=1762538442">
+      <link rel="stylesheet" type="text/css" href="custom.css?bust=1762499999">
       <link rel="stylesheet" type="text/css" href="assets/css/hero-form.css?v=1762478000">
       <title>Fortune Academy | Real Estate</title>
    </head>
@@ -486,19 +486,6 @@
     </div>
     
     <div class="learning-styles-carousel">
-      <!-- Slide 1: Real Estate Hero Banner (NEW) -->
-      <div class="learning-style-slide">
-        <div class="learning-style-card learning-style-card--banner">
-          <div class="learning-style-image" style="background-image: url(assets/images/index_hero/banner_real_estate.jpg);">
-            <div class="banner-overlay">
-              <h3>Start Your Real Estate Career Today</h3>
-              <p>Get licensed with Fortune Academy's comprehensive training programs</p>
-              <a href="real-estate.html" class="btn-learning-cta">Explore Courses</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
       <!-- Self-Paced Learning -->
       <div class="learning-style-slide">
         <div class="learning-style-card">
@@ -541,7 +528,7 @@
         </div>
       </div>
       
-      <!-- Interactive Content -->
+      <!-- In-Person Classroom -->
       <div class="learning-style-slide">
         <div class="learning-style-card">
           <div class="learning-style-image" style="background-image: url(assets/images/img29.jpg);">
@@ -553,10 +540,10 @@
           </div>
           <div class="learning-style-content">
             <div class="learning-icon">
-              <i class="fas fa-gamepad"></i>
+              <i class="fas fa-chalkboard-teacher"></i>
             </div>
-            <h4>Interactive Content</h4>
-            <p>Engaging videos, quizzes, and simulations. Learn by doing.</p>
+            <h4>In-Person Classroom</h4>
+            <p>Traditional classroom setting with hands-on learning and networking opportunities.</p>
             <a href="real-estate.html" class="btn-learning-cta">View Courses</a>
           </div>
         </div>
@@ -788,6 +775,33 @@
                 breakpoint: 768,
                 settings: {
                   slidesToShow: 2,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+          });
+          
+          // Learning Styles Carousel Initialization
+          $('.learning-styles-carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            dots: true,
+            arrows: true,
+            responsive: [
+              {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
                   slidesToScroll: 1
                 }
               }
