@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Disable all caching during development -->
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+
+      <!-- favicon -->
+      <link rel="icon" type="image/png" href="assets/images/favicon.png">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" media="all">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/fontawesome/css/all.min.css">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/jquery-ui/jquery-ui.min.css">
+      <!-- modal video css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/modal-video/modal-video.min.css">
+      <!-- light box css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/lightbox/dist/css/lightbox.min.css">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick.css">
+      <link rel="stylesheet" type="text/css" href="assets/vendors/slick/slick-theme.css">
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="custom.css">
+      <title>Shopping Cart | Fortune Academy</title>
+   </head>
+   <body>
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="assets/images/loader1.gif" alt="">
+         </div>
+      </div>
+      <div id="page" class="full-page">
+         <div data-include="partials/header.html"></div>
+         <main id="content" class="site-main">
+            <!-- Inner Banner html start-->
+            <section class="inner-banner-wrap">
+               <div class="inner-baner-container" style="background-image: url(assets/images/caart_hero.jpeg);">
+                  <div class="container">
+                     <div class="inner-banner-content">
+                        <h1 class="inner-title">Shopping Cart</h1>
+                     </div>
+                  </div>
+               </div>
+               <div class="inner-shape"></div>
+            </section>
+            <!-- Inner Banner html end-->
+            <div class="cart-section">
+               <div class="container">
+                  <div class="cart-list-inner">
+                     <form action="#">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Sub Total</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="">
+                                  <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                  <span class="cartImage"><img src="assets/images/real_estate_products/AdobeStock_134349439_Preview.jpeg" alt="Real Estate Introduction"></span>
+                                </td>
+                                <td data-column="Product Name">Real Estate: An Introduction to the Profession, 12th Edition</td>
+                                <td data-column="Price">$ 90.00</td>
+                                <td data-column="Quantity" class="count-input">
+                                    <div>
+                                       <a class="minus-btn" href="#"><i class="fa fa-minus"></i></a>
+                                       <input class="quantity" type="text" value="1">
+                                       <a class="plus-btn" href="#"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </td>
+                                <td data-column="Sub Total">$ 90.00</td>
+                              </tr>
+                              <tr>
+                                <td class="">
+                                  <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                  <span class="cartImage"><img src="assets/images/real_estate_products/AdobeStock_227656591_Preview.jpeg" alt="Georgia Pre-License"></span>
+                                </td>
+                                <td data-column="Product Name">Georgia Real Estate Salesperson Pre-License</td>
+                                <td data-column="Price">$ 70.00</td>
+                                <td data-column="Quantity" class="count-input">
+                                    <div>
+                                       <a class="minus-btn" href="#"><i class="fa fa-minus"></i></a>
+                                       <input class="quantity" type="text" value="1">
+                                       <a class="plus-btn" href="#"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </td>
+                                <td data-column="Sub Total">$ 70.00</td>
+                              </tr>
+                              <tr>
+                                <td class="">
+                                  <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                  <span class="cartImage"><img src="assets/images/real_estate_products/AdobeStock_282051680_Preview.jpeg" alt="SC Exam Prep"></span>
+                                </td>
+                                <td data-column="Product Name">South Carolina Real Estate Exam Prep</td>
+                                <td data-column="Price">$ 30.00</td>
+                                <td data-column="Quantity" class="count-input">
+                                    <div>
+                                       <a class="minus-btn" href="#"><i class="fa fa-minus"></i></a>
+                                       <input class="quantity" type="text" value="1">
+                                       <a class="plus-btn" href="#"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </td>
+                                <td data-column="Sub Total">$ 30.00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="updateArea">
+                          <div class="input-group">
+                              <input type="text" class="form-control" placeholder="I have a discount coupon">
+                              <a href="#" class="button-primary">apply coupon</a>
+                          </div>
+                           <a href="#" class="outline-primary update-btn">update cart</a>
+                        </div>
+                        <div class="totalAmountArea">
+                           <ul class="list-unstyled">
+                              <li><strong>Sub Total</strong> <span>$ 190.00</span></li>
+                              <li><strong>Tax</strong> <span>$ 13.30</span></li>
+                              <li><strong>Grand Total</strong> <span class="grandTotal">$ 203.30</span></li>
+                           </ul>
+                        </div>
+                        <div class="checkBtnArea text-right">
+                          <a href="product-checkout.html" class="button-primary">checkout</a>
+                        </div>
+                      </form>
+                  </div>
+               </div>
+            </div>
+         </main>
+         <div data-include="partials/footer.html"></div>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+         <!-- custom search field html -->
+         <div class="header-search-form">
+            <div class="container">
+               <div class="header-search-container">
+                  <form class="search-form" role="search" method="get" >
+                     <input type="text" name="s" placeholder="Enter your text...">
+                  </form>
+                  <a href="#" class="search-close">
+                     <i class="fas fa-times"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- header html end -->
+      </div>
+
+      <!-- JavaScript -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="assets/js/jquery.counterup.js"></script>
+      <script src="assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="assets/vendors/slick/slick.min.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/layout.js"></script>
+      <script src="assets/js/custom.min.js"></script>
+   </body>
+</html>
+
