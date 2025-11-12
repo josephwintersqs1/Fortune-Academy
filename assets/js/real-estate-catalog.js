@@ -1138,9 +1138,9 @@ var COURSE_DATA = {
         {
           title: "OSHA 10-Hour General Industry",
           description: "Manufacturing and warehouse safety training including machine guarding, lockout/tagout, and hazard communication.",
-          price: "$79.00",
-          originalPrice: "$99.00",
-          primaryCta: { label: "Start Training", href: "#" },
+          price: "$75.00",
+          originalPrice: "$125.00",
+          primaryCta: { label: "View Training", href: "osha-product-example.html" },
           badge: "OSHA Approved",
           image: "assets/images/osha/AdobeStock_1502394484_Preview.jpeg",
           duration: "10 Hours",
@@ -1299,7 +1299,22 @@ var COURSE_DATA = {
         roles: ["Healthcare Worker"]
         }
       ],
-      "exam": [],
+      "exam": [
+        {
+          title: "Surgical/Sterile Processing Technician",
+          description: "24-week comprehensive program preparing you for dual NCCT TS-C and HSPA CRCST certifications with clinical support.",
+          price: "$6,499",
+          originalPrice: "$6,699",
+          primaryCta: { label: "View Program", href: "healthcare-product-example.html" },
+          badge: "Dual Certification",
+          image: "assets/images/healthcare/surgical-tech-feature.jpg",
+          duration: "24 Weeks",
+          format: "Online + Clinical",
+          focus: "Surgical Technology",
+          licenses: ["NCCT TS-C", "HSPA CRCST"],
+          roles: ["Surgical Tech", "Sterile Processing"]
+        }
+      ],
       "upgrade": [],
       "post": [],
       "ce": []
