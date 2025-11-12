@@ -10,7 +10,8 @@
         industry: [],
         state: null, // Changed to single value for radio button
         education: [],
-        delivery: []
+        delivery: [],
+        bestseller: []
     };
 
     var allStates = [
@@ -197,6 +198,7 @@
         activeFilters.industry = [];
         activeFilters.education = [];
         activeFilters.delivery = [];
+        activeFilters.bestseller = [];
         // State is preserved (set by radio buttons)
 
         $('.dropdown-menu input[type="checkbox"]:checked').each(function() {
@@ -314,6 +316,14 @@
             }
         }
 
+        // Check bestseller filter
+        if (activeFilters.bestseller.length > 0) {
+            var courseBestseller = $course.data('bestseller');
+            if (courseBestseller !== true && courseBestseller !== 'true') {
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -338,7 +348,8 @@
             industry: [],
             state: null,
             education: [],
-            delivery: []
+            delivery: [],
+            bestseller: []
         };
         
         // Reset filter count
@@ -416,5 +427,74 @@
         }
         $('#resultsCount').text(count);
     }
+
+    /**
+     * Initialize book modal functionality
+     */
+    function initializeBookModal() {
+        // Handle Read More button clicks
+        $(document).on('click', '.read-more-btn', function(e) {
+            e.preventDefault();
+            
+            var $courseItem = $(this).closest('.course-item');
+            
+            // Get book data from data attributes
+            var bookData = {
+                title: $courseItem.data('title'),
+                code: $courseItem.data('code'),
+                state: $courseItem.data('state'),
+                price: $courseItem.data('price'),
+                author: $courseItem.data('author'),
+                isbn: $courseItem.data('isbn'),
+                pages: $courseItem.data('pages'),
+                publicationDate: $courseItem.data('publication-date'),
+                fullDescription: $courseItem.data('full-description'),
+                image: $courseItem.find('.feature-image img').attr('src')
+            };
+            
+            // Populate modal
+            $('#bookModalTitle').text(bookData.title);
+            $('#bookModalCode').text(bookData.code);
+            $('#bookModalState').text(bookData.state);
+            $('#bookModalPrice').text('$' + bookData.price);
+            $('#bookModalAuthor').text(bookData.author);
+            $('#bookModalISBN').text(bookData.isbn);
+            $('#bookModalPages').text(bookData.pages);
+            $('#bookModalDate').text(bookData.publicationDate);
+            $('#bookModalDescription').text(bookData.fullDescription);
+            $('#bookModalImage').attr('src', bookData.image).attr('alt', bookData.title);
+            
+            // Show modal
+            $('#bookModalBackdrop').fadeIn(200);
+            $('body').css('overflow', 'hidden');
+        });
+        
+        // Close modal handlers
+        $('#bookModalClose, #bookModalBackdrop').on('click', function(e) {
+            if (e.target === this) {
+                closeBookModal();
+            }
+        });
+        
+        // Close on escape key
+        $(document).on('keydown', function(e) {
+            if (e.key === 'Escape' && $('#bookModalBackdrop').is(':visible')) {
+                closeBookModal();
+            }
+        });
+    }
+    
+    /**
+     * Close the book modal
+     */
+    function closeBookModal() {
+        $('#bookModalBackdrop').fadeOut(200);
+        $('body').css('overflow', '');
+    }
+
+    // Initialize modal on document ready
+    $(document).ready(function() {
+        initializeBookModal();
+    });
 
 })(jQuery);

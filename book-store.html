@@ -29,6 +29,319 @@
       <!-- Custom CSS -->
       <link rel="stylesheet" type="text/css" href="style.css?v=no-banner-padding">
       <link rel="stylesheet" type="text/css" href="custom.css?v=bs4-native">
+      
+      <!-- Book Store Custom Styles -->
+      <style>
+         /* State Badge on Book Images */
+         .state-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #c1241a;
+            color: #fff;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 4px;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+         }
+         
+         /* Book Code Styling */
+         .book-code {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            padding: 4px 8px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+         }
+         
+         .review-area {
+            margin-bottom: 10px;
+         }
+         
+         /* Read More Button Styling */
+         .btn-wrap {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+         }
+         
+         .btn-wrap .button-text {
+            flex: 1;
+            min-width: calc(50% - 5px);
+            text-align: center;
+            justify-content: center;
+         }
+         
+         .read-more-btn {
+            background: #6c757d !important;
+         }
+         
+         .read-more-btn:hover {
+            background: #5a6268 !important;
+         }
+         
+         .read-more-btn i {
+            margin-left: 5px;
+         }
+         
+         /* Book Modal Styles */
+         .book-modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 20px;
+         }
+         
+         .book-modal {
+            position: relative;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+         }
+         
+         @keyframes modalSlideIn {
+            from {
+               opacity: 0;
+               transform: translateY(-30px);
+            }
+            to {
+               opacity: 1;
+               transform: translateY(0);
+            }
+         }
+         
+         .book-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid #dee2e6;
+         }
+         
+         .book-modal-header h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            padding-right: 20px;
+         }
+         
+         .book-modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.2s;
+         }
+         
+         .book-modal-close:hover {
+            background: #f5f5f5;
+            color: #333;
+         }
+         
+         .book-modal-body {
+            padding: 30px;
+         }
+         
+         .book-modal-content {
+            display: flex;
+            gap: 30px;
+         }
+         
+         .book-modal-image {
+            position: relative;
+            flex-shrink: 0;
+            width: 280px;
+         }
+         
+         .book-modal-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+         }
+         
+         .modal-state-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #c1241a;
+            color: #fff;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+         }
+         
+         .book-modal-details {
+            flex: 1;
+         }
+         
+         .book-modal-code {
+            margin-bottom: 15px;
+            font-size: 14px;
+         }
+         
+         .book-modal-code strong {
+            color: #333;
+         }
+         
+         .book-modal-code span {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #666;
+            padding: 4px 8px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-left: 8px;
+         }
+         
+         .book-modal-price {
+            margin-bottom: 20px;
+         }
+         
+         .price-large {
+            font-size: 32px;
+            font-weight: 700;
+            color: #c1241a;
+         }
+         
+         .book-modal-meta {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+         }
+         
+         .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+         }
+         
+         .meta-item:last-child {
+            margin-bottom: 0;
+         }
+         
+         .meta-item i {
+            color: #c1241a;
+            width: 20px;
+            text-align: center;
+         }
+         
+         .meta-item strong {
+            color: #333;
+         }
+         
+         .book-modal-description {
+            margin-bottom: 25px;
+         }
+         
+         .book-modal-description h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+         }
+         
+         .book-modal-description p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+         }
+         
+         .book-modal-actions {
+            display: flex;
+            gap: 15px;
+         }
+         
+         .book-modal-actions .btn {
+            flex: 1;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+         }
+         
+         .book-modal-actions .btn i {
+            margin-right: 8px;
+         }
+         
+         /* Responsive Modal */
+         @media (max-width: 768px) {
+            .book-modal {
+               margin: 20px auto;
+            }
+            
+            .book-modal-content {
+               flex-direction: column;
+            }
+            
+            .book-modal-image {
+               width: 100%;
+               max-width: 300px;
+               margin: 0 auto;
+            }
+            
+            .book-modal-header h3 {
+               font-size: 20px;
+            }
+            
+            .price-large {
+               font-size: 28px;
+            }
+         }
+         
+         @media (max-width: 575px) {
+            .book-modal-backdrop {
+               padding: 10px;
+            }
+            
+            .book-modal-header {
+               padding: 20px;
+            }
+            
+            .book-modal-body {
+               padding: 20px;
+            }
+            
+            .btn-wrap .button-text {
+               min-width: 100%;
+            }
+         }
+      </style>
+      
       <title>Book Store | Fortune Academy</title>
    </head>
    <body class="search-page">
@@ -179,6 +492,13 @@
                                        <label class="custom-control-label" for="del4">Bundle</label>
                                     </div>
                                  </div>
+                                 <div class="mb-3 pb-3" style="border-bottom: 1px solid #dee2e6;">
+                                    <h6 class="font-weight-bold mb-2" style="font-size: 13px; text-transform: uppercase; color: #333;">Best Seller</h6>
+                                    <div class="custom-control custom-checkbox">
+                                       <input class="custom-control-input" type="checkbox" data-filter="bestseller" value="true" id="bestseller1">
+                                       <label class="custom-control-label" for="bestseller1">Show Best Sellers Only</label>
+                                    </div>
+                                 </div>
                                  <div class="d-flex justify-content-end pt-3" style="border-top: 1px solid #dee2e6; gap: 10px;">
                                     <button class="btn btn-sm btn-outline-secondary" id="clearFiltersInMenu">Clear All</button>
                                     <button class="btn btn-sm btn-primary" id="applyFilters">Apply</button>
@@ -220,12 +540,20 @@
                                 data-license="" 
                                 data-delivery="ebook" 
                                 data-price="90"
-                                data-title="Real Estate: An Introduction to the Profession, 12th Edition">
+                                data-title="Real Estate: An Introduction to the Profession, 12th Edition"
+                                data-code="REIP-12E"
+                                data-bestseller="true"
+                                data-author="Charles J. Jacobus"
+                                data-isbn="978-0-357-36789-1"
+                                data-pages="624"
+                                data-publication-date="2023"
+                                data-full-description="Comprehensive introduction to real estate fundamentals, covering principles, practices, and professional standards. This bestselling textbook provides in-depth coverage of real estate law, finance, appraisal, and property management. Includes updated case studies, practice questions, and real-world scenarios to prepare students for the licensing exam and professional practice.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_134349439_Preview.jpeg" alt="Real Estate Introduction">
                                     </a>
+                                    <span class="state-badge">GA</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6>
@@ -242,10 +570,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">Real Estate: An Introduction to the Profession, 12th Edition</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">REIP-12E</span>
                                        </div>
                                        <p>Comprehensive introduction to real estate fundamentals, covering principles, practices, and professional standards.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -261,12 +590,20 @@
                                 data-license="" 
                                 data-delivery="hardcopy" 
                                 data-price="70"
-                                data-title="Georgia Real Estate Salesperson Pre-License">
+                                data-title="Georgia Real Estate Salesperson Pre-License"
+                                data-code="GASP-EPB"
+                                data-bestseller="true"
+                                data-author="Georgia Real Estate Commission"
+                                data-isbn="978-0-945-67234-8"
+                                data-pages="485"
+                                data-publication-date="2024"
+                                data-full-description="Complete Georgia-specific pre-licensing textbook with state laws, regulations, and practice questions. This comprehensive guide covers Georgia real estate law, contracts, agency relationships, and professional ethics. Includes over 500 practice questions, case studies, and exam preparation materials aligned with the Georgia Real Estate Commission requirements.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_227656591_Preview.jpeg" alt="Georgia Pre-License">
                                     </a>
+                                    <span class="state-badge">GA</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$70</span></h6>
@@ -281,10 +618,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">Georgia Real Estate Salesperson Pre-License</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">GASP-EPB</span>
                                        </div>
                                        <p>Complete Georgia-specific pre-licensing textbook with state laws, regulations, and practice questions.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -300,12 +638,19 @@
                                 data-license="" 
                                 data-delivery="ebook" 
                                 data-price="30"
-                                data-title="South Carolina Real Estate Exam Prep">
+                                data-title="South Carolina Real Estate Exam Prep"
+                                data-code="SCRE-EPB"
+                                data-author="Professional Exam Prep Institute"
+                                data-isbn="978-0-856-45123-2"
+                                data-pages="298"
+                                data-publication-date="2024"
+                                data-full-description="Focused exam preparation with practice questions and study tips for the South Carolina state exam. This targeted study guide includes over 400 practice questions, detailed answer explanations, and test-taking strategies. Covers all major exam topics including contracts, property rights, agency, and South Carolina-specific regulations.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_282051680_Preview.jpeg" alt="SC Exam Prep">
                                     </a>
+                                    <span class="state-badge">SC</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$30</span></h6>
@@ -320,10 +665,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">South Carolina Real Estate Exam Prep</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">SCRE-EPB</span>
                                        </div>
                                        <p>Focused exam preparation with practice questions and study tips for the South Carolina state exam.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -339,12 +685,19 @@
                                 data-license="" 
                                 data-delivery="hardcopy" 
                                 data-price="65"
-                                data-title="NMLS Licensing Study Guide">
+                                data-title="NMLS Licensing Study Guide"
+                                data-code="NMLS-LSG"
+                                data-author="Mortgage Education Network"
+                                data-isbn="978-0-923-78456-9"
+                                data-pages="412"
+                                data-publication-date="2024"
+                                data-full-description="Complete study guide for mortgage loan originators preparing for NMLS licensing exam. Comprehensive coverage of federal lending regulations, ethics, mortgage products, and loan processing. Includes practice exams, glossary of mortgage terminology, and step-by-step guidance through the SAFE Act requirements.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/mortgage/AdobeStock_287067334_Preview.jpeg" alt="NMLS Study Guide">
                                     </a>
+                                    <span class="state-badge">FL</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$65</span></h6>
@@ -359,10 +712,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">NMLS Licensing Study Guide</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">NMLS-LSG</span>
                                        </div>
                                        <p>Complete study guide for mortgage loan originators preparing for NMLS licensing exam.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -378,12 +732,19 @@
                                 data-license="" 
                                 data-delivery="hardcopy" 
                                 data-price="75"
-                                data-title="USPAP Fundamentals for Appraisers">
+                                data-title="USPAP Fundamentals for Appraisers"
+                                data-code="USPAP-FND"
+                                data-author="Appraisal Institute"
+                                data-isbn="978-0-812-34567-3"
+                                data-pages="356"
+                                data-publication-date="2024"
+                                data-full-description="Essential reference guide covering Uniform Standards of Professional Appraisal Practice. Detailed explanation of all USPAP standards, guidelines, and advisory opinions. Includes real-world examples, common compliance issues, and best practices for professional appraisers. Updated annually to reflect current standards.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_330758315_Preview.jpeg" alt="USPAP Fundamentals">
                                     </a>
+                                    <span class="state-badge">GA</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$75</span></h6>
@@ -398,10 +759,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">USPAP Fundamentals for Appraisers</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">USPAP-FND</span>
                                        </div>
                                        <p>Essential reference guide covering Uniform Standards of Professional Appraisal Practice.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -417,12 +779,19 @@
                                 data-license="" 
                                 data-delivery="hardcopy" 
                                 data-price="45"
-                                data-title="OSHA Safety Standards Handbook">
+                                data-title="OSHA Safety Standards Handbook"
+                                data-code="OSHA-SSH"
+                                data-author="Occupational Safety Institute"
+                                data-isbn="978-0-734-89012-5"
+                                data-pages="528"
+                                data-publication-date="2024"
+                                data-full-description="Comprehensive reference guide to OSHA construction and general industry safety standards. Complete coverage of OSHA regulations, safety procedures, and compliance requirements. Includes illustrated safety protocols, inspection checklists, and documentation templates. Essential resource for safety officers and supervisors.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_292561185_Preview.jpeg" alt="OSHA Handbook">
                                     </a>
+                                    <span class="state-badge">TX</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$45</span></h6>
@@ -437,10 +806,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">OSHA Safety Standards Handbook</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">OSHA-SSH</span>
                                        </div>
                                        <p>Comprehensive reference guide to OSHA construction and general industry safety standards.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -456,12 +826,19 @@
                                 data-license="" 
                                 data-delivery="ebook" 
                                 data-price="55"
-                                data-title="HIPAA Compliance Guide for Healthcare Professionals">
+                                data-title="HIPAA Compliance Guide for Healthcare Professionals"
+                                data-code="HIPAA-CG"
+                                data-author="Healthcare Compliance Association"
+                                data-isbn="978-0-645-23789-4"
+                                data-pages="342"
+                                data-publication-date="2024"
+                                data-full-description="Essential guide to HIPAA privacy and security rules for healthcare workers and administrators. Comprehensive coverage of patient privacy rights, security safeguards, breach notification requirements, and enforcement. Includes compliance checklists, training materials, and real-world case studies. Updated to reflect latest regulatory changes.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_232729870_Preview.jpeg" alt="HIPAA Guide">
                                     </a>
+                                    <span class="state-badge">CA</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$55</span></h6>
@@ -476,10 +853,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">HIPAA Compliance Guide for Healthcare Professionals</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">HIPAA-CG</span>
                                        </div>
                                        <p>Essential guide to HIPAA privacy and security rules for healthcare workers and administrators.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -495,12 +873,19 @@
                                 data-license="" 
                                 data-delivery="bundle" 
                                 data-price="85"
-                                data-title="North Carolina Broker License Package">
+                                data-title="North Carolina Broker License Package"
+                                data-code="NCBL-PKG"
+                                data-author="NC Real Estate Educators"
+                                data-isbn="978-0-567-89123-6"
+                                data-pages="542"
+                                data-publication-date="2024"
+                                data-full-description="Complete package with textbook and practice exams for North Carolina broker licensing. Comprehensive coverage of NC real estate law, contracts, agency, property management, and ethics. Includes 5 full-length practice exams, flashcards, and online study resources. Bundle saves $40 compared to individual purchases.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_374540173_Preview.jpeg" alt="NC Broker Package">
                                     </a>
+                                    <span class="state-badge">NC</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$85</span></h6>
@@ -515,10 +900,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">North Carolina Broker License Package</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">NCBL-PKG</span>
                                        </div>
                                        <p>Complete package with textbook and practice exams for North Carolina broker licensing.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -534,12 +920,19 @@
                                 data-license="" 
                                 data-delivery="hardcopy" 
                                 data-price="60"
-                                data-title="Employment Law Essentials for HR Professionals">
+                                data-title="Employment Law Essentials for HR Professionals"
+                                data-code="HREL-ESS"
+                                data-author="National HR Institute"
+                                data-isbn="978-0-789-45678-2"
+                                data-pages="478"
+                                data-publication-date="2024"
+                                data-full-description="Comprehensive guide to federal and state employment laws for HR compliance professionals. Detailed coverage of hiring practices, discrimination laws, wage and hour regulations, leave policies, and termination procedures. Includes compliance checklists, policy templates, and case law examples. Essential reference for HR managers and business owners.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_461502029_Preview.jpeg" alt="HR Employment Law">
                                     </a>
+                                    <span class="state-badge">NY</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$60</span></h6>
@@ -554,10 +947,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">Employment Law Essentials for HR Professionals</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">HREL-ESS</span>
                                        </div>
                                        <p>Comprehensive guide to federal and state employment laws for HR compliance professionals.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -573,12 +967,19 @@
                                 data-license="" 
                                 data-delivery="ebook" 
                                 data-price="48"
-                                data-title="Real Estate Finance & Investment Principles">
+                                data-title="Real Estate Finance & Investment Principles"
+                                data-code="REFI-PRC"
+                                data-author="Financial Education Institute"
+                                data-isbn="978-0-654-32109-7"
+                                data-pages="395"
+                                data-publication-date="2024"
+                                data-full-description="In-depth coverage of real estate finance, mortgages, and investment analysis fundamentals. Comprehensive examination of financing techniques, mortgage products, investment strategies, and market analysis. Includes financial calculations, case studies, and practical applications. Suitable for continuing education and professional development.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/mortgage/AdobeStock_334660578_Preview.jpeg" alt="Finance Textbook">
                                     </a>
+                                    <span class="state-badge">GA</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$48</span></h6>
@@ -593,10 +994,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">Real Estate Finance & Investment Principles</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">REFI-PRC</span>
                                        </div>
                                        <p>In-depth coverage of real estate finance, mortgages, and investment analysis fundamentals.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -612,12 +1014,19 @@
                                 data-license="" 
                                 data-delivery="flashcard" 
                                 data-price="30"
-                                data-title="Texas Real Estate Exam Flashcards">
+                                data-title="Texas Real Estate Exam Flashcards"
+                                data-code="TXRE-FLS"
+                                data-author="Texas Real Estate Academy"
+                                data-isbn="978-0-543-21098-4"
+                                data-pages="Digital"
+                                data-publication-date="2024"
+                                data-full-description="Digital flashcard set with 500+ practice questions for Texas real estate licensing exam. Interactive study tool with spaced repetition algorithm for optimal retention. Covers all exam topics including Texas-specific laws, contracts, finance, and real estate practices. Mobile app included for studying on-the-go.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_461557983_Preview.jpeg" alt="TX Flashcards">
                                     </a>
+                                    <span class="state-badge">TX</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$30</span></h6>
@@ -632,10 +1041,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">Texas Real Estate Exam Flashcards</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">TXRE-FLS</span>
                                        </div>
                                        <p>Digital flashcard set with 500+ practice questions for Texas real estate licensing exam.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -651,12 +1061,19 @@
                                 data-license="" 
                                 data-delivery="ebook" 
                                 data-price="35"
-                                data-title="Appraisal Practice Question Data Bank">
+                                data-title="Appraisal Practice Question Data Bank"
+                                data-code="APPQ-BNK"
+                                data-author="Appraisal Education Center"
+                                data-isbn="978-0-432-10987-6"
+                                data-pages="312"
+                                data-publication-date="2024"
+                                data-full-description="Extensive collection of practice questions and scenarios for appraisal certification exams. Over 600 practice questions covering all appraisal topics including valuation methods, USPAP compliance, market analysis, and report writing. Includes detailed explanations for each answer and references to study materials. Organized by topic for targeted practice.">
                               <div class="package-wrap">
                                  <figure class="feature-image">
                                     <a href="#">
                                        <img src="assets/images/real_estate_products/AdobeStock_538839062_Preview.jpeg" alt="Appraisal Questions">
                                     </a>
+                                    <span class="state-badge">SC</span>
                                  </figure>
                                  <div class="package-price">
                                     <h6><span>$35</span></h6>
@@ -671,10 +1088,11 @@
                                     <div class="package-content">
                                        <h3><a href="#">Appraisal Practice Question Data Bank</a></h3>
                                        <div class="review-area">
-                                          <span class="review-text">(View Details)</span>
+                                          <span class="book-code">APPQ-BNK</span>
                                        </div>
                                        <p>Extensive collection of practice questions and scenarios for appraisal certification exams.</p>
                                        <div class="btn-wrap">
+                                          <a href="#" class="button-text width-6 read-more-btn">Read More<i class="fas fa-info-circle"></i></a>
                                           <a href="#" class="button-text width-6">Add to Cart<i class="fas fa-arrow-right"></i></a>
                                        </div>
                                     </div>
@@ -725,6 +1143,61 @@
             </div>
             <div class="search-modal-results" id="searchModalResults" style="display: none;">
                <!-- Results populated by JS -->
+            </div>
+         </div>
+      </div>
+
+      <!-- Book Details Modal -->
+      <div class="book-modal-backdrop" id="bookModalBackdrop" style="display: none;">
+         <div class="book-modal">
+            <div class="book-modal-header">
+               <h3 id="bookModalTitle">Book Title</h3>
+               <button class="book-modal-close" id="bookModalClose" aria-label="Close">
+                  <i class="fas fa-times"></i>
+               </button>
+            </div>
+            <div class="book-modal-body">
+               <div class="book-modal-content">
+                  <div class="book-modal-image">
+                     <img id="bookModalImage" src="" alt="">
+                     <span id="bookModalState" class="modal-state-badge"></span>
+                  </div>
+                  <div class="book-modal-details">
+                     <div class="book-modal-code">
+                        <strong>Book Code:</strong> <span id="bookModalCode"></span>
+                     </div>
+                     <div class="book-modal-price">
+                        <span id="bookModalPrice" class="price-large"></span>
+                     </div>
+                     <div class="book-modal-meta">
+                        <div class="meta-item">
+                           <i class="fas fa-user"></i>
+                           <span><strong>Author:</strong> <span id="bookModalAuthor"></span></span>
+                        </div>
+                        <div class="meta-item">
+                           <i class="fas fa-barcode"></i>
+                           <span><strong>ISBN:</strong> <span id="bookModalISBN"></span></span>
+                        </div>
+                        <div class="meta-item">
+                           <i class="fas fa-file-alt"></i>
+                           <span><strong>Pages:</strong> <span id="bookModalPages"></span></span>
+                        </div>
+                        <div class="meta-item">
+                           <i class="fas fa-calendar"></i>
+                           <span><strong>Publication:</strong> <span id="bookModalDate"></span></span>
+                        </div>
+                     </div>
+                     <div class="book-modal-description">
+                        <h4>Description</h4>
+                        <p id="bookModalDescription"></p>
+                     </div>
+                     <div class="book-modal-actions">
+                        <a href="#" class="btn btn-primary btn-lg">
+                           <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </a>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
