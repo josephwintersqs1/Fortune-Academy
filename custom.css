@@ -5333,28 +5333,80 @@ body.industry-compliance {
 
 /* ========== PARTNERS CAROUSEL STYLES ========== */
 .partners-carousel .activity-item {
-    margin: 0 30px;
+    margin: 0 50px !important;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
 }
 
 .partners-carousel .activity-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100px;
-    padding: 10px;
+    min-height: 120px;
+    padding: 15px;
 }
 
 .partners-carousel .activity-icon img {
-    max-height: 60px;
+    max-height: 70px;
     width: auto;
     object-fit: contain;
 }
 
-.partners-carousel .activity-content h4 {
-    font-size: 14px;
-    margin-top: 15px;
+/* Hide ALL titles in partners carousel */
+.partners-carousel .activity-content h4,
+.partners-carousel .activity-content {
+    display: none !important;
+}
+
+/* Show arrows for partners carousel */
+.partners-carousel .slick-prev,
+.partners-carousel .slick-next {
+    width: 44px;
+    height: 44px;
+    z-index: 100;
+    background: #173C97 !important;
+    border-radius: 50%;
+    display: block !important;
+}
+
+.partners-carousel .slick-prev {
+    left: -60px;
+}
+
+.partners-carousel .slick-next {
+    right: -60px;
+}
+
+.partners-carousel .slick-prev:before,
+.partners-carousel .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 16px;
+    color: white;
+    opacity: 1;
+}
+
+.partners-carousel .slick-prev:before {
+    content: "\f053";
+}
+
+.partners-carousel .slick-next:before {
+    content: "\f054";
+}
+
+.partners-carousel .slick-prev:hover,
+.partners-carousel .slick-next:hover {
+    background: #2c75ba !important;
+}
+
+@media (max-width: 1200px) {
+    .partners-carousel .slick-prev {
+        left: -25px;
+    }
+    
+    .partners-carousel .slick-next {
+        right: -25px;
+    }
 }
 
 
