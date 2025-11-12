@@ -5209,9 +5209,9 @@ body.industry-compliance {
 
 /* ========== PARTNERS CAROUSEL STYLES ========== */
 .partners-carousel .activity-item {
-    margin: 0 50px !important;
+    margin: 0 40px !important;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
 .partners-carousel .activity-icon {
@@ -5219,11 +5219,11 @@ body.industry-compliance {
     align-items: center;
     justify-content: center;
     min-height: 120px;
-    padding: 15px;
+    padding: 20px;
 }
 
 .partners-carousel .activity-icon img {
-    max-height: 70px;
+    max-height: 80px;
     width: auto;
     object-fit: contain;
 }
