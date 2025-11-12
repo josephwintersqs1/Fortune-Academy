@@ -5399,7 +5399,15 @@ body.industry-compliance {
 }
 
 /* Testimonials Masonry Grid */
-/* Remove blue background from stars - with stronger selectors */
+/* Remove blue background from stars - with VERY specific selectors to override style.css */
+.industry-real-estate .testimonial-page-section .start-wrap,
+.industry-real-estate .testimonial-page-section .rating-start,
+.industry-real-estate .testimonial-page-section .rating-start span,
+.industry-mortgage .testimonial-page-section .rating-start span,
+.industry-appraisal .testimonial-page-section .rating-start span,
+.industry-osha .testimonial-page-section .rating-start span,
+.industry-healthcare .testimonial-page-section .rating-start span,
+.industry-compliance .testimonial-page-section .rating-start span,
 .testimonial-page-section .start-wrap,
 .testimonial-page-section .rating-start,
 .testimonial-page-section .rating-start span,
@@ -5410,8 +5418,9 @@ body.industry-compliance {
     background-color: transparent !important;
 }
 
+/* Fix Masonry Layout - Completely remove floats and ensure Masonry has full control */
 .testimonials-grid {
-    display: block;
+    display: block !important;
     width: 100%;
     position: relative;
 }
@@ -5422,20 +5431,18 @@ body.industry-compliance {
     clear: both;
 }
 
-.testimonial-grid-item {
+/* CRITICAL: Remove ALL Bootstrap grid floats that interfere with Masonry */
+.testimonial-grid-item,
+.testimonials-grid .testimonial-grid-item,
+.testimonials-grid .col-lg-4,
+.testimonials-grid .col-md-6,
+.testimonials-grid [class*="col-"] {
+    float: none !important;
+    position: absolute !important;
     width: 33.333%;
     padding: 0 15px;
     margin-bottom: 30px;
     box-sizing: border-box;
-    /* Remove Bootstrap grid floats that conflict with Masonry */
-    float: none !important;
-}
-
-/* Override Bootstrap column styles */
-.testimonials-grid .col-lg-4,
-.testimonials-grid .col-md-6 {
-    float: none !important;
-    position: relative !important;
 }
 
 @media (max-width: 992px) {
