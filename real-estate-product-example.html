@@ -4657,13 +4657,18 @@ html: false
 const faqItems = document.querySelectorAll('.faq-item');
 faqItems.forEach(item => {
 const question = item.querySelector('.faq-question');
+const answer = item.querySelector('.faq-answer');
+if (question && answer) {
 question.addEventListener('click', () => {
-const isActive = item.classList.contains('active');
-faqItems.forEach(i => i.classList.remove('active'));
+const isActive = question.classList.contains('active');
+question.classList.toggle('active');
 if (!isActive) {
-item.classList.add('active');
+answer.style.maxHeight = answer.scrollHeight + 'px';
+} else {
+answer.style.maxHeight = '0';
 }
 });
+}
 });
 
 // Schedule Card Selection
