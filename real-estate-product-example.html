@@ -655,7 +655,7 @@ display: block;
 }
 
 .passed-badge {
-background: #16a34a;
+background: #22c55e;
 color: white;
 padding: 3px 10px;
 border-radius: 12px;
@@ -2910,6 +2910,33 @@ width: 100%;
 max-width: 100%;
 }
 }
+
+/* Show More/Less functionality */
+.instructor-card.hidden,
+.testimonial-card.hidden {
+display: none;
+}
+
+.show-more-btn {
+text-align: center;
+margin-top: 25px;
+}
+
+.show-more-btn button {
+background: var(--real-estate-primary);
+color: white;
+border: none;
+padding: 12px 30px;
+border-radius: 8px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.show-more-btn button:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 </style>
 </head>
 <body class="industry-page industry-real-estate">
@@ -4143,6 +4170,9 @@ See Schedule
 <span class="specialization-tag">Mentorship</span>
 </div>
 </div>
+</div>
+<div class="show-more-btn">
+<button onclick="toggleInstructors(this)">Show More Instructors</button>
 </div>
 </div>
 

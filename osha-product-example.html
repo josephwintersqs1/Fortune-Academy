@@ -804,15 +804,16 @@ border-bottom: none;
 }
 
 .feature-icon {
-width: 40px;
-height: 40px;
-border-radius: 8px;
+width: 32px;
+height: 32px;
+min-width: 32px;
+border-radius: 6px;
 background: linear-gradient(135deg, var(--osha-primary) 0%, var(--osha-secondary) 100%);
 display: flex;
 align-items: center;
 justify-content: center;
 color: white;
-font-size: 1.2rem;
+font-size: 1rem;
 margin-right: 12px;
 flex-shrink: 0;
 }
@@ -930,6 +931,33 @@ grid-template-columns: 1fr;
 .module-grid {
 grid-template-columns: 1fr;
 }
+}
+
+/* Show More/Less functionality */
+.instructor-card.hidden,
+.testimonial-card.hidden {
+display: none;
+}
+
+.show-more-btn {
+text-align: center;
+margin-top: 25px;
+}
+
+.show-more-btn button {
+background: var(--osha-primary);
+color: white;
+border: none;
+padding: 12px 30px;
+border-radius: 8px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.show-more-btn button:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -1858,6 +1886,9 @@ Choose Your Training
 </div>
 </div>
 </div>
+<div class="show-more-btn">
+<button onclick="toggleInstructors(this)">Show More Instructors</button>
+</div>
 </div>
 
 <!-- Student Testimonials Section -->
@@ -1921,6 +1952,9 @@ Choose Your Training
 </div>
 </div>
 </div>
+</div>
+<div class="show-more-btn">
+<button onclick="toggleTestimonials(this)">Show More Testimonials</button>
 </div>
 </div>
 
