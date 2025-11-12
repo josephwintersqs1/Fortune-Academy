@@ -1551,6 +1551,7 @@ function getCourses(state, tab, role) {
               priceHTML +
               '<div class="btn-wrap">' +
                 '<a href="' + primaryCta.href + '" class="button-primary">View Details</a>' +
+                '<p class="payment-notice">Flexible payment plans available</p>' +
               '</div>' +
             '</div>' +
           '</div>' +

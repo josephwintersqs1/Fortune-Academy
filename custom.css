@@ -5169,3 +5169,248 @@ body.industry-compliance {
         margin-bottom: 20px;
     }
 }
+
+/* ========== TESTIMONIALS CAROUSEL STYLES ========== */
+/* Consistent heights for testimonial cards */
+.testimonials-carousel .testimonial-item {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+.testimonials-carousel .testimonial-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Remove blue background from star ratings */
+.testimonials-carousel .start-wrap {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Slick carousel arrows styling */
+.testimonials-carousel .slick-prev,
+.testimonials-carousel .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+}
+
+.testimonials-carousel .slick-prev {
+    left: -50px;
+}
+
+.testimonials-carousel .slick-next {
+    right: -50px;
+}
+
+.testimonials-carousel .slick-prev:before,
+.testimonials-carousel .slick-next:before {
+    font-size: 40px;
+    opacity: 0.75;
+}
+
+/* Slick dots styling */
+.testimonials-carousel .slick-dots {
+    bottom: -50px;
+}
+
+.testimonials-carousel .slick-dots li button:before {
+    font-size: 12px;
+    color: #173C97;
+    opacity: 0.5;
+}
+
+.testimonials-carousel .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #173C97;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .testimonials-carousel .slick-prev {
+        left: -30px;
+    }
+    
+    .testimonials-carousel .slick-next {
+        right: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-carousel .testimonial-item {
+        min-height: 280px;
+    }
+    
+    .testimonials-carousel .slick-prev {
+        left: -20px;
+    }
+    
+    .testimonials-carousel .slick-next {
+        right: -20px;
+    }
+    
+    .testimonials-carousel .slick-prev,
+    .testimonials-carousel .slick-next {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .testimonials-carousel .slick-prev:before,
+    .testimonials-carousel .slick-next:before {
+        font-size: 30px;
+    }
+}
+
+
+/* ========== VIDEO BUTTON VISIBILITY FIX ========== */
+/* Ensure video buttons are visible in FLEXIBLE LEARNING section */
+.learning-styles-section .video-button,
+.learning-style-image .video-button {
+    display: block !important;
+}
+
+/* Specifically hide ONLY in hero/banner sections */
+.industry-hero .learning-style-slide .video-button,
+.home-banner-section .learning-style-slide .video-button,
+.home-banner-items .learning-style-slide .video-button {
+    display: none !important;
+}
+
+
+/* ========== PAYMENT NOTICE STYLES ========== */
+.payment-notice {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.btn-wrap .payment-notice {
+    margin-top: 12px;
+}
+
+/* Optional: Add icon before text */
+.payment-notice::before {
+    content: '\f09d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 6px;
+    color: #4ade80;
+}
+
+
+/* ========== PARTNERS CAROUSEL STYLES ========== */
+.partners-carousel .activity-item {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.partners-carousel .activity-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.partners-carousel .activity-icon img {
+    max-height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.partners-carousel .activity-content h4 {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+
+/* ========== HELPFUL LINKS SECTION STYLES ========== */
+.helpful-links-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.helpful-links-header {
+    background: linear-gradient(135deg, #c1241a 0%, #e74c3c 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.helpful-link-card {
+    display: block;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.helpful-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-color: var(--industry-accent, #173C97);
+    text-decoration: none;
+}
+
+.helpful-link-icon {
+    margin-bottom: 20px;
+}
+
+.helpful-link-icon img,
+.helpful-link-icon i {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.helpful-link-icon i {
+    font-size: 64px;
+    color: var(--industry-accent, #173C97);
+}
+
+.helpful-link-card h4 {
+    color: #212529;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.helpful-link-card:hover h4 {
+    color: var(--industry-accent, #173C97);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .helpful-links-header {
+        font-size: 24px;
+        padding: 15px;
+    }
+    
+    .helpful-link-card {
+        min-height: 150px;
+        margin-bottom: 20px;
+    }
+}
+

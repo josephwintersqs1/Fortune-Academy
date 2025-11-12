@@ -201,8 +201,8 @@
               </div>
             </div>
 
-            <div class="activity-inner row justify-content-between">
-              <div class="col-6 col-md-4 col-lg">
+            <div class="partners-carousel">
+              <div>
                 <div class="activity-item">
                   <div class="activity-icon">
                     <a href="#"><img src="assets/images/partner-1-white.png" alt="National Mortgage Alliance"></a>
@@ -213,7 +213,7 @@
                 </div>
               </div>
 
-              <div class="col-6 col-md-4 col-lg">
+              <div>
                 <div class="activity-item">
                   <div class="activity-icon">
                     <a href="#"><img src="assets/images/partner-2-white.png" alt="Gateway Lending Group"></a>
@@ -224,7 +224,7 @@
                 </div>
               </div>
 
-              <div class="col-6 col-md-4 col-lg">
+              <div>
                 <div class="activity-item">
                   <div class="activity-icon">
                     <a href="#"><img src="assets/images/partner-3-white.png" alt="Regional Bank Partners"></a>
@@ -235,7 +235,7 @@
                 </div>
               </div>
 
-              <div class="col-6 col-md-4 col-lg">
+              <div>
                 <div class="activity-item">
                   <div class="activity-icon">
                     <a href="#"><img src="assets/images/partner-4-white.png" alt="Mortgage Innovation Council"></a>
@@ -246,13 +246,36 @@
                 </div>
               </div>
 
-              <div class="col-6 col-md-4 col-lg">
+              <div>
                 <div class="activity-item">
                   <div class="activity-icon">
                     <a href="#"><img src="assets/images/partner-5-white.png" alt="Credit Union Academy"></a>
                   </div>
                   <div class="activity-content">
                     <h4><a href="#">Credit Union Academy</a></h4>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Repeat -->
+              <div>
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <a href="#"><img src="assets/images/partner-1-white.png" alt="National Mortgage Alliance"></a>
+                  </div>
+                  <div class="activity-content">
+                    <h4><a href="#">National Mortgage Alliance</a></h4>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <a href="#"><img src="assets/images/partner-2-white.png" alt="Gateway Lending Group"></a>
+                  </div>
+                  <div class="activity-content">
+                    <h4><a href="#">Gateway Lending Group</a></h4>
                   </div>
                 </div>
               </div>
@@ -330,6 +353,39 @@
         </section>
       </main>
 
+      <!-- Helpful Links Section -->
+      <section class="helpful-links-section">
+        <div class="container">
+          <h2 class="helpful-links-header">HELPFUL LINKS</h2>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+              <a href="#" class="helpful-link-card">
+                <div class="helpful-link-icon"><i class="fas fa-bell"></i></div>
+                <h4>Important NMLS Updates</h4>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <a href="/contact.html" class="helpful-link-card">
+                <div class="helpful-link-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h4>Campus Information</h4>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <a href="#" class="helpful-link-card">
+                <div class="helpful-link-icon"><i class="fas fa-book"></i></div>
+                <h4>Mortgage Resources</h4>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <a href="#" class="helpful-link-card">
+                <div class="helpful-link-icon"><i class="fas fa-calendar-alt"></i></div>
+                <h4>Download Loan Officer Schedule</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div data-include="partials/footer.html"></div>
 
       <a id="backTotop" href="#" class="to-top-icon">
@@ -373,6 +429,37 @@
     <script src="assets/js/fa-states.js?v=1762478000"></script>
     <script src="assets/js/hero-form-new.js?v=1762478000"></script>
     <script src="assets/js/real-estate-catalog.js?v=20250107-fix2"></script>
+    
+    <!-- Partners Carousel Initialization -->
+    <script>
+      $(document).ready(function(){
+        $('.partners-carousel').slick({
+          infinite: true,
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          dots: false,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      });
+    </script>
   </body>
 </html>
 
