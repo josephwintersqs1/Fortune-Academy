@@ -5269,9 +5269,70 @@ $(document).ready(function() {
     });
     
     fadeInSections.forEach(section => {
-        fadeInObserver.observe(section);
-    });
+fadeInObserver.observe(section);
+});
 })();
+</script>
+
+<script>
+// Show More/Less functionality
+let instructorsShown = 4;
+const INSTRUCTORS_PER_BATCH = 4;
+
+function toggleInstructors(btn) {
+const cards = document.querySelectorAll('.instructor-card');
+const hiddenCards = document.querySelectorAll('.instructor-card.hidden');
+
+if (hiddenCards.length > 0) {
+// Show next batch
+const toShow = Math.min(INSTRUCTORS_PER_BATCH, hiddenCards.length);
+for (let i = 0; i < toShow; i++) {
+hiddenCards[i].classList.remove('hidden');
+}
+instructorsShown += toShow;
+
+// Check if all shown
+if (document.querySelectorAll('.instructor-card.hidden').length === 0) {
+btn.textContent = 'Show Less';
+}
+} else {
+// Show less - hide all but first 4
+for (let i = 4; i < cards.length; i++) {
+cards[i].classList.add('hidden');
+}
+instructorsShown = 4;
+btn.textContent = 'Show More Instructors';
+}
+}
+
+let testimonialsShown = 3;
+const TESTIMONIALS_PER_BATCH = 3;
+
+function toggleTestimonials(btn) {
+const cards = document.querySelectorAll('.testimonial-card');
+const hiddenCards = document.querySelectorAll('.testimonial-card.hidden');
+
+if (hiddenCards.length > 0) {
+// Show next batch
+const toShow = Math.min(TESTIMONIALS_PER_BATCH, hiddenCards.length);
+for (let i = 0; i < toShow; i++) {
+hiddenCards[i].classList.remove('hidden');
+}
+testimonialsShown += toShow;
+
+// Check if all shown
+if (document.querySelectorAll('.testimonial-card.hidden').length === 0) {
+btn.textContent = 'Show Less';
+}
+} else {
+// Show less - hide all but first 3
+for (let i = 3; i < cards.length; i++) {
+cards[i].classList.add('hidden');
+}
+testimonialsShown = 3;
+btn.textContent = 'Show More Testimonials';
+}
+}
 </script>
 
 </body>
