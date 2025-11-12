@@ -452,7 +452,7 @@
       </div>
       
       <!-- Additional testimonials (hidden by default) -->
-      <div class="col-lg-4 col-md-6 testimonial-grid-item testimonial-hidden">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Sarah M</figure>
           <div class="testimonial-content">
@@ -471,7 +471,7 @@
         </div>
       </div>
       
-      <div class="col-lg-4 col-md-6 testimonial-grid-item testimonial-hidden">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Mike J</figure>
           <div class="testimonial-content">
@@ -490,7 +490,7 @@
         </div>
       </div>
       
-      <div class="col-lg-4 col-md-6 testimonial-grid-item testimonial-hidden">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Lisa R</figure>
           <div class="testimonial-content">
@@ -508,16 +508,6 @@
           </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Fade out gradient overlay -->
-    <div class="testimonials-fade" id="testimonialsFade"></div>
-    
-    <!-- Load More Button -->
-    <div class="text-center" style="margin-top: 40px; margin-bottom: 60px;">
-      <button id="loadMoreTestimonials" class="button-primary" style="padding: 12px 40px; font-size: 16px;">
-        Load More Reviews
-      </button>
     </div>
   </div>
 </div>
@@ -604,8 +594,8 @@
     <div class="activity-inner row">
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="activity-item">
-          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important;">
-            <a href="#">
+          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; background: linear-gradient(135deg, #173C97 0%, rgba(23, 60, 151, 0.8) 100%) !important;">
+            <a href="#" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
               <i class="fas fa-clipboard-list" style="font-size: 80px !important; color: #fff !important;"></i>
             </a>
           </div>
@@ -619,8 +609,8 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="activity-item">
-          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important;">
-            <a href="/contact.html">
+          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; background: linear-gradient(135deg, #173C97 0%, rgba(23, 60, 151, 0.8) 100%) !important;">
+            <a href="/contact.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
               <i class="fas fa-map-marker-alt" style="font-size: 80px !important; color: #fff !important;"></i>
             </a>
           </div>
@@ -634,8 +624,8 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="activity-item">
-          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important;">
-            <a href="#">
+          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; background: linear-gradient(135deg, #173C97 0%, rgba(23, 60, 151, 0.8) 100%) !important;">
+            <a href="#" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
               <i class="fas fa-book-open" style="font-size: 80px !important; color: #fff !important;"></i>
             </a>
           </div>
@@ -649,8 +639,8 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="activity-item">
-          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important;">
-            <a href="#">
+          <div class="activity-icon" style="width: 200px !important; height: 200px !important; margin: 0 auto 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; background: linear-gradient(135deg, #173C97 0%, rgba(23, 60, 151, 0.8) 100%) !important;">
+            <a href="#" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
               <i class="fas fa-calendar-download" style="font-size: 80px !important; color: #fff !important;"></i>
             </a>
           </div>
@@ -807,7 +797,7 @@
             ]
           });
           
-          // Testimonials Masonry Grid & Load More
+          // Testimonials Masonry Grid - All testimonials shown
           var $grid = $('#testimonialsGrid');
           var masonryInstance = null;
           
@@ -818,9 +808,9 @@
               masonryInstance = null;
             }
             
-            // Initialize Masonry immediately
+            // Initialize Masonry immediately - show ALL items
             $grid.masonry({
-              itemSelector: '.testimonial-grid-item:not(.testimonial-hidden)',
+              itemSelector: '.testimonial-grid-item',
               columnWidth: '.testimonial-grid-item',
               percentPosition: true,
               horizontalOrder: true,
@@ -830,14 +820,14 @@
             });
             masonryInstance = $grid.data('masonry');
             
-            // Force layout after a brief moment to ensure everything is rendered
+            // Force layout after a brief moment
             setTimeout(function() {
               if (masonryInstance) {
                 $grid.masonry('layout');
               }
             }, 300);
             
-            // Also force layout on window load (images fully loaded)
+            // Also force layout on window load
             $(window).on('load', function() {
               if (masonryInstance) {
                 $grid.masonry('layout');
@@ -845,37 +835,8 @@
             });
           }
           
-          // Show fade overlay when hidden items exist
-          function updateFadeOverlay() {
-            var hiddenCount = $('.testimonial-hidden').length;
-            if (hiddenCount > 0) {
-              $('#testimonialsFade').fadeIn();
-            } else {
-              $('#testimonialsFade').fadeOut();
-            }
-          }
-          
           // Initialize on page load
           initMasonry();
-          updateFadeOverlay();
-          
-          // Load More button handler
-          $('#loadMoreTestimonials').on('click', function(e) {
-            e.preventDefault();
-            var $hiddenItems = $('.testimonial-hidden');
-            
-            if ($hiddenItems.length > 0) {
-              // Show all hidden items
-              $hiddenItems.removeClass('testimonial-hidden').hide().fadeIn(600, function() {
-                $grid.masonry('reloadItems');
-                $grid.masonry('layout');
-              });
-              
-              // Hide the button and fade overlay
-              $(this).fadeOut();
-              $('#testimonialsFade').fadeOut();
-            }
-          });
           
           // Re-layout on window resize
           $(window).on('resize', function() {
