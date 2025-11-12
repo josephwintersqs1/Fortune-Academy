@@ -5368,6 +5368,92 @@ body.industry-compliance {
     }
 }
 
+/* Testimonials Masonry Grid */
+.testimonials-grid {
+    display: block;
+    width: 100%;
+}
+
+.testimonial-grid-item {
+    float: left;
+    width: 33.333%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+    .testimonial-grid-item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-grid-item {
+        width: 100%;
+    }
+}
+
+/* Hidden testimonials */
+.testimonial-hidden {
+    display: none !important;
+}
+
+/* Fade out gradient overlay */
+.testimonials-fade {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,1) 100%);
+    pointer-events: none;
+    z-index: 5;
+    display: none;
+}
+
+/* Load More button positioning */
+#loadMoreTestimonials {
+    position: relative;
+    z-index: 10;
+}
+
+/* Learning Modality Interactive Cards */
+.learning-modality-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.learning-modality-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.learning-modality-card.active-modality {
+    border: 3px solid #ff6f00;
+    box-shadow: 0 10px 30px rgba(255,111,0,0.3);
+}
+
+.learning-modality-card.active-modality::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #ff6f00, #ff8c00);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Video wrap background transition */
+.about-video-wrap {
+    transition: opacity 0.3s ease;
+}
+
+
 
 
 

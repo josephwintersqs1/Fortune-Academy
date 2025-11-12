@@ -28,7 +28,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
       <!-- Custom CSS -->
       <link rel="stylesheet" type="text/css" href="style.css?bust=1762497475">
-      <link rel="stylesheet" type="text/css" href="custom.css?bust=1762500200">
+      <link rel="stylesheet" type="text/css" href="custom.css?bust=1762927650">
       <link rel="stylesheet" type="text/css" href="assets/css/hero-form.css?v=1762478000">
       <title>Fortune Academy | Real Estate</title>
    </head>
@@ -249,9 +249,6 @@
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-1-white.png" alt="Technical College of the Lowcountry"></a>
       </div>
-      <div class="activity-content">
-        <h4><a href="#">Technical College of the Lowcountry</a></h4>
-      </div>
     </div>
   </div>
 
@@ -260,9 +257,6 @@
     <div class="activity-item">
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-2-white.png" alt="Trident Technical College"></a>
-      </div>
-      <div class="activity-content">
-        <h4><a href="#">Trident Technical College</a></h4>
       </div>
     </div>
   </div>
@@ -273,9 +267,6 @@
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-3-white.png" alt="Aiken Technical College"></a>
       </div>
-      <div class="activity-content">
-        <h4><a href="#">Aiken Technical College</a></h4>
-      </div>
     </div>
   </div>
 
@@ -285,9 +276,6 @@
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-4-white.png" alt="Denmark Technical College"></a>
       </div>
-      <div class="activity-content">
-        <h4><a href="#">Denmark Technical College</a></h4>
-      </div>
     </div>
   </div>
 
@@ -296,9 +284,6 @@
     <div class="activity-item">
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-5-white.png" alt="Horry-Georgetown Technical College"></a>
-      </div>
-      <div class="activity-content">
-        <h4><a href="#">Horry-Georgetown Technical College</a></h4>
       </div>
     </div>
   </div>
@@ -310,9 +295,6 @@
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-1-white.png" alt="Technical College of the Lowcountry"></a>
       </div>
-      <div class="activity-content">
-        <h4><a href="#">Technical College of the Lowcountry</a></h4>
-      </div>
     </div>
   </div>
   
@@ -322,9 +304,6 @@
       <div class="activity-icon">
         <a href="#"><img src="assets/images/partner-2-white.png" alt="Trident Technical College"></a>
       </div>
-      <div class="activity-content">
-        <h4><a href="#">Trident Technical College</a></h4>
-      </div>
     </div>
   </div>
 </div>
@@ -333,7 +312,7 @@
 <!-- activity html end -->
 
 <!-- Testimonials Section -->
-<div class="testimonial-page-section">
+<div class="testimonial-page-section" style="position: relative;">
   <div class="container">
     <div class="section-heading text-center">
       <h5 class="dash-style">STUDENT SUCCESS</h5>
@@ -351,9 +330,9 @@
       </div>
     </div>
     
-    <div class="row">
+    <div class="testimonials-grid" id="testimonialsGrid">
       <!-- Review 1: Shane Cashwell -->
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Shane C</figure>
           <div class="testimonial-content">
@@ -373,7 +352,7 @@
       </div>
       
       <!-- Review 2: Gaelle Lapaix -->
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Gaelle L</figure>
           <div class="testimonial-content">
@@ -393,7 +372,7 @@
       </div>
       
       <!-- Review 3: Conner Macdonald -->
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Conner M</figure>
           <div class="testimonial-content">
@@ -413,7 +392,7 @@
       </div>
       
       <!-- Review 4: Duilio Moctezuma -->
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Duilio M</figure>
           <div class="testimonial-content">
@@ -433,7 +412,7 @@
       </div>
       
       <!-- Review 5: Thomas -->
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Thomas</figure>
           <div class="testimonial-content">
@@ -453,7 +432,7 @@
       </div>
       
       <!-- Review 6: Kenneth Darling -->
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6 testimonial-grid-item">
         <div class="testimonial-item text-center">
           <figure class="testimonial-img">Kenneth D</figure>
           <div class="testimonial-content">
@@ -471,6 +450,74 @@
           </div>
         </div>
       </div>
+      
+      <!-- Additional testimonials (hidden by default) -->
+      <div class="col-lg-4 col-md-6 testimonial-grid-item testimonial-hidden">
+        <div class="testimonial-item text-center">
+          <figure class="testimonial-img">Sarah M</figure>
+          <div class="testimonial-content">
+            <p>The online platform made it so easy to study at my own pace. The instructors were always available to answer questions. Highly recommend!</p>
+            <div class="start-wrap">
+              <div class="rating-start" title="Rated 5 out of 5">
+                <span style="width: 100%"></span>
+              </div>
+            </div>
+            <h3>Sarah Martinez</h3>
+            <span style="display: inline-flex; align-items: center; justify-content: center; font-size: 13px; color: #888; font-style: italic;">
+              <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="Google" style="height: 16px; vertical-align: middle; margin-right: 5px;">
+              Posted on Google
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 testimonial-grid-item testimonial-hidden">
+        <div class="testimonial-item text-center">
+          <figure class="testimonial-img">Mike J</figure>
+          <div class="testimonial-content">
+            <p>Best decision I made for my career. The exam prep was thorough and I felt fully prepared on test day.</p>
+            <div class="start-wrap">
+              <div class="rating-start" title="Rated 5 out of 5">
+                <span style="width: 100%"></span>
+              </div>
+            </div>
+            <h3>Mike Johnson</h3>
+            <span style="display: inline-flex; align-items: center; justify-content: center; font-size: 13px; color: #888; font-style: italic;">
+              <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="Google" style="height: 16px; vertical-align: middle; margin-right: 5px;">
+              Posted on Google
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 testimonial-grid-item testimonial-hidden">
+        <div class="testimonial-item text-center">
+          <figure class="testimonial-img">Lisa R</figure>
+          <div class="testimonial-content">
+            <p>Professional, knowledgeable, and supportive. Fortune Academy helped me achieve my real estate license goals!</p>
+            <div class="start-wrap">
+              <div class="rating-start" title="Rated 5 out of 5">
+                <span style="width: 100%"></span>
+              </div>
+            </div>
+            <h3>Lisa Rodriguez</h3>
+            <span style="display: inline-flex; align-items: center; justify-content: center; font-size: 13px; color: #888; font-style: italic;">
+              <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png" alt="Google" style="height: 16px; vertical-align: middle; margin-right: 5px;">
+              Posted on Google
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Fade out gradient overlay -->
+    <div class="testimonials-fade" id="testimonialsFade"></div>
+    
+    <!-- Load More Button -->
+    <div class="text-center" style="margin-top: 40px;">
+      <button id="loadMoreTestimonials" class="button-primary" style="padding: 12px 40px; font-size: 16px;">
+        Load More Reviews
+      </button>
     </div>
   </div>
 </div>
@@ -497,9 +544,9 @@
       <div class="about-service-container">
         <div class="row">
           <div class="col-lg-4">
-            <div class="about-service">
+            <div class="about-service learning-modality-card" data-video-id="IUN664s7N-c" data-preview="assets/images/img24-training.jpg">
               <div class="about-service-icon">
-                <i class="fas fa-chalkboard-teacher" style="font-size: 60px; color: #173C97;"></i>
+                <i class="fas fa-chalkboard-teacher" style="font-size: 60px; color: #ff6f00;"></i>
               </div>
               <div class="about-service-content">
                 <h4>IN-PERSON CLASSROOM</h4>
@@ -508,9 +555,9 @@
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="about-service">
+            <div class="about-service learning-modality-card" data-video-id="IUN664s7N-c" data-preview="assets/images/img25.jpg">
               <div class="about-service-icon">
-                <i class="fas fa-video" style="font-size: 60px; color: #173C97;"></i>
+                <i class="fas fa-video" style="font-size: 60px; color: #ff6f00;"></i>
               </div>
               <div class="about-service-content">
                 <h4>LIVE VIRTUAL CLASSES</h4>
@@ -519,9 +566,9 @@
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="about-service">
+            <div class="about-service learning-modality-card" data-video-id="IUN664s7N-c" data-preview="assets/images/img29.jpg">
               <div class="about-service-icon">
-                <i class="fas fa-laptop" style="font-size: 60px; color: #173C97;"></i>
+                <i class="fas fa-laptop" style="font-size: 60px; color: #ff6f00;"></i>
               </div>
               <div class="about-service-content">
                 <h4>SELF-PACED LEARNING</h4>
@@ -723,6 +770,89 @@
               }
             ]
           });
+          
+          // Testimonials Masonry Grid & Load More
+          var $grid = $('#testimonialsGrid');
+          var masonryInstance = null;
+          
+          // Initialize masonry
+          function initMasonry() {
+            if (masonryInstance) {
+              masonryInstance.destroy();
+            }
+            $grid.masonry({
+              itemSelector: '.testimonial-grid-item:not(.testimonial-hidden)',
+              columnWidth: '.testimonial-grid-item',
+              percentPosition: true,
+              gutter: 20
+            });
+            masonryInstance = $grid.data('masonry');
+          }
+          
+          // Show fade overlay when hidden items exist
+          function updateFadeOverlay() {
+            var hiddenCount = $('.testimonial-hidden').length;
+            if (hiddenCount > 0) {
+              $('#testimonialsFade').fadeIn();
+            } else {
+              $('#testimonialsFade').fadeOut();
+            }
+          }
+          
+          // Initialize on page load
+          initMasonry();
+          updateFadeOverlay();
+          
+          // Load More button handler
+          $('#loadMoreTestimonials').on('click', function(e) {
+            e.preventDefault();
+            var $hiddenItems = $('.testimonial-hidden');
+            
+            if ($hiddenItems.length > 0) {
+              // Show all hidden items
+              $hiddenItems.removeClass('testimonial-hidden').hide().fadeIn(600, function() {
+                $grid.masonry('reloadItems');
+                $grid.masonry('layout');
+              });
+              
+              // Hide the button and fade overlay
+              $(this).fadeOut();
+              $('#testimonialsFade').fadeOut();
+            }
+          });
+          
+          // Re-layout on window resize
+          $(window).on('resize', function() {
+            if ($grid.data('masonry')) {
+              $grid.masonry('layout');
+            }
+          });
+          
+          // Learning Modality Video Switching
+          $('.learning-modality-card').on('click', function() {
+            var videoId = $(this).data('video-id');
+            var previewImage = $(this).data('preview');
+            
+            // Update video button data attribute
+            $('#video-container').attr('data-video-id', videoId);
+            
+            // Update background image with smooth transition
+            var $videoWrap = $('.about-video-wrap');
+            $videoWrap.fadeOut(300, function() {
+              $videoWrap.css('background-image', 'url(' + previewImage + ')');
+              $videoWrap.fadeIn(300);
+            });
+            
+            // Optional: Add active state to clicked card
+            $('.learning-modality-card').removeClass('active-modality');
+            $(this).addClass('active-modality');
+          });
+          
+          // Set default preview on page load
+          var defaultCard = $('.learning-modality-card').first();
+          var defaultPreview = defaultCard.data('preview');
+          $('.about-video-wrap').css('background-image', 'url(' + defaultPreview + ')');
+          defaultCard.addClass('active-modality');
           
           // Learning Styles Carousel Initialization - REMOVED (now static section)
         });
