@@ -2387,6 +2387,16 @@ text-transform: uppercase;
 letter-spacing: 0.3px;
 }
 
+.location-badge {
+display: inline-block;
+padding: 4px 10px;
+border-radius: 4px;
+font-size: 12px;
+font-weight: 600;
+background: var(--real-estate-primary);
+color: white;
+}
+
 .type-day {
 background: #fff3cd;
 color: #856404;
@@ -5092,6 +5102,10 @@ function renderScheduleGrid(courseId, sessions) {
 			</div>
 			<div class="card-details">
 				<div class="detail-row">
+					<span class="detail-icon">📍</span>
+					<span><strong>${session.location}</strong></span>
+				</div>
+				<div class="detail-row">
 					<span class="detail-icon">📆</span>
 					<span>${session.days}</span>
 				</div>
@@ -5113,7 +5127,7 @@ function renderScheduleList(courseId, sessions) {
 	if (sessions.length === 0) {
 		tbody.html(`
 			<tr>
-				<td colspan="5" style="text-align: center; padding: 40px;">
+				<td colspan="6" style="text-align: center; padding: 40px;">
 					<div class="schedule-empty-state">
 						<div class="empty-icon">📅</div>
 						<h3>No sessions found</h3>
@@ -5161,6 +5175,7 @@ function filterScheduleCourse(courseId) {
 
 // Reset filters
 function resetScheduleFilters(courseId) {
+	$('#' + courseId + 'LocationFilter').val('');
 	$('#' + courseId + 'TypeFilter').val('');
 	$('#' + courseId + 'MonthFilter').val('');
 	filterScheduleCourse(courseId);
