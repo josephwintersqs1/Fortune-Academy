@@ -689,86 +689,127 @@
                 </div>
               </div>
             </div>
-          </div>
         </section>
-
-
-
-
-
-        <!-- ===== Partners ===== -->
-        <section class="activity-section activity-bg-image" style="background-image: url(assets/images/img29.jpg);">
-          <div class="container">
-            <div class="section-heading section-heading-white text-center">
-              <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                  <h5>VALUATION ALLIANCES</h5>
-                  <h2>Trusted by AMCs &amp; National Firms</h2>
-                  <p>Appraisal management companies, lenders, and independent practices partner with Fortune Academy to keep their analysts certified and market-ready.</p>
-                  <div class="title-icon-divider">
-                    <i class="fas fa-balance-scale" style="font-size: 40px !important; color: #fff !important;"></i>
-                  </div>
-                </div>
-              </div>
+         </main>
+         
+         <div data-include="partials/footer.html" data-footer-logo="assets/images/fa-logo-for-dark-real-estate.png"></div>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+      <!-- Modern search modal -->
+      <div class="search-modal-backdrop" id="searchBackdrop" style="display: none;">
+         <div class="search-modal">
+            <div class="search-modal-header">
+               <i class="fas fa-search search-modal-icon"></i>
+               <input type="text" id="searchModalInput" placeholder="Search courses..." autocomplete="off">
+               <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                  <i class="fas fa-times"></i>
+               </button>
             </div>
+            <div class="search-modal-results" id="searchModalResults" style="display: none;">
+               <!-- Results populated by JS -->
+            </div>
+         </div>
+      </div>
+         <!-- header html end -->
+      </div>
 
-            <div class="partners-carousel">
-          </div>
-        </section>
-
-
-
-      <!-- Helpful Links Section -->
-      <!-- Testimonials Section -->
-
-<!-- Learning Styles Section - Static (Template Based) -->
-
-           horizontalOrder: true,
-                gutter: 0,
-                transitionDuration: 0
-              });
-          masonryInstance = $grid.data('masonry');
-        }
-        
-        // Show fade overlay when hidden items exist
-        function updateFadeOverlay() {
-          var hiddenCount = $('.testimonial-hidden').length;
-          if (hiddenCount > 0) {
-            $('#testimonialsFade').fadeIn();
-          } else {
-            $('#testimonialsFade').fadeOut();
-          }
-        }
-        
-        // Initialize on page load
-        initMasonry();
-        updateFadeOverlay();
-        
-        // Load More button handler
-        $('#loadMoreTestimonials').on('click', function(e) {
-          e.preventDefault();
-          var $hiddenItems = $('.testimonial-hidden');
+      <!-- JavaScript -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="assets/js/jquery.counterup.js"></script>
+      <script src="assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="assets/vendors/slick/slick.min.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/layout.js"></script>
+      <script src="assets/js/custom.min.js"></script>
+      <script src="assets/js/fa-states.js?v=1762478000"></script>
+      <script src="assets/js/hero-form-new.js?v=1762478000"></script>
+      <script src="assets/js/real-estate-catalog.js?v=1762499470"></script>
+      <script src="assets/js/header-search.js?t=1762483431"></script>
+      
+      <!-- Testimonials Carousel Initialization - REMOVED (now static grid) -->
+      <script>
+        $(document).ready(function(){
+          // Partners Carousel Initialization
+          $('.partners-carousel').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false,
+            arrows: true,
+            responsive: [
+              {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              }
+            ]
+          });
           
-          if ($hiddenItems.length > 0) {
-            // Show all hidden items
-            $hiddenItems.removeClass('testimonial-hidden').hide().fadeIn(600, function() {
-              $grid.masonry('reloadItems');
-              $grid.masonry('layout');
-            });
+          // Testimonials Masonry Grid - All testimonials shown
+          var $grid = $('#testimonialsGrid');
+          var masonryInstance = null;
+          
+          // Initialize masonry
+          function initMasonry() {
+            if (masonryInstance) {
+              masonryInstance.destroy();
+              masonryInstance = null;
+            }
             
-            // Hide the button and fade overlay
-            $(this).fadeOut();
-            $('#testimonialsFade').fadeOut();
+            // Initialize Masonry immediately - show ALL items
+            $grid.masonry({
+              itemSelector: '.testimonial-grid-item',
+              columnWidth: '.testimonial-grid-item',
+              percentPosition: true,
+              horizontalOrder: true,
+              gutter: 0,
+              transitionDuration: '0.3s',
+              fitWidth: false
+            });
+            masonryInstance = $grid.data('masonry');
+            
+            // Force layout after a brief moment
+            setTimeout(function() {
+              if (masonryInstance) {
+                $grid.masonry('layout');
+              }
+            }, 300);
+            
+            // Also force layout on window load
+            $(window).on('load', function() {
+              if (masonryInstance) {
+                $grid.masonry('layout');
+              }
+            });
           }
-        });
-        
-        // Re-layout on window resize
-        $(window).on('resize', function() {
-          if ($grid.data('masonry')) {
-            $grid.masonry('layout');
-          }
-        });
-      });
+          
+          // Initialize on page load
+          initMasonry();
+          
+          // Re-layout on window resize
+          $(window).on('resize', function() {
+            if ($grid.data('masonry')) {
+              $grid.masonry('layout');
+            }
+          });
           
           // Learning Modality Video Switching
           $('.learning-modality-card').on('click', function() {
@@ -795,7 +836,9 @@
           var defaultPreview = defaultCard.data('preview');
           $('.about-video-wrap').css('background-image', 'url(' + defaultPreview + ')');
           defaultCard.addClass('active-modality');
-    </script>
-  </body>
+          
+          // Learning Styles Carousel Initialization - REMOVED (now static section)
+        });
+      </script>
+   </body>
 </html>
-

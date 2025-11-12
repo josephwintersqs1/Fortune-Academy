@@ -689,115 +689,156 @@
                 </div>
               </div>
             </div>
-          </div>
         </section>
-
-
-
-
-
-        <!-- ===== Partners ===== -->
-        <section class="activity-section activity-bg-image" style="background-image: url(assets/images/img29.jpg);">
-          <div class="container">
-            <div class="section-heading section-heading-white text-center">
-              <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                  <h5>HEALTHCARE PARTNERS</h5>
-                  <h2>Trusted by Hospitals &amp; Care Networks</h2>
-                  <p>Hospitals, clinics, and long-term care providers choose Fortune Academy to upskill teams and safeguard compliance.</p>
-                  <div class="title-icon-divider">
-                    <i class="fas fa-stethoscope" style="font-size: 40px !important; color: #fff !important;"></i>
-                  </div>
-                </div>
-              </div>
+         </main>
+         
+         <div data-include="partials/footer.html" data-footer-logo="assets/images/fa-logo-for-dark-real-estate.png"></div>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+      <!-- Modern search modal -->
+      <div class="search-modal-backdrop" id="searchBackdrop" style="display: none;">
+         <div class="search-modal">
+            <div class="search-modal-header">
+               <i class="fas fa-search search-modal-icon"></i>
+               <input type="text" id="searchModalInput" placeholder="Search courses..." autocomplete="off">
+               <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                  <i class="fas fa-times"></i>
+               </button>
             </div>
+            <div class="search-modal-results" id="searchModalResults" style="display: none;">
+               <!-- Results populated by JS -->
+            </div>
+         </div>
+      </div>
+         <!-- header html end -->
+      </div>
 
-            <div class="partners-carousel">
-          </div>
-        </section>
-
-
-
-      <!-- Helpful Links Section -->
-      <!-- Testimonials Section -->
-
-<!-- Learning Styles Section - Static (Template Based) -->
-
-      rid-item',
-                percentPosition: true,
-                horizontalOrder: true,
-                gutter: 0,
-                transitionDuration: 0
-              });
-          masonryInstance = $grid.data('masonry');
-        }
-        
-        // Show fade overlay when hidden items exist
-        function updateFadeOverlay() {
-          var hiddenCount = $('.testimonial-hidden').length;
-          if (hiddenCount > 0) {
-            $('#testimonialsFade').fadeIn();
-          } else {
-            $('#testimonialsFade').fadeOut();
-          }
-        }
-        
-        // Initialize on page load
-        initMasonry();
-        updateFadeOverlay();
-        
-        // Load More button handler
-        $('#loadMoreTestimonials').on('click', function(e) {
-          e.preventDefault();
-          var $hiddenItems = $('.testimonial-hidden');
-          
-          if ($hiddenItems.length > 0) {
-            // Show all hidden items
-            $hiddenItems.removeClass('testimonial-hidden').hide().fadeIn(600, function() {
-              $grid.masonry('reloadItems');
-              $grid.masonry('layout');
-            });
-            
-            // Hide the button and fade overlay
-            $(this).fadeOut();
-            $('#testimonialsFade').fadeOut();
-          }
-        });
-        
-        // Re-layout on window resize
-        $(window).on('resize', function() {
-          if ($grid.data('masonry')) {
-            $grid.masonry('layout');
-          }
-        });
-        
-        // Learning Modality Video Switching
-        $('.learning-modality-card').on('click', function() {
-          var videoId = $(this).data('video-id');
-          var previewImage = $(this).data('preview');
-          
-          // Update video button data attribute
-          $('#video-container').attr('data-video-id', videoId);
-          
-          // Update background image with smooth transition
-          var $videoWrap = $('.about-video-wrap');
-          $videoWrap.fadeOut(300, function() {
-            $videoWrap.css('background-image', 'url(' + previewImage + ')');
-            $videoWrap.fadeIn(300);
+      <!-- JavaScript -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+      <script src="assets/vendors/countdown-date-loop-counter/loopcounter.js"></script>
+      <script src="assets/js/jquery.counterup.js"></script>
+      <script src="assets/vendors/modal-video/jquery-modal-video.min.js"></script>
+      <script src="assets/vendors/masonry/masonry.pkgd.min.js"></script>
+      <script src="assets/vendors/lightbox/dist/js/lightbox.min.js"></script>
+      <script src="assets/vendors/slick/slick.min.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/layout.js"></script>
+      <script src="assets/js/custom.min.js"></script>
+      <script src="assets/js/fa-states.js?v=1762478000"></script>
+      <script src="assets/js/hero-form-new.js?v=1762478000"></script>
+      <script src="assets/js/real-estate-catalog.js?v=1762499470"></script>
+      <script src="assets/js/header-search.js?t=1762483431"></script>
+      
+      <!-- Testimonials Carousel Initialization - REMOVED (now static grid) -->
+      <script>
+        $(document).ready(function(){
+          // Partners Carousel Initialization
+          $('.partners-carousel').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false,
+            arrows: true,
+            responsive: [
+              {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              }
+            ]
           });
           
-          // Optional: Add active state to clicked card
-          $('.learning-modality-card').removeClass('active-modality');
-          $(this).addClass('active-modality');
+          // Testimonials Masonry Grid - All testimonials shown
+          var $grid = $('#testimonialsGrid');
+          var masonryInstance = null;
+          
+          // Initialize masonry
+          function initMasonry() {
+            if (masonryInstance) {
+              masonryInstance.destroy();
+              masonryInstance = null;
+            }
+            
+            // Initialize Masonry immediately - show ALL items
+            $grid.masonry({
+              itemSelector: '.testimonial-grid-item',
+              columnWidth: '.testimonial-grid-item',
+              percentPosition: true,
+              horizontalOrder: true,
+              gutter: 0,
+              transitionDuration: '0.3s',
+              fitWidth: false
+            });
+            masonryInstance = $grid.data('masonry');
+            
+            // Force layout after a brief moment
+            setTimeout(function() {
+              if (masonryInstance) {
+                $grid.masonry('layout');
+              }
+            }, 300);
+            
+            // Also force layout on window load
+            $(window).on('load', function() {
+              if (masonryInstance) {
+                $grid.masonry('layout');
+              }
+            });
+          }
+          
+          // Initialize on page load
+          initMasonry();
+          
+          // Re-layout on window resize
+          $(window).on('resize', function() {
+            if ($grid.data('masonry')) {
+              $grid.masonry('layout');
+            }
+          });
+          
+          // Learning Modality Video Switching
+          $('.learning-modality-card').on('click', function() {
+            var videoId = $(this).data('video-id');
+            var previewImage = $(this).data('preview');
+            
+            // Update video button data attribute
+            $('#video-container').attr('data-video-id', videoId);
+            
+            // Update background image with smooth transition
+            var $videoWrap = $('.about-video-wrap');
+            $videoWrap.fadeOut(300, function() {
+              $videoWrap.css('background-image', 'url(' + previewImage + ')');
+              $videoWrap.fadeIn(300);
+            });
+            
+            // Optional: Add active state to clicked card
+            $('.learning-modality-card').removeClass('active-modality');
+            $(this).addClass('active-modality');
+          });
+          
+          // Set default preview on page load
+          var defaultCard = $('.learning-modality-card').first();
+          var defaultPreview = defaultCard.data('preview');
+          $('.about-video-wrap').css('background-image', 'url(' + defaultPreview + ')');
+          defaultCard.addClass('active-modality');
+          
+          // Learning Styles Carousel Initialization - REMOVED (now static section)
         });
-        
-        // Set default preview on page load
-        var defaultCard = $('.learning-modality-card').first();
-        var defaultPreview = defaultCard.data('preview');
-        $('.about-video-wrap').css('background-image', 'url(' + defaultPreview + ')');
-        defaultCard.addClass('active-modality');
-      });
-    </script>
-  </body>
+      </script>
+   </body>
 </html>
-
