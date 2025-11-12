@@ -5407,27 +5407,44 @@ body.industry-compliance {
 }
 
 /* Testimonials Masonry Grid */
-/* Remove blue background from stars - with VERY specific selectors to override style.css */
-/* Target BOTH the container AND the span element */
-body.industry-real-estate .testimonial-page-section .start-wrap,
-body.industry-real-estate .testimonial-page-section .rating-start,
-body.industry-real-estate .testimonial-page-section .rating-start span,
-body.industry-real-estate .testimonial-page-section .testimonial-item .start-wrap,
-body.industry-real-estate .testimonial-page-section .testimonial-item .rating-start,
-body.industry-real-estate .testimonial-page-section .testimonial-item .rating-start span,
-body.industry-mortgage .testimonial-page-section .rating-start span,
-body.industry-appraisal .testimonial-page-section .rating-start span,
-body.industry-osha .testimonial-page-section .rating-start span,
-body.industry-healthcare .testimonial-page-section .rating-start span,
-body.industry-compliance .testimonial-page-section .rating-start span,
-.testimonial-page-section .start-wrap,
-.testimonial-page-section .rating-start,
-.testimonial-page-section .rating-start span,
-.testimonial-item .start-wrap,
-.testimonial-item .rating-start,
-.testimonial-item .rating-start span {
-    background: none !important;
+/* OVERRIDE style.css line 6593-6615 - Remove ALL industry star backgrounds */
+/* These rules in style.css are causing the blue/colored backgrounds on stars */
+/* We need EXACT same specificity + !important to override */
+.industry-real-estate .testimonial-page-section .rating-start span {
     background-color: transparent !important;
+    background: none !important;
+}
+
+.industry-mortgage .testimonial-page-section .rating-start span {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+.industry-appraisal .testimonial-page-section .rating-start span {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+.industry-osha .testimonial-page-section .rating-start span {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+.industry-healthcare .testimonial-page-section .rating-start span {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+.industry-compliance .testimonial-page-section .rating-start span {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+/* Also remove from wrapper elements */
+.testimonial-page-section .start-wrap,
+.testimonial-page-section .rating-start {
+    background-color: transparent !important;
+    background: none !important;
 }
 
 /* Fix Masonry Layout - Completely remove floats and ensure Masonry has full control */
