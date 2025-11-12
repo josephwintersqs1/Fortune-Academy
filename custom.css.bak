@@ -4987,6 +4987,39 @@ body.industry-compliance {
     text-align: right;
 }
 
+/* Offering Cards Styles */
+.offering-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border-top: 4px solid;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.offering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.border-blue { border-top-color: #173C97; }
+.border-green { border-top-color: #16a34a; }
+.border-orange { border-top-color: #ff6f00; }
+.border-red { border-top-color: #dc2626; }
+.border-purple { border-top-color: #7c3aed; }
+
+.offering-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.border-blue .offering-icon { color: #173C97; }
+.border-green .offering-icon { color: #16a34a; }
+.border-orange .offering-icon { color: #ff6f00; }
+.border-red .offering-icon { color: #dc2626; }
+.border-purple .offering-icon { color: #7c3aed; }
 
 /* Award Item Styles */
 .award-item {
