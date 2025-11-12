@@ -816,13 +816,19 @@
             if (masonryInstance) {
               masonryInstance.destroy();
             }
-            $grid.masonry({
-              itemSelector: '.testimonial-grid-item:not(.testimonial-hidden)',
-              columnWidth: '.testimonial-grid-item',
-              percentPosition: true,
-              gutter: 20
-            });
-            masonryInstance = $grid.data('masonry');
+            
+            // Small delay to ensure DOM is ready
+            setTimeout(function() {
+              $grid.masonry({
+                itemSelector: '.testimonial-grid-item:not(.testimonial-hidden)',
+                columnWidth: '.testimonial-grid-item',
+                percentPosition: true,
+                horizontalOrder: true,
+                gutter: 0,
+                transitionDuration: 0
+              });
+              masonryInstance = $grid.data('masonry');
+            }, 100);
           }
           
           // Show fade overlay when hidden items exist
